@@ -1,0 +1,34 @@
+{
+    "Object": [
+        {
+            "Title": "加入 Kaiheila 聊天室服务器",
+            "Subtitle": "免费的 5000 人群，岂不美哉",
+            "Type": "link",
+            "Body": "https://kaihei.co/yW15HU"
+        },
+        {
+            "Title": "欢迎加入 Discord 聊天室服务器",
+            "Subtitle": "国际聊天室暂未对外开放",
+            "Type": "link",
+            "Body": "https://discord.gg/tZufMZRzyC"
+        },
+        {
+            "Title": "加入开发者群，提出开发建议",
+            "Subtitle": "欢迎催更",
+            "Type": "link",
+            "Body": "https://qm.qq.com/cgi-bin/qm/qr?k=iofvyDF4uW1WwUCZEX6QMxeOZb1bZHEP"
+        },
+        {
+            "Title": "在哔哩哔哩关注我",
+            "Subtitle": "动态区UP主",
+            "Type": "link",
+            "Body": "https://space.bilibili.com/319785096"
+        },
+        {
+            "Title": "本产品还处于初期开发中",
+            "Subtitle": "请勿就现在的状态评价",
+            "Type": "msg",
+            "Body": "让我康康是谁在黑我，有本事你做啊，我巴不得呢 doge"
+        }
+    ]
+}
