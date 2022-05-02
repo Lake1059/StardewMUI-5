@@ -1,5 +1,5 @@
 ## StardewMUI 5
-本产品是 1059 Studio 的 星露谷 SMUI 系列 最后一代产品
+本产品是 1059 Studio 的 星露谷 SMUI 系列 最后一代产品  
 使用 .NET Framework 4.8 运行库，仅支持 64 位 Windows 系统  
 欢迎各路大神开发其他系统上的版本
 
