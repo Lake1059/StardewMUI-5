@@ -20,15 +20,15 @@
         },
         {
             "Title": "在哔哩哔哩关注我",
-            "Subtitle": "动态区UP主",
+            "Subtitle": "某不知名的动态区UP主",
             "Type": "link",
             "Body": "https://space.bilibili.com/319785096"
         },
         {
-            "Title": "本产品还处于初期开发中",
-            "Subtitle": "请勿就现在的状态评价",
-            "Type": "msg",
-            "Body": "让我康康是谁在黑我，有本事你做啊，我巴不得呢 doge"
+            "Title": "关注维基获取最新教程的技术文档",
+            "Subtitle": "https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki",
+            "Type": "link",
+            "Body": "https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki"
         }
     ]
 }
