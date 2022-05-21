@@ -1,3 +1,6 @@
+![GitHub all releases](https://img.shields.io/github/downloads/Lake1059/StardewMUI-5/total?color=blue&label=Gitub%20发行版全部下载次数&style=flat-square)  
+![GitHub release (latest by date and asset including pre-releases)](https://img.shields.io/github/downloads-pre/Lake1059/StardewMUI-5/latest/StardewMUI.5.Installer.exe?color=blue&label=最新版本下载数量&style=flat-square)
+
 ## StardewMUI 5
 本产品是 1059 Studio 的 星露谷 SMUI 系列 最后一代产品  
 使用 .NET Framework 4.8 运行库，仅支持 64 位 Windows 系统  
