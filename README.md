@@ -20,9 +20,14 @@ SMUI 以一点点的复杂化为代价带来了巨大的效率提升
 ## 维基
 请在维基上获取本产品的所有官方教程和技术文档
 
-中文维基：https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki
-
+中文维基：https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki  
 English Wiki: https://stardewmui.fandom.com/wiki/StardewMUI_Wiki
+
+## 配置要求
+建议使用 i5 - 7代 及以上性能的任意平台处理器  
+预计将使用 30 MB ~ 350 MB 的物理内存（浏览器组件需要使用大量内存，且无法正确释放，不打开就不会占那么多）  
+建议使用高性能 SSD，预计缓存数据存储容量为 10KB ~ 无限（如果你不手动删除自动下载的模组文件压缩包的话就是无限）  
+建议使用能够流畅访问 NEXUS、Github、Gitee 的无线网络或宽带连接，或者使用 VPN
 
 ## 社区
 QQ群：738313040  
