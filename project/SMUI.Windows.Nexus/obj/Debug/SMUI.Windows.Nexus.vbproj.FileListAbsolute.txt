@@ -1,0 +1,13 @@
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\bin\Debug\SMUI.Windows.Nexus.dll
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\bin\Debug\SMUI.Windows.Nexus.pdb
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\bin\Debug\SMUI.Windows.Nexus.xml
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\bin\Debug\Newtonsoft.Json.dll
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\bin\Debug\Newtonsoft.Json.xml
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\obj\Debug\SMUI.Windows.Nexus.vbproj.AssemblyReference.cache
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\obj\Debug\SMUI.Windows.Nexus.Resources.resources
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\obj\Debug\SMUI.Windows.Nexus.vbproj.GenerateResource.cache
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\obj\Debug\SMUI.Windows.Nexus.vbproj.CoreCompileInputs.cache
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\obj\Debug\SMUI.Windows.Nexus.vbproj.CopyComplete
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\obj\Debug\SMUI.Windows.Nexus.dll
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\obj\Debug\SMUI.Windows.Nexus.xml
+C:\Visual Basic\StardewMUI 5\SMUI.Windows.Nexus\obj\Debug\SMUI.Windows.Nexus.pdb

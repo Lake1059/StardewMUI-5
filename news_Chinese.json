@@ -8,13 +8,13 @@
         },
         {
             "Title": "加入 Discord 聊天室服务器",
-            "Subtitle": "国际聊天室暂未对外开放",
+            "Subtitle": "国内用户可使用 Steam++ 软件代理访问",
             "Type": "link",
             "Body": "https://discord.gg/tZufMZRzyC"
         },
         {
             "Title": "加入开发者群，提出开发建议",
-            "Subtitle": "欢迎催更",
+            "Subtitle": "咸鱼吧务在线摸鱼",
             "Type": "link",
             "Body": "https://qm.qq.com/cgi-bin/qm/qr?k=iofvyDF4uW1WwUCZEX6QMxeOZb1bZHEP"
         },
@@ -30,11 +30,5 @@
             "Type": "link",
             "Body": "https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki"
         },
-        {
-            "Title": "使用插件增强体验",
-            "Subtitle": "https://stardewmui.fandom.com/zh/wiki/插件开发",
-            "Type": "link",
-            "Body": "https://stardewmui.fandom.com/zh/wiki/%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91"
-        }
     ]
 }

@@ -1,0 +1,4 @@
+﻿[*.vb]
+
+# BC41997: 引用程序集“DarkUI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null”没有强名称。
+dotnet_diagnostic.BC41997.severity = warning

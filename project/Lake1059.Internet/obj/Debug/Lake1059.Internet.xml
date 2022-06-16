@@ -1,0 +1,31 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Lake1059.Internet
+</name>
+</assembly>
+<members>
+<member name="T:Lake1059.Internet.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Lake1059.Internet.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Lake1059.Internet.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:Lake1059.Internet.下载文件.DownloadFile(System.String,System.String,System.Int64@,System.Int64@,System.Boolean@)">
+ <summary>
+ 请使用异步调用此方法
+ </summary>
+</member>
+</members>
+</doc>

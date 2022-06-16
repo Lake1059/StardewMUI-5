@@ -1,16 +1,16 @@
 {
     "Object": [
         {
-            "Title": "Join in our Discord.",
-            "Subtitle": "Ask for help or some tips.",
+            "Title": "Join our server",
+            "Subtitle": "ask for any help",
             "Type": "link",
             "Body": "https://discord.gg/tZufMZRzyC"
         },
         {
-            "Title": "Follow the wiki for the latest tutorials.",
-            "Subtitle": "English wiki is not ready, but there is Chinese.",
+            "Title": "Please check the wiki to learn how to use.",
+            "Subtitle": "There is only Chinese wiki here, I need you guys to write in English.",
             "Type": "link",
             "Body": "https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki"
-        }
+        },
     ]
 }

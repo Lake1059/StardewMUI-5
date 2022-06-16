@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<StardewValleyGamePath></StardewValleyGamePath>
+	<ModRepositoryPath></ModRepositoryPath>
+	<StardewValleyGameBackUpPath></StardewValleyGameBackUpPath>
+	<CategoryExportDefaultPath></CategoryExportDefaultPath>
+	<ModItemExportDefaultPath></ModItemExportDefaultPath>
+	<SubLibraryExportDefaultPath></SubLibraryExportDefaultPath>
+	<VisualStudioCodePath></VisualStudioCodePath>
+	<VisualStudioPath></VisualStudioPath>
+	<NotepadPath></NotepadPath>
+
+	<DownloadSmuiUndateFrom></DownloadSmuiUndateFrom>
+	<OnlineContentFrom></OnlineContentFrom>
+	<OnlineContentLanguage></OnlineContentLanguage>
+	<InterfaceLanguage></InterfaceLanguage>
+	
+	<NEXUSMODSPersonalAPIKey></NEXUSMODSPersonalAPIKey>
+	<GitHubPersonalAccessTokens></GitHubPersonalAccessTokens>
+	<GiteePersonalAccessTokens></GiteePersonalAccessTokens>
+
+	<StartOptions>1</StartOptions>
+	<UserStartOptions></UserStartOptions>
+
+	<AutoCheckSMUIUpdates>True</AutoCheckSMUIUpdates>
+	<AutoGetNews>True</AutoGetNews>
+	<StatisticsOnTheNmberOfParticipatingUsers>True</StatisticsOnTheNmberOfParticipatingUsers>
+	<SaveInterfaceLayout>True</SaveInterfaceLayout>
+	<DragDropCompatibilityForAdministrator>True</DragDropCompatibilityForAdministrator>
+
+	<CategoryPanelWidth>200</CategoryPanelWidth>
+	<DetailsPanelWidth>250</DetailsPanelWidth>
+	<MainWindowWidth>1200</MainWindowWidth>
+	<MainWindowHeight>705</MainWindowHeight>
+
+	<LastUsedSubLibraryName>Default Sub Library</LastUsedSubLibraryName>
+	
+	
+</data>
