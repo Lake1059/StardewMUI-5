@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--chs : Chinese default text, you can refer to it for translation-->
+<!--width : width of the object-->
+<!--/crlf/ : Automatically replace with newline-->
+<data>
+	<MainWindow>
+		<TitlePanel.1 chs="起始页面">Главная</TitlePanel.1>
+		<TitlePanel.2 chs="管理模组">Моды</TitlePanel.2>
+		<TitlePanel.3 chs="配置队列">Очередь</TitlePanel.3>
+		<!--MAX 120 MIN 100-->
+		<TitleMainPanelButtonEachWidth>120</TitleMainPanelButtonEachWidth>
+		<TitlePanel.4 chs="内容中心">Контент</TitlePanel.4>
+		<TitlePanel.5 chs="设置选项">Настройки</TitlePanel.5>
+
+		<StartPanel.1 chs="检查模组安装情况">Проверка модов</StartPanel.1>
+		<StartPanel.2 chs="传统管理方式">Обычное управление</StartPanel.2>
+		<StartPanel.3 chs="存档编辑器">Редактор сохранений</StartPanel.3>
+		<StartPanel.4 chs="模组更新管理器">Обновление модов</StartPanel.4>
+		<StartPanel.5 chs="插件和扩展内容">Плагины</StartPanel.5>
+		<StartPanel.6 chs="新闻公告">Новости</StartPanel.6>
+		<StartPanel.7 chs="模组列表">Список модов/crlf/NEXUS</StartPanel.7>
+		<StartPanel.8 chs="下载模组">Скачать моды</StartPanel.8>
+		<StartPanel.9 chs="主题内容">Содержание темы</StartPanel.9>
+		<StartPanel.10 chs="创作者自由面板">Бесплатная панель/crlf/для авторов</StartPanel.10>
+		<StartPanel.11 chs="参与翻译 SMUI">Перевести SMUI</StartPanel.11>
+		<StartPanel.12 chs="立即检查更新">Проверить обновления</StartPanel.12>
+		<StartPanel.13 chs="关于和许可协议">О приложении</StartPanel.13>
+		<StartPanel.14 chs="查看更新历史">Список изменений</StartPanel.14>
+
+		<ModListMenu.1 chs="右键再次调出此菜单">Щёлкните правой кнопкой мыши, чтобы снова показать это меню</ModListMenu.1>
+		<ModListMenu.2 chs="清除内容">Очистить содержимое</ModListMenu.2>
+		<ModListMenu.3 chs="最新的 10 个模组">Последние 10 модов</ModListMenu.3>
+		<ModListMenu.4 chs="最近更新的 10 个模组">Обновления последних 10 модов</ModListMenu.4>
+		<ModListMenu.5 chs="有史以来最热门的 10 个模组">10 самых популярных модов за всё время</ModListMenu.5>
+
+		<ContentCenter.1 chs="产品简体中文维基">Вики (На китайском)</ContentCenter.1>
+		<ContentCenter.2 chs="产品 GitHub 仓库">Репозиторий GitHub</ContentCenter.2>
+		<ContentCenter.3 chs="链接汇总">Сводка ссылок</ContentCenter.3>
+		<ContentCenter.4 chs="应用程序目录集">Папка коллекций</ContentCenter.4>
+		<ContentCenter.5 chs="星露谷目录集">Папка коллекций Stardew Valley</ContentCenter.5>
+		<ContentCenter.6 chs="星露谷 Steam 商店页面">Страница магазина Stardew Valley в Steam</ContentCenter.6>
+		<ContentCenter.7 chs="SMAPI 官网">smapi.io</ContentCenter.7>
+		<ContentCenter.8 chs="模组数据表">Совместимость с модами</ContentCenter.8>
+		<ContentCenter.9 chs="日志分析器">Парсер логов SMAPI</ContentCenter.9>
+		<ContentCenter.10 chs="农场布局规划器">Планировщик Stardew</ContentCenter.10>
+		<ContentCenter.11 chs="存档预测器">Предсказатель Stardew</ContentCenter.11>
+		<ContentCenter.12 chs="存档进度检查器">Проверка Stardew</ContentCenter.12>
+		<ContentCenter.13 chs="软件安装目录">Папка приложения</ContentCenter.13>
+		<ContentCenter.14 chs="用户配置数据文件夹">Папка данных профиля пользователя</ContentCenter.14>
+		<ContentCenter.15 chs="插件目录">Папка с плагинами</ContentCenter.15>
+		<ContentCenter.16 chs="下载更新目录">Скачать папку с обновлениями</ContentCenter.16>
+		<ContentCenter.17 chs="当前星露谷游戏目录">Папка с игрой Stardew Valley</ContentCenter.17>
+		<ContentCenter.18 chs="星露谷 Mods 文件夹">Папка Mods Stardew Valley</ContentCenter.18>
+		<ContentCenter.19 chs="星露谷 Content 文件夹">Папка Content Stardew Valley</ContentCenter.19>
+		<ContentCenter.20 chs="星露谷 存档 文件夹">Папка с сохранениями Stardew Valley</ContentCenter.20>
+		<ContentCenter.21 chs="SMAPI 日志 文件夹">Папка с логами SMAPI</ContentCenter.21>
+
+		
+		<!--Вам необходимо строго контролировать длину этого текста-->
+		<!--Потому что по умолчанию ширина дисплея составляет всего 200 пикселей или даже меньше.-->
+		<ManagePanel.1 chs=" 子库和分类菜单"> SubLib + Категории</ManagePanel.1>
+		<ManagePanel.2 chs="刷新分类">Обновить</ManagePanel.2>
+		<ManagePanel.3 chs="数据子库操作">Подбиблиотека</ManagePanel.3>
+		<ManagePanel.4 chs="切换数据子库">Сменить</ManagePanel.4>
+		<ManagePanel.5 chs="刷新数据子库">Обновить</ManagePanel.5>
+		<ManagePanel.6 chs="新建数据子库">Новая</ManagePanel.6>
+		<ManagePanel.7 chs="导入数据子库">Импорт</ManagePanel.7>
+		<ManagePanel.8 chs="导出数据子库">Экспорт</ManagePanel.8>
+		<ManagePanel.9 chs="删除数据子库">Удалить</ManagePanel.9>
+		<ManagePanel.10 chs="新建分类">Новая</ManagePanel.10>
+		<ManagePanel.11 chs="转移分类">Переместить</ManagePanel.11>
+		<ManagePanel.12 chs="删除分类">Удалить</ManagePanel.12>
+		<ManagePanel.13 chs="导入分类">Импорт</ManagePanel.13>
+		<ManagePanel.14 chs="导出分类">Экспорт</ManagePanel.14>
+		<!--清除config缓存在这-->
+		<ClearConfigCache chs="清除 Config 缓存">Очистить кэш</ClearConfigCache>
+		<ManagePanel.15 chs="文件夹">Папка</ManagePanel.15>
+		<ManagePanel.16 chs="重命名分类">Переименовать</ManagePanel.16>
+		<ManagePanel.17 chs="设置颜色">Цвет</ManagePanel.17>
+		<ManagePanel.18 chs="设置字体">Шрифт</ManagePanel.18>
+		<ManagePanel.19 chs="属性">Атрибуты</ManagePanel.19>
+		<ManagePanel.20 chs="激活拖拽">Перетаскивание</ManagePanel.20>
+		
+		<ManagePanel.21 chs=" 项列表菜单" width="100"> Элементы</ManagePanel.21>
+		<ManagePanel.22 chs="刷新" width="70">Обновить</ManagePanel.22>
+		<ManagePanel.23 chs="搜索" width="70">Поиск</ManagePanel.23>
+		<ManagePanel.24 chs="筛选" width="60">Фильтр</ManagePanel.24>
+		
+		<ManagePanel.25 chs="新建项">Новый элемент</ManagePanel.25>
+		<ManagePanel.26 chs="移动项">Переместить</ManagePanel.26>
+		<ManagePanel.27 chs="删除项">Удалить</ManagePanel.27>
+		<ManagePanel.28 chs="导入项">Импорт</ManagePanel.28>
+		<ManagePanel.29 chs="导出项">Экспорт</ManagePanel.29>
+		<ManagePanel.30 chs="批量创建">Создать массово</ManagePanel.30>
+		<ManagePanel.31 chs="本地更新">Локальное обновление</ManagePanel.31>
+		<ManagePanel.32 chs="从 Mods 中覆盖到仓库">Переопределение из Mods в библиотеку</ManagePanel.32>
+		<ManagePanel.33 chs="从 Mods 中替换到仓库">Заменить из Mods в библиотеку</ManagePanel.33>
+		<ManagePanel.34 chs="切换显示所属分类">Переключить категории</ManagePanel.34>
+		<ManagePanel.35 chs="切换显示滚动条">Переключить полосу прокрутки</ManagePanel.35>
+		
+		<ManagePanel.36 chs="全选">Выбрать все</ManagePanel.36>
+		<ManagePanel.37 chs="反选">Обратный выбор</ManagePanel.37>
+		<ManagePanel.38 chs="选择当前列表：已安装">Список: Установлено</ManagePanel.38>
+		<ManagePanel.39 chs="选择当前列表：未安装">Список: Удалено</ManagePanel.39>
+		<ManagePanel.40 chs="选择当前列表：更新可用">Список: Доступно обновление</ManagePanel.40>
+		<ManagePanel.41 chs="选择当前列表：已有新的">Список: Есть новое</ManagePanel.41>
+		<ManagePanel.42 chs="选择当前列表：在线更新可用">Список: Доступно онлайн-обновление</ManagePanel.42>
+		<ManagePanel.43 chs="扫描当前子库：已安装">Подбиблиотека: Установлено</ManagePanel.43>
+		<ManagePanel.44 chs="扫描当前子库：未安装">Подбиблиотека: Удалено</ManagePanel.44>
+		<ManagePanel.45 chs="扫描当前子库：文件夹">Подбиблиотека: Папки</ManagePanel.45>
+		<ManagePanel.46 chs="扫描当前子库：文件">Подбиблиотека: Файлы</ManagePanel.46>
+		
+		<ManagePanel.47 chs="调试" width="70">Отладка</ManagePanel.47>
+		<ManagePanel.48 chs=" 描述菜单"> Описание</ManagePanel.48>
+		<ManagePanel.49 chs="新建 RTF 文档">Новый документ (RTF)</ManagePanel.49>
+		<ManagePanel.50 chs="在写字板中编辑 RTF">Изменить RTF в WordPad</ManagePanel.50>
+		<ManagePanel.51 chs="保存到 TXT 纯文本">Сохранить как TXT</ManagePanel.51>
+		<ManagePanel.52 chs="保存到 RTF 富文本">Сохранить как RTF</ManagePanel.52>
+		<ManagePanel.53 chs="切换滚动条显示">Переключить полосу прокрутки</ManagePanel.53>
+		<ManagePanel.54 chs="设置选中内容的字体">Шрифт выбранного содержимого</ManagePanel.54>
+		<ManagePanel.55 chs="设置选中内容的颜色">Цвет выбранного содержимого</ManagePanel.55>
+		<ManagePanel.56 chs="清除选择内容的格式">Очистить формат выбранного</ManagePanel.56>
+		<ManagePanel.57 chs="数据仓库内版本">Версия в репозитории</ManagePanel.57>
+		<ManagePanel.58 chs="已安装到游戏内版本">Установленная версия</ManagePanel.58>
+		<ManagePanel.59 chs=" 预览图菜单"> Предпросмотр</ManagePanel.59>
+		<ManagePanel.60 chs="文件夹">Папка</ManagePanel.60>
+		<ManagePanel.61 chs="复制">Копировать</ManagePanel.61>
+		<ManagePanel.62 chs="删除此图">Удалить это изображение</ManagePanel.62>
+		<ManagePanel.63 chs="删除所有图">Удалить все изображения</ManagePanel.63>
+		<ManagePanel.64 chs="缩放处理">Масштабирование</ManagePanel.64>
+
+		<ManagePanel.65 chs="安装">Установить</ManagePanel.65>
+		<ManagePanel.66 chs="卸载">Удалить</ManagePanel.66>
+		<ManagePanel.67 chs="配置/部署">Включить</ManagePanel.67>
+		<ManagePanel.68 chs="文件夹">Папка</ManagePanel.68>
+		<ManagePanel.69 chs="编辑器">Редактор</ManagePanel.69>
+		<ManagePanel.70 chs="重命名项">Переименовать</ManagePanel.70>
+		<ManagePanel.71 chs="用 Visual Studio Code 打开">Открыть с помощью Visual Studio Code</ManagePanel.71>
+		<ManagePanel.72 chs="用 Visual Studio 打开">Открыть с помощью Visual Studio</ManagePanel.72>
+		<ManagePanel.73 chs="用 Notepad++ 打开">Открыть с помощью Notepad++</ManagePanel.73>
+		<ManagePanel.74 chs="可视化清单编辑器">Визуальный редактор манифеста</ManagePanel.74>
+		<ManagePanel.75 chs="简单编辑 Config">Простое изменение конфига</ManagePanel.75>
+		<ManagePanel.76 chs="清除 Config 缓存">Очистить кэш конфига</ManagePanel.76>
+		<ManagePanel.77 chs="属性">Атрибуты</ManagePanel.77>
+		<ManagePanel.78 chs="激活拖拽">Перетаскивание</ManagePanel.78>
+		
+		<ManagePanel.79 chs=""></ManagePanel.79>
+		<ManagePanel.80 chs=""></ManagePanel.80>
+		<ManagePanel.81 chs=""></ManagePanel.81>
+		<ManagePanel.82 chs=""></ManagePanel.82>
+		
+		<DeployPanel.1 chs=" 正在配置的项："> Включено:</DeployPanel.1>
+		<DeployPanel.2 chs=" 自定义版本号："> Польз. версия: </DeployPanel.2>
+		<DeployPanel.3 chs="保存并从队列中移除" width="130">Сохранить и удалить</DeployPanel.3>
+		<DeployPanel.4 chs="仅保存" width="80">Сохранить</DeployPanel.4>
+		<DeployPanel.5 chs=" 配置队列中的项"> Элементы в очереди на включение</DeployPanel.5>
+		<DeployPanel.6 chs="全部移除" width="85">Удалить все</DeployPanel.6>
+		<DeployPanel.7 chs="移除" width="70">Удалить</DeployPanel.7>
+		<DeployPanel.8 chs=" 项的数据内容"> Контент</DeployPanel.8>
+		<DeployPanel.9 chs="添加文件夹" width="90">Добавить папку</DeployPanel.9>
+		<DeployPanel.10 chs="添加文件" width="80">Добавить файл</DeployPanel.10>
+		<DeployPanel.11 chs="刷新" width="70">Обновить</DeployPanel.11>
+		<DeployPanel.12 chs="插入名称">Вставить название</DeployPanel.12>
+		<DeployPanel.13 chs="复制名称">Копировать название</DeployPanel.13>
+		<DeployPanel.14 chs="重命名">Переименовать</DeployPanel.14>
+		<DeployPanel.15 chs="上移">Вверх</DeployPanel.15>
+		<DeployPanel.16 chs="下移">Вниз</DeployPanel.16>
+		<DeployPanel.17 chs="提取压缩包">Извлечь архив</DeployPanel.17>
+		<DeployPanel.18 chs="拿出内容">Убрать</DeployPanel.18>
+		<DeployPanel.19 chs="内容套层">Накрыть один слой</DeployPanel.19>
+		<DeployPanel.20 chs="删除">Удалить</DeployPanel.20>
+		<DeployPanel.21 chs=" 情况分析器"> Анализатор ситуации</DeployPanel.21>
+		<DeployPanel.22 chs="全部复制" width="80">Копировать все</DeployPanel.22>
+		<DeployPanel.23 chs=" 编写安装命令"> Запись команды установки</DeployPanel.23>
+		<DeployPanel.24 chs="自动完成" width="60">Авто</DeployPanel.24>
+		<DeployPanel.25 chs="所有命令" width="110">Все команды</DeployPanel.25>
+		<DeployPanel.26 chs="激活拖拽">Перетаскивание</DeployPanel.26>
+		
+		<FontMenu.1 chs="标准字体">Стандартный шрифт</FontMenu.1>
+		<FontMenu.2 chs="粗体">Полужирный</FontMenu.2>
+		<FontMenu.3 chs="斜体">Курсив</FontMenu.3>
+		<FontMenu.4 chs="下划线">Подчёркивание</FontMenu.4>
+		<FontMenu.5 chs="删除线">Зачёркивание</FontMenu.5>
+		<FontMenu.6 chs="粗体 + 下划线">Полужирный + подчёркивание</FontMenu.6>
+		<FontMenu.7 chs="粗体 + 删除线">Полужирный + зачёркивание</FontMenu.7>
+		<FontMenu.8 chs="斜体 + 下划线">Курсив + подчёркивание</FontMenu.8>
+		<FontMenu.9 chs="斜体 + 删除线">Курсив + зачёркивание</FontMenu.9>
+
+	</MainWindow >
+
+	<DirectOnlineUpdateWindow>
+		<Title chs="直接联网更新单个项">Обновить по сети</Title>		
+		<S1 chs="正在连接到 NEXUS 获取文件列表">Подключение к NEXUS для получения списка файлов...</S1>
+		<S2 chs="点击文件名称来获取下载地址">Нажмите на название файла, чтобы получить адрес скачивания.</S2>
+		<S3 chs="正在连接到 NEXUS 获取文件下载地址">Получение ссылки на скачивание файла...</S3>
+		<S4 chs="正在下载文件">Скачивание...</S4>
+		<S5 chs="正在解压">Распаковка...</S5>
+		<S6 chs="选择要从哪个服务器下载文件">Выберите сервер для скачивания файла.</S6>
+		<S7 chs="如果你无法高速下载，请自行使用代理，记得添加域名规则：cf-files.nexusmods.com">Если вы не можете скачивать на высокой скорости, используйте собственный прокси и не забудьте добавить правила домена по адресу: cf-files.nexusmods.com</S7>
+		<S8 chs="正在下载，请稍后">Скачивание...</S8>
+		<S9 chs="正在解压">Распаковка...</S9>
+		<S10 chs="正在评估">Проверка...</S10>
+		<S_10_1 chs="评估成功，正在更新数据">Проверка прошла успешно, данные обновлены...</S_10_1>
+		<S11 chs="已自动完成更新项">Обновление было завершено автоматически.</S11>
+		<S12 chs="存在验证不通过的内容，为了避免意外情况不能自动完成，请在配置队列中手动操作，程序将自动打开解压目录。你还可以在调试窗口中查看具体的情况">Есть контент, который не проходит проверку. Во избежание непредвиденных ситуаций он не может быть завершён автоматически. Работайте вручную в очереди включения, и программа автоматически откроет каталог распаковки. Вы также можете увидеть конкретную ситуацию в окне отладки.</S12>
+		<S13 chs="正在等待浏览器完成页面加载">Ожидание завершения загрузки страницы браузером...</S13>
+		<S14 chs="正在删除临时解压的数据，请稍后">Удаление временно распакованных данных...</S14>
+		<A1 chs="文件夹名称不匹配">Имя папки не совпадает.</A1>
+		<A2 chs="清单文件放置目录不正确">Файл манифеста размещён по неправильному пути.</A2>
+		<A3 chs="暂不支持非 CDCD 命令的自动更新">Автоматическое обновление команд, отличных от CDCD, пока не поддерживается.</A3>
+		<A4 chs="文件夹数量和 CDCD 命令数量不匹配">Количество папок не соответствует количеству команд CDCD.</A4>
+		<A5 chs="当前使用会员下载">Используется Premium скачивание</A5>
+		<A6 chs="当前使用免费下载">Используется бесплатное скачивание</A6>
+		<IE1 chs="无法获取到参数，请关闭此页面重试">Указанные данные не были получены, продолжение невозможно.</IE1>	
+	</DirectOnlineUpdateWindow>
+		
+	<SettingsWindow>
+		<Title chs="设置">Настройки</Title>
+		<A1 chs="   设置窗口打开时，你仍旧可以操作其他窗口/crlf/   在左侧列表中选择一项来显示该类的设置项">   Когда окно настроек открыто, вы по-прежнему можете работать с другими окнами./crlf/ Выберите элемент в списке слева, чтобы отобразить настройки для этого класса.</A1>
+		<A2 chs="取消">Отмена</A2>
+		<A3 chs="应用">Применить</A3>
+		<A4 chs="确定">ОК</A4>
+		<A5 chs="   关键路径">   Обязательные пути</A5>
+		<A6 chs="游戏路径（支持所有版本）">Расположение игры (поддерживает все версии)</A6>
+		<A7 chs="模组数据仓库路径">Расположение библиотеки модов</A7>
+		<A8 chs="在第五代中，一个库可以包含多个子库，如果你的模组超级多，那么这将非常有用">В Gen 5 библиотека может содержать несколько подбиблиотек, что полезно, если у вас много модов.</A8>
+		<A9 chs="   可选路径">   Необязательные пути</A9>
+		<A10 chs="游戏文件备份路径（如果要使用文件替换类命令，则是必须的，否则程序会删除游戏文件）">Путь к резервной копии файлов игры (требуется, если вы используете CDGRF, CDVD, иначе программа удалит файл игры.)</A10>
+		<A11 chs="分类数据导出默认路径">Путь экспорта данных категории</A11>
+		<A12 chs="项数据导出默认路径">Путь экспорта данных элемента</A12>
+		<A13 chs="子库打包导出默认路径">Путь экспорта данных подбиблиотеки</A13>
+		<A14 chs="Visual Studio Code">Visual Studio Code</A14>
+		<A15 chs="Visual Studio">Visual Studio</A15>
+		<A16 chs="Notepad++">Notepad++</A16>
+		<A17 chs="   地区和语言">   Язык</A17>
+		<A18 chs="下载更新来源">Источник скачивания обновлений</A18>
+		<A19 chs="界面语言">Язык интерфейса</A19>
+		<A20 chs="在线内容来源">Источник онлайн-контента</A20>
+		<A21 chs="在线内容语言">Язык онлайн-контента</A21>
+		<A22 chs="   网络服务">   Сетевые службы</A22>
+		<A23 chs="登录 NEXUS API">Войти через NEXUS API</A23>
+		<A23B1 chs="非会员请在内置浏览器登录账号才能下载模组">Для скачивания файла мода не членам клуба необходимо войти в аккаунт во встроенном браузере.</A23B1>
+		<A24 chs="Github 私人令牌">Персональный токен Github</A24>
+		<A25 chs="   启动项">   Запуск игры</A25>
+		<A26 chs="正常启动 SMAPI">Запустить SMAPI в обычном режиме</A26>
+		<A27 chs="启动 Natural Color - Reshade">Запустить с Natural Color - Reshade</A27>
+		<A28 chs="自定义启动项">Запуск с пользовательской консолью</A28>
+		<A29 chs="   功能">   Функции</A29>
+		<A30 chs="自动检查更新">Автопроверка обновлений</A30>
+		<A31 chs="自动获取新闻公告">Получать новости</A31>
+		<A32 chs="保存用户调整后的界面布局">Сохранить макет интерфейса, настроенный пользователем</A32>
+		<A33 chs="启用管理员身份下的拖拽兼容选项">Включить параметр совместимости с перетаскиванием от администратора</A33>
+		<A34 chs="   界面尺寸">   Размер интерфейса</A34>
+		<A35 chs="分类栏区域宽度（200-400）">Ширина области панели категории (200-400)</A35>
+		<A36 chs="描述栏区域宽度（250-500）">Ширина области панели описания (250-500)</A36>
+		<A37 chs="   字体样式">   Шрифт</A37>
+		<A38 chs="   图标">   Иконки</A38>
+		<A39 chs="挑选你喜欢的图标（立即生效，可能在下次启动计算机时才完全生效）/crlf/更新后快捷方式将被重置，请再手动设置">Выберите понравившуюся иконку (применится сразу или при следующем запуске приложения) /crlf/ После обновления ярлык будет сброшен, установите его вручную.</A39>
+		<A40 chs="在桌面创建快捷方式">Создать ярлык на рабочем столе</A40>
+	</SettingsWindow>
+
+	<ExportWindow>
+		<A1 chs="选择保存路径">Выбрать путь сохранения</A1>
+		<A2 chs="设置密码">Установите пароль</A2>
+		<A3 chs="清除密码本">Очистить список паролей</A3>
+		<A4 chs="完成后关闭控制台">Автозакрытие консоли</A4>
+		<A5 chs="加密导出">Зашифрованный экспорт</A5>
+		<A6 chs="开始导出">Начать экспорт</A6>
+	</ExportWindow>
+
+	<ImportWindow>
+		<A1 chs="添加打包文件">Добавить упакованый файл</A1>
+		<A2 chs="移除选中">Удалить</A2>
+		<A3 chs="清除密码本">Очистить список паролей</A3>
+		<A4 chs="完成后关闭控制台">Автозакрытие консоли</A4>
+		<A5 chs="使用密码">Использовать пароль</A5>
+		<A6 chs="开始导入">Начать импорт</A6>
+	</ImportWindow>
+
+	<SearchWindow>
+		<Search.1 chs="正在搜索">Поиск...</Search.1>
+		<Search.2 chs="正在添加项">Добавление элементов...</Search.2>
+		<Search.3 chs="搜索完成">Поиск выполнен</Search.3>
+		<Search.4 chs="你要搜索什么？">Что искать?</Search.4>
+		<Search.5 chs="项名称">Название</Search.5>
+		<Search.6 chs="Name 键值">Название</Search.6>
+		<Search.7 chs="Author 键值">Автор</Search.7>
+		<Search.8 chs="UniqueID 键值">UniqueID</Search.8>
+		<Search.9 chs="依赖项（反向搜索依赖）">Зависимости (обратный поиск)</Search.9>
+		<Search.10 chs="包含的文件夹（不搜索子目录）">Включенные папки (без вложений)</Search.10>
+		<Search.11 chs="NEXUS ID">NEXUS ID</Search.11>
+		<Search.12 chs="模糊搜索选项">Неточные параметры поиска</Search.12>
+		<Search.13 chs="不区分字母大小写">Без учёта регистра</Search.13>
+		<Search.14 chs="不区分中英文的标点符号">Без различий между chs и eng</Search.14>
+		<Search.15 chs="逐字拆分搜索（特耗时）">Дословный раздельный поиск</Search.15>
+		<Search.Title chs="搜索">Поиск</Search.Title>
+	</SearchWindow>	
+	
+	<!--These are dynamic text, in dialogs and status information, etc.-->
+	<DynamicText>
+		<OK chs="确定">ОК</OK>
+		<Cancel chs="取消">Отмена</Cancel>
+		<Yes chs="是">Да</Yes>
+		<No chs="否">нет</No>
+		<Negative chs="否决">Отклонить</Negative>
+		<DeletionInProgress chs="正在进行删除操作">Идет удаление!</DeletionInProgress>
+		<CopyLink chs="复制链接：">Копировать ссылку: </CopyLink>
+		<CopyLink2 chs="复制链接">Копировать ссылку</CopyLink2>
+		<GoToLink chs="打开链接：">Перейти по ссылке: </GoToLink>
+		<DirectOnlineUpdate chs="进行在线更新">Сетевое обновление напрямую</DirectOnlineUpdate>
+		<Unavailable chs="不可用">Недоступно</Unavailable>
+		<Available chs="可用">Доступно</Available>
+		<Folder chs="文件夹">Папка</Folder>
+		<File chs="文件">Файл</File>
+		<Line chs="行">Строка</Line>
+		<CharacterL chs="字符位">Символ</CharacterL>
+		<NoMatches chs="没有匹配的目标">Нет совпадений.</NoMatches>
+		<mainFile chs="主要文件">Основные файлы</mainFile>
+		<optionalFiles chs="可选文件">Дополнительные файлы</optionalFiles>
+		
+
+		<LoggedNexusWebApi chs="已登录 NEXUS WEB API">Вы вошли через NEXUS WEB API</LoggedNexusWebApi>
+		<NotLogInNexusWebApi chs="未登录 NEXUS WEB API">Вы не вошли через NEXUS WEB API</NotLogInNexusWebApi>
+		<LogInFailed chs="登录失败">Ошибка входа</LogInFailed>
+		<UserName chs="账户：">Пользователь: </UserName>
+		<TooFewRequestsRemainingInCurrentHour chs="当前小时剩余可请求次数过少：">В текущем часе осталось слишком мало запросов: </TooFewRequestsRemainingInCurrentHour>
+
+		<not_published chs="尚未发布">Не опубликовано</not_published>
+		<removed chs="已被移除">Удалено</removed>
+		<hidden chs="已被隐藏">Скрыто</hidden>
+
+		<InstallStatus.Unknow chs="未知">Неизвестно</InstallStatus.Unknow>
+		<InstallStatus.0 chs="未配置/部署">Не включен</InstallStatus.0>
+		<InstallStatus.1 chs="已安装">Установлен</InstallStatus.1>
+		<InstallStatus.2 chs="未安装">Не установлен</InstallStatus.2>
+		<InstallStatus.3 chs="安装不完整">Неполный</InstallStatus.3>
+		<InstallStatus.5 chs="文件夹已复制">Папка скопирована</InstallStatus.5>
+		<InstallStatus.6 chs="文件夹未复制">Папка не скопирована</InstallStatus.6>
+		<InstallStatus.10 chs="附加内容">Дополнительный контент</InstallStatus.10>
+		<InstallStatus.20 chs="文件已替换">Файл заменён</InstallStatus.20>
+		<InstallStatus.21 chs="文件未替换">Файл не заменён</InstallStatus.21>
+		<InstallStatus.30 chs="文件已复制">Файл скопирован</InstallStatus.30>
+		<InstallStatus.31 chs="文件未复制">Файл не скопирован</InstallStatus.31>
+		<InstallStatus.35 chs="需要复制文件">Требуется копия файла</InstallStatus.35>
+		<InstallStatus.40 chs="覆盖 Content">Переопределить Content</InstallStatus.40>
+
+		<InstallStatus.UpdateAvailable chs="更新可用">Доступно обновление</InstallStatus.UpdateAvailable>
+		<InstallStatus.YouInstalledNewOne chs="已有新的">Установить новую</InstallStatus.YouInstalledNewOne>
+		<InstallStatus.OnlineUpdateAvailable chs="在线更新可用">Доступно онлайн-обновление</InstallStatus.OnlineUpdateAvailable>
+
+		<ManageMod.1 chs="当前模组数据仓库路径不可用">Текущий путь к репозиторию модов недоступен.</ManageMod.1>
+		<ManageMod.2 chs="你还没有选择要使用哪个子库">Вы не выбрали, какую подбиблиотеку использовать.</ManageMod.2>
+		<ManageMod.3 chs="请先选择一个分类（只选一个）">Сначала выберите категорию (только одну, не более)</ManageMod.3>
+		<ManageMod.4 chs="为了防止你反悔，将子库发送到回收站">Чтобы потом не жалеть об этом, отправьте подбиблиотеку в корзину.</ManageMod.4>
+		<NewSubLibrary chs="新建子库">Новая подбиблиотека</NewSubLibrary>
+		<ManageMod.5 chs="输入新建子库的名字，由于这是路径的一部分，所以你不能使用某些字符">Введите имя новой подбиблиотеки, поскольку оно является частью пути, вы не можете использовать определённые символы.</ManageMod.5>
+		<ManageMod.6 chs="文件夹已存在，请重新输入">Папка уже существует, введите заново.</ManageMod.6>
+		<NewCategory chs="新建分类">Новая категория</NewCategory>
+		<ManageMod.7 chs="输入新建分类的名字，由于这是路径的一部分，所以你不能使用某些字符">Введите название новой категории, поскольку это часть пути, вы не можете использовать определённые символы.</ManageMod.7>
+		<ManageMod.8 chs="为了防止你反悔，将分类发送到回收站">Чтобы не пожалеть об этом, отправьте категорию в корзину.</ManageMod.8>
+		<ManageMod.9 chs="重新命名分类：">Переименовать категорию: </ManageMod.9>
+		<ManageMod.10 chs="请先选择一个项">Сначала выберите элемент.</ManageMod.10>
+		<NewItem chs="新建项">Новый элемент</NewItem>
+		<ManageMod.11 chs="输入新建项的名字，由于这是路径的一部分，所以你不能使用某些字符">Введите название нового элемента, поскольку оно является частью пути, вы не можете использовать определённые символы.</ManageMod.11>
+		<!--请完成配置在这-->
+		<ManageMod.12 chs="请完成配置">Перейти к включению</ManageMod.12>
+		<ManageMod.13 chs="为了防止你反悔，将项发送到回收站">Чтобы потом не жалеть об этом, отправьте элемент в корзину.</ManageMod.13>
+		<ManageMod.14 chs="选择目标分类">Целевая категория</ManageMod.14>
+		<ManageMod.15 chs="选择目标子库">Целевая подбиблиотека</ManageMod.15>
+		<ManageMod.16 chs="请先选择一个项（只选一个）">Сначала выберите элемент (только один, не более)</ManageMod.16>
+		<ManageMod.17 chs="请至少选择一个项">Выберите хотя бы один элемент.</ManageMod.17>
+		<ManageMod.18 chs="重命名对象名称">Переименовать объект.</ManageMod.18>
+		<ManageMod.19 chs="目标对象路径已存在，请重新命名">Путь к целевому объекту уже существует, переименуйте.</ManageMod.19>
+		<ManageMod.20 chs="要创建截图文件夹嘛？">Хотите создать папку для скриншотов?</ManageMod.20>
+		<ManageMod.21 chs="已保存到富文本文档">Сохранено в форматированный текстовый документ.</ManageMod.21>
+		<ManageMod.22 chs="已保存到纯文本文档">Сохранено в обычный текстовый документ.</ManageMod.22>
+		<ManageMod.23 chs="当前项没有富文本描述文件，是否立即创建并在写字板中打开？">Для текущего элемента нет файла описания форматированного текста. Хотите создать его сейчас и открыть в WordPad?</ManageMod.23>
+		<ManageMod.24 chs="无法在默认路径下找到 Windows 写字板应用程序">Приложение Windows Notepad не может быть найдено по пути по умолчанию.</ManageMod.24>
+		<ManageMod.25 chs="导入子库">Импорт подбиблиотек</ManageMod.25>
+		<ManageMod.26 chs="导入分类">Испорт категорий</ManageMod.26>
+		<ManageMod.27 chs="导入项">Импорт элементов</ManageMod.27>
+		<ManageMod.28 chs="导出子库">Экспорт подбиблиотек</ManageMod.28>
+		<ManageMod.29 chs="导出分类">Экспорт категорий</ManageMod.29>
+		<ManageMod.30 chs="导出项">Экспорт элементов</ManageMod.30>
+		<ManageMod.31 chs="目标文件存在，是否要删除目标文件再进行导出？">Целевой файл существует. Вы хотите удалить целевой файл, а затем экспортировать?</ManageMod.31>
+		<ManageMod.32 chs="如果你忘记了设置的密码，可以到用户配置文件夹，用记事本或其他编辑器打开最后的 7za.bat 批处理文件查看即可，但是请不要运行它，防止造成意外事故">Если вы забыли установленный пароль, вы можете перейти в папку конфигурации пользователя и открыть окончательный пакетный файл 7za.bat с помощью блокнота или других редакторов, чтобы просмотреть его, но, пожалуйста, не запускайте его во избежание несчастных случаев.</ManageMod.32>
+
+		<InstallMessage.1 chs="正在安装">Установка</InstallMessage.1>
+		<InstallMessage.2 chs="正在卸载">Установка</InstallMessage.2>
+		<InstallMessage.3 chs="本地更新中">Локальное обновление</InstallMessage.3>
+		<InstallMessage.4 chs="所选的项都正在被其他线程处理，本线程结束，请勿重复操作，避免引起文件系统冲突">Выбранные элементы обрабатываются другими потоками. Эта ветка заканчивается. Не повторяйте операцию во избежание конфликтов файловой системы.</InstallMessage.4>
+		<InstallMessage.5 chs="选择的项数量：">Выбранно элементов: </InstallMessage.5>
+		<InstallMessage.6 chs="载入线程任务的项数量：">Элементы для загрузки потоковых задач: </InstallMessage.6>
+		<InstallMessage.7 chs="后台线程开始创建项，请不要重复操作以避免文件系统冲突">Фоновый поток начинает создавать элементы, пожалуйста, не повторяйте, чтобы избежать конфликтов файловой системы.</InstallMessage.7>
+		<InstallMessage.8 chs="目标项已存在，将不会创建项：">Целевой элемент уже существует, элемент не будет создан: </InstallMessage.8>
+		<InstallMessage.9 chs="正在创建项：">Создание элемента: </InstallMessage.9>
+		<InstallMessage.10 chs="正在复制文件夹：">Копирование папок: </InstallMessage.10>
+		<InstallMessage.11 chs="正在创建命令文件并自动编写">Создаются и автоматически записываются командные файлы</InstallMessage.11>
+		<InstallMessage.12 chs="完成创建">Завершение создания</InstallMessage.12>
+		<InstallMessage.13 chs="后台线程启动">Начало фонового потока</InstallMessage.13>
+		<InstallMessage.14 chs="已解析安装命令：">Разобранная команда установки: </InstallMessage.14>
+		<InstallMessage.15 chs="载入命令失败：">Команда загрузки не удалась: </InstallMessage.15>
+		<InstallMessage.16 chs="位于项：">На элементе: </InstallMessage.16>
+		<InstallMessage.17 chs="位于分类：">На категории: </InstallMessage.17>
+		<InstallMessage.18 chs="正在复制文件夹到 Mods：">Копирование папки в Mods: </InstallMessage.18>
+		<InstallMessage.19 chs="正在复制文件夹到目标位置：">Копирование папки в место назначения: </InstallMessage.19>
+		<InstallMessage.20 chs="正在覆盖 Mods 中已存在的文件夹：">Перезапись существующей папки в Mods: </InstallMessage.20>
+		<InstallMessage.21 chs="正在替换文件：">Замена файла: </InstallMessage.21>
+		<InstallMessage.22 chs="正在复制文件到目标位置：">Копирование файла в место назначения: </InstallMessage.22>
+		<InstallMessage.23 chs="正在复制文件到目标位置（不带验证）：">Копирование файлов в место назначения (без проверки): </InstallMessage.23>
+		<InstallMessage.24 chs="正在覆盖 Cotnent 文件夹">Перезапись папки Content</InstallMessage.24>
+		<InstallMessage.25 chs="正在验证文件夹排斥关系... ">Проверка исключений папок... </InstallMessage.25>
+		<InstallMessage.26 chs="在安装命令行号：">Строка: </InstallMessage.26>
+		<InstallMessage.27 chs="正在撤销...   无视所有错误反向顺序执行卸载">Отмена... Удаление в обратном порядке, игнорируя все ошибки</InstallMessage.27>
+		<InstallMessage.28 chs="正在删除 Mods 中的文件夹：">Удаление папок в Mods: </InstallMessage.28>
+		<InstallMessage.29 chs="正在删除文件夹：">Удаление папки: </InstallMessage.29>
+		<InstallMessage.30 chs="CDMAD 命令无法卸载，自动跳过">Команду CDMAD нельзя удалить, она автоматически пропускается.</InstallMessage.30>
+		<InstallMessage.31 chs="找到备份，正在还原文件：">Резервная копия найдена, файлы восстанавливаются: </InstallMessage.31>
+		<InstallMessage.32 chs="没有目标备份文件，正在删除文件：">Нет целевых резервных копий файлов, файлы удаляются: </InstallMessage.32>
+		<InstallMessage.33 chs="正在删除文件：">Удаление файлов: </InstallMessage.33>
+		<InstallMessage.34 chs="正在还原 Cotnent 文件夹">Восстановление папки Content</InstallMessage.34>
+		<InstallMessage.35 chs="卸载操作不能通过反向执行来中途撤销，这可能已经造成了预期外的问题，请仔细检查安装命令">Операции удаления не могут быть отменены на полпути, это могло вызвать непредвиденные проблемы, пожалуйста, дважды проверьте команду установки.</InstallMessage.35>
+		<InstallMessage.36 chs="正在将 Mods 中的文件夹覆盖到仓库内：">Перезапись папок Mods в репозитории: </InstallMessage.36>
+		<InstallMessage.37 chs="未能找到 Mods 中文件夹：">Не удалось найти папки в Mods: </InstallMessage.37>
+		<InstallMessage.38 chs="正在删除仓库内的文件夹：">Удаление папок внутри репозитория: </InstallMessage.38>
+		<InstallMessage.39 chs="正在将 Mods 中的文件夹复制到仓库内：">Копируем папки Mods в репозиторий: </InstallMessage.39>
+		<InstallMessage.40 chs="安装结束：">Установка завершена: </InstallMessage.40>
+		<InstallMessage.41 chs="卸载结束：">Удаление завершено: </InstallMessage.41>
+		<InstallMessage.42 chs="本地更新结束：">Локальное обновление завершено: </InstallMessage.42>
+		<InstallMessage.43 chs="需要刷新">Необходимо обновить</InstallMessage.43>
+		<InstallMessage.44 chs="本地更新完成">Завершение локального обновления</InstallMessage.44>
+		<InstallMessage.45 chs="线程结束">Конец потока</InstallMessage.45>
+		<InstallMessage.46 chs="项本地更新已完成，请刷新查看版本和状态">Локальное обновление элементов завершено. Обновите, чтобы увидеть версию и статус.</InstallMessage.46>
+		<InstallMessage.47 chs="错误">Ошибка</InstallMessage.47>
+		
+		<InstallMessage.48 chs=""></InstallMessage.48>
+		<InstallMessage.49 chs=""></InstallMessage.49>
+		<InstallMessage.50 chs=""></InstallMessage.50>
+		<InstallMessage.51 chs=""></InstallMessage.51>
+		<InstallMessage.52 chs=""></InstallMessage.52>
+		<InstallMessage.53 chs=""></InstallMessage.53>
+		<InstallMessage.54 chs=""></InstallMessage.54>
+
+		<Deploy.1 chs="原路径已不存在，无法保存">Исходный путь больше не существует и не может быть сохранен.</Deploy.1>
+		<Deploy.2 chs="要进行重命名项的目标路径已存在，请重新取名">Целевой путь элемента, который нужно переименовать, уже существует, переименуйте.</Deploy.2>
+		<Deploy.3 chs="没有可供生成的对象，请手动输入">Нет объектов для генерации, введите вручную.</Deploy.3>
+		<Deploy.4 chs="配置已保存">Развернутая конфигурация сохраняется.</Deploy.4>
+		<Deploy.5 chs="请先修改所有安装命令错误，或者等待自动命令检查器刷新数据">Сначала исправьте все ошибки команды установки или подождите, пока средство автоматической проверки команд не обновит данные.</Deploy.5>
+		<Deploy.6 chs="项的数据内容中存在错误项，请先解决那些问题">В содержании данных элемента есть элементы с ошибками, сначала исправьте их.</Deploy.6>
+		<Deploy.7 chs="缺少参数">Отсутствующие параметры.</Deploy.7>
+		<Deploy.8 chs="参数不能为空">Параметры не могут быть пустыми.</Deploy.8>
+		<Deploy.9 chs="找不到文件夹：">Папка не найдена: </Deploy.9>
+		<Deploy.10 chs="找不到文件：">Файл не найден: </Deploy.10>
+		<Deploy.11 chs="CDVD 命令找不到 Content 文件夹">Команда CDVD не может найти папку Content.</Deploy.11>
+		<Deploy.12 chs="SUB 过程没有 END SUB">Процедура SUB без END SUB.</Deploy.12>
+		<Deploy.13 chs="END SUB 要与 SUB 过程一起使用">END SUB следует использовать с процедурой SUB.</Deploy.13>
+		<Deploy.14 chs="未知命令：">Неизвестная команда: </Deploy.14>
+		<Deploy.15 chs="名为 assets 的文件夹不应该出现">Папка с именем assets не должна отображаться.</Deploy.15>
+		<Deploy.16 chs="Content 文件夹可以使用 CDVD 命令，请注意设置备份">Папка Content может использовать команду CDVD, обратите внимание на настройку резервного копирования.</Deploy.16>
+		<Deploy.17 chs=" 文件夹为标准 SMAPI 模组，添加正确"> папка - это стандартный мод SMAPI, добавляйте его правильно.</Deploy.17>
+		<Deploy.18 chs=" 文件在任何情况下都不可能出现，你在干什么！"> файл вряд ли появится при любых обстоятельствах.</Deploy.18>
+		<Deploy.19 chs=" 压缩文件需要解压，或者你有其他需求"> сжатый файл необходимо распаковать, или у вас есть другие потребности.</Deploy.19>
+		<Deploy.20 chs="使用 CDCD 命令的文件夹不准套娃，manifest.json 必须就在文件夹下">Папка, в которой используется команда CDCD, должна содержать непосредственно файл manifest.json.</Deploy.20>
+		
+		<Sever.0 chs="检测到绿色版模式标记文件，检查更新功能已禁用">Обнаружен файл с флагом портативного режима, проверка обновлений отключена.</Sever.0>
+		<Sever.1 chs="正在连接服务器...">Подключение к серверу...</Sever.1>
+		<Sever.2 chs="获取失败或服务器上没有指定的文件">Указанный файл отсутствует на сервере.</Sever.2>
+		<Sever.3 chs="正在连接服务器上的文件">Подключение к серверу файлов...</Sever.3>
+		<Sever.4 chs="更新已下载完成，等待软件退出后自动运行安装程序">Скачивание обновления завершено, программа установки автоматически запустится после выхода из программы.</Sever.4>
+		<Sever.5 chs="下载失败">Скачивание не удалось</Sever.5>
+		<Sever.6 chs="正在下载更新：">Скачать: </Sever.6>
+		<Sever.7 chs="正在连接到用户统计服务器">Подключение сервера статистики пользователей...</Sever.7>
+		<Sever.8 chs="无网络">Нет сети</Sever.8>
+		<Sever.9 chs="成功发送了用户统计">Статистика пользователя успешно отправлена.</Sever.9>
+		<Sever.10 chs="当前位于 Debug 文件夹中，检查更新自动禁用以防止在调试时浪费服务器资源">В настоящее время в папке «Отладка» проверка обновлений автоматически отключена, чтобы предотвратить трату ресурсов сервера во время отладки.</Sever.10>
+
+		<Settings.1 chs="选择星露谷游戏文件夹">Выберите папку с игрой Stardew Valley.</Settings.1>
+		<Settings.2 chs="选择程序自动找到的或者你可以自己浏览文件夹">Выберите то, что программа нашла автоматически, или просмотрите папку самостоятельно.</Settings.2>
+		<Settings.3 chs="这里没有列出，浏览文件夹来选择">Не указано здесь, просмотрите папку самостоятельно, чтобы выбрать.</Settings.3>
+		<Settings.4 chs="选择你的星露谷游戏文件夹">Выберите папку с игрой Stardew Valley</Settings.4>
+		<Settings.5 chs="此文件夹路径下不包含星露谷的可执行文件：Stardew Valley.exe">Исполняемый файл Stardew Valley не включен в этот путь к папке: Stardew Valley.exe</Settings.5>	
+		<Settings.6 chs="选择模组数据仓库">Выберите папку репозитория модов</Settings.6>
+		<Settings.7 chs="你可以选择现有的模组数据仓库文件夹，如果你之前使用第四代的产品，则可以直接在下面选择。如果你还没有本产品定义的模组数据仓库，请选择第一项然后选择一个空文件夹来创建新的数据仓库/crlf//crlf/请确保你的数据仓库应该放在固态硬盘，而不是机械硬盘，SMUI 非常需要瞬间读取速度，否则 SMUI 的性能将大幅下降">Вы можете выбрать существующую папку репозитория модов или непосредственно под ней, если раньше вы использовали продукт 4-го поколения. Если у вас ещё нет репозитория модов, определенного для этого продукта, выберите первый элемент и выберите пустую папку для создания нового репозитория модов/crlf//crlf/Убедитесь, что ваш репозиторий модов размещён на SSD, не HDD, SMUI нужна мгновенная скорость чтения, иначе производительность SMUI сильно упадёт.</Settings.7>
+		<Settings.8 chs="创建新的模组数据仓库，使用现有也可以">Создайте новый репозиторий модов или используйте существующий.</Settings.8>
+		<Settings.9 chs="继续使用第四代产品的仓库：">Продолжайте использовать репозиторий 4: </Settings.9>
+		<Settings.10 chs="选择一个空文件夹，它将作为你的新数据仓库">Выберите пустую папку, которая будет вашим новым репозиторием модов.</Settings.10>
+		<Settings.11 chs="确认使用此文件夹作为你的模组数据仓库？">Вы уверены, что хотите использовать эту папку в качестве репозитория модов?</Settings.11>
+	
+</DynamicText>
+	
+</data>
