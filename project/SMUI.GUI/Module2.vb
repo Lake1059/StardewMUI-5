@@ -167,7 +167,7 @@ jx1:
 
     Public Function 获取动态多语言文本(节点路径 As String) As String
         Try
-            If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" Then
+            If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" And ST1.是否正在使用自定义语言包 = False Then
                 Return xml_lang.SelectSingleNode(节点路径).Attributes("chs").Value
             Else
                 Return xml_lang.SelectSingleNode(节点路径).InnerText.Replace("/crlf/", vbNewLine)
