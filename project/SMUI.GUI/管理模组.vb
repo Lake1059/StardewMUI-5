@@ -32,6 +32,7 @@ Module 管理模组
                     m1.Image = My.Resources.绿
                     扫描分类(s1)
                     清除模组列表()
+                    清除配置队列()
                 End Sub
             Form1.切换数据子库ToolStripMenuItem.DropDownItems.Add(m1)
             If xml_Settings.SelectSingleNode("data/LastUsedSubLibraryName").InnerText = m1.Text Then
@@ -52,6 +53,12 @@ Module 管理模组
                         My.Computer.FileSystem.DeleteDirectory(xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText & "\" & s1, FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin, FileIO.UICancelOption.DoNothing)
                         Form1.删除数据子库ToolStripMenuItem.DropDownItems.Remove(m2)
                         Form1.切换数据子库ToolStripMenuItem.DropDownItems.Remove(m1)
+                        If xml_Settings.SelectSingleNode("data/LastUsedSubLibraryName").InnerText = s1 Then
+                            清除分类列表()
+                            清除模组列表()
+                            清除配置队列()
+                            xml_Settings.SelectSingleNode("data/LastUsedSubLibraryName").InnerText = ""
+                        End If
                     End If
                 End Sub
             Form1.删除数据子库ToolStripMenuItem.DropDownItems.Add(m2)

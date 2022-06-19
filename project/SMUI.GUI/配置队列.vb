@@ -5,6 +5,11 @@ Module 配置队列
     Public 当前的安装命令是否书写正确 As Boolean = False
     Public 当前的项是否添加正确 As Boolean = False
 
+    Public Sub 清除配置队列()
+        Form1.ListView3.Items.Clear()
+        重置配置队列选择状态()
+    End Sub
+
     Public Sub 重置配置队列选择状态()
         Form1.ToolStripTextBox1.Text = ""
         Form1.ToolStripTextBox2.Text = ""

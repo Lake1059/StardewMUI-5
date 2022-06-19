@@ -6,6 +6,8 @@
 使用 .NET Framework 4.8 运行库，仅支持 64 位 Windows 系统  
 欢迎各路大神开发其他系统上的版本
 
+NEXUSMODS：https://www.nexusmods.com/stardewvalley/mods/12230
+
 ## 开源代码
 SMUI 项目（包含 SMUI 核心处理 和 GUI 用户操作软件）在 GPL-3.0 协议下开源  
 有关详细的许可声明和授权费用，请在软件内查看
