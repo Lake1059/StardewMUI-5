@@ -558,6 +558,24 @@ Line1:
 
     End Sub
 
+    Private Sub 清除Config缓存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 清除Config缓存ToolStripMenuItem.Click
+        Dim a As String = 检查并返回当前可用子库路径(False)
+        Dim p As String() = {}
+        For i = 0 To Me.ListView1.SelectedItems.Count - 1
+            Dim x As String() = SMUI.Windows.Core.SharedFunction.SearchFolderWithoutSub(a & "\" & Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(i)).Text)
+            For i9 = 0 To x.Count - 1
+                ReDim Preserve p(p.Count)
+                p(p.Count - 1) = a & "\" & Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(i)).Text & "\" & x(i9)
+            Next
+        Next
+
+        For i3 = 0 To p.Count - 1
+            If My.Computer.FileSystem.DirectoryExists(p(i3) & "\.config") = False Then Continue For
+            My.Computer.FileSystem.DeleteDirectory(p(i3) & "\.config", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently)
+        Next
+        MsgBox("Finish.")
+    End Sub
+
 #End Region
 
 #Region "项菜单和刷新功能"
@@ -1665,14 +1683,14 @@ jx:
     End Sub
 
     Private Sub 清除Config缓存ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 清除Config缓存ToolStripMenuItem1.Click
-        Dim a As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView1.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView1.SelectedIndices(0)).Text & "\.config"
+        Dim a As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & "\.config"
         If My.Computer.FileSystem.DirectoryExists(a) = False Then Exit Sub
         My.Computer.FileSystem.DeleteDirectory(a, FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin)
+        MsgBox("Finish.")
     End Sub
 
 #End Region
 
     ReadOnly 分割线 As Integer = 0
-
 
 End Class
