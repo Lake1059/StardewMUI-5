@@ -486,6 +486,8 @@ Module 管理模组
         Form1.ToolTip1.SetToolTip(Form1.PictureBox1, ST1.全局状态_当前正在显示的预览图索引 + 1 & "/" & 当前项信息_预览图文件表.Count)
     End Sub
 
+
+
     Public Function 生成更新地址表菜单() As DarkContextMenu
         Dim a As New DarkContextMenu
         If Form1.ListView2.SelectedItems.Count <> 1 Then
@@ -517,6 +519,29 @@ Module 管理模组
                    显示模式窗体(Form直接联网更新单个项, Form1)
                End Sub
         Next
+
+        If 付费功能解锁.我知道你会看这个毕竟这是开源软件藏那么深没有必要但请你遵守服务条款禁止传播禁止私自传播解锁程序因为这是付费功能.解锁自由输入直接更新项功能的NEXUSID = True Then
+            Dim x As New ToolStripMenuItem With {
+                .Image = My.Resources.NEXUS,
+                .Text = "Enter ID to update"
+            }
+            a.Items.Add(x)
+            AddHandler x.Click,
+                Sub(s, e)
+                    Dim sss1 As String = ""
+                    If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" Then
+                        sss1 = "输入你要进行访问的 星露谷 NEXUS 模组的页面 ID"
+                    Else
+                        sss1 = "Enter the ID of the NEXUS Stardew Valley mod you want to access."
+                    End If
+                    Dim m1 As New InputTextDialog("Lake1059.Plugin1.UnlockFreeInputID", sss1)
+                    Dim m2 As String = m1.ShowDialog(Form1)
+                    If m2 = "" Or m2 Is Nothing Then Exit Sub
+                    ST1.当前正在进行更新的单个项的N网ID = m2
+                    显示模式窗体(Form直接联网更新单个项, Form1)
+                End Sub
+        End If
+
 
         If 当前项信息_ModDropID列表.Count > 0 Then a.Items.Add(New ToolStripSeparator)
         For i = 0 To 当前项信息_ModDropID列表.Count - 1

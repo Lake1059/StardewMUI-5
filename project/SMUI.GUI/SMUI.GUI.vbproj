@@ -247,6 +247,7 @@
     <Compile Include="WebBrowser Window.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="付费功能解锁.vb" />
     <Compile Include="在线模组列表功能.vb" />
     <Compile Include="多语言.vb" />
     <Compile Include="安装卸载统一后台线程.vb" />
