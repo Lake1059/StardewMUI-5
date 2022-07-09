@@ -202,5 +202,7 @@ jx1:
             Me.DarkButton1.Text = 获取动态多语言文本("data/ImportWindow/A6")
             Me.CheckBox1.Left = Me.CheckBox2.Left
         End If
+
+
     End Sub
 End Class

@@ -62,6 +62,7 @@ Module 设置管理
         xml_X.Load(Path1.应用程序设置文件路径)
         xml_Settings.LoadXml(My.Resources.SettingsEmpty)
         For Each 元素 As XmlElement In xml_X.DocumentElement.ChildNodes
+            If xml_Settings.SelectSingleNode("data/" & 元素.Name) Is Nothing Then Continue For
             xml_Settings.SelectSingleNode("data/" & 元素.Name).InnerText = xml_X.SelectSingleNode("data/" & 元素.Name).InnerText
         Next
     End Sub

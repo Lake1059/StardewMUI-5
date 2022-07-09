@@ -706,7 +706,7 @@ Line1:
     End Sub
 
     Private Sub 批量创建ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 批量创建ToolStripMenuItem.Click
-
+        显示窗体(Form批量创建, Me)
     End Sub
 
     Private Sub 从Mods中覆盖到仓库ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 从Mods中覆盖到仓库ToolStripMenuItem.Click

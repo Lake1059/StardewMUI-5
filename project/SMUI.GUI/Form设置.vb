@@ -6,12 +6,12 @@ Imports SMUI.Windows.PakManager
 Public Class Form设置
 
 
-    Sub 一级按钮鼠标移上事件(sender As Object, e As EventArgs) Handles Label9.MouseEnter, Label7.MouseEnter, Label确定.MouseEnter, Label应用.MouseEnter, Label4.MouseEnter, Label37.MouseEnter, Label3.MouseEnter, Label28.MouseEnter, Label24.MouseEnter, Label16.MouseEnter, Label10.MouseEnter, Label取消.MouseEnter
+    Sub 一级按钮鼠标移上事件(sender As Object, e As EventArgs) Handles Label9.MouseEnter, Label7.MouseEnter, Label确定.MouseEnter, Label应用.MouseEnter, Label4.MouseEnter, Label28.MouseEnter, Label24.MouseEnter, Label10.MouseEnter, Label取消.MouseEnter
         sender.BackColor = ColorTranslator.FromWin32(RGB(100, 100, 100))
 
     End Sub
 
-    Sub 一级按钮鼠标移走事件(sender As Object, e As EventArgs) Handles Label9.MouseLeave, Label7.MouseLeave, Label确定.MouseLeave, Label应用.MouseLeave, Label4.MouseLeave, Label37.MouseLeave, Label3.MouseLeave, Label28.MouseLeave, Label24.MouseLeave, Label16.MouseLeave, Label10.MouseLeave, Label取消.MouseLeave
+    Sub 一级按钮鼠标移走事件(sender As Object, e As EventArgs) Handles Label9.MouseLeave, Label7.MouseLeave, Label确定.MouseLeave, Label应用.MouseLeave, Label4.MouseLeave, Label28.MouseLeave, Label24.MouseLeave, Label10.MouseLeave, Label取消.MouseLeave
         sender.BackColor = ColorTranslator.FromWin32(RGB(64, 64, 64))
 
     End Sub
@@ -31,9 +31,6 @@ Public Class Form设置
             Me.Label19.Text = 获取动态多语言文本("data/SettingsWindow/A8")
             Me.Label可选路径.Text = 获取动态多语言文本("data/SettingsWindow/A9")
             Me.Label12.Text = 获取动态多语言文本("data/SettingsWindow/A10")
-            Me.Label11.Text = 获取动态多语言文本("data/SettingsWindow/A11")
-            Me.Label17.Text = 获取动态多语言文本("data/SettingsWindow/A12")
-            Me.Label38.Text = 获取动态多语言文本("data/SettingsWindow/A13")
             Me.Label25.Text = 获取动态多语言文本("data/SettingsWindow/A14")
             Me.Label29.Text = 获取动态多语言文本("data/SettingsWindow/A15")
             Me.Label15.Text = 获取动态多语言文本("data/SettingsWindow/A16")
@@ -137,9 +134,6 @@ Public Class Form设置
         Me.TextBox星露谷游戏路径.Text = xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText
         Me.TextBox模组数据仓库路径.Text = xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText
         Me.TextBox星露谷游戏备份路径.Text = xml_Settings.SelectSingleNode("data/StardewValleyGameBackUpPath").InnerText
-        Me.TextBox3.Text = xml_Settings.SelectSingleNode("data/CategoryExportDefaultPath").InnerText
-        Me.TextBox5.Text = xml_Settings.SelectSingleNode("data/ModItemExportDefaultPath").InnerText
-        Me.TextBox12.Text = xml_Settings.SelectSingleNode("data/SubLibraryExportDefaultPath").InnerText
         Me.TextBox6.Text = xml_Settings.SelectSingleNode("data/VisualStudioCodePath").InnerText
         Me.TextBox7.Text = xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText
         Me.TextBox13.Text = xml_Settings.SelectSingleNode("data/NotepadPath").InnerText
@@ -202,9 +196,6 @@ Public Class Form设置
         xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText = Me.TextBox星露谷游戏路径.Text
         xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText = Me.TextBox模组数据仓库路径.Text
         xml_Settings.SelectSingleNode("data/StardewValleyGameBackUpPath").InnerText = Me.TextBox星露谷游戏备份路径.Text
-        xml_Settings.SelectSingleNode("data/CategoryExportDefaultPath").InnerText = Me.TextBox3.Text
-        xml_Settings.SelectSingleNode("data/ModItemExportDefaultPath").InnerText = Me.TextBox5.Text
-        xml_Settings.SelectSingleNode("data/SubLibraryExportDefaultPath").InnerText = Me.TextBox12.Text
         xml_Settings.SelectSingleNode("data/VisualStudioCodePath").InnerText = Me.TextBox6.Text
         xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText = Me.TextBox7.Text
         xml_Settings.SelectSingleNode("data/NotepadPath").InnerText = Me.TextBox13.Text
@@ -540,27 +531,6 @@ R1:
         a.ShowDialog()
         If a.SelectedFolder = "" Then Exit Sub
         TextBox星露谷游戏备份路径.Text = a.SelectedFolder
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-        Dim a As New WK.Libraries.BetterFolderBrowserNS.BetterFolderBrowser
-        a.ShowDialog()
-        If a.SelectedFolder = "" Then Exit Sub
-        TextBox3.Text = a.SelectedFolder
-    End Sub
-
-    Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
-        Dim a As New WK.Libraries.BetterFolderBrowserNS.BetterFolderBrowser
-        a.ShowDialog()
-        If a.SelectedFolder = "" Then Exit Sub
-        TextBox5.Text = a.SelectedFolder
-    End Sub
-
-    Private Sub Label37_Click(sender As Object, e As EventArgs) Handles Label37.Click
-        Dim a As New WK.Libraries.BetterFolderBrowserNS.BetterFolderBrowser
-        a.ShowDialog()
-        If a.SelectedFolder = "" Then Exit Sub
-        TextBox12.Text = a.SelectedFolder
     End Sub
 
     Private Sub Label24_Click(sender As Object, e As EventArgs) Handles Label24.Click

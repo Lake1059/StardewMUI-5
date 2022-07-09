@@ -71,6 +71,11 @@
         Exit Function
     End Function
 
+    ''' <summary>
+    ''' 只返回此目录下的文件夹名称
+    ''' </summary>
+    ''' <param name="Path"></param>
+    ''' <returns></returns>
     Public Shared Function SearchFolderWithoutSub(Path As String) As String()
         Dim mDir As System.IO.DirectoryInfo
         Dim mDirInfo As New System.IO.DirectoryInfo(Path)

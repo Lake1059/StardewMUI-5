@@ -226,9 +226,10 @@
 		<A8 chs="在第五代中，一个库可以包含多个子库，如果你的模组超级多，那么这将非常有用">In Gen 5, a library can contain multiple sub-libraries, which is useful if you have a lot of mods.</A8>
 		<A9 chs="   可选路径">   Optional path</A9>
 		<A10 chs="游戏文件备份路径（如果要使用文件替换类命令，则是必须的，否则程序会删除游戏文件）">Game file backup path (required if you use CDGRF, CDVD, otherwise program will delete game file.)</A10>
-		<A11 chs="分类数据导出默认路径">Category data export default path</A11>
+		<!--已经弃用，不要翻译这个 Deprecated, don't translate this-->
+		<!--<A11 chs="分类数据导出默认路径">Category data export default path</A11>
 		<A12 chs="项数据导出默认路径">Item data export default path</A12>
-		<A13 chs="子库打包导出默认路径">Sub Library data export default path</A13>
+		<A13 chs="子库打包导出默认路径">Sub Library data export default path</A13>-->
 		<A14 chs="Visual Studio Code">Visual Studio Code</A14>
 		<A15 chs="Visual Studio">Visual Studio</A15>
 		<A16 chs="Notepad++">Notepad++</A16>
@@ -294,7 +295,35 @@
 		<Search.14 chs="不区分中英文的标点符号">No distinction chs and eng symbols</Search.14>
 		<Search.15 chs="逐字拆分搜索（特耗时）">Verbatim split search</Search.15>
 		<Search.Title chs="搜索">Search</Search.Title>
-	</SearchWindow>	
+	</SearchWindow>
+
+	<BulkCreateItemWindow>
+		<Title chs="批量创建">Bulk creation</Title>
+		<A1 chs="将每个文件夹视为一个独立的模组">Make each folder as a separate mod.</A1>
+		<A2 chs="将所选的文件夹作为一个模组">Make the selected folders a mod.</A2>
+		<A3 chs="开始创建">Start Create</A3>
+		<A4 chs="若要将多个文件夹创建为一个项，请输入该新项的名称">To create multiple folders as a single item, enter the name of the new item.</A4>
+		<A5 chs="目标分类">Target Category</A5>
+		<A6 chs="选择批量创建的操作类型">Select the operation type for bulk creation.</A6>
+		<A7 chs="文件夹">Folder</A7>
+		<A8 chs="删除">Delete</A8>
+		<A9 chs=""></A9>
+		<A10 chs=""></A10>
+
+		<DS.1 chs="是否确认开始批量创建？如果有目标路径存在则不会创建，创建过程中切勿重复操作，避免文件系统冲突！">Are you sure to start batch creation? If the target path exists, it will not be created. Do not repeat operations during the creation process to avoid file system conflicts!</DS.1>
+		<DS.2 chs="将多个文件夹创建为一个项时，必须设定这个新项的名称">When creating multiple folders as an item, you must set the name of the new item.</DS.2>
+		<!--已经预防了，SMAPI 自带的模组不会被扫描-->
+		<DS.3 chs="你不应该把 SMAPI 自带的模组创建到库中">You should not build mods that come with SMAPI into the library.</DS.3>
+		<DS.4 chs="你没有选择操作类型">You did not select an operation type.</DS.4>
+		<DS.5 chs="你没有选择目标分类">You have not selected a target category.</DS.5>
+		<DS.6 chs="指定的项名称路径已存在">The specified item name path already exists.</DS.6>
+		<DS.7 chs="不是标准 SMAPI 模组或者套娃了">Not a standard SMAPI mod or has multiple layers of folders.</DS.7>
+		<DS.8 chs="准备就绪">Ready</DS.8>
+		<DS.9 chs="不能进行操作">Cannot operate</DS.9>
+		<DS.10 chs=""></DS.10>
+		
+	</BulkCreateItemWindow>
+	
 	
 	<!--These are dynamic text, in dialogs and status information, etc.-->
 	<DynamicText>

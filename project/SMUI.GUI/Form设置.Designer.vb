@@ -96,22 +96,13 @@ Partial Class Form设置
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox13 = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.Label38 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.TextBox星露谷游戏备份路径 = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel关键路径 = New System.Windows.Forms.Panel()
@@ -1022,22 +1013,13 @@ Partial Class Form设置
         Me.Panel可选路径.Controls.Add(Me.Label4)
         Me.Panel可选路径.Controls.Add(Me.TextBox13)
         Me.Panel可选路径.Controls.Add(Me.Label15)
-        Me.Panel可选路径.Controls.Add(Me.Label37)
-        Me.Panel可选路径.Controls.Add(Me.TextBox12)
-        Me.Panel可选路径.Controls.Add(Me.Label38)
         Me.Panel可选路径.Controls.Add(Me.Label28)
         Me.Panel可选路径.Controls.Add(Me.TextBox7)
         Me.Panel可选路径.Controls.Add(Me.Label29)
         Me.Panel可选路径.Controls.Add(Me.Label24)
         Me.Panel可选路径.Controls.Add(Me.TextBox6)
         Me.Panel可选路径.Controls.Add(Me.Label25)
-        Me.Panel可选路径.Controls.Add(Me.Label16)
-        Me.Panel可选路径.Controls.Add(Me.TextBox5)
-        Me.Panel可选路径.Controls.Add(Me.Label17)
-        Me.Panel可选路径.Controls.Add(Me.Label3)
         Me.Panel可选路径.Controls.Add(Me.Label10)
-        Me.Panel可选路径.Controls.Add(Me.TextBox3)
-        Me.Panel可选路径.Controls.Add(Me.Label11)
         Me.Panel可选路径.Controls.Add(Me.TextBox星露谷游戏备份路径)
         Me.Panel可选路径.Controls.Add(Me.Label12)
         Me.Panel可选路径.Dock = System.Windows.Forms.DockStyle.Top
@@ -1053,7 +1035,7 @@ Partial Class Form设置
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label4.Location = New System.Drawing.Point(528, 407)
+        Me.Label4.Location = New System.Drawing.Point(528, 227)
         Me.Label4.Margin = New System.Windows.Forms.Padding(5)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(30, 23)
@@ -1066,7 +1048,7 @@ Partial Class Form设置
         Me.TextBox13.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox13.ForeColor = System.Drawing.Color.Silver
-        Me.TextBox13.Location = New System.Drawing.Point(23, 407)
+        Me.TextBox13.Location = New System.Drawing.Point(23, 227)
         Me.TextBox13.Margin = New System.Windows.Forms.Padding(0)
         Me.TextBox13.Name = "TextBox13"
         Me.TextBox13.Size = New System.Drawing.Size(500, 23)
@@ -1075,47 +1057,12 @@ Partial Class Form设置
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(20, 380)
+        Me.Label15.Location = New System.Drawing.Point(20, 200)
         Me.Label15.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(78, 17)
         Me.Label15.TabIndex = 34
         Me.Label15.Text = "Notepad++"
-        '
-        'Label37
-        '
-        Me.Label37.AutoEllipsis = True
-        Me.Label37.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label37.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label37.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label37.Location = New System.Drawing.Point(528, 227)
-        Me.Label37.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(30, 23)
-        Me.Label37.TabIndex = 33
-        Me.Label37.Text = "..."
-        Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TextBox12
-        '
-        Me.TextBox12.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox12.ForeColor = System.Drawing.Color.Silver
-        Me.TextBox12.Location = New System.Drawing.Point(23, 227)
-        Me.TextBox12.Margin = New System.Windows.Forms.Padding(0)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(500, 23)
-        Me.TextBox12.TabIndex = 32
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(20, 200)
-        Me.Label38.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(128, 17)
-        Me.Label38.TabIndex = 31
-        Me.Label38.Text = "子库打包导出默认路径"
         '
         'Label28
         '
@@ -1123,7 +1070,7 @@ Partial Class Form设置
         Me.Label28.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label28.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label28.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label28.Location = New System.Drawing.Point(528, 347)
+        Me.Label28.Location = New System.Drawing.Point(528, 167)
         Me.Label28.Margin = New System.Windows.Forms.Padding(5)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(30, 23)
@@ -1136,7 +1083,7 @@ Partial Class Form设置
         Me.TextBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox7.ForeColor = System.Drawing.Color.Silver
-        Me.TextBox7.Location = New System.Drawing.Point(23, 347)
+        Me.TextBox7.Location = New System.Drawing.Point(23, 167)
         Me.TextBox7.Margin = New System.Windows.Forms.Padding(0)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(500, 23)
@@ -1145,7 +1092,7 @@ Partial Class Form设置
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(20, 320)
+        Me.Label29.Location = New System.Drawing.Point(20, 140)
         Me.Label29.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(83, 17)
@@ -1158,7 +1105,7 @@ Partial Class Form设置
         Me.Label24.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label24.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label24.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label24.Location = New System.Drawing.Point(528, 287)
+        Me.Label24.Location = New System.Drawing.Point(528, 107)
         Me.Label24.Margin = New System.Windows.Forms.Padding(5)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(30, 23)
@@ -1171,7 +1118,7 @@ Partial Class Form设置
         Me.TextBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox6.ForeColor = System.Drawing.Color.Silver
-        Me.TextBox6.Location = New System.Drawing.Point(23, 287)
+        Me.TextBox6.Location = New System.Drawing.Point(23, 107)
         Me.TextBox6.Margin = New System.Windows.Forms.Padding(0)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(500, 23)
@@ -1180,61 +1127,12 @@ Partial Class Form设置
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(20, 260)
+        Me.Label25.Location = New System.Drawing.Point(20, 80)
         Me.Label25.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(118, 17)
         Me.Label25.TabIndex = 24
         Me.Label25.Text = "Visual Studio Code"
-        '
-        'Label16
-        '
-        Me.Label16.AutoEllipsis = True
-        Me.Label16.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label16.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label16.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label16.Location = New System.Drawing.Point(528, 167)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(30, 23)
-        Me.Label16.TabIndex = 23
-        Me.Label16.Text = "..."
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TextBox5
-        '
-        Me.TextBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox5.ForeColor = System.Drawing.Color.Silver
-        Me.TextBox5.Location = New System.Drawing.Point(23, 167)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(0)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(500, 23)
-        Me.TextBox5.TabIndex = 22
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(20, 140)
-        Me.Label17.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(116, 17)
-        Me.Label17.TabIndex = 21
-        Me.Label17.Text = "项数据导出默认路径"
-        '
-        'Label3
-        '
-        Me.Label3.AutoEllipsis = True
-        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label3.Location = New System.Drawing.Point(528, 107)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(30, 23)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "..."
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label10
         '
@@ -1249,27 +1147,6 @@ Partial Class Form设置
         Me.Label10.TabIndex = 19
         Me.Label10.Text = "..."
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TextBox3
-        '
-        Me.TextBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.ForeColor = System.Drawing.Color.Silver
-        Me.TextBox3.Location = New System.Drawing.Point(23, 107)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(0)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(500, 23)
-        Me.TextBox3.TabIndex = 18
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(20, 80)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(128, 17)
-        Me.Label11.TabIndex = 17
-        Me.Label11.Text = "分类数据导出默认路径"
         '
         'TextBox星露谷游戏备份路径
         '
@@ -1598,13 +1475,7 @@ Partial Class Form设置
     Friend WithEvents Label18 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel可选路径 As Panel
-    Friend WithEvents Label16 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents TextBox星露谷游戏备份路径 As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Panel关键路径 As Panel
@@ -1646,9 +1517,6 @@ Partial Class Form设置
     Friend WithEvents Label34 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents Label37 As Label
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents Label38 As Label
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Label关键路径 As Label
     Friend WithEvents Label40 As Label
