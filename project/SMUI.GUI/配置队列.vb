@@ -173,71 +173,76 @@ Module 配置队列
         }
         AddHandler a.Items.Add("CDCD").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("CDMAD").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("CDGCD").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("CDGRF").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("CDGCF").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("CDF").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("CDVD").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         a.Items.Add(New ToolStripSeparator)
         AddHandler a.Items.Add("RQ-D").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("RQ-D-IN").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("RQ-D-UN").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("RQ-F").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("RQ-F-IN").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("RQ-F-UN").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         a.Items.Add(New ToolStripSeparator)
         AddHandler a.Items.Add("CR-UN-OFF").Click,
             Sub(s, e)
-                插入文本(s.Text)
+                插入文本(s.Text) : a.Dispose()
             End Sub
         AddHandler a.Items.Add("CR-CG-DB").Click,
-    Sub(s, e)
-        插入文本(s.Text)
-    End Sub
+            Sub(s, e)
+                插入文本(s.Text) : a.Dispose()
+            End Sub
+        AddHandler a.Items.Add("CR-CDS-CDCD-AMD").Click,
+            Sub(s, e)
+                插入文本(s.Text) : a.Dispose()
+            End Sub
         a.Items.Add(New ToolStripSeparator)
         AddHandler a.Items.Add("SUB D-EX-IN").Click,
             Sub(s, e)
-                插入文本(s.Text & vbNewLine & vbNewLine & "END SUB")
+                插入文本(s.Text & vbNewLine & vbNewLine & "END SUB") : a.Dispose()
             End Sub
+
         Return a
     End Function
 
@@ -288,6 +293,7 @@ Module 配置队列
         End If
         Form1.RichTextBox4.Text = ""
         Dim 存在错误 As Boolean = False
+        Dim 是否允许CDCD套娃 As Boolean = False
         Dim 当前项路径 As String = 检查并返回当前可用子库路径(False) & "\" & Form1.ListView3.Items.Item(Form1.ListView3.SelectedIndices(0)).Text & "\" & Form1.ListView3.Items.Item(Form1.ListView3.SelectedIndices(0)).SubItems(1).Text
         Dim line As String() = Replace(Form1.RichTextBox3.Text, vbLf, vbCrLf).Split(vbNewLine)
         '解决 .NET Framework 的祖传bug，分割字符串除了第一行外其他行的开头字符会多出来占位一个字的换行符
@@ -314,9 +320,11 @@ Module 配置队列
                         添加情况分析文本(字符_行() & i + 2 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.9") & line(i + 1), Color1.红色)
                         i += 1 : 存在错误 = True : Exit Select
                     End If
-                    If My.Computer.FileSystem.FileExists(当前项路径 & "\" & line(i + 1) & "\manifest.json") = False Then
-                        添加情况分析文本(字符_行() & i + 2 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.20"), Color1.红色)
-                        i += 1 : 存在错误 = True : Exit Select
+                    If 是否允许CDCD套娃 = False Then
+                        If My.Computer.FileSystem.FileExists(当前项路径 & "\" & line(i + 1) & "\manifest.json") = False Then
+                            添加情况分析文本(字符_行() & i + 2 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.20"), Color1.红色)
+                            i += 1 : 存在错误 = True : Exit Select
+                        End If
                     End If
                     i += 1
                 Case "CDGCD"
@@ -385,6 +393,8 @@ Module 配置队列
                         i += 1 : 存在错误 = True : Exit Select
                     End If
                 Case "UN-OFF", "CR-UN-OFF"
+                Case "CR-CDS-CDCD-AMD"
+                    是否允许CDCD套娃 = True : 添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.21"), Color1.黄色)
                 Case "SUBD-EX-IN"
                     For x1 = i + 1 To line.Count - 1
                         If Replace(line(x1), " ", "") IsNot Nothing Then
