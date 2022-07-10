@@ -1,6 +1,7 @@
 ﻿
 Imports System.Text
 Imports System.Xml
+Imports SMUI.GUI.Class1
 Imports SMUI.Windows.PakManager
 
 Public Class Form设置

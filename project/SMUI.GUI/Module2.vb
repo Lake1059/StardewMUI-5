@@ -2,6 +2,7 @@
 Imports System.IO
 Imports System.Runtime.InteropServices
 Imports SMUI.Windows.PakManager
+Imports SMUI.GUI.Class1
 
 Module Module2
     'Win32 API

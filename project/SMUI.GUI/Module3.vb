@@ -1,4 +1,6 @@
-﻿Module Module3
+﻿Imports SMUI.GUI.Class1
+
+Module Module3
 
     Public FileDroper As WindowsMF.Class1.FileDropHandler
 

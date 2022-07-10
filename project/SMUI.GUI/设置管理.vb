@@ -1,5 +1,6 @@
 ﻿
 Imports System.Xml
+Imports SMUI.GUI.Class1
 
 Module 设置管理
     Public Sub 启动时加载用户设置()

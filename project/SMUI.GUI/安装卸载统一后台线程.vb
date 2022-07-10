@@ -1,4 +1,6 @@
-﻿Module 安装卸载统一后台线程
+﻿Imports SMUI.GUI.Class1
+
+Module 安装卸载统一后台线程
 
     Public 要批量创建项的路径数据列表 As String() = {}
     Public 要创建一个项的路径数据列表 As String() = {}

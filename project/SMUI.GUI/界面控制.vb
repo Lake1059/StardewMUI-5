@@ -1,4 +1,6 @@
-﻿Module 界面控制
+﻿Imports SMUI.GUI.Class1
+
+Module 界面控制
 
     Public Sub 启动时初始化界面()
         Form1.Panel起始页面.Dock = DockStyle.Fill

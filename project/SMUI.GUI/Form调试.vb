@@ -1,4 +1,6 @@
-﻿Public Class Form调试
+﻿Imports SMUI.GUI.Class1
+
+Public Class Form调试
     Private Sub Form调试_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         设置富文本框行高(Me.RichTextBox1, 300)
         Me.RichTextBox1.AutoWordSelection = False

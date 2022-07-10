@@ -1,5 +1,5 @@
 ﻿Imports SMUI.Windows.PakManager
-
+Imports SMUI.GUI.Class1
 Module 筛选功能
 
     Sub 选中已安装()

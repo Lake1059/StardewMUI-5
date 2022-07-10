@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Runtime.InteropServices
+Imports SMUI.GUI.Class1
 
 Public Class WebBrowser_Window
 

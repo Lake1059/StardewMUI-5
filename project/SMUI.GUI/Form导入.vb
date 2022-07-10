@@ -1,4 +1,5 @@
-﻿Imports SMUI.Windows.PakManager
+﻿Imports SMUI.GUI.Class1
+Imports SMUI.Windows.PakManager
 
 Public Class Form导入
 

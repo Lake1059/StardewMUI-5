@@ -3,7 +3,7 @@ Imports System.Management
 Imports System.Net
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
-
+Imports SMUI.GUI.Class1
 Module 服务器
     Public 正在进行更新 As Boolean = False
     Public 获取到的更新内容描述 As String = ""

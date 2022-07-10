@@ -1,4 +1,6 @@
-﻿Module 设置字体
+﻿Imports SMUI.GUI.Class1
+
+Module 设置字体
 
     Public Sub 设置字体_默认()
         Dim x As String = 检查并返回当前可用子库路径()

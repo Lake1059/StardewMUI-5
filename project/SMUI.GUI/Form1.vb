@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports DarkUI.Controls
+Imports SMUI.GUI.Class1
 Imports SMUI.Windows.Core
 Imports SMUI.Windows.PakManager
 

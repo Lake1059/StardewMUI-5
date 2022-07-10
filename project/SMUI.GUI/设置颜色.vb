@@ -1,4 +1,6 @@
-﻿Module 设置颜色
+﻿Imports SMUI.GUI.Class1
+
+Module 设置颜色
     Public Sub 设置分类颜色_白色()
         For i = 0 To Form1.ListView1.SelectedItems.Count - 1
             Dim x As String = 检查并返回当前可用子库路径()

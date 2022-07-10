@@ -1,4 +1,6 @@
-﻿Module 多语言
+﻿Imports SMUI.GUI.Class1
+
+Module 多语言
 
     Public Sub 加载界面的多语言()
         Form1.Label起始页面.Text = xml_lang.SelectSingleNode("data/MainWindow/TitlePanel.1").InnerText

@@ -1,5 +1,6 @@
 ﻿Imports System.Reflection
 Imports Microsoft.WindowsAPICodePack.Shell
+Imports SMUI.GUI.Class1
 
 Module 插件管理程序
 

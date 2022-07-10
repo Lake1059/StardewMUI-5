@@ -1,4 +1,6 @@
-﻿Module 在线模组列表功能
+﻿Imports SMUI.GUI.Class1
+
+Module 在线模组列表功能
 
     Public 模组分类数组 As String() = {}
 

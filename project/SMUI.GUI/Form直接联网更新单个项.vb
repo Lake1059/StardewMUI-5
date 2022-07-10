@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports SMUI.GUI.Class1
 Imports SMUI.Windows.PakManager
 
 Public Class Form直接联网更新单个项

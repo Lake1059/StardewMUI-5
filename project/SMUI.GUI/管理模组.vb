@@ -2,6 +2,7 @@
 Imports SMUI.Windows.PakManager
 Imports SMUI.Windows.Core
 Imports DarkUI.Controls
+Imports SMUI.GUI.Class1
 
 Module 管理模组
 

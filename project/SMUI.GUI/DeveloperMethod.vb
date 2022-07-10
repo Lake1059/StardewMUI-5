@@ -1,4 +1,6 @@
-﻿Public Class DeveloperMethod
+﻿Imports SMUI.GUI.Class1
+
+Public Class DeveloperMethod
 
     Public Shared Sub RegisterPluginLogo(assemblyName As String, img As Image)
         Dim a As Integer = Array.IndexOf(插件数据.插件程序集名称列表, assemblyName)
@@ -29,6 +31,15 @@
 
         Public Shared Function IsUsingCustomLanguage() As Boolean
             Return ST1.是否正在使用自定义语言包
+        End Function
+
+
+    End Class
+
+    Public Class GetStates
+
+        Public Shared Function GetCurrentUserIdentityGroup() As Security.Principal.WindowsBuiltInRole
+            Return ST1.当前用户身份组
         End Function
 
     End Class

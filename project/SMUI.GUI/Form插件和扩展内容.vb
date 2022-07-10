@@ -1,4 +1,6 @@
-﻿Public Class Form插件和扩展内容
+﻿Imports SMUI.GUI.Class1
+
+Public Class Form插件和扩展内容
     Private Sub Form插件和扩展内容_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub

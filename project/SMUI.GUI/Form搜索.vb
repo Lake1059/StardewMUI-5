@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports SMUI.GUI.Class1
 
 Public Class Form搜索
 

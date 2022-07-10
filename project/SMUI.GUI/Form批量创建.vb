@@ -1,5 +1,6 @@
 ﻿Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
+Imports SMUI.GUI.Class1
 Imports SMUI.Windows.PakManager
 
 Public Class Form批量创建
