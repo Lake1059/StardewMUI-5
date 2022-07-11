@@ -162,8 +162,8 @@ Public Class Form1
         切换主选项卡按钮状态(3)
         隐藏所有主选项卡()
         Me.Panel配置队列.Visible = True
-        If ST1.是否已经初始化了配置队列选项卡界面 = True Then Exit Sub
-        调整配置队列选项卡界面()
+        If ST1.是否已经初始化了配置队列选项卡界面 = False Then 调整配置队列选项卡界面()
+
     End Sub
 
 #End Region
@@ -873,11 +873,15 @@ jx1:
     End Sub
 
     Private Sub 设置选中内容的字体ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 设置选中内容的字体ToolStripMenuItem.Click
-
+        Dim a As New FontDialog
+        a.ShowDialog(Me)
+        If a.Font IsNot Nothing Then Me.RichTextBox1.SelectionFont = a.Font
     End Sub
 
     Private Sub 设置选中内容的颜色ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 设置选中内容的颜色ToolStripMenuItem.Click
-
+        Dim a As New ColorDialog
+        a.ShowDialog(Me)
+        If a.Color <> Nothing Then Me.RichTextBox1.SelectionColor = a.Color
     End Sub
 
     Private Sub 清除选择内容的格式ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 清除选择内容的格式ToolStripMenuItem.Click
@@ -1657,7 +1661,27 @@ jx:
 #Region "项右键菜单编辑器功能"
 
     Private Sub 重命名项ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 重命名项ToolStripMenuItem.Click
+        If Me.ListView2.SelectedItems.Count <> 1 Then Exit Sub
+        For i = 0 To Me.ListView3.Items.Count - 1
+            If 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) = Me.ListView3.Items.Item(i).Text Then
+                If Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text = Me.ListView3.Items.Item(i).SubItems(1).Text Then
+                    MsgBox(获取动态多语言文本("data/DynamicText/ManageMod.33"), MsgBoxStyle.Exclamation)
+                    Exit Sub
+                End If
+            End If
+        Next
 
+        Dim a As New InputTextDialog("", 获取动态多语言文本("data/DynamicText/ManageMod.34") & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text, Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text)
+nextline:
+        Dim b As String = a.ShowDialog(Me)
+        If b = "" Then Exit Sub
+        Dim c As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\"
+        If My.Computer.FileSystem.DirectoryExists(c & b) = True Then
+            MsgBox(获取动态多语言文本("data/DynamicText/ManageMod.6"), MsgBoxStyle.Exclamation)
+            GoTo nextline
+        End If
+        My.Computer.FileSystem.RenameDirectory(检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text, b)
+        Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text = b
     End Sub
 
     Private Sub 用VisualStudioCode打开ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 用VisualStudioCode打开ToolStripMenuItem.Click

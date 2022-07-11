@@ -1789,7 +1789,6 @@ Partial Class Form1
         Me.DCM5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.DCM5.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Default220220220ToolStripMenuItem, Me.ToolStripSeparator20, Me.OrangeRed255690ToolStripMenuItem, Me.DarkOrange2551400ToolStripMenuItem, Me.YellowL2402400ToolStripMenuItem, Me.LimeGreen5020550ToolStripMenuItem, Me.AquaL0230230ToolStripMenuItem, Me.DeepSkyBlue0191255ToolStripMenuItem, Me.Violet238130238ToolStripMenuItem})
         Me.DCM5.Name = "DarkContextMenu1"
-        Me.DCM5.OwnerItem = Me.设置颜色ToolStripMenuItem
         Me.DCM5.ShowItemToolTips = False
         Me.DCM5.Size = New System.Drawing.Size(214, 187)
         '
@@ -1888,7 +1887,6 @@ Partial Class Form1
         Me.DCM4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.DCM4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.标准字体ToolStripMenuItem, Me.ToolStripSeparator7, Me.粗体ToolStripMenuItem, Me.斜体ToolStripMenuItem, Me.下划线ToolStripMenuItem, Me.删除线ToolStripMenuItem})
         Me.DCM4.Name = "DarkContextMenu1"
-        Me.DCM4.OwnerItem = Me.设置字体ToolStripMenuItem
         Me.DCM4.ShowImageMargin = False
         Me.DCM4.ShowItemToolTips = False
         Me.DCM4.Size = New System.Drawing.Size(100, 121)
@@ -2579,7 +2577,6 @@ Partial Class Form1
         Me.DCM2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.DCM2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.切换数据子库ToolStripMenuItem, Me.ToolStripSeparator28, Me.刷新子库列表ToolStripMenuItem, Me.新建数据子库ToolStripMenuItem, Me.ToolStripSeparator3, Me.导入数据子库ToolStripMenuItem, Me.导出数据子库ToolStripMenuItem, Me.ToolStripSeparator25, Me.删除数据子库ToolStripMenuItem, Me.ToolStripSeparator35})
         Me.DCM2.Name = "DarkContextMenu1"
-        Me.DCM2.OwnerItem = Me.数据子库操作ToolStripMenuItem
         Me.DCM2.ShowImageMargin = False
         Me.DCM2.ShowItemToolTips = False
         Me.DCM2.Size = New System.Drawing.Size(124, 164)
@@ -3954,8 +3951,8 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1184, 666)
         Me.Controls.Add(Me.Panel管理模组)
-        Me.Controls.Add(Me.Panel起始页面)
         Me.Controls.Add(Me.Panel配置队列)
+        Me.Controls.Add(Me.Panel起始页面)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ButtonF)
         Me.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
