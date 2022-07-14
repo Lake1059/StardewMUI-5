@@ -3,6 +3,35 @@ Imports SMUI.GUI.Class1
 
 Module Module1
 
+
+
+    Public Sub 初始化谷歌浏览器组件()
+        Try
+            Dim _settings As New CefSharp.WinForms.CefSettings With {
+                    .PersistSessionCookies = True,
+                    .CachePath = Path1.应用程序用户数据路径 & "\WebCache"
+                }
+            CefSharp.Cef.Initialize(_settings)
+            添加调试文本(获取动态多语言文本("data/DynamicText/Other.1"), Color1.蓝色)
+        Catch ex As Exception
+            添加调试文本(获取动态多语言文本("data/DynamicText/Other.2") & vbNewLine & ex.Message, Color1.黄色)
+        End Try
+
+
+
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
     Public 导入导出密码本 As String() = {}
 
     Public Sub 添加导入导出密码到密码本中(key As String)

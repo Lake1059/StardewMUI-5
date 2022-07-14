@@ -14,15 +14,18 @@ Public Class Form1
         启动时加载用户设置()
         读取导入导出密码本()
         启动时初始化界面()
-
         Form调试.Hide()
-        Dim _settings As New CefSharp.WinForms.CefSettings With {
-    .PersistSessionCookies = True,
-    .CachePath = Path1.应用程序用户数据路径 & "\WebCache"
-}
-        CefSharp.Cef.Initialize(_settings)
 
-
+        If My.Computer.FileSystem.FileExists(Application.StartupPath & "\CefSharp.dll") = False Then
+            添加调试文本(获取动态多语言文本("data/DynamicText/Other.3"), Color1.黄色) : Exit Sub
+        End If
+        If My.Computer.FileSystem.FileExists(Application.StartupPath & "\CefSharp.Core.dll") = False Then
+            添加调试文本(获取动态多语言文本("data/DynamicText/Other.3"), Color1.黄色) : Exit Sub
+        End If
+        If My.Computer.FileSystem.FileExists(Application.StartupPath & "\CefSharp.WinForms.dll") = False Then
+            添加调试文本(获取动态多语言文本("data/DynamicText/Other.3"), Color1.黄色) : Exit Sub
+        End If
+        初始化谷歌浏览器组件()
     End Sub
 
     Private Sub Form1_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
