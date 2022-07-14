@@ -9,13 +9,20 @@ Public Class Form1
 #Region "主窗口"
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SevenZip.SevenZipBase.SetLibraryPath(Application.StartupPath & "\7zFull64.dll")
-        SYS1.检查用户身份组()
         加载自定义语言文件()
         Application.DoEvents()
         启动时加载用户设置()
         读取导入导出密码本()
         启动时初始化界面()
+
         Form调试.Hide()
+        Dim _settings As New CefSharp.WinForms.CefSettings With {
+    .PersistSessionCookies = True,
+    .CachePath = Path1.应用程序用户数据路径 & "\WebCache"
+}
+        CefSharp.Cef.Initialize(_settings)
+
+
     End Sub
 
     Private Sub Form1_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
@@ -42,6 +49,7 @@ Public Class Form1
         End If
         If System.Globalization.CultureInfo.CurrentCulture.Name = "zh-CN" And xml_Settings.SelectSingleNode("data/StatisticsOnTheNmberOfParticipatingUsers").InnerText = "True" Then 向服务器发送用户统计()
         刷新标题栏主信息显示()
+        SYS1.检查用户身份组()
         启动后自动登录NEXUSAPI()
         If xml_Settings.SelectSingleNode("data/AutoGetNews").InnerText = "True" Then
             Dim e1 As New MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0)

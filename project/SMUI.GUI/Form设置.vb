@@ -522,9 +522,9 @@ R1:
     End Sub
 
     Private Sub DarkButton4_Click(sender As Object, e As EventArgs) Handles DarkButton4.Click
-        If WebBrowser_Window.Visible = False Then WebBrowser_Window.Show()
-        If WebBrowser_Window.WindowState = FormWindowState.Minimized Then WebBrowser_Window.WindowState = FormWindowState.Normal
-        WebBrowser_Window.WebBrowser1.Navigate("https://users.nexusmods.com/auth/sign_in")
+        If ChromiumBrowser.Visible = False Then ChromiumBrowser.Show(Form1)
+        If ChromiumBrowser.WindowState = FormWindowState.Minimized Then ChromiumBrowser.WindowState = FormWindowState.Normal
+        ChromiumBrowser.ChromiumWebBrowser1.LoadUrl("https://users.nexusmods.com/auth/sign_in")
     End Sub
 
     Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click

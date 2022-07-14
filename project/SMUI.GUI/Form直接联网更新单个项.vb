@@ -114,8 +114,9 @@ Public Class Form直接联网更新单个项
                     Me.BackgroundWorker2.RunWorkerAsync()
                 ElseIf Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6") Then
                     Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S13")
-                    If WebBrowser_Window.Visible = False Then WebBrowser_Window.Show()
-                    WebBrowser_Window.WebBrowser1.Navigate("https://www.nexusmods.com/stardewvalley/mods/" & ST1.当前正在进行更新的单个项的N网ID & "?tab=files&file_id=" & 选定下载文件的ID & "&nmm=1")
+                    If ChromiumBrowser.Visible = False Then ChromiumBrowser.Show(Form1)
+
+                    ChromiumBrowser.ChromiumWebBrowser1.LoadUrl("https://www.nexusmods.com/stardewvalley/mods/" & ST1.当前正在进行更新的单个项的N网ID & "?tab=files&file_id=" & 选定下载文件的ID & "&nmm=1")
                     ST1.用于内置IE浏览器_当前正在更新模组 = True
                 End If
             End Sub
@@ -176,7 +177,7 @@ Public Class Form直接联网更新单个项
             调整下载界面内容()
             Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S8")
             Me.Timer1.Enabled = True
-            Me.Timer2.Enabled = True
+            'Me.Timer2.Enabled = True
             Me.BackgroundWorker3.RunWorkerAsync()
         End If
     End Sub
@@ -195,7 +196,7 @@ Public Class Form直接联网更新单个项
 
     Private Sub BackgroundWorker3_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker3.RunWorkerCompleted
         Me.Timer1.Enabled = False
-        Me.Timer2.Enabled = False
+        'Me.Timer2.Enabled = False
         Me.Label3.Text = ""
         Me.Label5.Text = ""
         Me.Label2.Width = Me.Label2.Parent.Width
@@ -232,6 +233,10 @@ Public Class Form直接联网更新单个项
                 Me.Label3.Text &= "   " & Format((已下载字节数 - 上一秒的已下载字节数) / 1024, "0") & " KB/S"
             End If
         End If
+
+        Me.Label5.Text = Format((已下载字节数 / 总字节数) * 100, "0.0") & "%"
+        Me.Label2.Width = 已下载字节数 / 总字节数 * Me.Label2.Parent.Width
+
         上一秒的已下载字节数 = 已下载字节数
         If 已下载字节数 = 总字节数 And 总字节数 > 0 Then
             Me.Timer1.Enabled = False

@@ -523,23 +523,30 @@ Module 管理模组
 
         If 付费功能解锁.我知道你会看这个毕竟这是开源软件藏那么深没有必要但请你遵守服务条款禁止传播禁止私自传播解锁程序因为这是付费功能.解锁自由输入直接更新项功能的NEXUSID = True Then
             Dim x As New ToolStripMenuItem With {
-                .Image = My.Resources.NEXUS,
-                .Text = "Enter ID to update"
+                .Image = My.Resources.NEXUS
             }
+            If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" Then
+                x.Text = "自由输入 ID 进行更新"
+            Else
+                x.Text = "Enter ID to update"
+            End If
             a.Items.Add(x)
             AddHandler x.Click,
                 Sub(s, e)
+                    If Form直接联网更新单个项.Visible = True Then Exit Sub
                     Dim sss1 As String = ""
                     If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" Then
                         sss1 = "输入你要进行访问的 星露谷 NEXUS 模组的页面 ID"
+                        x.Text = "自由输入 ID 进行更新"
                     Else
                         sss1 = "Enter the ID of the NEXUS Stardew Valley mod you want to access."
+                        x.Text = "Enter ID to update"
                     End If
                     Dim m1 As New InputTextDialog("Lake1059.Plugin1.UnlockFreeInputID", sss1)
                     Dim m2 As String = m1.ShowDialog(Form1)
                     If m2 = "" Or m2 Is Nothing Then Exit Sub
                     ST1.当前正在进行更新的单个项的N网ID = m2
-                    显示模式窗体(Form直接联网更新单个项, Form1)
+                    显示窗体(Form直接联网更新单个项, Form1)
                 End Sub
         End If
 

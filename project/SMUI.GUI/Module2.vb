@@ -228,8 +228,8 @@ jx1:
 
     Public Sub 点击文档中的链接时触发(链接 As String)
         ST1.点击的链接 = 链接
-        Form1.访问链接ToolStripMenuItem.Text = 获取动态多语言文本("data/DynamicText/GoToLink") & ST1.点击的链接
-        Form1.复制链接ToolStripMenuItem.Text = 获取动态多语言文本("data/DynamicText/CopyLink") & ST1.点击的链接
+        Form1.访问链接ToolStripMenuItem.Text = 获取动态多语言文本("data/DynamicText/GoToLink") '& ST1.点击的链接
+        Form1.复制链接ToolStripMenuItem.Text = 获取动态多语言文本("data/DynamicText/CopyLink") '& ST1.点击的链接
     End Sub
 
 
