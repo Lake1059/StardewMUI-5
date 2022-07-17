@@ -25,7 +25,7 @@ Public Class Form1
         If My.Computer.FileSystem.FileExists(Application.StartupPath & "\CefSharp.WinForms.dll") = False Then
             添加调试文本(获取动态多语言文本("data/DynamicText/Other.3"), Color1.黄色) : Exit Sub
         End If
-        初始化谷歌浏览器组件()
+        ST1.是否安装了谷歌浏览器组件 = True
     End Sub
 
     Private Sub Form1_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
@@ -670,6 +670,7 @@ Line1:
                         End If
                         i2 += 1
                     Loop
+                    x.Dispose()
                 End Sub
         Next
         x.Show(MousePosition)
@@ -1626,6 +1627,10 @@ jx:
         Process.Start(IO.Path.GetDirectoryName(Path1.更新安装程序文件路径))
     End Sub
 
+    Private Sub 谷歌浏览器缓存目录ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 谷歌浏览器缓存目录ToolStripMenuItem.Click
+        Process.Start(Path1.应用程序用户数据路径 & "\WebCache")
+    End Sub
+
     Private Sub 当前星露谷游戏目录ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 当前星露谷游戏目录ToolStripMenuItem.Click
         Process.Start(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText)
     End Sub
@@ -1728,5 +1733,6 @@ nextline:
 #End Region
 
     ReadOnly 分割线 As Integer = 0
+
 
 End Class

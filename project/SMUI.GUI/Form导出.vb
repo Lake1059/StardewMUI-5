@@ -137,21 +137,5 @@ Public Class Form导出
             Me.DarkButton1.Text = 获取动态多语言文本("data/ExportWindow/A6")
             Me.CheckBox1.Left = Me.CheckBox2.Left
         End If
-
-        Select Case Me.Text
-            Case 获取动态多语言文本("data/DynamicText/ManageMod.28")
-                If Me.DarkTextBox1.Text = "" And xml_Settings.SelectSingleNode("data/SubLibraryExportDefaultPath").InnerText <> "" Then
-
-                    Me.DarkTextBox1.Text = xml_Settings.SelectSingleNode("data/SubLibraryExportDefaultPath").InnerText
-                End If
-            Case 获取动态多语言文本("data/DynamicText/ManageMod.29")
-                If Me.DarkTextBox1.Text = "" And xml_Settings.SelectSingleNode("data/CategoryExportDefaultPath").InnerText <> "" Then
-                    Me.DarkTextBox1.Text = xml_Settings.SelectSingleNode("data/CategoryExportDefaultPath").InnerText
-                End If
-            Case 获取动态多语言文本("data/DynamicText/ManageMod.30")
-                If Me.DarkTextBox1.Text = "" And xml_Settings.SelectSingleNode("data/ModItemExportDefaultPath").InnerText <> "" Then
-                    Me.DarkTextBox1.Text = xml_Settings.SelectSingleNode("data/ModItemExportDefaultPath").InnerText
-                End If
-        End Select
     End Sub
 End Class

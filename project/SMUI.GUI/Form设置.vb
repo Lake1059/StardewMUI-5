@@ -194,8 +194,16 @@ Public Class Form设置
     End Sub
 
     Public Sub 保存设置()
+        If xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText <> Me.TextBox星露谷游戏路径.Text Then
+            是否改动了关键路径 = True
+        End If
         xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText = Me.TextBox星露谷游戏路径.Text
+
+        If xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText <> Me.TextBox模组数据仓库路径.Text Then
+            是否改动了关键路径 = True
+        End If
         xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText = Me.TextBox模组数据仓库路径.Text
+
         xml_Settings.SelectSingleNode("data/StardewValleyGameBackUpPath").InnerText = Me.TextBox星露谷游戏备份路径.Text
         xml_Settings.SelectSingleNode("data/VisualStudioCodePath").InnerText = Me.TextBox6.Text
         xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText = Me.TextBox7.Text
@@ -251,19 +259,25 @@ Public Class Form设置
         If Me.TextBox11.Text = "" Then Form1.Label7.Text = ""
     End Sub
 
+    Dim 是否改动了关键路径 As Boolean = False
+
     Private Sub Label确定_Click(sender As Object, e As EventArgs) Handles Label确定.Click
         保存设置()
-        扫描数据子库()
-        清除分类列表()
-        清除模组列表()
+        If 是否改动了关键路径 = True Then
+            扫描数据子库()
+            清除分类列表()
+            清除模组列表()
+        End If
         Me.Close()
     End Sub
 
     Private Sub Label应用_Click(sender As Object, e As EventArgs) Handles Label应用.Click
         保存设置()
-        扫描数据子库()
-        清除分类列表()
-        清除模组列表()
+        If 是否改动了关键路径 = True Then
+            扫描数据子库()
+            清除分类列表()
+            清除模组列表()
+        End If
     End Sub
 
     Private Sub Label取消_Click(sender As Object, e As EventArgs) Handles Label取消.Click
@@ -522,6 +536,9 @@ R1:
     End Sub
 
     Private Sub DarkButton4_Click(sender As Object, e As EventArgs) Handles DarkButton4.Click
+        If ST1.是否安装了谷歌浏览器组件 = True And ST1.用于内置谷歌浏览器_是否已经初始化 = False Then
+            初始化谷歌浏览器组件() : ST1.用于内置谷歌浏览器_是否已经初始化 = True
+        End If
         If ChromiumBrowser.Visible = False Then ChromiumBrowser.Show(Form1)
         If ChromiumBrowser.WindowState = FormWindowState.Minimized Then ChromiumBrowser.WindowState = FormWindowState.Normal
         ChromiumBrowser.ChromiumWebBrowser1.LoadUrl("https://users.nexusmods.com/auth/sign_in")

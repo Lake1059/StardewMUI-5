@@ -259,12 +259,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="WebBrowser Window.Designer.vb">
-      <DependentUpon>WebBrowser Window.vb</DependentUpon>
-    </Compile>
-    <Compile Include="WebBrowser Window.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="付费功能解锁.vb" />
     <Compile Include="在线模组列表功能.vb" />
     <Compile Include="多语言.vb" />
@@ -318,9 +312,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WebBrowser Window.resx">
-      <DependentUpon>WebBrowser Window.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

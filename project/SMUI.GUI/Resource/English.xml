@@ -54,6 +54,7 @@
 		<ContentCenter.19 chs="星露谷 Content 文件夹">Stardew Valley Content Folder</ContentCenter.19>
 		<ContentCenter.20 chs="星露谷 存档 文件夹">Stardew Valley Save Folder</ContentCenter.20>
 		<ContentCenter.21 chs="SMAPI 日志 文件夹">SMAPI log folder</ContentCenter.21>
+		<ContentCenter.22 chs="谷歌浏览器缓存目录">Chromium cache path</ContentCenter.22>
 
 		
 		<!--You need to strictly control the length of this text-->
@@ -211,7 +212,12 @@
 		<A4 chs="文件夹数量和 CDCD 命令数量不匹配">The number of folders does not match the number of CDCD commands.</A4>
 		<A5 chs="当前使用会员下载">Using Premium download</A5>
 		<A6 chs="当前使用免费下载">Using free download</A6>
-		<IE1 chs="无法获取到参数，请关闭此页面重试">The specified data has not been obtained and cannot continue.</IE1>	
+		<Chromium.1 chs="正在等待页面完成加载 ...">Waiting for page to finish loading...</Chromium.1>
+		<!--用不着，别翻译   no use, don't translate-->
+		<!--<Chromium.2 chs="成功拿到参数，自动关闭页面">Successfully get the parameters, automatically close the page.</Chromium.2>-->
+		<Chromium.3 chs="无法获取到参数，请关闭此页面重试，顺便请确保打开的模组页面也是已经登录状态，如果不是就再点一下登录，必须登录了才会有参数">The specified data has not been obtained and cannot continue. Make sure that the opened mod page is also logged in. If not, click to log in again. You must log in to have parameters.</Chromium.3>
+		
+		
 	</DirectOnlineUpdateWindow>
 		
 	<SettingsWindow>
@@ -309,7 +315,6 @@
 		<A8 chs="删除">Delete</A8>
 		<A9 chs=""></A9>
 		<A10 chs=""></A10>
-
 		<DS.1 chs="是否确认开始批量创建？如果有目标路径存在则不会创建，创建过程中切勿重复操作，避免文件系统冲突！">Are you sure to start batch creation? If the target path exists, it will not be created. Do not repeat operations during the creation process to avoid file system conflicts!</DS.1>
 		<DS.2 chs="将多个文件夹创建为一个项时，必须设定这个新项的名称">When creating multiple folders as an item, you must set the name of the new item.</DS.2>
 		<!--已经预防了，SMAPI 自带的模组不会被扫描-->
@@ -320,9 +325,17 @@
 		<DS.7 chs="不是标准 SMAPI 模组或者套娃了">Not a standard SMAPI mod or has multiple layers of folders.</DS.7>
 		<DS.8 chs="准备就绪">Ready</DS.8>
 		<DS.9 chs="不能进行操作">Cannot operate</DS.9>
-		<DS.10 chs=""></DS.10>
-		
+		<DS.10 chs=""></DS.10>		
 	</BulkCreateItemWindow>
+
+	<SaveEditorWindow>
+		<Title chs="存档编辑器">Save Editor</Title>
+		<A1 chs=""></A1>
+		
+		
+		
+		
+	</SaveEditorWindow>
 	
 	
 	<!--These are dynamic text, in dialogs and status information, etc.-->
@@ -333,9 +346,9 @@
 		<No chs="否">No</No>
 		<Negative chs="否决">Negative</Negative>
 		<DeletionInProgress chs="正在进行删除操作">Deletion in progress!</DeletionInProgress>
-		<CopyLink chs="复制链接：">Copy Link: </CopyLink>
+		<CopyLink chs="复制链接">Copy Link</CopyLink>
 		<CopyLink2 chs="复制链接">Copy Link</CopyLink2>
-		<GoToLink chs="打开链接：">Go To Link: </GoToLink>
+		<GoToLink chs="打开链接">Go To Link</GoToLink>
 		<DirectOnlineUpdate chs="进行在线更新">Direct online update</DirectOnlineUpdate>
 		<Unavailable chs="不可用">Unavailable</Unavailable>
 		<Available chs="可用">Available</Available>
@@ -413,6 +426,8 @@
 		<ManageMod.30 chs="导出项">Export Items</ManageMod.30>
 		<ManageMod.31 chs="目标文件存在，是否要删除目标文件再进行导出？">The target file exists, do you want to delete the target file and then export?</ManageMod.31>
 		<ManageMod.32 chs="如果你忘记了设置的密码，可以到用户配置文件夹，用记事本或其他编辑器打开最后的 7za.bat 批处理文件查看即可，但是请不要运行它，防止造成意外事故">If you forget the password you set, you can go to the user configuration folder and open the final 7za.bat batch file with Notepad or other editors to view it, but please do not run it to prevent accidents.</ManageMod.32>
+		<ManageMod.33 chs="当前项已经在配置队列中，请去那里进行重命名操作">The current item is already in the deploy queue, please go there to rename.</ManageMod.33>
+		<ManageMod.34 chs="重命名项：">Rename Item: </ManageMod.34>
 
 		<InstallMessage.1 chs="正在安装">Installing</InstallMessage.1>
 		<InstallMessage.2 chs="正在卸载">Uninstalling</InstallMessage.2>
@@ -490,6 +505,7 @@
 		<Deploy.18 chs=" 文件在任何情况下都不可能出现，你在干什么！"> file is unlikely to appear under any circumstances.</Deploy.18>
 		<Deploy.19 chs=" 压缩文件需要解压，或者你有其他需求"> compressed file needs to be decompressed, or you have other needs.</Deploy.19>
 		<Deploy.20 chs="使用 CDCD 命令的文件夹不准套娃，manifest.json 必须就在文件夹下">The folder using CDCD command must contain manifest.json directly.</Deploy.20>
+		<Deploy.21 chs="已使用控制命令解锁允许 CDCD 套娃">Unlocked with control command to allow CDCD multi-level folders.</Deploy.21>
 		
 		<Sever.0 chs="检测到绿色版模式标记文件，检查更新功能已禁用">Portable mode flag file detected, check for updates disabled.</Sever.0>
 		<Sever.1 chs="正在连接服务器...">Connecting to server...</Sever.1>
@@ -514,7 +530,10 @@
 		<Settings.9 chs="继续使用第四代产品的仓库：">Continue use 4th Repository: </Settings.9>
 		<Settings.10 chs="选择一个空文件夹，它将作为你的新数据仓库">Choose a empty folder that will be your new Mod Repository</Settings.10>
 		<Settings.11 chs="确认使用此文件夹作为你的模组数据仓库？">Are you sure you want to use this folder as your Mod Repository?</Settings.11>
-	
+
+		<Other.1 chs="成功初始化了浏览器配置">Browser configuration successfully initialized.</Other.1>
+		<Other.2 chs="初始化浏览器配置发生错误">Error initializing browser configuration.</Other.2>
+		<Other.3 chs="未安装谷歌浏览器组件">Chromium component not installed.</Other.3>
 </DynamicText>
 	
 </data>

@@ -5,7 +5,7 @@ Imports SMUI.Windows.PakManager
 Public Class Form直接联网更新单个项
     Private Sub Form直接联网更新单个项_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If ST1.当前正在进行更新的单个项的N网ID = 12230 Then
-            MsgBox("不准用来操作 12230 号页面，没有这种操作！" & vbNewLine & vbNewLine & "Not allowed to operate 12230, there is no such operation!", MsgBoxStyle.Exclamation, "请不要在酒吧里点炒饭")
+            MsgBox("不准用来操作 12230 号页面，没有这种操作！" & vbNewLine & vbNewLine & "Not allowed to operate 12230, there is no such operation!", MsgBoxStyle.Exclamation, "不要在酒吧里点炒饭")
             Me.Close()
         End If
 
@@ -114,10 +114,12 @@ Public Class Form直接联网更新单个项
                     Me.BackgroundWorker2.RunWorkerAsync()
                 ElseIf Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6") Then
                     Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S13")
+                    If ST1.是否安装了谷歌浏览器组件 = True And ST1.用于内置谷歌浏览器_是否已经初始化 = False Then
+                        初始化谷歌浏览器组件() : ST1.用于内置谷歌浏览器_是否已经初始化 = True
+                    End If
                     If ChromiumBrowser.Visible = False Then ChromiumBrowser.Show(Form1)
-
                     ChromiumBrowser.ChromiumWebBrowser1.LoadUrl("https://www.nexusmods.com/stardewvalley/mods/" & ST1.当前正在进行更新的单个项的N网ID & "?tab=files&file_id=" & 选定下载文件的ID & "&nmm=1")
-                    ST1.用于内置IE浏览器_当前正在更新模组 = True
+                    ST1.用于内置谷歌浏览器_当前正在更新模组 = True
                 End If
             End Sub
 
@@ -145,7 +147,7 @@ Public Class Form直接联网更新单个项
         If Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5") Then
             e.Result = b.StartGet("stardewvalley", ST1.当前正在进行更新的单个项的N网ID, 选定下载文件的ID)
         Else
-            e.Result = b.StartGet("stardewvalley", ST1.当前正在进行更新的单个项的N网ID, 选定下载文件的ID, ST1.用于内置IE浏览器_获取到的key, ST1.用于内置IE浏览器_获取到的expires)
+            e.Result = b.StartGet("stardewvalley", ST1.当前正在进行更新的单个项的N网ID, 选定下载文件的ID, ST1.用于内置谷歌浏览器_获取到的key, ST1.用于内置谷歌浏览器_获取到的expires)
         End If
     End Sub
 
@@ -165,6 +167,7 @@ Public Class Form直接联网更新单个项
             下载地址数组(下载地址数组.Count - 1) = b.URI(i)
         Next
         Dim dig1 As New SingleSelectionDialog(获取动态多语言文本("data/DirectOnlineUpdateWindow/S6"), 选项数组, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S7"), 100, 500)
+        Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S6")
         Dim k1 As Integer = dig1.ShowDialog(Me)
         If k1 <> -1 Then
             确认的下载地址 = b.URI(k1)
@@ -179,6 +182,8 @@ Public Class Form直接联网更新单个项
             Me.Timer1.Enabled = True
             'Me.Timer2.Enabled = True
             Me.BackgroundWorker3.RunWorkerAsync()
+        Else
+            Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S2")
         End If
     End Sub
 

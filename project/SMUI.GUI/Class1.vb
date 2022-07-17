@@ -40,9 +40,11 @@ Public Class Class1
         Public Shared 上次用的会员下载还是免费下载 As Integer = 1
 
         Public Shared 当前正在进行更新的单个项的N网ID As Integer = 0
-        Public Shared 用于内置IE浏览器_当前正在更新模组 As Boolean = False
-        Public Shared 用于内置IE浏览器_获取到的key As String = ""
-        Public Shared 用于内置IE浏览器_获取到的expires As String = ""
+        Public Shared 用于内置谷歌浏览器_当前正在更新模组 As Boolean = False
+        Public Shared 用于内置谷歌浏览器_获取到的key As String = ""
+        Public Shared 用于内置谷歌浏览器_获取到的expires As String = ""
+        Public Shared 是否安装了谷歌浏览器组件 As Boolean = False
+        Public Shared 用于内置谷歌浏览器_是否已经初始化 As Boolean = False
 
     End Class
 

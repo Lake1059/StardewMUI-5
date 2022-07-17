@@ -3,8 +3,6 @@ Imports SMUI.GUI.Class1
 
 Module Module1
 
-
-
     Public Sub 初始化谷歌浏览器组件()
         Try
             Dim _settings As New CefSharp.WinForms.CefSettings With {
@@ -17,20 +15,7 @@ Module Module1
             添加调试文本(获取动态多语言文本("data/DynamicText/Other.2") & vbNewLine & ex.Message, Color1.黄色)
         End Try
 
-
-
     End Sub
-
-
-
-
-
-
-
-
-
-
-
 
     Public 导入导出密码本 As String() = {}
 
