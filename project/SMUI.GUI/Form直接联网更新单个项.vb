@@ -13,15 +13,17 @@ Public Class Form直接联网更新单个项
         Me.Panel2.Dock = DockStyle.Fill : Me.Panel3.Dock = DockStyle.Fill
         Me.Panel2.Visible = True
         Me.Label2.Width = 0
+
+
     End Sub
 
     Private Sub Form直接联网更新单个项_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Me.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/Title")
         Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S1")
-        If ST1.上次用的会员下载还是免费下载 = 1 Then
-            Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5")
-        Else
+        If xml_Settings.SelectSingleNode("data/LastUsed_DirectDownloadItemUpdateUserMember").InnerText = "True" Then
             Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6")
+        Else
+            Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5")
         End If
 
         Me.Panel2.Controls.Clear()
@@ -346,10 +348,10 @@ Public Class Form直接联网更新单个项
     Private Sub DarkButton1_Click(sender As Object, e As EventArgs) Handles DarkButton1.Click
         If Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5") Then
             Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6")
-            ST1.上次用的会员下载还是免费下载 = 2
+            xml_Settings.SelectSingleNode("data/LastUsed_DirectDownloadItemUpdateUserMember").InnerText = "True"
         Else
             Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5")
-            ST1.上次用的会员下载还是免费下载 = 1
+            xml_Settings.SelectSingleNode("data/LastUsed_DirectDownloadItemUpdateUserMember").InnerText = "False"
         End If
     End Sub
 

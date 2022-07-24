@@ -88,7 +88,6 @@ Module 界面控制
 
         Form1.ColumnHeader7.Width = Form1.ListView3.Width - Form1.ColumnHeader6.Width - 25
         Form1.ColumnHeader8.Width = Form1.ListView4.Width - Form1.ColumnHeader9.Width - 25
-        'If ST1.是否已经初始化了配置队列选项卡界面 = True Then Exit Sub
         ST1.是否已经初始化了配置队列选项卡界面 = True
     End Sub
 

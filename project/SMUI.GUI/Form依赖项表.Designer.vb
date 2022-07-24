@@ -24,9 +24,12 @@ Partial Class Form依赖项表
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label子库分类菜单 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label依赖表项菜单 = New System.Windows.Forms.Label()
+        Me.DarkContextMenu2 = New DarkUI.Controls.DarkContextMenu()
+        Me.复制整个列表ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label52 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -38,19 +41,21 @@ Partial Class Form依赖项表
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DarkContextMenu1 = New DarkUI.Controls.DarkContextMenu()
         Me.复制此项的名称ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.ButtonL = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.ButtonL = New System.Windows.Forms.Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Panel1.SuspendLayout()
+        Me.DarkContextMenu2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.DarkContextMenu1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label子库分类菜单)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label依赖表项菜单)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label52)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -62,25 +67,13 @@ Partial Class Form依赖项表
         Me.Panel1.Size = New System.Drawing.Size(534, 31)
         Me.Panel1.TabIndex = 2
         '
-        'Label子库分类菜单
-        '
-        Me.Label子库分类菜单.AutoEllipsis = True
-        Me.Label子库分类菜单.BackColor = System.Drawing.Color.Transparent
-        Me.Label子库分类菜单.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label子库分类菜单.Location = New System.Drawing.Point(0, 0)
-        Me.Label子库分类菜单.Name = "Label子库分类菜单"
-        Me.Label子库分类菜单.Size = New System.Drawing.Size(397, 30)
-        Me.Label子库分类菜单.TabIndex = 10
-        Me.Label子库分类菜单.Text = " 依赖表菜单"
-        Me.Label子库分类菜单.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Label4
         '
         Me.Label4.AutoEllipsis = True
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label4.Location = New System.Drawing.Point(397, 0)
+        Me.Label4.Location = New System.Drawing.Point(396, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(1, 30)
         Me.Label4.TabIndex = 15
@@ -90,12 +83,54 @@ Partial Class Form依赖项表
         Me.Label3.AutoEllipsis = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Label3.Location = New System.Drawing.Point(398, 0)
+        Me.Label3.Location = New System.Drawing.Point(397, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 30)
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "刷新"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label5
+        '
+        Me.Label5.AutoEllipsis = True
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label5.Location = New System.Drawing.Point(447, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(1, 30)
+        Me.Label5.TabIndex = 16
+        '
+        'Label依赖表项菜单
+        '
+        Me.Label依赖表项菜单.AutoEllipsis = True
+        Me.Label依赖表项菜单.BackColor = System.Drawing.Color.Transparent
+        Me.Label依赖表项菜单.ContextMenuStrip = Me.DarkContextMenu2
+        Me.Label依赖表项菜单.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label依赖表项菜单.Location = New System.Drawing.Point(0, 0)
+        Me.Label依赖表项菜单.Name = "Label依赖表项菜单"
+        Me.Label依赖表项菜单.Size = New System.Drawing.Size(448, 30)
+        Me.Label依赖表项菜单.TabIndex = 10
+        Me.Label依赖表项菜单.Text = " 依赖表菜单"
+        Me.Label依赖表项菜单.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'DarkContextMenu2
+        '
+        Me.DarkContextMenu2.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.DarkContextMenu2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.DarkContextMenu2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.复制整个列表ToolStripMenuItem})
+        Me.DarkContextMenu2.Name = "DarkContextMenu1"
+        Me.DarkContextMenu2.ShowImageMargin = False
+        Me.DarkContextMenu2.ShowItemToolTips = False
+        Me.DarkContextMenu2.Size = New System.Drawing.Size(124, 26)
+        '
+        '复制整个列表ToolStripMenuItem
+        '
+        Me.复制整个列表ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.复制整个列表ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.复制整个列表ToolStripMenuItem.Name = "复制整个列表ToolStripMenuItem"
+        Me.复制整个列表ToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.复制整个列表ToolStripMenuItem.Text = "复制整个列表"
         '
         'Label1
         '
@@ -205,8 +240,11 @@ Partial Class Form依赖项表
         Me.复制此项的名称ToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.复制此项的名称ToolStripMenuItem.Text = "复制此项的名称"
         '
-        'BackgroundWorker1
+        'ImageList1
         '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(1, 23)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
         'ButtonL
         '
@@ -218,11 +256,8 @@ Partial Class Form依赖项表
         Me.ButtonL.Text = "Button1"
         Me.ButtonL.UseVisualStyleBackColor = True
         '
-        'ImageList1
+        'BackgroundWorker1
         '
-        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
-        Me.ImageList1.ImageSize = New System.Drawing.Size(1, 23)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
         'Form依赖项表
         '
@@ -242,6 +277,7 @@ Partial Class Form依赖项表
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "依赖项表"
         Me.Panel1.ResumeLayout(False)
+        Me.DarkContextMenu2.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.DarkContextMenu1.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -250,7 +286,7 @@ Partial Class Form依赖项表
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label子库分类菜单 As Label
+    Friend WithEvents Label依赖表项菜单 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label52 As Label
@@ -266,4 +302,7 @@ Partial Class Form依赖项表
     Friend WithEvents 复制此项的名称ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents ButtonL As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents DarkContextMenu2 As DarkUI.Controls.DarkContextMenu
+    Friend WithEvents 复制整个列表ToolStripMenuItem As ToolStripMenuItem
 End Class

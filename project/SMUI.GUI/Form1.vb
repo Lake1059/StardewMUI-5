@@ -38,6 +38,8 @@ Public Class Form1
         Me.ListView2.Width = Me.ListView2.Parent.Width + ST1.系统滚动条宽度
         调整项列表列宽()
         调整配置队列选项卡界面()
+        Application.DoEvents()
+        If ST1.是否已启动完毕 = False Then ST1.是否已经初始化了配置队列选项卡界面 = False
     End Sub
 
     Private Sub Form1_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
@@ -88,7 +90,6 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles MyBase.Closed
-        xml_Settings.Save(Path1.应用程序设置文件路径)
         If ST1.全局状态_是否需要在退出后安装更新 = True Then
             If My.Computer.FileSystem.FileExists(Path1.更新安装程序文件路径) = True Then
                 Shell(Path1.更新安装程序文件路径, AppWinStyle.NormalFocus)

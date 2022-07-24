@@ -22,7 +22,7 @@ Public Class Form设置
         读取设置()
         If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "English" Or ST1.是否正在使用自定义语言包 = True Then
             Me.Text = 获取动态多语言文本("data/SettingsWindow/Title")
-            Me.Label2.Text = 获取动态多语言文本("data/SettingsWindow/A1").Replace("/crlf/", vbNewLine)
+            Me.Label2.Text = 获取动态多语言文本("data/SettingsWindow/A1")
             Me.Label取消.Text = 获取动态多语言文本("data/SettingsWindow/A2")
             Me.Label应用.Text = 获取动态多语言文本("data/SettingsWindow/A3")
             Me.Label确定.Text = 获取动态多语言文本("data/SettingsWindow/A4")
@@ -58,7 +58,7 @@ Public Class Form设置
             Me.Label20.Text = 获取动态多语言文本("data/SettingsWindow/A36")
             Me.Label字体样式.Text = 获取动态多语言文本("data/SettingsWindow/A37")
             Me.Label图标.Text = 获取动态多语言文本("data/SettingsWindow/A38")
-            Me.Label32.Text = 获取动态多语言文本("data/SettingsWindow/A39").Replace("/crlf/", vbNewLine)
+            Me.Label32.Text = 获取动态多语言文本("data/SettingsWindow/A39")
             Me.CheckBox2.Text = 获取动态多语言文本("data/SettingsWindow/A40")
         End If
 
