@@ -162,6 +162,7 @@ Partial Class Form1
         Me.斜体ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.下划线ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.删除线ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.设置字体ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.查看选中分类的属性ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.激活拖拽ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -183,7 +184,6 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label角落预览图菜单 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.设置字体ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DCM10 = New DarkUI.Controls.DarkContextMenu()
         Me.全选ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.反选ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -213,6 +213,7 @@ Partial Class Form1
         Me.清除选择内容的格式ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DCM6 = New DarkUI.Controls.DarkContextMenu()
         Me.新建项ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.下载并新建项ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.移动项ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.删除项ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
@@ -1796,7 +1797,6 @@ Partial Class Form1
         Me.DCM5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.DCM5.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Default220220220ToolStripMenuItem, Me.ToolStripSeparator20, Me.OrangeRed255690ToolStripMenuItem, Me.DarkOrange2551400ToolStripMenuItem, Me.YellowL2402400ToolStripMenuItem, Me.LimeGreen5020550ToolStripMenuItem, Me.AquaL0230230ToolStripMenuItem, Me.DeepSkyBlue0191255ToolStripMenuItem, Me.Violet238130238ToolStripMenuItem})
         Me.DCM5.Name = "DarkContextMenu1"
-        Me.DCM5.OwnerItem = Me.设置颜色ToolStripMenuItem
         Me.DCM5.ShowItemToolTips = False
         Me.DCM5.Size = New System.Drawing.Size(214, 187)
         '
@@ -1895,7 +1895,7 @@ Partial Class Form1
         Me.DCM4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.DCM4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.标准字体ToolStripMenuItem, Me.ToolStripSeparator7, Me.粗体ToolStripMenuItem, Me.斜体ToolStripMenuItem, Me.下划线ToolStripMenuItem, Me.删除线ToolStripMenuItem})
         Me.DCM4.Name = "DarkContextMenu1"
-        Me.DCM4.OwnerItem = Me.设置字体ToolStripMenuItem1
+        Me.DCM4.OwnerItem = Me.设置字体ToolStripMenuItem
         Me.DCM4.ShowImageMargin = False
         Me.DCM4.ShowItemToolTips = False
         Me.DCM4.Size = New System.Drawing.Size(100, 121)
@@ -1951,6 +1951,15 @@ Partial Class Form1
         Me.删除线ToolStripMenuItem.Name = "删除线ToolStripMenuItem"
         Me.删除线ToolStripMenuItem.Size = New System.Drawing.Size(99, 22)
         Me.删除线ToolStripMenuItem.Text = "删除线"
+        '
+        '设置字体ToolStripMenuItem1
+        '
+        Me.设置字体ToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.设置字体ToolStripMenuItem1.DropDown = Me.DCM4
+        Me.设置字体ToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.设置字体ToolStripMenuItem1.Name = "设置字体ToolStripMenuItem1"
+        Me.设置字体ToolStripMenuItem1.Size = New System.Drawing.Size(147, 22)
+        Me.设置字体ToolStripMenuItem1.Text = "设置字体"
         '
         '查看选中分类的属性ToolStripMenuItem
         '
@@ -2183,15 +2192,6 @@ Partial Class Form1
         Me.Label13.Size = New System.Drawing.Size(953, 1)
         Me.Label13.TabIndex = 8
         '
-        '设置字体ToolStripMenuItem1
-        '
-        Me.设置字体ToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.设置字体ToolStripMenuItem1.DropDown = Me.DCM4
-        Me.设置字体ToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.设置字体ToolStripMenuItem1.Name = "设置字体ToolStripMenuItem1"
-        Me.设置字体ToolStripMenuItem1.Size = New System.Drawing.Size(147, 22)
-        Me.设置字体ToolStripMenuItem1.Text = "设置字体"
-        '
         'DCM10
         '
         Me.DCM10.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -2414,11 +2414,11 @@ Partial Class Form1
         '
         Me.DCM6.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.DCM6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.DCM6.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.新建项ToolStripMenuItem, Me.移动项ToolStripMenuItem, Me.删除项ToolStripMenuItem, Me.ToolStripSeparator10, Me.导入项ToolStripMenuItem, Me.导出项ToolStripMenuItem, Me.ToolStripSeparator11, Me.批量创建ToolStripMenuItem, Me.本地更新ToolStripMenuItem, Me.ToolStripSeparator12, Me.设置字体ToolStripMenuItem1, Me.切换显示所属分类ToolStripMenuItem, Me.ToolStripSeparator15})
+        Me.DCM6.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.新建项ToolStripMenuItem, Me.下载并新建项ToolStripMenuItem, Me.移动项ToolStripMenuItem, Me.删除项ToolStripMenuItem, Me.ToolStripSeparator10, Me.导入项ToolStripMenuItem, Me.导出项ToolStripMenuItem, Me.ToolStripSeparator11, Me.批量创建ToolStripMenuItem, Me.本地更新ToolStripMenuItem, Me.ToolStripSeparator12, Me.设置字体ToolStripMenuItem1, Me.切换显示所属分类ToolStripMenuItem, Me.ToolStripSeparator15})
         Me.DCM6.Name = "DarkContextMenu1"
         Me.DCM6.ShowImageMargin = False
         Me.DCM6.ShowItemToolTips = False
-        Me.DCM6.Size = New System.Drawing.Size(148, 230)
+        Me.DCM6.Size = New System.Drawing.Size(148, 252)
         '
         '新建项ToolStripMenuItem
         '
@@ -2427,6 +2427,15 @@ Partial Class Form1
         Me.新建项ToolStripMenuItem.Name = "新建项ToolStripMenuItem"
         Me.新建项ToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
         Me.新建项ToolStripMenuItem.Text = "新建项"
+        '
+        '下载并新建项ToolStripMenuItem
+        '
+        Me.下载并新建项ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.下载并新建项ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.下载并新建项ToolStripMenuItem.Name = "下载并新建项ToolStripMenuItem"
+        Me.下载并新建项ToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.下载并新建项ToolStripMenuItem.Text = "下载并新建项"
+        Me.下载并新建项ToolStripMenuItem.Visible = False
         '
         '移动项ToolStripMenuItem
         '
@@ -3806,6 +3815,7 @@ Partial Class Form1
         Me.DCM应用程序目录集.ImageScalingSize = New System.Drawing.Size(23, 23)
         Me.DCM应用程序目录集.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.软件安装目录ToolStripMenuItem, Me.用户配置数据文件夹ToolStripMenuItem, Me.插件目录ToolStripMenuItem, Me.下载更新目录ToolStripMenuItem, Me.谷歌浏览器缓存目录ToolStripMenuItem})
         Me.DCM应用程序目录集.Name = "DCM应用程序目录集"
+        Me.DCM应用程序目录集.OwnerItem = Me.应用程序目录集ToolStripMenuItem
         Me.DCM应用程序目录集.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.DCM应用程序目录集.Size = New System.Drawing.Size(192, 154)
         '
@@ -3868,6 +3878,7 @@ Partial Class Form1
         Me.DCM游戏目录集.ImageScalingSize = New System.Drawing.Size(23, 23)
         Me.DCM游戏目录集.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.当前星露谷游戏目录ToolStripMenuItem, Me.星露谷Mods文件夹ToolStripMenuItem, Me.星露谷Content文件夹ToolStripMenuItem, Me.星露谷存档文件夹ToolStripMenuItem, Me.SMAPI日志文件夹ToolStripMenuItem})
         Me.DCM游戏目录集.Name = "DCM应用程序目录集"
+        Me.DCM游戏目录集.OwnerItem = Me.星露谷目录集ToolStripMenuItem
         Me.DCM游戏目录集.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.DCM游戏目录集.Size = New System.Drawing.Size(209, 154)
         '
@@ -4401,4 +4412,5 @@ Partial Class Form1
     Friend WithEvents 右键再次调出此菜单ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Timer3 As Timer
     Friend WithEvents 谷歌浏览器缓存目录ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents 下载并新建项ToolStripMenuItem As ToolStripMenuItem
 End Class

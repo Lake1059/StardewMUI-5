@@ -12,6 +12,7 @@ Module 插件管理程序
         Public Shared 插件版本号列表 As String() = {}
         Public Shared 插件logo列表 As Image() = {}
         Public Shared 插件简要描述列表 As String() = {}
+        Public Shared 插件Entry加载状态 As Boolean() = {}
     End Class
 
     Public Sub 加载插件(插件路径 As String)
@@ -40,10 +41,26 @@ Module 插件管理程序
         ReDim Preserve 插件数据.插件简要描述列表(插件数据.插件简要描述列表.Count)
         插件数据.插件简要描述列表(插件数据.插件简要描述列表.Count - 1) = ""
 
-        Dim 获取类型 As Type = 程序集.GetType(程序集.GetName.Name & ".Entry")
-        Dim 创建实例 As Object = Activator.CreateInstance(获取类型)
-        Dim 实现方法 As MethodInfo = 获取类型.GetMethod("Entry")
-        实现方法.Invoke(创建实例, New Object() {})
+        Try
+            Dim 获取类型 As Type = 程序集.GetType(程序集.GetName.Name & ".Entry")
+            Dim 创建实例 As Object = Activator.CreateInstance(获取类型)
+            Dim 实现方法 As MethodInfo = 获取类型.GetMethod("Entry")
+            实现方法.Invoke(创建实例, New Object() {})
+
+            ReDim Preserve 插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count)
+            插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count - 1) = True
+        Catch ex As Exception
+            添加调试文本("[" & ex.Source & "] " & ex.Message, Color1.红色)
+            ReDim Preserve 插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count)
+            插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count - 1) = False
+            If Form调试.Visible = True Then
+                Form调试.Focus()
+            Else
+                显示窗体(Form调试, Form1)
+            End If
+        End Try
+
+
 
     End Sub
 

@@ -3,22 +3,31 @@ Imports SMUI.GUI.Class1
 Imports SMUI.Windows.PakManager
 
 Public Class Form直接联网更新单个项
+
+
+
+
     Private Sub Form直接联网更新单个项_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If ST1.当前正在进行更新的单个项的N网ID = 12230 Then
             MsgBox("不准用来操作 12230 号页面，没有这种操作！" & vbNewLine & vbNewLine & "Not allowed to operate 12230, there is no such operation!", MsgBoxStyle.Exclamation, "不要在酒吧里点炒饭")
             Me.Close()
         End If
 
+        Select Case ST1.当前正在进行直接更新的操作类型
+            Case 在线更新操作类型.新建项
+                Me.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/Title2")
+            Case 在线更新操作类型.更新项
+                Me.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/Title")
+        End Select
+
         Me.Panel2.BorderStyle = BorderStyle.None : Me.Panel3.BorderStyle = BorderStyle.None
         Me.Panel2.Dock = DockStyle.Fill : Me.Panel3.Dock = DockStyle.Fill
         Me.Panel2.Visible = True
         Me.Label2.Width = 0
 
-
     End Sub
 
     Private Sub Form直接联网更新单个项_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        Me.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/Title")
         Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S1")
         If xml_Settings.SelectSingleNode("data/LastUsed_DirectDownloadItemUpdateUserMember").InnerText = "True" Then
             Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6")
@@ -33,6 +42,10 @@ Public Class Form直接联网更新单个项
 
     Private Sub Form直接联网更新单个项_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = False
+    End Sub
+
+    Private Sub Form直接联网更新单个项_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Me.Dispose(True)
     End Sub
 
     Private Sub Form直接联网更新单个项_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
@@ -177,6 +190,7 @@ Public Class Form直接联网更新单个项
                 My.Computer.FileSystem.CreateDirectory(Path1.临时自动下载路径)
             End If
             保存位置 = Path1.临时自动下载路径 & "\" & ST1.当前正在进行更新的单个项的N网ID & "-" & 选定下载的文件 & "-" & 选定下载的文件版本 & ".zip"
+            '保存位置 = Replace(保存位置, ".", "_")
             Me.Panel2.Visible = False
             Me.Panel3.Visible = True
             调整下载界面内容()
@@ -203,7 +217,6 @@ Public Class Form直接联网更新单个项
 
     Private Sub BackgroundWorker3_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker3.RunWorkerCompleted
         Me.Timer1.Enabled = False
-        'Me.Timer2.Enabled = False
         Me.Label3.Text = ""
         Me.Label5.Text = ""
         Me.Label2.Width = Me.Label2.Parent.Width
@@ -250,16 +263,6 @@ Public Class Form直接联网更新单个项
         End If
     End Sub
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        If 总字节数 = 0 Then Exit Sub
-        If 已下载字节数 = 总字节数 And 总字节数 > 0 Then
-            Me.Timer2.Enabled = False
-            Exit Sub
-        End If
-        Me.Label5.Text = Format((已下载字节数 / 总字节数) * 100, "0.0") & "%"
-        Me.Label2.Width = 已下载字节数 / 总字节数 * Me.Label2.Parent.Width
-    End Sub
-
     Private Sub BackgroundWorker4_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker4.DoWork
         Try
             Dim zip1 As New SevenZip.SevenZipExtractor(保存位置)
@@ -284,51 +287,129 @@ Public Class Form直接联网更新单个项
         '开始评估
         Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S10")
         Application.DoEvents()
-        Dim myItemCode As New SMUI.Windows.Core.TaskQueue With {
-            .ItemPath = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Form1.ListView2.SelectedIndices(0)) & "\" & Form1.ListView2.Items.Item(Form1.ListView2.SelectedIndices(0)).Text
-        }
-        myItemCode.LoadCode()
-        Dim 压缩包内文件夹计数 As Integer = SMUI.Windows.Core.SharedFunction.SearchFolderWithoutSub(Path1.临时自动解压路径).Count
-        Dim CDCD计数 As Integer = 0
-        For i = 0 To myItemCode.Task_Code.Count - 1
-            Select Case myItemCode.Task_Code(i)
-                Case SMUI.Windows.Core.Objects.CDTask.CDCD
-                    CDCD计数 += 1
-                    If My.Computer.FileSystem.DirectoryExists(Path1.临时自动解压路径 & "\" & myItemCode.Task_Parameter1(i)) = False Then
-                        评估不通过操作()
-                        添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A1"), Color1.黄色)
-                        Exit Sub
-                    End If
-                    If My.Computer.FileSystem.FileExists(Path1.临时自动解压路径 & "\" & myItemCode.Task_Parameter1(i) & "\manifest.json") = False Then
-                        评估不通过操作()
-                        添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A2"), Color1.黄色)
-                        Exit Sub
-                    End If
-                Case SMUI.Windows.Core.Objects.CDTask.CDGCD, SMUI.Windows.Core.Objects.CDTask.CDGCF, SMUI.Windows.Core.Objects.CDTask.CDGRF, SMUI.Windows.Core.Objects.CDTask.CDMAD, SMUI.Windows.Core.Objects.CDTask.CDVD, SMUI.Windows.Core.Objects.CDTask.CDF
-                    评估不通过操作()
-                    添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A3"), Color1.黄色)
-                    Exit Sub
-            End Select
-        Next
-        If 压缩包内文件夹计数 <> CDCD计数 Then
-            评估不通过操作()
-            添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A4"), Color1.黄色)
-            Exit Sub
+
+        Dim 解压出的文件夹列表 As String() = SMUI.Windows.Core.SharedFunction.SearchFolderWithoutSub(Path1.临时自动解压路径)
+        Dim 单层套娃兼容后_解压出的文件夹列表 As String() = {}
+        Dim 实际解压路径算起位置 As String = ""
+        If 解压出的文件夹列表.Count = 1 And My.Computer.FileSystem.FileExists(Path1.临时自动解压路径 & "\" & 解压出的文件夹列表(0) & "\manifest.json") = False Then
+            单层套娃兼容后_解压出的文件夹列表 = SMUI.Windows.Core.SharedFunction.SearchFolderWithoutSub(Path1.临时自动解压路径 & "\" & 解压出的文件夹列表(0))
+            实际解压路径算起位置 = Path1.临时自动解压路径 & "\" & 解压出的文件夹列表(0)
+        Else
+            实际解压路径算起位置 = Path1.临时自动解压路径
         End If
-        Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S_10_1")
-        Application.DoEvents()
-        '开始更新数据
-        For i = 0 To myItemCode.Task_Code.Count - 1
-            Select Case myItemCode.Task_Code(i)
-                Case SMUI.Windows.Core.Objects.CDTask.CDCD
-                    If My.Computer.FileSystem.DirectoryExists(myItemCode.ItemPath & "\" & myItemCode.Task_Parameter1(i)) = True Then
-                        My.Computer.FileSystem.DeleteDirectory(myItemCode.ItemPath & "\" & myItemCode.Task_Parameter1(i), FileIO.DeleteDirectoryOption.DeleteAllContents)
+
+        Select Case ST1.当前正在进行直接更新的操作类型
+            Case 在线更新操作类型.更新项
+
+                Dim myItemCode As New SMUI.Windows.Core.TaskQueue With {.ItemPath = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Form1.ListView2.SelectedIndices(0)) & "\" & Form1.ListView2.Items.Item(Form1.ListView2.SelectedIndices(0)).Text}
+                myItemCode.LoadCode()
+
+                Dim 准备处理的文件夹列表 As String() = {}
+                If 单层套娃兼容后_解压出的文件夹列表.Count = 0 Then
+                    准备处理的文件夹列表 = 解压出的文件夹列表
+                Else
+                    准备处理的文件夹列表 = 单层套娃兼容后_解压出的文件夹列表
+                End If
+                Dim CDCD计数 As Integer = 0
+                For i = 0 To myItemCode.Task_Code.Count - 1
+                    Select Case myItemCode.Task_Code(i)
+                        Case SMUI.Windows.Core.Objects.CDTask.CDCD
+                            CDCD计数 += 1
+                            If My.Computer.FileSystem.DirectoryExists(实际解压路径算起位置 & "\" & myItemCode.Task_Parameter1(i)) = False Then
+                                更新项评估不通过操作()
+                                添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A1"), Color1.黄色)
+                                Exit Sub
+                            End If
+                            If My.Computer.FileSystem.FileExists(实际解压路径算起位置 & "\" & myItemCode.Task_Parameter1(i) & "\manifest.json") = False Then
+                                更新项评估不通过操作()
+                                添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A2"), Color1.黄色)
+                                Exit Sub
+                            End If
+                        Case SMUI.Windows.Core.Objects.CDTask.CDGCD, SMUI.Windows.Core.Objects.CDTask.CDGCF, SMUI.Windows.Core.Objects.CDTask.CDGRF, SMUI.Windows.Core.Objects.CDTask.CDMAD, SMUI.Windows.Core.Objects.CDTask.CDVD, SMUI.Windows.Core.Objects.CDTask.CDF
+                            更新项评估不通过操作()
+                            添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A3"), Color1.黄色)
+                            Exit Sub
+                    End Select
+                Next
+                If CDCD计数 <> 准备处理的文件夹列表.Count Then
+                    更新项评估不通过操作()
+                    添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A4"), Color1.黄色)
+                    Exit Sub
+                End If
+                Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S_10_1")
+                Application.DoEvents()
+
+                For i = 0 To myItemCode.Task_Code.Count - 1
+                    Select Case myItemCode.Task_Code(i)
+                        Case SMUI.Windows.Core.Objects.CDTask.CDCD
+                            If My.Computer.FileSystem.DirectoryExists(myItemCode.ItemPath & "\" & myItemCode.Task_Parameter1(i)) = True Then
+                                My.Computer.FileSystem.DeleteDirectory(myItemCode.ItemPath & "\" & myItemCode.Task_Parameter1(i), FileIO.DeleteDirectoryOption.DeleteAllContents)
+                            End If
+                            My.Computer.FileSystem.CopyDirectory(实际解压路径算起位置 & "\" & myItemCode.Task_Parameter1(i), myItemCode.ItemPath & "\" & myItemCode.Task_Parameter1(i), True)
+                    End Select
+                Next
+                Dim msg1 As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S11"))
+                msg1.ShowDialog(Me)
+
+
+            Case 在线更新操作类型.新建项
+
+                Dim 自动编写的安装命令 As String = ""
+                Dim 准备处理的文件夹列表 As String() = {}
+                If 单层套娃兼容后_解压出的文件夹列表.Count = 0 Then
+                    准备处理的文件夹列表 = 解压出的文件夹列表
+                Else
+                    准备处理的文件夹列表 = 单层套娃兼容后_解压出的文件夹列表
+                End If
+
+                Dim 新建项完整路径 As String = 检查并返回当前可用子库路径(False) & "\" & ST1.当前正在进行新建项的目标分类 & "\" & ST1.当前正在进行新建项的项名称
+                If My.Computer.FileSystem.DirectoryExists(新建项完整路径) = False Then
+                    My.Computer.FileSystem.CreateDirectory(新建项完整路径)
+                End If
+
+                Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S17")
+                Application.DoEvents()
+
+                For i = 0 To 准备处理的文件夹列表.Count - 1
+                    My.Computer.FileSystem.MoveDirectory(实际解压路径算起位置 & "\" & 准备处理的文件夹列表(i), 新建项完整路径 & "\" & 准备处理的文件夹列表(i), True)
+                Next
+                Dim 文件 As System.IO.FileInfo
+                Dim 目录 As New System.IO.DirectoryInfo(实际解压路径算起位置)
+                For Each 文件 In 目录.GetFiles("*.*")
+                    My.Computer.FileSystem.MoveFile(实际解压路径算起位置 & "\" & 文件.Name, 新建项完整路径 & "\" & 文件.Name, True)
+                Next
+
+
+                If 准备处理的文件夹列表.Count = 0 Then
+                    新建项评估不通过操作()
+                    添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A8"), Color1.黄色)
+                    Exit Sub
+                End If
+                If My.Computer.FileSystem.FileExists(新建项完整路径 & "\manifest.json") = True Then
+                    新建项评估不通过操作()
+                    添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A9"), Color1.黄色)
+                    Exit Sub
+                End If
+                For i = 0 To 准备处理的文件夹列表.Count - 1
+                    If My.Computer.FileSystem.FileExists(新建项完整路径 & "\" & 准备处理的文件夹列表(i) & "\manifest.json") = False Then
+                        新建项评估不通过操作()
+                        添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A7"), Color1.黄色)
+                        Exit Sub
+                    Else
+                        If 自动编写的安装命令 = "" Then
+                            自动编写的安装命令 &= "CDCD" & vbNewLine & 准备处理的文件夹列表(i)
+                        Else
+                            自动编写的安装命令 &= vbNewLine & "CDCD" & vbNewLine & 准备处理的文件夹列表(i)
+                        End If
                     End If
-                    My.Computer.FileSystem.CopyDirectory(Path1.临时自动解压路径 & "\" & myItemCode.Task_Parameter1(i), myItemCode.ItemPath & "\" & myItemCode.Task_Parameter1(i), True)
-            End Select
-        Next
-        Dim msg1 As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S11"))
-        msg1.ShowDialog(Me)
+                Next
+
+                My.Computer.FileSystem.WriteAllText(新建项完整路径 & "\Code", 自动编写的安装命令, False, System.Text.Encoding.UTF8)
+                Dim msg1 As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S15"))
+                msg1.ShowDialog(Me)
+
+        End Select
+
         If My.Computer.FileSystem.DirectoryExists(Path1.临时自动解压路径) = True Then
             Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S14")
             Application.DoEvents()
@@ -337,11 +418,30 @@ Public Class Form直接联网更新单个项
         Me.Close()
     End Sub
 
-    Sub 评估不通过操作()
+    Sub 更新项评估不通过操作()
         Dim msg1 As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S12"), 150, 500)
         msg1.ShowDialog(Me)
         Process.Start(Path1.临时自动解压路径)
         Form1.配置部署ToolStripMenuItem.PerformClick()
+        Me.Close()
+    End Sub
+
+    Sub 新建项评估不通过操作()
+        Dim msg1 As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S12"), 150, 500)
+        msg1.ShowDialog(Me)
+        Process.Start(Path1.临时自动解压路径)
+        For i = 0 To Form1.ListView3.Items.Count - 1
+            If Form1.ListView3.Items.Item(i).Text = ST1.当前正在进行新建项的目标分类 And Form1.ListView3.Items.Item(i).SubItems(1).Text = ST1.当前正在进行新建项的项名称 Then
+                GoTo jx1
+            End If
+        Next
+        Form1.ListView3.Items.Add(ST1.当前正在进行新建项的目标分类)
+        Form1.ListView3.Items.Item(Form1.ListView3.Items.Count - 1).SubItems.Add(ST1.当前正在进行新建项的项名称)
+jx1:
+        If Form1.ListView3.SelectedItems.Count = 0 Then Form1.ListView3.Items.Item(Form1.ListView3.Items.Count - 1).Selected = True
+        If Form1.ListView3.Items.Count = 1 Then
+            Form1.模拟按下配置队列选项卡切换按钮()
+        End If
         Me.Close()
     End Sub
 
@@ -358,4 +458,6 @@ Public Class Form直接联网更新单个项
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
+
+
 End Class

@@ -162,7 +162,7 @@ Module 管理模组
 
     Public Sub 刷新项列表数据()
         For i = 0 To Form1.ListView2.Items.Count - 1
-            Dim itempath As String = 检查并返回当前可用子库路径() & "\" & 当前项列表中项的分类集合(i) & "\" & Form1.ListView2.Items.Item(i).Text
+            Dim itempath As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(i) & "\" & Form1.ListView2.Items.Item(i).Text
             Dim a As New SMUI.Windows.Core.ItemInfoReader
             Dim ct As New SMUI.Windows.Core.Objects.ItemCalculateType With {
                     .InstallStatus = True,
@@ -517,15 +517,16 @@ Module 管理模组
             AddHandler a.Items.Add(获取动态多语言文本("data/DynamicText/DirectOnlineUpdate")).Click,
                Sub(s, e)
                    ST1.当前正在进行更新的单个项的N网ID = Mid(x.Text, 8)
-                   显示模式窗体(Form直接联网更新单个项, Form1)
+                   ST1.当前正在进行直接更新的操作类型 = 在线更新操作类型.更新项
+                   显示窗体(New Form直接联网更新单个项, Form1)
                End Sub
         Next
 
-        If 付费功能解锁.我知道你会看这个毕竟这是开源软件藏那么深没有必要但请你遵守服务条款禁止传播禁止私自传播解锁程序因为这是付费功能.解锁自由输入直接更新项功能的NEXUSID = True Then
+        If 付费功能解锁.解锁自由输入直接更新项功能的NEXUSID = True Then
             Dim x As New ToolStripMenuItem With {
                 .Image = My.Resources.NEXUS
             }
-            If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" Then
+            If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" Or ST1.是否正在使用自定义语言包 = True Then
                 x.Text = "自由输入 ID 进行更新"
             Else
                 x.Text = "Enter ID to update"
@@ -535,7 +536,7 @@ Module 管理模组
                 Sub(s, e)
                     If Form直接联网更新单个项.Visible = True Then Exit Sub
                     Dim sss1 As String = ""
-                    If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" Then
+                    If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" Or ST1.是否正在使用自定义语言包 = True Then
                         sss1 = "输入你要进行访问的 星露谷 NEXUS 模组的页面 ID"
                         x.Text = "自由输入 ID 进行更新"
                     Else
@@ -546,6 +547,7 @@ Module 管理模组
                     Dim m2 As String = m1.ShowDialog(Form1)
                     If m2 = "" Or m2 Is Nothing Then Exit Sub
                     ST1.当前正在进行更新的单个项的N网ID = m2
+                    ST1.当前正在进行直接更新的操作类型 = 在线更新操作类型.更新项
                     显示窗体(Form直接联网更新单个项, Form1)
                 End Sub
         End If

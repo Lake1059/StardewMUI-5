@@ -41,9 +41,9 @@ Module 界面控制
         Form1.Label分类计数显示.Parent = Form1.Label子库分类菜单
         Form1.Label预览图计数显示.Parent = Form1.Label预览图菜单
 
-        Application.DoEvents()
+        'Application.DoEvents()
         Form1.ListView1.Width = Form1.Panel9.Width + ST1.系统滚动条宽度
-        Form1.ListView2.Width = Form1.Panel11.Width + ST1.系统滚动条宽度
+        Form1.ListView2.Width = Form1.Panel11.Width - 5 '+ ST1.系统滚动条宽度
 
         Form1.RichTextBox1.Width = Form1.Panel10.Width + ST1.系统滚动条宽度
         Form1.RichTextBox1.Height = Form1.Label1.Height
@@ -154,12 +154,12 @@ Module 界面控制
                 Form1.ColumnHeader4.Width = 150
                 Form1.ColumnHeader5.Width = 150
                 Form1.ColumnHeader3.Width = 100
-                Form1.ColumnHeader2.Width = Form1.ListView2.Parent.Width - 400 - 10
+                Form1.ColumnHeader2.Width = Form1.ListView2.Parent.Width - 400 - 10 - ST1.系统滚动条宽度
             Else
                 Form1.ColumnHeader5.Width = 0
                 Form1.ColumnHeader4.Width = 150
                 Form1.ColumnHeader3.Width = 100
-                Form1.ColumnHeader2.Width = Form1.ListView2.Parent.Width - 250 - 10
+                Form1.ColumnHeader2.Width = Form1.ListView2.Parent.Width - 250 - 10 - ST1.系统滚动条宽度
             End If
         Else
             If 切换 = True Then
@@ -167,12 +167,12 @@ Module 界面控制
                 Form1.ColumnHeader5.Width = 0
                 Form1.ColumnHeader4.Width = 150
                 Form1.ColumnHeader3.Width = 100
-                Form1.ColumnHeader2.Width = Form1.ListView2.Parent.Width - 250 - 10
+                Form1.ColumnHeader2.Width = Form1.ListView2.Parent.Width - 250 - 10 - ST1.系统滚动条宽度
             Else
                 Form1.ColumnHeader4.Width = 150
                 Form1.ColumnHeader5.Width = 150
                 Form1.ColumnHeader3.Width = 100
-                Form1.ColumnHeader2.Width = Form1.ListView2.Parent.Width - 400 - 10
+                Form1.ColumnHeader2.Width = Form1.ListView2.Parent.Width - 400 - 10 - ST1.系统滚动条宽度
             End If
         End If
     End Sub

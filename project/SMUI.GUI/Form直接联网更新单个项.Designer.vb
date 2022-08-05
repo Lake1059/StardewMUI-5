@@ -37,7 +37,6 @@ Partial Class Form直接联网更新单个项
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorker3 = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker4 = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker5 = New System.ComponentModel.BackgroundWorker()
@@ -173,9 +172,6 @@ Partial Class Form直接联网更新单个项
         '
         Me.Timer1.Interval = 1000
         '
-        'Timer2
-        '
-        '
         'BackgroundWorker3
         '
         Me.BackgroundWorker3.WorkerReportsProgress = True
@@ -226,7 +222,6 @@ Partial Class Form直接联网更新单个项
     Friend WithEvents Label2 As Label
     Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Timer2 As Timer
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents BackgroundWorker3 As System.ComponentModel.BackgroundWorker

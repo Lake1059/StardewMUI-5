@@ -2,6 +2,11 @@
 
 Public Class Class1
 
+    Enum 在线更新操作类型
+        更新项 = 1
+        新建项 = 2
+    End Enum
+
     ''' <summary>
     ''' 包含语言文件数据
     ''' </summary>
@@ -11,7 +16,7 @@ Public Class Class1
     ''' </summary>
     Public Shared ReadOnly xml_Settings As New XmlDocument
     ''' <summary>
-    ''' 表示最新版本的空设置文件，禁止在运行时修改
+    ''' 表示最新版本的空设置文件，禁止在运行时修改内容
     ''' </summary>
     Public Shared ReadOnly xml_Settings_Lock As New XmlDocument
 
@@ -39,6 +44,11 @@ Public Class Class1
         Public Shared NEXUS登录状态 As String = ""
 
         Public Shared 当前正在进行更新的单个项的N网ID As Integer = 0
+
+        Public Shared 当前正在进行直接更新的操作类型 As 在线更新操作类型
+        Public Shared 当前正在进行新建项的项名称 As String = ""
+        Public Shared 当前正在进行新建项的目标分类 As String = ""
+
         Public Shared 用于内置谷歌浏览器_当前正在更新模组 As Boolean = False
         Public Shared 用于内置谷歌浏览器_获取到的key As String = ""
         Public Shared 用于内置谷歌浏览器_获取到的expires As String = ""

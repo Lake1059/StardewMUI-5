@@ -186,6 +186,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form下载并新建项输入对话框.Designer.vb">
+      <DependentUpon>Form下载并新建项输入对话框.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form下载并新建项输入对话框.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form依赖项表.Designer.vb">
       <DependentUpon>Form依赖项表.vb</DependentUpon>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form下载并新建项输入对话框.resx">
+      <DependentUpon>Form下载并新建项输入对话框.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form依赖项表.resx">
       <DependentUpon>Form依赖项表.vb</DependentUpon>

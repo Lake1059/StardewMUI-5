@@ -190,7 +190,8 @@
 	</MainWindow >
 
 	<DirectOnlineUpdateWindow>
-		<Title chs="直接联网更新单个项">Update a item directly online</Title>		
+		<Title chs="直接联网更新单个项">Update a item directly online</Title>
+		<Title2 chs="直接联网新建单个项">Create a item directly online</Title2>
 		<S1 chs="正在连接到 NEXUS 获取文件列表">Connecting to NEXUS to get file list ...</S1>
 		<S2 chs="点击文件名称来获取下载地址">Click the file name to get the download address.</S2>
 		<S3 chs="正在连接到 NEXUS 获取文件下载地址">Obtaining file download link ...</S3>
@@ -206,20 +207,56 @@
 		<S12 chs="存在验证不通过的内容，为了避免意外情况不能自动完成，请在配置队列中手动操作，程序将自动打开解压目录。你还可以在调试窗口中查看具体的情况">There is content that does not pass the verification. In order to avoid unexpected situations, it cannot be completed automatically. Please manually operate in the deploy queue, and the program will automatically open the decompression directory. You can also see the specific situation in the debug window.</S12>
 		<S13 chs="正在等待浏览器完成页面加载">Waiting for the browser to finish loading the page ...</S13>
 		<S14 chs="正在删除临时解压的数据，请稍后">Deleting temporarily decompressed data, please wait ...</S14>
+		<S15 chs="已完成自动新建项">Auto Creat New Item Completed.</S15>
+		<S16 chs="解压出的内容不能自动编写安装命令，请手动编写">The decompressed content cannot automatically write the installation command, please write it manually.</S16>
+		<S17 chs="正在转移解压出的内容到新的项">Moving unpacked content to new item.</S17>
+		
 		<A1 chs="文件夹名称不匹配">Folder name does not match.</A1>
 		<A2 chs="清单文件放置目录不正确">The manifest file is placed in the wrong path.</A2>
 		<A3 chs="暂不支持非 CDCD 命令的自动更新">Automatic update of non-CDCD commands is not supported yet.</A3>
 		<A4 chs="文件夹数量和 CDCD 命令数量不匹配">The number of folders does not match the number of CDCD commands.</A4>
 		<A5 chs="当前使用会员下载">Using Premium download</A5>
 		<A6 chs="当前使用免费下载">Using free download</A6>
+		<A7 chs="存在多重套娃或者非标准 SMAPI 模组内容">There are multiple subdirectory loops or non-standard SMAPI mods.</A7>
+		<A8 chs="解压出的内容不包含文件夹或文件夹是空的">The extracted content does not contain a folder or the folder is empty.</A8>
+		<A9 chs="检测到 manifest.json 直接存在于解压出的根位置">Detected that manifest.json exists directly in the unzipped root location.</A9>
+		
+		
 		<Chromium.1 chs="正在等待页面完成加载 ...">Waiting for page to finish loading...</Chromium.1>
 		<!--用不着，别翻译   no use, don't translate-->
 		<!--<Chromium.2 chs="成功拿到参数，自动关闭页面">Successfully get the parameters, automatically close the page.</Chromium.2>-->
-		<Chromium.3 chs="无法获取到参数，请关闭此页面重试，顺便请确保打开的模组页面也是已经登录状态，如果不是就再点一下登录，必须登录了才会有参数">The specified data has not been obtained and cannot continue. Make sure that the opened mod page is also logged in. If not, click to log in again. You must log in to have parameters.</Chromium.3>
+		<Chromium.3 chs="无法获取到参数，请在顶部菜单中恢复任务并刷新重试，顺便请确保打开的模组页面也是已经登录状态，如果不是就再点一下登录，必须登录了才会有参数">Unable to get parameters, please resume the task in the top menu and refresh and try again. Make sure that the opened mod page is also logged in. If not, click to log in again. You must log in to have parameters.</Chromium.3>
+		<Chromium.4 chs="直接更新项流程的参数检测程序已重新挂起，请刷新页面或者继续等待">The parameter detector of the direct update item process has been reset, please refresh the page or continue to wait</Chromium.4>
 		
+		
+	
 		
 	</DirectOnlineUpdateWindow>
+	<ChromiumWindow>	
+		<M1 chs="中断的任务继续选项">Continue Task</M1>
+		<M2 chs="NEXUS 账户页">NEXUS Account</M2>
+		<M3 chs="刷新">Refresh</M3>
+		<M4 chs="← 后退">← Back</M4>
+		<M5 chs="前进 →">Forward →</M5>
+		<M6 chs="停止 ❌">Stop ❌</M6>
+		<M7 chs="转到地址：">Go Link:</M7>	
+		<A1 chs="重置直接更新项流程状态">Reset direct update item process state</A1>
+		<!--中文梗，别乱翻译，翻译第一句就行了，后边的别翻译-->
+		<K1 chs="没有检测到谷歌浏览器组件，请正确安装后再试。造成这个问题的原因目前记录到的有：不看新闻列表的，不看维基的，不看我B站专栏的，选择性失明的，选择性不识字的，跟运行库搞混的，没正确安装到SMUI的安装目录的，还有瞬间失忆的，瞬间不识字的，觉得看不懂就觉得不重要的。我郑重声明：再来问这个问题的统一上交250元智商税后再解答。">Chrome component not detected, please install it correctly and try again.</K1>
 		
+	</ChromiumWindow>
+
+
+	<DownloadAndCreateItemWindow>
+		<Title chs="下载并新建项">Download and create new item</Title>
+		<A1 chs="新建项名称">New Item Name</A1>
+		<A2 chs="目标分类">Target Category</A2>
+		<A3 chs="访问 NEXUS 页面 ID">NEXUS Page ID</A3>
+		<A4 chs="确认">GO</A4>
+		
+	</DownloadAndCreateItemWindow>
+	
+	
 	<SettingsWindow>
 		<Title chs="设置">Settings</Title>
 		<A1 chs="   设置窗口打开时，你仍旧可以操作其他窗口/crlf/   在左侧列表中选择一项来显示该类的设置项">   When the settings window is open, you can still operate other windows./crlf/   Select an item in the list on the left to display the settings for that class.</A1>
@@ -266,6 +303,24 @@
 		<A40 chs="在桌面创建快捷方式">Create a shortcut on the desktop</A40>
 	</SettingsWindow>
 
+	<DependenciesListWindow>
+		<Title chs="依赖项表">Dependencies List</Title>
+		<A1 chs=" 依赖表菜单"> Dependencies Menu</A1>
+		<A2 chs="刷新" width="70">Refresh</A2>
+		<A3 chs="检查" width="60">Check</A3>
+		<A4 chs="复制此项的名称">Copy name</A4>
+		<A5 chs="复制整个列表">Copy full list</A5>
+		<S1 chs="内容包">Content Pack</S1>
+		<S2 chs="必须">Require</S2>
+		<S3 chs="可选">Optional</S3>
+		<S4 chs="扫描中...">Scanning...</S4>
+		<S5 chs="读取中...">Loading...</S5>
+		<S6 chs="已安装">Installed</S6>
+		<S7 chs="无">UnInstalled</S7>
+		<S8 chs=""></S8>
+	</DependenciesListWindow>
+	
+	
 	<ExportWindow>
 		<A1 chs="选择保存路径">Choose save path</A1>
 		<A2 chs="设置密码">Set password</A2>

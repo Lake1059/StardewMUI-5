@@ -35,7 +35,7 @@ Public Class Form1
         Me.Panel配置队列左上面板.Width = Me.Panel配置队列左上面板.Parent.Width * 0.5
         Me.Panel配置队列左下面板.Width = Me.Panel配置队列左下面板.Parent.Width * 0.5
         Me.Panel配置队列上方面板.Height = Me.Panel配置队列.Height * 0.5 - Me.Panel配置队列顶部面板.Height - 30
-        Me.ListView2.Width = Me.ListView2.Parent.Width + ST1.系统滚动条宽度
+        Me.ListView2.Width = Me.ListView2.Parent.Width - 5 '+ ST1.系统滚动条宽度
         调整项列表列宽()
         调整配置队列选项卡界面()
         Application.DoEvents()
@@ -47,6 +47,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+
         If IO.Path.GetFileName(IO.Path.GetDirectoryName(Application.ExecutablePath)).ToLower = "debug" Then
             添加调试文本(获取动态多语言文本("data/DynamicText/Sever.10"), Color1.黄色)
         Else
@@ -57,8 +58,7 @@ Public Class Form1
         SYS1.检查用户身份组()
         启动后自动登录NEXUSAPI()
         If xml_Settings.SelectSingleNode("data/AutoGetNews").InnerText = "True" Then
-            Dim e1 As New MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0)
-            Label新闻公告_MouseClick(Label新闻公告, e1)
+            Label新闻公告_MouseClick(Label新闻公告, New MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0))
         End If
 
         Me.RichTextBox3.BorderStyle = BorderStyle.None
@@ -77,6 +77,8 @@ Public Class Form1
         调整项列表列宽()
         '=============================================
         扫描插件并加载()
+        Application.DoEvents()
+        If 付费功能解锁.解锁直接从N网下载并新建项的功能 = True Then Me.下载并新建项ToolStripMenuItem.Visible = True
         '=============================================
         DeveloperEvent.Raise_StartLoadedEvent()
     End Sub
@@ -166,7 +168,7 @@ Public Class Form1
         切换主选项卡按钮状态(2)
         隐藏所有主选项卡()
         Me.Panel管理模组.Visible = True
-        ListView2.Width = Panel11.Width + ST1.系统滚动条宽度
+        Me.ListView2.Width = Me.ListView2.Parent.Width - 5
         调整项列表列宽()
     End Sub
 
@@ -175,7 +177,10 @@ Public Class Form1
         隐藏所有主选项卡()
         Me.Panel配置队列.Visible = True
         If ST1.是否已经初始化了配置队列选项卡界面 = False Then 调整配置队列选项卡界面()
+    End Sub
 
+    Public Sub 模拟按下配置队列选项卡切换按钮()
+        Label配置队列_Click(Label配置队列, New EventArgs)
     End Sub
 
 #End Region
@@ -642,6 +647,10 @@ Line1:
             End If
         End If
         Me.Label项列表计数显示.Text = Me.ListView2.Items.Count
+    End Sub
+
+    Private Sub 下载并新建项ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 下载并新建项ToolStripMenuItem.Click
+        显示模式窗体(Form下载并新建项输入对话框, Me)
     End Sub
 
     Private Sub 移动项ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 移动项ToolStripMenuItem.Click
@@ -1734,6 +1743,5 @@ nextline:
 #End Region
 
     ReadOnly 分割线 As Integer = 0
-
 
 End Class
