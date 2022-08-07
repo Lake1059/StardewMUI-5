@@ -1661,6 +1661,9 @@ jx:
         If FileIO.FileSystem.DirectoryExists(Path1.SMAPI日志文件夹路径) = True Then Process.Start(Path1.SMAPI日志文件夹路径)
     End Sub
 
+    Private Sub 存储管理ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 存储管理ToolStripMenuItem.Click
+        显示窗体(Form存储管理, Me)
+    End Sub
 
 #End Region
 
@@ -1684,64 +1687,7 @@ jx:
 
 #End Region
 
-#Region "项右键菜单编辑器功能"
-
-    Private Sub 重命名项ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 重命名项ToolStripMenuItem.Click
-        If Me.ListView2.SelectedItems.Count <> 1 Then Exit Sub
-        For i = 0 To Me.ListView3.Items.Count - 1
-            If 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) = Me.ListView3.Items.Item(i).Text Then
-                If Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text = Me.ListView3.Items.Item(i).SubItems(1).Text Then
-                    MsgBox(获取动态多语言文本("data/DynamicText/ManageMod.33"), MsgBoxStyle.Exclamation)
-                    Exit Sub
-                End If
-            End If
-        Next
-
-        Dim a As New InputTextDialog("", 获取动态多语言文本("data/DynamicText/ManageMod.34") & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text, Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text)
-nextline:
-        Dim b As String = a.ShowDialog(Me)
-        If b = "" Then Exit Sub
-        Dim c As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\"
-        If My.Computer.FileSystem.DirectoryExists(c & b) = True Then
-            MsgBox(获取动态多语言文本("data/DynamicText/ManageMod.6"), MsgBoxStyle.Exclamation)
-            GoTo nextline
-        End If
-        My.Computer.FileSystem.RenameDirectory(检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text, b)
-        Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text = b
-    End Sub
-
-    Private Sub 用VisualStudioCode打开ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 用VisualStudioCode打开ToolStripMenuItem.Click
-        If xml_Settings.SelectSingleNode("data/VisualStudioCodePath").InnerText = "" Then Exit Sub
-        Shell("""" & xml_Settings.SelectSingleNode("data/VisualStudioCodePath").InnerText & """" & " " & """" & 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
-    End Sub
-
-    Private Sub 用VisualStudio打开ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 用VisualStudio打开ToolStripMenuItem.Click
-        If xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText = "" Then Exit Sub
-        Shell("""" & xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText & """" & " " & """" & 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
-    End Sub
-
-    Private Sub 用Notepad打开ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 用Notepad打开ToolStripMenuItem.Click
-        If xml_Settings.SelectSingleNode("data/NotepadPath").InnerText = "" Then Exit Sub
-        Shell("""" & xml_Settings.SelectSingleNode("data/NotepadPath").InnerText & """" & " " & """" & 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
-    End Sub
-
-    Private Sub 可视化清单编辑器ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 可视化清单编辑器ToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub 简单编辑ConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 简单编辑ConfigToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub 清除Config缓存ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 清除Config缓存ToolStripMenuItem1.Click
-        Dim a As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & "\.config"
-        If My.Computer.FileSystem.DirectoryExists(a) = False Then Exit Sub
-        My.Computer.FileSystem.DeleteDirectory(a, FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin)
-        MsgBox("Finish.")
-    End Sub
-
-#End Region
-
     ReadOnly 分割线 As Integer = 0
+
 
 End Class

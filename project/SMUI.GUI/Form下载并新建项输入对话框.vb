@@ -47,8 +47,9 @@ Public Class Form下载并新建项输入对话框
         ST1.当前正在进行新建项的目标分类 = Me.DarkComboBox1.Text
         ST1.当前正在进行直接更新的操作类型 = 在线更新操作类型.新建项
         ST1.当前正在进行更新的单个项的N网ID = Me.DarkTextBox2.Text
-        显示窗体(Form直接联网更新单个项, Form1)
         Me.Close()
+        显示模式窗体(Form直接联网更新单个项, Form1)
+
     End Sub
 
 

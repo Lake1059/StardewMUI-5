@@ -90,6 +90,7 @@ Module 多语言
         Form1.Label项菜单.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.21").InnerText
         Form1.Label项菜单.Width = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.21").Attributes.GetNamedItem("width").InnerText
         Form1.新建项ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.25").InnerText
+        Form1.下载并新建项ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.25_1").InnerText
         Form1.移动项ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.26").InnerText
         Form1.删除项ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.27").InnerText
         Form1.导入项ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.28").InnerText

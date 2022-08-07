@@ -518,7 +518,7 @@ Module 管理模组
                Sub(s, e)
                    ST1.当前正在进行更新的单个项的N网ID = Mid(x.Text, 8)
                    ST1.当前正在进行直接更新的操作类型 = 在线更新操作类型.更新项
-                   显示窗体(New Form直接联网更新单个项, Form1)
+                   显示模式窗体(Form直接联网更新单个项, Form1)
                End Sub
         Next
 
@@ -548,7 +548,7 @@ Module 管理模组
                     If m2 = "" Or m2 Is Nothing Then Exit Sub
                     ST1.当前正在进行更新的单个项的N网ID = m2
                     ST1.当前正在进行直接更新的操作类型 = 在线更新操作类型.更新项
-                    显示窗体(Form直接联网更新单个项, Form1)
+                    显示模式窗体(Form直接联网更新单个项, Form1)
                 End Sub
         End If
 

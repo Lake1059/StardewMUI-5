@@ -589,4 +589,8 @@ R1:
         If a.FileName = "" Then Exit Sub
         TextBox13.Text = a.FileName
     End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Process.Start("https://stardewmui.fandom.com/wiki/Third-party_language_file_publishing_page_address")
+    End Sub
 End Class

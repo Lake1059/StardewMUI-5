@@ -30,9 +30,9 @@ Public Class Form直接联网更新单个项
     Private Sub Form直接联网更新单个项_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S1")
         If xml_Settings.SelectSingleNode("data/LastUsed_DirectDownloadItemUpdateUserMember").InnerText = "True" Then
-            Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6")
-        Else
             Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5")
+        Else
+            Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6")
         End If
 
         Me.Panel2.Controls.Clear()
@@ -159,11 +159,12 @@ Public Class Form直接联网更新单个项
        }
 
     Private Sub BackgroundWorker2_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker2.DoWork
-        If Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5") Then
-            e.Result = b.StartGet("stardewvalley", ST1.当前正在进行更新的单个项的N网ID, 选定下载文件的ID)
-        Else
-            e.Result = b.StartGet("stardewvalley", ST1.当前正在进行更新的单个项的N网ID, 选定下载文件的ID, ST1.用于内置谷歌浏览器_获取到的key, ST1.用于内置谷歌浏览器_获取到的expires)
-        End If
+        Select Case xml_Settings.SelectSingleNode("data/LastUsed_DirectDownloadItemUpdateUserMember").InnerText
+            Case "True"
+                e.Result = b.StartGet("stardewvalley", ST1.当前正在进行更新的单个项的N网ID, 选定下载文件的ID)
+            Case "False"
+                e.Result = b.StartGet("stardewvalley", ST1.当前正在进行更新的单个项的N网ID, 选定下载文件的ID, ST1.用于内置谷歌浏览器_获取到的key, ST1.用于内置谷歌浏览器_获取到的expires)
+        End Select
     End Sub
 
     Private Sub BackgroundWorker2_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker2.RunWorkerCompleted
@@ -190,13 +191,11 @@ Public Class Form直接联网更新单个项
                 My.Computer.FileSystem.CreateDirectory(Path1.临时自动下载路径)
             End If
             保存位置 = Path1.临时自动下载路径 & "\" & ST1.当前正在进行更新的单个项的N网ID & "-" & 选定下载的文件 & "-" & 选定下载的文件版本 & ".zip"
-            '保存位置 = Replace(保存位置, ".", "_")
             Me.Panel2.Visible = False
             Me.Panel3.Visible = True
             调整下载界面内容()
             Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S8")
             Me.Timer1.Enabled = True
-            'Me.Timer2.Enabled = True
             Me.BackgroundWorker3.RunWorkerAsync()
         Else
             Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S2")
@@ -446,16 +445,15 @@ jx1:
     End Sub
 
     Private Sub DarkButton1_Click(sender As Object, e As EventArgs) Handles DarkButton1.Click
-        If Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5") Then
-            Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6")
-            xml_Settings.SelectSingleNode("data/LastUsed_DirectDownloadItemUpdateUserMember").InnerText = "True"
-        Else
-            Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5")
-            xml_Settings.SelectSingleNode("data/LastUsed_DirectDownloadItemUpdateUserMember").InnerText = "False"
-        End If
-    End Sub
+        Select Case Me.DarkButton1.Text
+            Case 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5")
+                Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6")
+                xml_Settings.SelectSingleNode("data/LastUsed_DirectDownloadItemUpdateUserMember").InnerText = "False"
+            Case 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6")
+                Me.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A5")
+                xml_Settings.SelectSingleNode("data/LastUsed_DirectDownloadItemUpdateUserMember").InnerText = "True"
+        End Select
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
 

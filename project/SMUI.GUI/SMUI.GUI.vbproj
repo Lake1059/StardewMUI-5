@@ -198,6 +198,12 @@
     <Compile Include="Form依赖项表.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form存储管理.Designer.vb">
+      <DependentUpon>Form存储管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form存储管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form导入.Designer.vb">
       <DependentUpon>Form导入.vb</DependentUpon>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form依赖项表.resx">
       <DependentUpon>Form依赖项表.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form存储管理.resx">
+      <DependentUpon>Form存储管理.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form导入.resx">
       <DependentUpon>Form导入.vb</DependentUpon>

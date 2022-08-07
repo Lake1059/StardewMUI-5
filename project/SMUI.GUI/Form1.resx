@@ -123,6 +123,9 @@
   <metadata name="DCM8.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>822, 17</value>
   </metadata>
+  <metadata name="DCM9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>911, 17</value>
+  </metadata>
   <metadata name="ImageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>83, 17</value>
   </metadata>
@@ -131,7 +134,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACK
-        DQAAAk1TRnQBSQFMAgEBCAEAAWABBAFgAQQBAwEAARkBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAEM
+        DQAAAk1TRnQBSQFMAgEBCAEAAXABBAFwAQQBAwEAARkBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAEM
         AwABSwMAAQEBAAEgBQABEAEO/wD/AP8A/wD2AAEyAc0BMgH/ATIBzQEyAf8BMgHNATIB/wLmAQAB/wLm
         AQAB/wLmAQAC/wG/AQAC/wG/AQAC/wG/AQAB/wHuAYIB7gH/Ae4BggHuAf8B7gGCAe4B/wEyAc0BMgH/
         ATIBzQEyAf8BMgHNATIB/wLmAQAB/wLmAQAB/wLmAQAC/wG/AQAC/wG/AQAC/wG/AQAB/wHuAYIB7gH/
@@ -191,9 +194,6 @@
         AQEFAAEsAQEWAAP/ZQAB/wHwWgAB/wHwAgAB/wHwAgAB/wHwWgAB/wHwAgAB/wHwAgAL
 </value>
   </data>
-  <metadata name="DCM9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>911, 17</value>
-  </metadata>
   <metadata name="DCM3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>377, 17</value>
   </metadata>
@@ -226,9 +226,6 @@
   </metadata>
   <metadata name="ImageList2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>349, 55</value>
-  </metadata>
-  <metadata name="T1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
   </metadata>
   <metadata name="T1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
