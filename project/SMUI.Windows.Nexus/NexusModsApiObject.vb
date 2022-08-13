@@ -22,7 +22,7 @@
         The10UpdatedThisWeek = 2
         The10UpdatedThisMonth = 3
     End Enum
-
+    'NEXUS API (Windows NT; WOW64) from SMUI.Windows.Nexus by 1059 Stutudio
     Public Shared Property GlobalUserAgent As String = "NEXUS API (Windows NT; WOW64) from SMUI.Windows.Nexus by 1059 Stutudio"
 
 End Class

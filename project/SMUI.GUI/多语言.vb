@@ -57,7 +57,7 @@ Module 多语言
         Form1.星露谷存档文件夹ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ContentCenter.20").InnerText
         Form1.SMAPI日志文件夹ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ContentCenter.21").InnerText
         Form1.谷歌浏览器缓存目录ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ContentCenter.22").InnerText
-
+        Form1.存储管理ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ContentCenter.23").InnerText
 
         Form1.Label子库分类菜单.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.1").InnerText
         Form1.刷新分类ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.2").InnerText

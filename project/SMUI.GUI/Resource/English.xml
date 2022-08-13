@@ -55,7 +55,7 @@
 		<ContentCenter.20 chs="星露谷 存档 文件夹">Stardew Valley Save Folder</ContentCenter.20>
 		<ContentCenter.21 chs="SMAPI 日志 文件夹">SMAPI log folder</ContentCenter.21>
 		<ContentCenter.22 chs="谷歌浏览器缓存目录">Chromium cache path</ContentCenter.22>
-
+		<ContentCenter.23 chs="存储管理">Storage manage</ContentCenter.23>
 		
 		<!--You need to strictly control the length of this text-->
 		<!--Because it only has a display width of 200 pixels by default, or even less-->
@@ -88,6 +88,7 @@
 		<ManagePanel.24 chs="筛选" width="60">Filter</ManagePanel.24>
 		
 		<ManagePanel.25 chs="新建项">New item</ManagePanel.25>
+		<ManagePanel.25_1 chs="下载并新建项">Dowload, create new item</ManagePanel.25_1>
 		<ManagePanel.26 chs="移动项">Move item</ManagePanel.26>
 		<ManagePanel.27 chs="删除项">Delete item</ManagePanel.27>
 		<ManagePanel.28 chs="导入项">Import item</ManagePanel.28>
@@ -220,18 +221,14 @@
 		<A7 chs="存在多重套娃或者非标准 SMAPI 模组内容">There are multiple subdirectory loops or non-standard SMAPI mods.</A7>
 		<A8 chs="解压出的内容不包含文件夹或文件夹是空的">The extracted content does not contain a folder or the folder is empty.</A8>
 		<A9 chs="检测到 manifest.json 直接存在于解压出的根位置">Detected that manifest.json exists directly in the unzipped root location.</A9>
-		
-		
-		<Chromium.1 chs="正在等待页面完成加载 ...">Waiting for page to finish loading...</Chromium.1>
+			
+		<Chromium.1 chs="正在等待页面完成加载 ... 请不要点击下载按钮，程序将自动取出需要的参数">Waiting for page to finish loading...</Chromium.1>
 		<!--用不着，别翻译   no use, don't translate-->
 		<!--<Chromium.2 chs="成功拿到参数，自动关闭页面">Successfully get the parameters, automatically close the page.</Chromium.2>-->
 		<Chromium.3 chs="无法获取到参数，请在顶部菜单中恢复任务并刷新重试，顺便请确保打开的模组页面也是已经登录状态，如果不是就再点一下登录，必须登录了才会有参数">Unable to get parameters, please resume the task in the top menu and refresh and try again. Make sure that the opened mod page is also logged in. If not, click to log in again. You must log in to have parameters.</Chromium.3>
-		<Chromium.4 chs="直接更新项流程的参数检测程序已重新挂起，请刷新页面或者继续等待">The parameter detector of the direct update item process has been reset, please refresh the page or continue to wait</Chromium.4>
-		
-		
-	
-		
+		<Chromium.4 chs="直接更新项流程的参数检测程序已重新挂起，请刷新页面或者继续等待">The parameter detector of the direct update item process has been reset, please refresh the page or continue to wait</Chromium.4>	
 	</DirectOnlineUpdateWindow>
+	
 	<ChromiumWindow>	
 		<M1 chs="中断的任务继续选项">Continue Task</M1>
 		<M2 chs="NEXUS 账户页">NEXUS Account</M2>
@@ -242,8 +239,7 @@
 		<M7 chs="转到地址：">Go Link:</M7>	
 		<A1 chs="重置直接更新项流程状态">Reset direct update item process state</A1>
 		<!--中文梗，别乱翻译，翻译第一句就行了，后边的别翻译-->
-		<K1 chs="没有检测到谷歌浏览器组件，请正确安装后再试。造成这个问题的原因目前记录到的有：不看新闻列表的，不看维基的，不看我B站专栏的，选择性失明的，选择性不识字的，跟运行库搞混的，没正确安装到SMUI的安装目录的，还有瞬间失忆的，瞬间不识字的，觉得看不懂就觉得不重要的。我郑重声明：再来问这个问题的统一上交250元智商税后再解答。">Chrome component not detected, please install it correctly and try again.</K1>
-		
+		<K1 chs="没有检测到谷歌浏览器组件，请正确安装后再试。造成这个问题的原因目前记录到的有：不看新闻列表的，不看维基的，不看我B站专栏的，选择性失明的，选择性不识字的，跟运行库搞混的，没正确安装到SMUI的安装目录的，还有瞬间失忆的，瞬间不识字的，觉得看不懂就觉得不重要的。再来问这个问题的统一上交250元智商税后再解答。">Chrome component not detected, please install it correctly and try again.</K1>	
 	</ChromiumWindow>
 
 
@@ -252,9 +248,36 @@
 		<A1 chs="新建项名称">New Item Name</A1>
 		<A2 chs="目标分类">Target Category</A2>
 		<A3 chs="访问 NEXUS 页面 ID">NEXUS Page ID</A3>
-		<A4 chs="确认">GO</A4>
-		
+		<A4 chs="确认">GO</A4>	
 	</DownloadAndCreateItemWindow>
+
+	<StorageManagementWindow>
+		<Title chs="存储管理">Storage Management</Title>
+		<A1 chs="计算中...">calculating...</A1>
+		<!--暂时不用 ，no use-->
+		<A2 chs="当前计算程序正忙，请等待计算完成后进行删除数据">The current calculation program is busy, please wait for the calculation to complete before deleting the data.</A2>
+		<A3 chs="无数据">no data.</A3>
+		<A4 chs="已删除">Deleted</A4>
+
+		<S1 chs="SMUI.GUI 应用程序">SMUI.GUI Application</S1>
+		<S2 chs="SMUI 动态链接库组件">SMUI dll component</S2>
+		<S3 chs="第三方动态链接库组件和应用程序">Third-party dll and applications</S3>
+		<S4 chs="文本数据">Text File</S4>
+		<S5 chs="Chromium 应用程序组件">Chromium application components</S5>
+		<S6 chs="Chromium 网页缓存">Chromium Web Cache</S6>
+		<S7 chs="Chromium 网站存储">Chromium Website Storage</S7>
+		<S8 chs="Chromium Cookies">Chromium Cookies</S8>
+		<S9 chs="Chromium GPU 缓存">Chromium GPU cache</S9>
+		<S10 chs="Chromium 日志信息">Chromium log information</S10>
+		<S11 chs="Chromium 数据库">Chromium database</S11>
+		<S12 chs="保存的设置">saved settings</S12>
+		<S13 chs="检查更新自动下载的安装包">Updates installation package</S13>
+		<S14 chs="下载的数据">Downloaded data</S14>
+		<S15 chs="临时解压">Temporary decompression</S15>
+		<S16 chs="插件数据">Plugin data</S16>
+
+		<B1 chs="完全删除浏览器所有缓存">delete all browser cache</B1>
+	</StorageManagementWindow>
 	
 	
 	<SettingsWindow>

@@ -23,9 +23,9 @@ Partial Class Form多项单选对话框
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.LabelLine = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.LabelLine = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -38,27 +38,6 @@ Partial Class Form多项单选对话框
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(284, 77)
         Me.Panel1.TabIndex = 0
-        '
-        'Panel2
-        '
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 140)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Padding = New System.Windows.Forms.Padding(20)
-        Me.Panel2.Size = New System.Drawing.Size(284, 121)
-        Me.Panel2.TabIndex = 1
-        '
-        'LabelLine
-        '
-        Me.LabelLine.AutoEllipsis = True
-        Me.LabelLine.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.LabelLine.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LabelLine.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.LabelLine.Location = New System.Drawing.Point(0, 76)
-        Me.LabelLine.Name = "LabelLine"
-        Me.LabelLine.Size = New System.Drawing.Size(284, 1)
-        Me.LabelLine.TabIndex = 17
-        Me.LabelLine.Visible = False
         '
         'Label1
         '
@@ -73,9 +52,31 @@ Partial Class Form多项单选对话框
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Label1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Label1"
         '
+        'LabelLine
+        '
+        Me.LabelLine.AutoEllipsis = True
+        Me.LabelLine.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.LabelLine.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LabelLine.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.LabelLine.Location = New System.Drawing.Point(0, 76)
+        Me.LabelLine.Name = "LabelLine"
+        Me.LabelLine.Size = New System.Drawing.Size(284, 1)
+        Me.LabelLine.TabIndex = 17
+        Me.LabelLine.Visible = False
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 140)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Padding = New System.Windows.Forms.Padding(20)
+        Me.Panel2.Size = New System.Drawing.Size(284, 121)
+        Me.Panel2.TabIndex = 1
+        '
         'Form多项单选对话框
         '
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(284, 261)

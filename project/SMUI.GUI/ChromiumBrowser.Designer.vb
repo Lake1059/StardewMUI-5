@@ -142,8 +142,8 @@ Partial Class ChromiumBrowser
         '
         'ChromiumBrowser
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(1184, 761)
         Me.Controls.Add(Me.ChromiumWebBrowser1)
         Me.Controls.Add(Me.DarkMenuStrip1)

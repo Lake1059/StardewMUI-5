@@ -75,6 +75,9 @@ Partial Class Form输入对话框
         '
         'Label1
         '
+        Me.Label1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoEllipsis = True
         Me.Label1.Location = New System.Drawing.Point(16, 19)
         Me.Label1.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
@@ -85,7 +88,8 @@ Partial Class Form输入对话框
         '
         'Form输入对话框
         '
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(434, 161)
         Me.Controls.Add(Me.Label1)

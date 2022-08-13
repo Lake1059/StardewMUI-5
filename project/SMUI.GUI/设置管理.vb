@@ -3,9 +3,8 @@ Imports System.Xml
 Imports SMUI.GUI.Class1
 
 Module 设置管理
-    Public Sub 启动时加载用户设置()
-        xml_Settings_Lock.LoadXml(My.Resources.SettingsEmpty)
-        加载图标选择()
+
+    Public Sub 生成应用程序缓存文件夹()
         If My.Computer.FileSystem.DirectoryExists(IO.Path.GetDirectoryName(Path1.应用程序设置文件路径)) = False Then
             My.Computer.FileSystem.CreateDirectory(IO.Path.GetDirectoryName(Path1.应用程序设置文件路径))
         End If
@@ -15,6 +14,12 @@ Module 设置管理
         If My.Computer.FileSystem.DirectoryExists(Path1.应用程序插件数据路径) = False Then
             My.Computer.FileSystem.CreateDirectory(Path1.应用程序插件数据路径)
         End If
+    End Sub
+
+    Public Sub 启动时加载用户设置()
+        xml_Settings_Lock.LoadXml(My.Resources.SettingsEmpty)
+        加载图标选择()
+        生成应用程序缓存文件夹()
         If My.Computer.FileSystem.FileExists(Path1.应用程序设置文件路径) = True Then
             加载XML设置数据()
             更新XML设置数据()

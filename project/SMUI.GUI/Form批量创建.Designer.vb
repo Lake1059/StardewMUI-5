@@ -114,14 +114,14 @@ Partial Class Form批量创建
         Me.DarkContextMenu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.打开文件夹ToolStripMenuItem, Me.ToolStripSeparator1, Me.删除ToolStripMenuItem})
         Me.DarkContextMenu1.Name = "DarkContextMenu1"
         Me.DarkContextMenu1.ShowImageMargin = False
-        Me.DarkContextMenu1.Size = New System.Drawing.Size(156, 77)
+        Me.DarkContextMenu1.Size = New System.Drawing.Size(88, 55)
         '
         '打开文件夹ToolStripMenuItem
         '
         Me.打开文件夹ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.打开文件夹ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.打开文件夹ToolStripMenuItem.Name = "打开文件夹ToolStripMenuItem"
-        Me.打开文件夹ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.打开文件夹ToolStripMenuItem.Size = New System.Drawing.Size(87, 22)
         Me.打开文件夹ToolStripMenuItem.Text = "文件夹"
         '
         'ToolStripSeparator1
@@ -130,14 +130,14 @@ Partial Class Form批量创建
         Me.ToolStripSeparator1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.ToolStripSeparator1.Margin = New System.Windows.Forms.Padding(0, 0, 0, 1)
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(152, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(84, 6)
         '
         '删除ToolStripMenuItem
         '
         Me.删除ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.删除ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem"
-        Me.删除ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.删除ToolStripMenuItem.Size = New System.Drawing.Size(87, 22)
         Me.删除ToolStripMenuItem.Text = "删除"
         '
         'ImageList1
@@ -204,7 +204,8 @@ Partial Class Form批量创建
         '
         'Form批量创建
         '
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(684, 561)
         Me.Controls.Add(Me.DarkComboBox1)

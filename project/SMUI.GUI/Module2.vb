@@ -149,8 +149,9 @@ jx1:
     End Function
 
     Public Sub 添加调试文本(ByVal 文本 As String, ByVal 颜色 As Color)
-        Form调试.RichTextBox1.AppendText(vbNewLine & 文本)
-        Form调试.RichTextBox1.Select(Form调试.RichTextBox1.TextLength - 文本.Length, 文本.Length)
+        Dim a As String = "[" & Now.TimeOfDay.Hours & ":" & Now.TimeOfDay.Minutes & ":" & Now.TimeOfDay.Seconds & "] " & 文本
+        Form调试.RichTextBox1.AppendText(vbNewLine & a)
+        Form调试.RichTextBox1.Select(Form调试.RichTextBox1.TextLength - a.Length, a.Length)
         Form调试.RichTextBox1.SelectionColor = 颜色
         Form调试.RichTextBox1.Select(Form调试.RichTextBox1.TextLength, 0)
         Form调试.RichTextBox1.ScrollToCaret()

@@ -50,7 +50,7 @@ Module 插件管理程序
             ReDim Preserve 插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count)
             插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count - 1) = True
         Catch ex As Exception
-            添加调试文本("[" & ex.Source & "] " & ex.Message, Color1.红色)
+            添加调试文本("[" & ex.Source & "] " & ex.Message & ": " & ex.TargetSite.Name, Color1.红色)
             ReDim Preserve 插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count)
             插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count - 1) = False
             If Form调试.Visible = True Then

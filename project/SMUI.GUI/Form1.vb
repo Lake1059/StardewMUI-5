@@ -11,10 +11,12 @@ Public Class Form1
         SevenZip.SevenZipBase.SetLibraryPath(Application.StartupPath & "\7zFull64.dll")
         加载自定义语言文件()
         Application.DoEvents()
+        Dim graphics As Graphics = Me.CreateGraphics
+        If graphics.DpiX <> 96 Then 高DPI兼容处理_主界面()
         启动时加载用户设置()
         读取导入导出密码本()
         启动时初始化界面()
-        Form调试.Hide()
+        If Form调试.Visible = False Then Form调试.Hide()
 
         If My.Computer.FileSystem.FileExists(Application.StartupPath & "\CefSharp.dll") = False Then
             添加调试文本(获取动态多语言文本("data/DynamicText/Other.3"), Color1.黄色) : Exit Sub
@@ -1353,6 +1355,7 @@ jx:
 #Region "启动项功能"
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If ST1.是否已启动完毕 = False Then Exit Sub
         Dim temp As Process() = Process.GetProcessesByName("StardewModdingAPI")
         If temp.Count = 0 Then
             Select Case xml_Settings.SelectSingleNode("data/StartOptions").InnerText

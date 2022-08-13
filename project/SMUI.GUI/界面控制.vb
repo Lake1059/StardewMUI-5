@@ -177,6 +177,28 @@ Module 界面控制
         End If
     End Sub
 
+    Sub 高DPI兼容处理控件(控件 As Control, 对齐方式 As DockStyle)
+        Dim a As Integer
+        控件.AutoSize = True
+        a = 控件.Width
+        控件.Dock = 对齐方式
+        控件.AutoSize = False
+        控件.Width = a + 20
+    End Sub
+
+    Public Sub 高DPI兼容处理_主界面()
+
+        高DPI兼容处理控件(Form1.Label保存并从队列中移除, DockStyle.Right)
+        高DPI兼容处理控件(Form1.Label仅保存, DockStyle.Right)
+        高DPI兼容处理控件(Form1.Label移除配置队列中的项, DockStyle.Right)
+        高DPI兼容处理控件(Form1.Label移除配置队列里的全部项, DockStyle.Right)
+        高DPI兼容处理控件(Form1.Label刷新项的数据内容, DockStyle.Right)
+        高DPI兼容处理控件(Form1.Label添加文件, DockStyle.Right)
+        高DPI兼容处理控件(Form1.Label添加文件夹, DockStyle.Right)
+        高DPI兼容处理控件(Form1.Label全部复制, DockStyle.Right)
+        高DPI兼容处理控件(Form1.Label所有命令, DockStyle.Right)
+        高DPI兼容处理控件(Form1.Label自动完成, DockStyle.Right)
+    End Sub
 
 
 

@@ -26,6 +26,8 @@ Partial Class Form导入
         Me.DarkButton1 = New DarkUI.Controls.DarkButton()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DarkContextMenu1 = New DarkUI.Controls.DarkContextMenu()
+        Me.激活拖拽ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.DarkButton2 = New DarkUI.Controls.DarkButton()
         Me.DarkButton3 = New DarkUI.Controls.DarkButton()
@@ -36,8 +38,6 @@ Partial Class Form导入
         Me.DarkButton6 = New DarkUI.Controls.DarkButton()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.DarkContextMenu1 = New DarkUI.Controls.DarkContextMenu()
-        Me.激活拖拽ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.DarkContextMenu1.SuspendLayout()
         Me.SuspendLayout()
@@ -80,6 +80,24 @@ Partial Class Form导入
         'ColumnHeader1
         '
         Me.ColumnHeader1.Width = 347
+        '
+        'DarkContextMenu1
+        '
+        Me.DarkContextMenu1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.DarkContextMenu1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.DarkContextMenu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.激活拖拽ToolStripMenuItem})
+        Me.DarkContextMenu1.Name = "DarkContextMenu1"
+        Me.DarkContextMenu1.ShowImageMargin = False
+        Me.DarkContextMenu1.Size = New System.Drawing.Size(100, 26)
+        '
+        '激活拖拽ToolStripMenuItem
+        '
+        Me.激活拖拽ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.激活拖拽ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.激活拖拽ToolStripMenuItem.Name = "激活拖拽ToolStripMenuItem"
+        Me.激活拖拽ToolStripMenuItem.Size = New System.Drawing.Size(99, 22)
+        Me.激活拖拽ToolStripMenuItem.Text = "激活拖拽"
+        Me.激活拖拽ToolStripMenuItem.Visible = False
         '
         'ImageList1
         '
@@ -187,24 +205,6 @@ Partial Class Form导入
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'DarkContextMenu1
-        '
-        Me.DarkContextMenu1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.DarkContextMenu1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.DarkContextMenu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.激活拖拽ToolStripMenuItem})
-        Me.DarkContextMenu1.Name = "DarkContextMenu1"
-        Me.DarkContextMenu1.ShowImageMargin = False
-        Me.DarkContextMenu1.Size = New System.Drawing.Size(100, 26)
-        '
-        '激活拖拽ToolStripMenuItem
-        '
-        Me.激活拖拽ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.激活拖拽ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.激活拖拽ToolStripMenuItem.Name = "激活拖拽ToolStripMenuItem"
-        Me.激活拖拽ToolStripMenuItem.Size = New System.Drawing.Size(99, 22)
-        Me.激活拖拽ToolStripMenuItem.Text = "激活拖拽"
-        Me.激活拖拽ToolStripMenuItem.Visible = False
-        '
         'CheckBox2
         '
         Me.CheckBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -218,7 +218,8 @@ Partial Class Form导入
         '
         'Form导入
         '
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(584, 261)
         Me.Controls.Add(Me.CheckBox2)
