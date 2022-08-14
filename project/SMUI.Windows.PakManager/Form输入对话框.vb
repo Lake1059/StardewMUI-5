@@ -34,4 +34,17 @@ Public Class Form输入对话框
     Private Sub Form输入对话框_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If 是否点击了确定 = False Then 输入的内容 = ""
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
+        Select Case e.KeyData
+            Case Keys.Enter
+                Label确定_Click(Me.Label确定, New EventArgs)
+            Case Keys.Escape
+                Label取消_Click(Me.Label取消, New EventArgs)
+        End Select
+    End Sub
 End Class

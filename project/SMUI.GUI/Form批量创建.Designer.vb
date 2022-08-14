@@ -221,6 +221,7 @@ Partial Class Form批量创建
         Me.ForeColor = System.Drawing.Color.Gainsboro
         Me.MaximizeBox = False
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(700, 600)
         Me.Name = "Form批量创建"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
