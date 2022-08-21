@@ -42,6 +42,13 @@ Public Class Form直接联网更新单个项
 
     Private Sub Form直接联网更新单个项_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = False
+        On Error Resume Next
+        是否终止下载 = True
+        Me.BackgroundWorker1.CancelAsync()
+        Me.BackgroundWorker2.CancelAsync()
+        Me.BackgroundWorker3.CancelAsync()
+        Me.BackgroundWorker4.CancelAsync()
+        Me.BackgroundWorker5.CancelAsync()
     End Sub
 
     Private Sub Form直接联网更新单个项_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed

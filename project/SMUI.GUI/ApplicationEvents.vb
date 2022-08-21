@@ -23,6 +23,8 @@ Namespace My
             Else
                 显示窗体(Form调试, Form1)
             End If
+            Application.DoEvents()
+            Form调试.Focus()
         End Sub
     End Class
 End Namespace

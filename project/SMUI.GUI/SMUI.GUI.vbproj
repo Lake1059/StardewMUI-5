@@ -234,6 +234,12 @@
     <Compile Include="Form搜索.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form模组检查更新操作台.Designer.vb">
+      <DependentUpon>Form模组检查更新操作台.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form模组检查更新操作台.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form直接联网更新单个项.Designer.vb">
       <DependentUpon>Form直接联网更新单个项.vb</DependentUpon>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form搜索.resx">
       <DependentUpon>Form搜索.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form模组检查更新操作台.resx">
+      <DependentUpon>Form模组检查更新操作台.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form直接联网更新单个项.resx">
       <DependentUpon>Form直接联网更新单个项.vb</DependentUpon>

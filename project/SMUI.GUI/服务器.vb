@@ -119,7 +119,7 @@ Module 服务器
         If My.Settings.上次发送用户统计的日期 = Now.Year & "/" & Now.Month & "/" & Now.Day Then Exit Sub
         If My.Computer.Network.IsAvailable = False Then Exit Sub
         添加调试文本(获取动态多语言文本("data/DynamicText/Sever.7"), Color1.白色)
-        Dim 服务器发送 As New System.ComponentModel.BackgroundWorker
+        Dim 服务器发送 As New System.ComponentModel.BackgroundWorker With {.WorkerReportsProgress = True}
         AddHandler 服务器发送.DoWork,
            Sub(sender As Object, e As System.ComponentModel.DoWorkEventArgs)
                Try
@@ -136,19 +136,37 @@ Module 服务器
                        If DisplayName = "" Then
                            DisplayName = mo("Name").ToString()
                        Else
-                           DisplayName &= "|" & mo("Name").ToString()
+                           DisplayName &= " | " & mo("Name").ToString()
                        End If
                    Next
-                   mn.Dispose()
-                   m.Dispose()
+
                    Dim 显卡列表 As String
                    If DisplayName = "" Then
                        显卡列表 = ""
                    Else
                        显卡列表 = "&gpulist=" & DisplayName
                    End If
+                   Dim 显示器分辨率 As String = Screen.PrimaryScreen.Bounds.Size.Width & "x" & Screen.PrimaryScreen.Bounds.Size.Height
+                   Dim 显示器颜色位数 As String = mn(0)("CurrentBitsPerPixel")
+                   Dim 显示器刷新率 As String = mn(0)("CurrentRefreshRate")
+                   Dim g1 As Graphics = Form1.CreateGraphics
+                   Dim 屏幕DPI As String = g1.DpiX & "x" & g1.DpiY
+                   Dim 显示器信息 As String = "&screen=" & 显示器分辨率 & " " & 显示器颜色位数 & " bit " & 显示器刷新率 & " fps " & 屏幕DPI & " dpi"
+
+                   mn.Dispose()
+                   m.Dispose()
+
                    Dim 谁他妈再攻击服务器祝你妈跟你出门必被压路机压S然后转生到印度 As Boolean = True
-                   Dim uri As New Uri("http://47.94.89.191:30003/user?appver=" & 软件版本 & "&sysname=" & 系统名称 & "&cpuname=" & 处理器名称 & "&ram=" & 内存大小 & 显卡列表)
+
+                   Dim 输出1 As String = "report"
+                   输出1 &= vbNewLine & "sysname=" & 系统名称
+                   输出1 &= vbNewLine & "cpuname=" & 处理器名称
+                   输出1 &= vbNewLine & "ram=" & 内存大小
+                   输出1 &= vbNewLine & "gpulist=" & DisplayName
+                   输出1 &= vbNewLine & "screen=" & 显示器分辨率 & " " & 显示器颜色位数 & " bit " & 显示器刷新率 & " fps " & 屏幕DPI & " dpi"
+                   服务器发送.ReportProgress(1, 输出1)
+
+                   Dim uri As New Uri("http://47.94.89.191:30003/user?appver=" & 软件版本 & "&sysname=" & 系统名称 & "&cpuname=" & 处理器名称 & "&ram=" & 内存大小 & 显卡列表 & 显示器信息)
                    Dim myReq As HttpWebRequest = DirectCast(WebRequest.Create(uri), HttpWebRequest)
                    myReq.ContinueTimeout = 5000
                    myReq.UserAgent = "StardewMUI 5 Official Application"
@@ -169,27 +187,32 @@ Module 服务器
                    e.Result = ex.Message
                End Try
            End Sub
+        AddHandler 服务器发送.ProgressChanged,
+           Sub(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs)
+               添加调试文本(e.UserState, Color1.白色)
+           End Sub
+
         AddHandler 服务器发送.RunWorkerCompleted,
-            Sub(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs)
-                If InStr(e.Result, "{") > 0 Then
-                    Dim JsonData As Object = CType(JsonConvert.DeserializeObject(e.Result), JObject)
-                    If JsonData.item("code") IsNot Nothing Then
-                        If JsonData.item("code").ToString = "100" Then
-                            添加调试文本(获取动态多语言文本("data/DynamicText/Sever.9"), Color1.白色)
-                            My.Settings.上次发送用户统计的日期 = Now.Year & "/" & Now.Month & "/" & Now.Day
-                            My.Settings.Save()
-                        Else
-                            添加调试文本("Err " & JsonData.item("code").ToString & "：" & JsonData.item("msg").ToString, Color1.红色)
-                        End If
-                    Else
-                        添加调试文本(e.Result, Color1.红色)
-                    End If
-                Else
-                    添加调试文本(e.Result, Color1.红色)
-                End If
-            End Sub
+           Sub(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs)
+               If InStr(e.Result, "{") > 0 Then
+                   Dim JsonData As Object = CType(JsonConvert.DeserializeObject(e.Result), JObject)
+                   If JsonData.item("code") IsNot Nothing Then
+                       If JsonData.item("code").ToString = "100" Then
+                           添加调试文本(获取动态多语言文本("data/DynamicText/Sever.9"), Color1.白色)
+                           My.Settings.上次发送用户统计的日期 = Now.Year & "/" & Now.Month & "/" & Now.Day
+                           My.Settings.Save()
+                       Else
+                           添加调试文本("Err " & JsonData.item("code").ToString & "：" & JsonData.item("msg").ToString, Color1.红色)
+                       End If
+                   Else
+                       添加调试文本(e.Result, Color1.红色)
+                   End If
+               Else
+                   添加调试文本(e.Result, Color1.红色)
+               End If
+           End Sub
         服务器发送.RunWorkerAsync()
-    End Sub
+           End Sub
 
     Public Sub 运行后台服务器获取新闻()
         If ST1.本次启动时候已经获取了新闻 = True Then Exit Sub

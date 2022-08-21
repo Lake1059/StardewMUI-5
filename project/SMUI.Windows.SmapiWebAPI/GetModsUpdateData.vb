@@ -13,14 +13,7 @@ Public Class GetModsUpdateData
     Public Input_platform As String = ""
     Public Input_includeExtendedMetadata As Boolean = False
 
-
-
-
-
     Public Output_id As String() = {}
-
-
-
 
     Public Function StartGet(yourPostJsonText As String) As String
         Try
