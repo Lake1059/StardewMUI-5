@@ -16,15 +16,15 @@ Namespace My
 
         End Sub
 
-        Private Sub MyApplication_UnhandledException(sender As Object, e As UnhandledExceptionEventArgs) Handles Me.UnhandledException
-            添加调试文本("[" & e.Exception.Source & "] " & e.Exception.Message & " [" & e.Exception.HResult & "] " & e.Exception.TargetSite.Name, Color1.红色)
-            If Form调试.Visible = True Then
-                Form调试.Focus()
-            Else
-                显示窗体(Form调试, Form1)
-            End If
-            Application.DoEvents()
-            Form调试.Focus()
-        End Sub
+        'Private Sub MyApplication_UnhandledException(sender As Object, e As UnhandledExceptionEventArgs) Handles Me.UnhandledException
+        '    添加调试文本("[" & e.Exception.Source & "] " & e.Exception.Message & " [" & e.Exception.HResult & "] " & e.Exception.TargetSite.Name, Color1.红色)
+        '    If Form调试.Visible = True Then
+        '        Form调试.Focus()
+        '    Else
+        '        显示窗体(Form调试, Form1)
+        '    End If
+        '    Application.DoEvents()
+        '    Form调试.Focus()
+        'End Sub
     End Class
 End Namespace

@@ -38,10 +38,8 @@ Public Class Form1
         Me.Panel配置队列左下面板.Width = Me.Panel配置队列左下面板.Parent.Width * 0.5
         Me.Panel配置队列上方面板.Height = Me.Panel配置队列.Height * 0.5 - Me.Panel配置队列顶部面板.Height - 30
         Me.ListView2.Width = Me.ListView2.Parent.Width - 5 '+ ST1.系统滚动条宽度
-        调整项列表列宽()
-        调整配置队列选项卡界面()
         Application.DoEvents()
-        If ST1.是否已启动完毕 = False Then ST1.是否已经初始化了配置队列选项卡界面 = False
+        调整项列表列宽()
     End Sub
 
     Private Sub Form1_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
@@ -65,8 +63,6 @@ Public Class Form1
 
         Me.RichTextBox3.BorderStyle = BorderStyle.None
         Me.RichTextBox4.BorderStyle = BorderStyle.None
-        校准RichTextBox3的尺寸和位置()
-        校准RichTextBox4的尺寸和位置()
 
         If My.Computer.FileSystem.DirectoryExists(xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText) = True Then
             扫描数据子库()
@@ -178,7 +174,7 @@ Public Class Form1
         切换主选项卡按钮状态(3)
         隐藏所有主选项卡()
         Me.Panel配置队列.Visible = True
-        If ST1.是否已经初始化了配置队列选项卡界面 = False Then 调整配置队列选项卡界面()
+        调整配置队列选项卡界面()
     End Sub
 
     Public Sub 模拟按下配置队列选项卡切换按钮()

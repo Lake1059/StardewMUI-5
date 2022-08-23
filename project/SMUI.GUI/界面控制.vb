@@ -88,7 +88,10 @@ Module 界面控制
 
         Form1.ColumnHeader7.Width = Form1.ListView3.Width - Form1.ColumnHeader6.Width - 25
         Form1.ColumnHeader8.Width = Form1.ListView4.Width - Form1.ColumnHeader9.Width - 25
+        校准RichTextBox3的尺寸和位置()
+        校准RichTextBox4的尺寸和位置()
         ST1.是否已经初始化了配置队列选项卡界面 = True
+
     End Sub
 
     Public Sub 切换主选项卡按钮状态(哪个选项卡 As Integer)
