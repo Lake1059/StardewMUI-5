@@ -14,22 +14,22 @@ NEXUSMODS：https://www.nexusmods.com/stardewvalley/mods/12230
 SMUI 项目（包含 SMUI 核心处理 和 GUI 用户操作软件）在 GPL-3.0 协议下开源  
 有关详细的许可声明和授权费用，请在软件内查看
 
-+ **Lake1059.GitAPI**
++ **Lake1059.GitAPI**  
 	开放自由使用，直接访问 Github 和 Gitee 仓库数据功能
-+ **Lake1059.Internet**
++ **Lake1059.Internet**  
 	开放自由使用，从 URL 下载单个文件，可输出进度和取消，不支持暂停和断点续传
-+ **PluginExample**
++ **PluginExample**  
 	开放自由使用，用来测试插件功能的空白插件
-+ **SMUI.GUI**
++ **SMUI.GUI**  
 	开放自由参考，SMUI 用户操作软件本体
-+ **SMUI.Windows.Core**
++ **SMUI.Windows.Core**  
 	版权所有，SMUI 管理模式核心库，包括项数据计算、搜索等，代码跨平台  
 	移植请删掉部分已经用注释标出的代码，使用请先申请授权
-+ **SMUI.Windows.Nexus**
++ **SMUI.Windows.Nexus**  
 	开放自由使用，NEXUSMODS 网站访问接口
-+ **SMUI.Windows.PakManager**
++ **SMUI.Windows.PakManager**  
 	开放自由使用，用于 SMUI.GUI 的 Windows 对话框
-+ **SMUI.Windows.SmapiWebAPI**
++ **SMUI.Windows.SmapiWebAPI**  
 	开放自由使用，SMAPI 模组列表更新数据接口
 
 ## 简介
