@@ -88,5 +88,5 @@ English Wiki: https://stardewmui.fandom.com/wiki/StardewMUI_Wiki
 
 ## 社区
 QQ群：738313040（人满清人）  
-国内聊天室：https://kook.top/yW15HU （超级大群）
-Discord: https://discord.gg/tZufMZRzyC（我暂时没有心思发展国际市场）
+国内聊天室：https://kook.top/yW15HU （超级大群）  
+Discord: https://discord.gg/tZufMZRzyC （我暂时没有心思发展国际市场）
