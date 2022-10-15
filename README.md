@@ -9,11 +9,11 @@
 NEXUSMODS：https://www.nexusmods.com/stardewvalley/mods/12230  
 （页面仅用于国际宣传，请在仓库发行版下载最新版安装程序）
 
-https://github.com/Lake1059/StardewMUI-5/releases/latest
+https://github.com/Lake1059/StardewMUI-5/releases/latest  
 https://gitee.com/Lake1059/StardewMUI-5/releases/latest
 
-安装 StardewMUI Chromium Embedded Framework
-https://lake1059.lanzouv.com/b0daefzoh 密码:smui
+安装 StardewMUI Chromium Embedded Framework 来使用软件内浏览器功能  
+https://lake1059.lanzouv.com/b0daefzoh 密码:smui  
 [Google Drive](https://drive.google.com/drive/folders/1UDZoHUOibIeFACRkn0ZI_DzaT_Zb4sA2?usp=sharing)
 
 ## 授权
