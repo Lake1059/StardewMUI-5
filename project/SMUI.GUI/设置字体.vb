@@ -3,7 +3,7 @@
 Module 设置字体
 
     Public Sub 设置字体_默认()
-        Dim x As String = 检查并返回当前可用子库路径()
+        Dim x As String = 检查并返回当前所选子库路径()
         If x = "" Then Exit Sub
         If ST1.打开了分类的菜单还是项的菜单 = 1 Then
             For i = 0 To Form1.ListView1.SelectedItems.Count - 1
@@ -26,7 +26,7 @@ Module 设置字体
     End Sub
 
     Public Sub 设置字体_粗体()
-        Dim x As String = 检查并返回当前可用子库路径()
+        Dim x As String = 检查并返回当前所选子库路径()
         If x = "" Then Exit Sub
         If ST1.打开了分类的菜单还是项的菜单 = 1 Then
             For i = 0 To Form1.ListView1.SelectedItems.Count - 1
@@ -45,7 +45,7 @@ Module 设置字体
     End Sub
 
     Public Sub 设置字体_斜体()
-        Dim x As String = 检查并返回当前可用子库路径()
+        Dim x As String = 检查并返回当前所选子库路径()
         If x = "" Then Exit Sub
         If ST1.打开了分类的菜单还是项的菜单 = 1 Then
             For i = 0 To Form1.ListView1.SelectedItems.Count - 1
@@ -64,7 +64,7 @@ Module 设置字体
     End Sub
 
     Public Sub 设置字体_下划线()
-        Dim x As String = 检查并返回当前可用子库路径()
+        Dim x As String = 检查并返回当前所选子库路径()
         If x = "" Then Exit Sub
         If ST1.打开了分类的菜单还是项的菜单 = 1 Then
             For i = 0 To Form1.ListView1.SelectedItems.Count - 1
@@ -82,7 +82,7 @@ Module 设置字体
     End Sub
 
     Public Sub 设置字体_删除线()
-        Dim x As String = 检查并返回当前可用子库路径()
+        Dim x As String = 检查并返回当前所选子库路径()
         If x = "" Then Exit Sub
         If ST1.打开了分类的菜单还是项的菜单 = 1 Then
             For i = 0 To Form1.ListView1.SelectedItems.Count - 1

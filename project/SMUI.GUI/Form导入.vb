@@ -164,7 +164,7 @@ jx1:
                 Next
             Case 获取动态多语言文本("data/DynamicText/ManageMod.26")
                 For i = 0 To Me.ListView1.Items.Count - 1
-                    str &= vbNewLine & 压缩程序路径 & " x " & """" & Me.ListView1.Items.Item(i).Text & """" & " -o" & """" & 检查并返回当前可用子库路径(False) & """"
+                    str &= vbNewLine & 压缩程序路径 & " x " & """" & Me.ListView1.Items.Item(i).Text & """" & " -o" & """" & 检查并返回当前所选子库路径(False) & """"
                     If CheckBox1.Checked = True Then
                         添加导入导出密码到密码本中(Me.DarkTextBox1.Text)
                         str &= " -p" & Me.DarkTextBox1.Text & " -y"
@@ -172,7 +172,7 @@ jx1:
                 Next
             Case 获取动态多语言文本("data/DynamicText/ManageMod.27")
                 For i = 0 To Me.ListView1.Items.Count - 1
-                    str &= vbNewLine & 压缩程序路径 & " x " & """" & Me.ListView1.Items.Item(i).Text & """" & " -o" & """" & 检查并返回当前可用子库路径(False) & "\" & Form1.ListView1.Items.Item(Form1.ListView1.SelectedIndices(0)).Text & """"
+                    str &= vbNewLine & 压缩程序路径 & " x " & """" & Me.ListView1.Items.Item(i).Text & """" & " -o" & """" & 检查并返回当前所选子库路径(False) & "\" & Form1.ListView1.Items.Item(Form1.ListView1.SelectedIndices(0)).Text & """"
                     If CheckBox1.Checked = True Then
                         添加导入导出密码到密码本中(Me.DarkTextBox1.Text)
                         str &= " -p" & Me.DarkTextBox1.Text & " -y"

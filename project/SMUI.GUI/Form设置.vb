@@ -1,6 +1,8 @@
 ﻿
+Imports System.IO
 Imports System.Text
 Imports System.Xml
+Imports CefSharp.DevTools.Emulation
 Imports SMUI.GUI.Class1
 Imports SMUI.Windows.PakManager
 
@@ -53,6 +55,8 @@ Public Class Form设置
             Me.CheckBox7.Text = 获取动态多语言文本("data/SettingsWindow/A31")
             Me.CheckBox5.Text = 获取动态多语言文本("data/SettingsWindow/A32")
             Me.CheckBox1.Text = 获取动态多语言文本("data/SettingsWindow/A33")
+            Me.CheckBox3.Text = 获取动态多语言文本("data/SettingsWindow/A34")
+            Me.LinkLabel打开隐私设置.Text = 获取动态多语言文本("data/SettingsWindow/B1")
             Me.Label界面尺寸.Text = 获取动态多语言文本("data/SettingsWindow/A34")
             Me.Label13.Text = 获取动态多语言文本("data/SettingsWindow/A35")
             Me.Label20.Text = 获取动态多语言文本("data/SettingsWindow/A36")
@@ -185,9 +189,10 @@ Public Class Form设置
         Me.TextBox10.Text = xml_Settings.SelectSingleNode("data/UserStartOptions").InnerText
         Me.CheckBox8.Checked = xml_Settings.SelectSingleNode("data/AutoCheckSMUIUpdates").InnerText
         Me.CheckBox7.Checked = xml_Settings.SelectSingleNode("data/AutoGetNews").InnerText
-        Me.CheckBox6.Checked = xml_Settings.SelectSingleNode("data/StatisticsOnTheNmberOfParticipatingUsers").InnerText
+        'Me.CheckBox6.Checked = xml_Settings.SelectSingleNode("data/StatisticsOnTheNmberOfParticipatingUsers").InnerText
         Me.CheckBox5.Checked = xml_Settings.SelectSingleNode("data/SaveInterfaceLayout").InnerText
         Me.CheckBox1.Checked = xml_Settings.SelectSingleNode("data/DragDropCompatibilityForAdministrator").InnerText
+        Me.CheckBox3.Checked = xml_Settings.SelectSingleNode("data/AutoSelectFirstNexusDownloadServer").InnerText
         Me.TrackBar1.Value = xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText
         Me.TrackBar2.Value = xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText
 
@@ -245,9 +250,10 @@ Public Class Form设置
         xml_Settings.SelectSingleNode("data/UserStartOptions").InnerText = Me.TextBox10.Text
         xml_Settings.SelectSingleNode("data/AutoCheckSMUIUpdates").InnerText = Me.CheckBox8.Checked
         xml_Settings.SelectSingleNode("data/AutoGetNews").InnerText = Me.CheckBox7.Checked
-        xml_Settings.SelectSingleNode("data/StatisticsOnTheNmberOfParticipatingUsers").InnerText = Me.CheckBox6.Checked
+        'xml_Settings.SelectSingleNode("data/StatisticsOnTheNmberOfParticipatingUsers").InnerText = Me.CheckBox6.Checked
         xml_Settings.SelectSingleNode("data/SaveInterfaceLayout").InnerText = Me.CheckBox5.Checked
         xml_Settings.SelectSingleNode("data/DragDropCompatibilityForAdministrator").InnerText = Me.CheckBox1.Checked
+        xml_Settings.SelectSingleNode("data/AutoSelectFirstNexusDownloadServer").InnerText = Me.CheckBox1.Checked
         xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText = Me.TrackBar1.Value
         xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText = Me.TrackBar2.Value
 
@@ -298,6 +304,7 @@ Public Class Form设置
             ReDim Preserve p1(p1.Count)
             p1(p1.Count - 1) = MyReg2.GetValue("PATH").ToString()
         End If
+        '这届的小白真是日了狗了，连个游戏文件夹都找不到，就TM这技术还玩单机游戏？
         Dim diskMayBe As String() = {"C", "D", "E", "F", "G", "H"} ', "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
         For i = 0 To diskMayBe.Count - 1
             If My.Computer.FileSystem.FileExists(diskMayBe(i) & ":\Program Files\Steam\steamapps\common\Stardew Valley" & "\Stardew Valley.exe") = True Then
@@ -400,105 +407,163 @@ R1:
         End Select
     End Sub
 
+    Dim 选择的图标Image As Image
+
     Public Sub 挑选图标的绑定按钮事件()
         For Each a As Button In Me.Panel2.Controls
             Select Case a.Tag
                 Case "1"
                     AddHandler a.Click,
                         Sub()
-                            My.Settings.图标 = 1
-                            Form1.Icon = My.Resources.ICO防风草
-                            Dim x As New IO.FileStream(Path1.应用程序用户数据路径 & "\ico.ico", IO.FileMode.Create)
-                            My.Resources.ICO防风草.Save(x)
-                            x.Close()
+                            选择的图标Image = My.Resources.防风草 : My.Settings.图标 = 1
                             挑选图标按钮确认执行()
                         End Sub
                 Case "2"
                     AddHandler a.Click,
                         Sub()
-                            My.Settings.图标 = 2
-                            Form1.Icon = My.Resources.ICO陈年蓝月亮葡萄酒
-                            Dim x As New IO.FileStream(Path1.应用程序用户数据路径 & "\ico.ico", IO.FileMode.Create)
-                            My.Resources.ICO陈年蓝月亮葡萄酒.Save(x)
-                            x.Close()
+                            选择的图标Image = My.Resources.EXEICO_2 : My.Settings.图标 = 2
                             挑选图标按钮确认执行()
                         End Sub
                 Case "3"
                     AddHandler a.Click,
                         Sub()
-                            My.Settings.图标 = 3
-                            Form1.Icon = My.Resources.ICO河豚
-                            Dim x As New IO.FileStream(Path1.应用程序用户数据路径 & "\ico.ico", IO.FileMode.Create)
-                            My.Resources.ICO河豚.Save(x)
-                            x.Close()
+                            选择的图标Image = My.Resources.EXEICO_3 : My.Settings.图标 = 3
                             挑选图标按钮确认执行()
                         End Sub
                 Case "4"
                     AddHandler a.Click,
                         Sub()
-                            My.Settings.图标 = 4
-                            Form1.Icon = My.Resources.ICO金色椰子
-                            Dim x As New IO.FileStream(Path1.应用程序用户数据路径 & "\ico.ico", IO.FileMode.Create)
-                            My.Resources.ICO金色椰子.Save(x)
-                            x.Close()
+                            选择的图标Image = My.Resources.EXEICO_4 : My.Settings.图标 = 4
                             挑选图标按钮确认执行()
                         End Sub
                 Case "5"
                     AddHandler a.Click,
                         Sub()
-                            My.Settings.图标 = 5
-                            Form1.Icon = My.Resources.ICO熔岩菇
-                            Dim x As New IO.FileStream(Path1.应用程序用户数据路径 & "\ico.ico", IO.FileMode.Create)
-                            My.Resources.ICO熔岩菇.Save(x)
-                            x.Close()
+                            选择的图标Image = My.Resources.EXEICO_5 : My.Settings.图标 = 5
                             挑选图标按钮确认执行()
                         End Sub
                 Case "6"
                     AddHandler a.Click,
                         Sub()
-                            My.Settings.图标 = 6
-                            Form1.Icon = My.Resources.ICO神盾药剂
-                            Dim x As New IO.FileStream(Path1.应用程序用户数据路径 & "\ico.ico", IO.FileMode.Create)
-                            My.Resources.ICO神盾药剂.Save(x)
-                            x.Close()
+                            选择的图标Image = My.Resources.EXEICO_6 : My.Settings.图标 = 6
                             挑选图标按钮确认执行()
                         End Sub
                 Case "7"
                     AddHandler a.Click,
                         Sub()
-                            My.Settings.图标 = 7
-                            Form1.Icon = My.Resources.ICO椰林飘香
-                            Dim x As New IO.FileStream(Path1.应用程序用户数据路径 & "\ico.ico", IO.FileMode.Create)
-                            My.Resources.ICO椰林飘香.Save(x)
-                            x.Close()
+                            选择的图标Image = My.Resources.EXEICO_7 : My.Settings.图标 = 7
                             挑选图标按钮确认执行()
                         End Sub
                 Case "8"
                     AddHandler a.Click,
                         Sub()
-                            My.Settings.图标 = 8
-                            Form1.Icon = My.Resources.ICO野山葵
-                            Dim x As New IO.FileStream(Path1.应用程序用户数据路径 & "\ico.ico", IO.FileMode.Create)
-                            My.Resources.ICO野山葵.Save(x)
-                            x.Close()
+                            选择的图标Image = My.Resources.EXEICO_8 : My.Settings.图标 = 8
                             挑选图标按钮确认执行()
                         End Sub
                 Case "9"
                     AddHandler a.Click,
                         Sub()
-                            My.Settings.图标 = 9
-                            Form1.Icon = My.Resources.ICO_HC_巧克力
-                            Dim x As New IO.FileStream(Path1.应用程序用户数据路径 & "\ico.ico", IO.FileMode.Create)
-                            My.Resources.ICO_HC_巧克力.Save(x)
-                            x.Close()
+                            选择的图标Image = My.Resources.EXEICO_9 : My.Settings.图标 = 9
                             挑选图标按钮确认执行()
+                        End Sub
+                Case "10"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_10 : My.Settings.图标 = 10
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "11"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_11 : My.Settings.图标 = 11
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "12"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_12 : My.Settings.图标 = 12
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "13"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_13 : My.Settings.图标 = 13
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "14"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_14 : My.Settings.图标 = 14
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "15"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_15 : My.Settings.图标 = 15
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "16"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_16 : My.Settings.图标 = 16
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "17"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_17 : My.Settings.图标 = 17
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "18"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_18 : My.Settings.图标 = 18
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "19"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_19 : My.Settings.图标 = 19
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "20"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.EXEICO_20 : My.Settings.图标 = 20
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "21"
+                    AddHandler a.Click,
+                        Sub()
+                            选择的图标Image = My.Resources.HC_巧克力 : My.Settings.图标 = 21
+                            挑选图标按钮确认执行()
+                        End Sub
+                Case "22"
+                    AddHandler a.Click,
+                        Sub()
+                            '选择的图标Image = My.Resources.EXEICO_22 : My.Settings.图标 =22
+                            '挑选图标按钮确认执行()
+                        End Sub
+                Case "23"
+                    AddHandler a.Click,
+                        Sub()
+                            '选择的图标Image = My.Resources.EXEICO_23 : My.Settings.图标 =23
+                            '挑选图标按钮确认执行()
+                        End Sub
+                Case "24"
+                    AddHandler a.Click,
+                        Sub()
+                            '选择的图标Image = My.Resources.MyPic : My.Settings.图标 =24
+                            '挑选图标按钮确认执行()
                         End Sub
             End Select
         Next
     End Sub
 
     Public Sub 挑选图标按钮确认执行()
-        My.Settings.Save()
+        Dim icoimg As Icon = Icon.FromHandle(DirectCast(选择的图标Image, Bitmap).GetHicon())
+        Form1.Icon = icoimg
+        IconTool.Tool1.SaveToIcon(选择的图标Image, 选择的图标Image.Size, Path1.应用程序用户数据路径 & "\ico.ico")
         If My.Computer.FileSystem.FileExists(Path1.开始菜单快捷方式路径) = True Then 创建快捷方式(Application.ExecutablePath, Path1.应用程序用户数据路径 & "\ico.ico", Path1.开始菜单快捷方式路径)
         If My.Computer.FileSystem.FileExists(Path1.桌面快捷方式路径) = True Or Me.CheckBox2.Checked = True Then 创建快捷方式(Application.ExecutablePath, Path1.应用程序用户数据路径 & "\ico.ico", Path1.桌面快捷方式路径)
     End Sub
@@ -592,5 +657,13 @@ R1:
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Process.Start("https://stardewmui.fandom.com/wiki/Third-party_language_file_publishing_page_address")
+    End Sub
+
+    Private Sub LinkLabel打开隐私设置_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel打开隐私设置.LinkClicked
+        Form隐私选项.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 End Class

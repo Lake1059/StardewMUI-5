@@ -62,7 +62,7 @@ Module 安装卸载统一后台线程
                     Case 后台操作类型.批量创建项
                         后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.7"))
                         For i = 0 To 要批量创建项的路径数据列表.Count - 1
-                            Dim str_1 As String = 检查并返回当前可用子库路径(False) & "\" & 自动创建项的目标分类 & "\" & IO.Path.GetFileName(要批量创建项的路径数据列表(i))
+                            Dim str_1 As String = 检查并返回当前所选子库路径(False) & "\" & 自动创建项的目标分类 & "\" & IO.Path.GetFileName(要批量创建项的路径数据列表(i))
                             Dim str_2 As String = IO.Path.GetFileName(要批量创建项的路径数据列表(i))
                             If My.Computer.FileSystem.DirectoryExists(str_1) = True Then
                                 后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.8") & str_2)
@@ -79,7 +79,7 @@ Module 安装卸载统一后台线程
                         Exit Sub
                     Case 后台操作类型.创建一个项
                         后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.7"))
-                        Dim str_1 As String = 检查并返回当前可用子库路径(False) & "\" & 自动创建项的目标分类 & "\" & 要创建一个项的项名称
+                        Dim str_1 As String = 检查并返回当前所选子库路径(False) & "\" & 自动创建项的目标分类 & "\" & 要创建一个项的项名称
                         Dim str_2 As String = 要创建一个项的项名称
                         If My.Computer.FileSystem.DirectoryExists(str_1) = True Then
                             后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.8") & str_2)
@@ -114,7 +114,7 @@ Module 安装卸载统一后台线程
                 }
 
                 For i = 0 To 项列表.Count - 1
-                    a.ItemPath = 检查并返回当前可用子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i)
+                    a.ItemPath = 检查并返回当前所选子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i)
                     Dim abc1 As String = a.LoadCode
                     If abc1 = "" Then
                         后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.14") & 项列表(i))
@@ -194,7 +194,7 @@ Module 安装卸载统一后台线程
                                     Case SMUI.Windows.Core.Objects.CDTask.CDCD
                                         If My.Computer.FileSystem.DirectoryExists(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\Mods\" & a.Task_Parameter1(i2)) = True Then
                                             后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.36") & a.Task_Parameter1(i2))
-                                            My.Computer.FileSystem.CopyDirectory(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\Mods\" & a.Task_Parameter1(i2), 检查并返回当前可用子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i) & "\" & a.Task_Parameter1(i2), True)
+                                            My.Computer.FileSystem.CopyDirectory(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\Mods\" & a.Task_Parameter1(i2), 检查并返回当前所选子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i) & "\" & a.Task_Parameter1(i2), True)
 
                                         Else
                                             后台线程.ReportProgress(50, 获取动态多语言文本("data/DynamicText/InstallMessage.37") & a.Task_Parameter1(i2))
@@ -204,12 +204,12 @@ Module 安装卸载统一后台线程
                                 Select Case a.Task_Code(i2)
                                     Case SMUI.Windows.Core.Objects.CDTask.CDCD
                                         If My.Computer.FileSystem.DirectoryExists(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\Mods\" & a.Task_Parameter1(i2)) = True Then
-                                            If My.Computer.FileSystem.DirectoryExists(检查并返回当前可用子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i) & "\" & a.Task_Parameter1(i2)) = True Then
+                                            If My.Computer.FileSystem.DirectoryExists(检查并返回当前所选子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i) & "\" & a.Task_Parameter1(i2)) = True Then
                                                 后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.38") & a.Task_Parameter1(i2))
-                                                My.Computer.FileSystem.DeleteDirectory(检查并返回当前可用子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i) & "\" & a.Task_Parameter1(i2), FileIO.DeleteDirectoryOption.DeleteAllContents)
+                                                My.Computer.FileSystem.DeleteDirectory(检查并返回当前所选子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i) & "\" & a.Task_Parameter1(i2), FileIO.DeleteDirectoryOption.DeleteAllContents)
                                             End If
                                             后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.39") & a.Task_Parameter1(i2))
-                                            My.Computer.FileSystem.CopyDirectory(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\Mods\" & a.Task_Parameter1(i2), 检查并返回当前可用子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i) & "\" & a.Task_Parameter1(i2), True)
+                                            My.Computer.FileSystem.CopyDirectory(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\Mods\" & a.Task_Parameter1(i2), 检查并返回当前所选子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i) & "\" & a.Task_Parameter1(i2), True)
                                         Else
                                             后台线程.ReportProgress(50, 获取动态多语言文本("data/DynamicText/InstallMessage.37") & a.Task_Parameter1(i2))
                                         End If
@@ -263,7 +263,7 @@ Module 安装卸载统一后台线程
                         If Form1.ListView2.Items.Item(索引列表(i)).Text = 项列表(i) And 当前项列表中项的分类集合(索引列表(i)) = 所属分类列表(i) Then
                             Dim smuia As New SMUI.Windows.Core.ItemInfoReader
                             Dim smuictype As New SMUI.Windows.Core.Objects.ItemCalculateType With {.InstallStatus = True}
-                            smuia.ReadItemInfo(检查并返回当前可用子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i), smuictype, xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText)
+                            smuia.ReadItemInfo(检查并返回当前所选子库路径(False) & "\" & 所属分类列表(i) & "\" & 项列表(i), smuictype, xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText)
                             If smuia.ErrorString = "" Then
                                 根据安装状态设置项的颜色标记(smuia.InstallStatus, Form1.ListView2.Items.Item(索引列表(i)))
                                 Form1.ListView2.Items.Item(索引列表(i)).SubItems(2).Text = 根据安装状态返回多语言字符(smuia.InstallStatus)

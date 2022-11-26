@@ -4,11 +4,13 @@ Public Class DeveloperMethod
 
     Public Shared Sub RegisterPluginLogo(assemblyName As String, img As Image)
         Dim a As Integer = Array.IndexOf(插件数据.插件程序集名称列表, assemblyName)
+        If a < 0 Then Exit Sub
         插件数据.插件logo列表(a) = img
     End Sub
 
     Public Shared Sub RegisterPluginDescription(assemblyName As String, text As String)
         Dim a As Integer = Array.IndexOf(插件数据.插件程序集名称列表, assemblyName)
+        If a < 0 Then Exit Sub
         插件数据.插件简要描述列表(a) = text
     End Sub
 
@@ -22,7 +24,7 @@ Public Class DeveloperMethod
         End Function
 
         Public Shared Function GetCurrentSubLibrary() As String
-            Return 检查并返回当前可用子库路径(False)
+            Return 检查并返回当前所选子库路径(False)
         End Function
 
         Public Shared Function GetInterfaceLanguage() As String

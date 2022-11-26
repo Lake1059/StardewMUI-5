@@ -21,7 +21,7 @@ Module 多语言
         Form1.Label插件和扩展内容.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.5").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label新闻公告.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.6").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label模组列表.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.7").InnerText.Replace("/crlf/", vbNewLine)
-        Form1.Label下载模组.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.8").InnerText.Replace("/crlf/", vbNewLine)
+        Form1.Label统计数据.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.8").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label主题内容.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.9").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label创作者自由面板.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.10").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label参与翻译SMUI.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.11").InnerText.Replace("/crlf/", vbNewLine)

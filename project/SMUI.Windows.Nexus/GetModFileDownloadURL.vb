@@ -20,7 +20,7 @@ Public Class GetModFileDownloadURL
     Public Function StartGet(GameName As String, ModID As Integer, FileID As Integer, Optional key As String = "", Optional expires As String = "") As String
         Try
             ErrorString = ""
-            Dim u1 As String = ""
+            Dim u1 As String
             If key <> "" And expires <> "" Then
                 u1 = "https://api.nexusmods.com/v1/games/" & GameName & "/mods/" & ModID & "/files/" & FileID & "/download_link.json?key=" & key & "&expires=" & expires
             Else

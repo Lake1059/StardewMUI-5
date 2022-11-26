@@ -3,6 +3,7 @@ Imports CefSharp.WinForms
 Imports SMUI.GUI.Class1
 
 Public Class ChromiumBrowser
+
     Private Sub ChromiumBrowser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         获得的HTML = ""
         If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "English" Or ST1.是否正在使用自定义语言包 = True Then
@@ -71,6 +72,8 @@ Public Class ChromiumBrowser
         Me.Timer1.Enabled = True
     End Sub
 
+    Public 浏览器窗口内_需要回调给哪个更新模组窗口 As Form直接联网更新单个项
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
         If ST1.用于内置谷歌浏览器_当前正在更新模组 = False Then
@@ -100,7 +103,7 @@ Public Class ChromiumBrowser
         If Form直接联网更新单个项.DarkButton1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/A6") Then
             Form直接联网更新单个项.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S3")
         End If
-        Form直接联网更新单个项.BackgroundWorker2.RunWorkerAsync()
+        浏览器窗口内_需要回调给哪个更新模组窗口.BackgroundWorker2.RunWorkerAsync()
         ST1.用于内置谷歌浏览器_当前正在更新模组 = False
         Me.Timer1.Enabled = False
         Me.Close()

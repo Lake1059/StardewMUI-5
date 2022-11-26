@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!--chs : Chinese default text, you can refer to it for translation-->
+<!--chs : Chinese default text-->
 <!--width : width of the object-->
 <!--/crlf/ : Automatically replace with newline-->
+
+<!--Very important-->
+<!--If you want to translate, please be sure to use English as the original text and Chinese as the reference for translation.-->
+<!--This is because of the cultural factors of Chinese, in which I use a lot of our Internet language and spoken language, many sentences and words cannot be translated correctly by the machine, which will lead to misunderstandings or even misunderstood as cultural attacks, please know.-->
+
 <data>
 	<MainWindow>
 		<TitlePanel.1 chs="起始页面">Start Page</TitlePanel.1>
@@ -15,11 +20,11 @@
 		<StartPanel.1 chs="检查模组安装情况">Check Mods/crlf/Installation</StartPanel.1>
 		<StartPanel.2 chs="传统管理方式">Traditional Manage</StartPanel.2>
 		<StartPanel.3 chs="存档编辑器">Save Editor</StartPanel.3>
-		<StartPanel.4 chs="模组更新管理器">Mods Update/crlf/Manager</StartPanel.4>
+		<StartPanel.4 chs="模组更新管理操作台">Mods Update/crlf/Manager</StartPanel.4>
 		<StartPanel.5 chs="插件和扩展内容">Plugins Extensions</StartPanel.5>
 		<StartPanel.6 chs="新闻公告">News</StartPanel.6>
 		<StartPanel.7 chs="模组列表">NEXUS Mod List</StartPanel.7>
-		<StartPanel.8 chs="下载模组">Download Mod</StartPanel.8>
+		<StartPanel.8 chs="统计数据">Statistics</StartPanel.8>
 		<StartPanel.9 chs="主题内容">Theme Content</StartPanel.9>
 		<StartPanel.10 chs="创作者自由面板">Creator Free Panel</StartPanel.10>
 		<StartPanel.11 chs="参与翻译 SMUI">Translate SMUI</StartPanel.11>
@@ -88,7 +93,7 @@
 		<ManagePanel.24 chs="筛选" width="60">Filter</ManagePanel.24>
 		
 		<ManagePanel.25 chs="新建项">New item</ManagePanel.25>
-		<ManagePanel.25_1 chs="下载并新建项">Dowload, create new item</ManagePanel.25_1>
+		<ManagePanel.25_1 chs="下载并新建项">Download, create new item</ManagePanel.25_1>
 		<ManagePanel.26 chs="移动项">Move item</ManagePanel.26>
 		<ManagePanel.27 chs="删除项">Delete item</ManagePanel.27>
 		<ManagePanel.28 chs="导入项">Import item</ManagePanel.28>
@@ -211,6 +216,8 @@
 		<S15 chs="已完成自动新建项">Auto Creat New Item Completed.</S15>
 		<S16 chs="解压出的内容不能自动编写安装命令，请手动编写">The decompressed content cannot automatically write the installation command, please write it manually.</S16>
 		<S17 chs="正在转移解压出的内容到新的项">Moving unpacked content to new item.</S17>
+		<S18 chs="不支持此格式：">This format is not supported: </S18>
+		<S19 chs="不支持 RAR 格式的压缩文件（由于授权的问题，将永远不会考虑支持，请联系作者不要上传此格式，应使用 zip 或者 7z）">Compressed files in RAR format are not supported (due to licensing issues, support will never be considered, please contact the author Do not upload this format, use zip or 7z.</S19>
 		
 		<A1 chs="文件夹名称不匹配">Folder name does not match.</A1>
 		<A2 chs="清单文件放置目录不正确">The manifest file is placed in the wrong path.</A2>
@@ -221,11 +228,13 @@
 		<A7 chs="存在多重套娃或者非标准 SMAPI 模组内容">There are multiple subdirectory loops or non-standard SMAPI mods.</A7>
 		<A8 chs="解压出的内容不包含文件夹或文件夹是空的">The extracted content does not contain a folder or the folder is empty.</A8>
 		<A9 chs="检测到 manifest.json 直接存在于解压出的根位置">Detected that manifest.json exists directly in the unzipped root location.</A9>
+		<A10 chs="检测到原本使用 CDMAD 的文件夹现在却可以使用 CDCD">Detected folder that used to use CDMAD, but now can use CDCD</A10>
 			
 		<Chromium.1 chs="正在等待页面完成加载 ... 请不要点击下载按钮，程序将自动取出需要的参数">Waiting for page to finish loading...</Chromium.1>
 		<!--用不着，别翻译   no use, don't translate-->
 		<!--<Chromium.2 chs="成功拿到参数，自动关闭页面">Successfully get the parameters, automatically close the page.</Chromium.2>-->
 		<Chromium.3 chs="无法获取到参数，请在顶部菜单中恢复任务并刷新重试，顺便请确保打开的模组页面也是已经登录状态，如果不是就再点一下登录，必须登录了才会有参数">Unable to get parameters, please resume the task in the top menu and refresh and try again. Make sure that the opened mod page is also logged in. If not, click to log in again. You must log in to have parameters.</Chromium.3>
+		<!--挂起一词需要使用重置来翻译，中文写作挂起是为了国内大众理解方便，而专业术语中挂起的意思是中断 must read this tip-->
 		<Chromium.4 chs="直接更新项流程的参数检测程序已重新挂起，请刷新页面或者继续等待">The parameter detector of the direct update item process has been reset, please refresh the page or continue to wait</Chromium.4>	
 	</DirectOnlineUpdateWindow>
 	
@@ -238,8 +247,6 @@
 		<M6 chs="停止 ❌">Stop ❌</M6>
 		<M7 chs="转到地址：">Go Link:</M7>	
 		<A1 chs="重置直接更新项流程状态">Reset direct update item process state</A1>
-		<!--中文梗，别乱翻译，翻译第一句就行了，后边的别翻译-->
-		<K1 chs="没有检测到谷歌浏览器组件，请正确安装后再试。造成这个问题的原因目前记录到的有：不看新闻列表的，不看维基的，不看我B站专栏的，选择性失明的，选择性不识字的，跟运行库搞混的，没正确安装到SMUI的安装目录的，还有瞬间失忆的，瞬间不识字的，觉得看不懂就觉得不重要的。再来问这个问题的统一上交250元智商税后再解答。">Chrome component not detected, please install it correctly and try again.</K1>	
 	</ChromiumWindow>
 
 
@@ -276,9 +283,8 @@
 		<S15 chs="临时解压">Temporary decompression</S15>
 		<S16 chs="插件数据">Plugin data</S16>
 
-		<B1 chs="完全删除浏览器所有缓存">delete all browser cache</B1>
+		<B1 chs="完全删除浏览器所有缓存">Delete all browser cache</B1>
 	</StorageManagementWindow>
-	
 	
 	<SettingsWindow>
 		<Title chs="设置">Settings</Title>
@@ -317,6 +323,10 @@
 		<A31 chs="自动获取新闻公告">Automatically get news</A31>
 		<A32 chs="保存用户调整后的界面布局">Save the interface layout adjusted by the user</A32>
 		<A33 chs="启用管理员身份下的拖拽兼容选项">Enable drag-and-drop compatibility option under admin</A33>
+		<A34 chs="自动选择首个 NEXUS 下载服务器（由 NEXUS 账户设置决定）">Automatically select the first NEXUS download server</A34>
+		
+		<B1 chs="打开隐私设置">Open Privacy Settings</B1>
+		
 		<A34 chs="   界面尺寸">   Interface size</A34>
 		<A35 chs="分类栏区域宽度（200-400）">Category panel area width (200-400)</A35>
 		<A36 chs="描述栏区域宽度（250-500）">Description panel area width (250-500)</A36>
@@ -395,7 +405,7 @@
 		<A10 chs=""></A10>
 		<DS.1 chs="是否确认开始批量创建？如果有目标路径存在则不会创建，创建过程中切勿重复操作，避免文件系统冲突！">Are you sure to start batch creation? If the target path exists, it will not be created. Do not repeat operations during the creation process to avoid file system conflicts!</DS.1>
 		<DS.2 chs="将多个文件夹创建为一个项时，必须设定这个新项的名称">When creating multiple folders as an item, you must set the name of the new item.</DS.2>
-		<!--已经预防了，SMAPI 自带的模组不会被扫描-->
+		<!--已经预防了，SMAPI 自带的模组不会被扫描 It has been prevented, the mods that come with SMAPI will not be scanned.-->
 		<DS.3 chs="你不应该把 SMAPI 自带的模组创建到库中">You should not build mods that come with SMAPI into the library.</DS.3>
 		<DS.4 chs="你没有选择操作类型">You did not select an operation type.</DS.4>
 		<DS.5 chs="你没有选择目标分类">You have not selected a target category.</DS.5>
@@ -410,10 +420,82 @@
 		<Title chs="存档编辑器">Save Editor</Title>
 		<A1 chs=""></A1>
 		
-		
-		
-		
 	</SaveEditorWindow>
+
+	
+	<ModCheckUpdateManageWindow>
+		<Title chs="模组检查更新管理操作台">Mod Check Update Manage Window</Title>
+		<A1 chs="步骤一：向 smapi.io 发送数据" width="200">Step1: Send data to smapi.io</A1>
+		<A2 chs="步骤二：选择接收到的数据" width="200">Step2: Select received data</A2>
+		<A3 chs="步骤三：在本地库中找到项" width="200">Step3: Find item in local</A3>
+		
+		<A4 chs=" 在主窗口的【管理模组】页面中，在分类列表和项列表的右键菜单中选择【加入检查更新表】来将数据添加到列表中，或者直接拖入包含清单文件的模组文件夹">In the [Manage Mod] tab of the main window, select [Add to check update List] in the right-click menu of the category list and item list to add data to the list, or directly drag the mod folder containing the manifest file.</A4>
+		<A5 chs="发送数据选项"></A5>
+		<A6 chs="发送 SMAPI 版本信息"></A6>
+		<A7 chs="发送 Stardew Valley 版本号"></A7>
+		<A8 chs="发送操作系统平台名称"></A8>
+		<A9 chs="让接口返回完整数据"></A9>
+		<A10 chs="发送所有更新键"></A10>
+		<A11 chs="发送所有本地版本"></A11>
+		<A12 chs="发送所有运行态"></A12>
+		<A13 chs="发送数据：下一步"></A13>
+		<A14 chs=" UniqueID"> UniqueID</A14>
+		<A15 chs=" 更新键"></A15>
+		<A16 chs=" 本地版本"></A16>
+		<A17 chs=" 当前正常运行"></A17>
+		<A18 chs="编辑单个条目"></A18>
+		<A19 chs="移除选中"></A19>
+		<A20 chs="移除全部"></A20>
+		<A21 chs="批量修改"></A21>
+		<A22 chs="批量修改：更新键"></A22>
+		<A23 chs="批量修改：本地版本"></A23>
+		<A24 chs="批量修改：运行态"></A24>
+
+		<A25 chs=" 查阅从 smapi.io 返回的数据"></A25>
+		<A26 chs=" 详细数据菜单"></A26>
+		<A27 chs="包含的 UniqueID"></A27>
+		<A28 chs="打开建议更新版本的地址"></A28>
+		<A29 chs="其他模组平台 ID"></A29>
+		<A30 chs="GitHub 存储库地址"></A30>
+		<A30.1 chs="没有 GitHub 地址"></A30.1>
+		<A31 chs="自定义资源地址"></A31>
+		<A32 chs="主要版本地址"></A32>
+		<A33 chs="其他版本地址"></A33>
+		<A34 chs="兼容性描述"></A34>
+		<A35 chs="额外兼容性和测试版信息"></A35>
+		<A36 chs="添加全部条目到下一步" width="150"></A36>
+		<A37 chs="添加选中条目到下一步" width="150"></A37>
+		<A38 chs="清空此表数据并返回" width="150"></A38>
+		<A39 chs="仅返回" width="80"></A39>
+		<A40 chs=" 模组名称"></A40>
+		<A41 chs=" UniqueID"></A41>
+		<A42 chs=" 建议更新版本"></A42>
+		<A43 chs=" 更新键"></A43>
+		<A44 chs=" 兼容性描述"></A44>
+
+		<S1 chs=" 正在收集数据"></S1>
+		<S2 chs=" 正在转换数据"></S2>
+		<S3 chs=" 正在连接 SMAPI 服务器"></S3>
+		<S4 chs=" 正在转换对象"></S4>
+		<S5 chs="已是最新">is up to date</S5>
+		<S6 chs="无 Nexus">no nexus id</S6>
+		<S7 chs="已找到："></S7>
+		<S8 chs="重复的对象："></S8>
+		<S8.1 chs="在：">At: </S8.1>
+		<S9 chs="未能找到包含此对象的项："></S9>
+		<S10 chs="查找结束"></S10>
+		<S11 chs="已添加条目数量："></S11>
+
+	</ModCheckUpdateManageWindow>
+
+	<PrivacyChoiceWindow>
+		<A1 chs="隐私选项">Privacy Choice</A1>
+		<A2 chs="参与用户统计，并上传这些数据"></A2>
+		<A3 chs="参与用户统计，但不愿意上传你的数据，我们仍会收到您的公网 IP 地址"></A3>
+		<A4 chs="不参与统计，我们不会收到你的任何数据"></A4>
+		<A5 chs="确认选择"></A5>
+	</PrivacyChoiceWindow>
+	
 	
 	
 	<!--These are dynamic text, in dialogs and status information, etc.-->
@@ -437,8 +519,12 @@
 		<NoMatches chs="没有匹配的目标">No matches.</NoMatches>
 		<mainFile chs="主要文件">Main Files</mainFile>
 		<optionalFiles chs="可选文件">Optional Files</optionalFiles>
-		
+		<WindowsMF_1 chs="激活拖拽"></WindowsMF_1>
+		<WindowsMF_2 chs="管理员：激活拖拽"></WindowsMF_2>
+		<neverRemindAgain chs="不再提醒">Never remind again</neverRemindAgain>
 
+		<ChromiumVersionWarn chs="当前 SMUI 版本需要使用的 Chromium 组件版本号为：{1}，请记得前往维基下载对应版本的 Chromium Embedded Framework 组件安装程序，如果版本不对应，可能无法正常使用浏览器功能">The version number of the Chromium component required for the current SMUI version is: {1}, please remember to go to the wiki to download the corresponding version of the Chromium Embedded Framework component installer, if the version does not match, the browser function may not work normally.</ChromiumVersionWarn>
+		
 		<LoggedNexusWebApi chs="已登录 NEXUS WEB API">Logged Nexus API</LoggedNexusWebApi>
 		<NotLogInNexusWebApi chs="未登录 NEXUS WEB API">Not Login Nexus API</NotLogInNexusWebApi>
 		<LogInFailed chs="登录失败">LogIn Failed</LogInFailed>
@@ -506,6 +592,9 @@
 		<ManageMod.32 chs="如果你忘记了设置的密码，可以到用户配置文件夹，用记事本或其他编辑器打开最后的 7za.bat 批处理文件查看即可，但是请不要运行它，防止造成意外事故">If you forget the password you set, you can go to the user configuration folder and open the final 7za.bat batch file with Notepad or other editors to view it, but please do not run it to prevent accidents.</ManageMod.32>
 		<ManageMod.33 chs="当前项已经在配置队列中，请去那里进行重命名操作">The current item is already in the deploy queue, please go there to rename.</ManageMod.33>
 		<ManageMod.34 chs="重命名项：">Rename Item: </ManageMod.34>
+
+		<UpdateMod.1 chs="输入你要进行访问的 星露谷 NEXUS 模组的页面 ID">Enter the ID of the NEXUS Stardew Valley mod you want to access.</UpdateMod.1>
+		<UpdateMod.2 chs="自由输入 ID 进行更新">Enter ID to update</UpdateMod.2>
 
 		<InstallMessage.1 chs="正在安装">Installing</InstallMessage.1>
 		<InstallMessage.2 chs="正在卸载">Uninstalling</InstallMessage.2>
@@ -579,11 +668,13 @@
 		<Deploy.14 chs="未知命令：">Unknown command: </Deploy.14>
 		<Deploy.15 chs="名为 assets 的文件夹不应该出现">A folder named assets should not appear.</Deploy.15>
 		<Deploy.16 chs="Content 文件夹可以使用 CDVD 命令，请注意设置备份">Content folder can use CDVD command, pay attention to setting backup.</Deploy.16>
-		<Deploy.17 chs=" 文件夹为标准 SMAPI 模组，添加正确"> folder is a standard SMAPI mod, add icorrectly.</Deploy.17>
+		<!--<Deploy.17 chs=" 文件夹为标准 SMAPI 模组"> folder is a standard SMAPI mod.</Deploy.17>-->
 		<Deploy.18 chs=" 文件在任何情况下都不可能出现，你在干什么！"> file is unlikely to appear under any circumstances.</Deploy.18>
 		<Deploy.19 chs=" 压缩文件需要解压，或者你有其他需求"> compressed file needs to be decompressed, or you have other needs.</Deploy.19>
 		<Deploy.20 chs="使用 CDCD 命令的文件夹不准套娃，manifest.json 必须就在文件夹下">The folder using CDCD command must contain manifest.json directly.</Deploy.20>
 		<Deploy.21 chs="已使用控制命令解锁允许 CDCD 套娃">Unlocked with control command to allow CDCD multi-level folders.</Deploy.21>
+		<Deploy.22 chs="未编写命令的对象：">Objects with no commands written: </Deploy.22>
+		<Deploy.23 chs="已使用控制命令解锁允许任何文件添加到项中">Unlocked with control command to allow any file tcan add to item.</Deploy.23>
 		
 		<Sever.0 chs="检测到绿色版模式标记文件，检查更新功能已禁用">Portable mode flag file detected, check for updates disabled.</Sever.0>
 		<Sever.1 chs="正在连接服务器...">Connecting to server...</Sever.1>
@@ -612,6 +703,14 @@
 		<Other.1 chs="成功初始化了浏览器配置">Browser configuration successfully initialized.</Other.1>
 		<Other.2 chs="初始化浏览器配置发生错误">Error initializing browser configuration.</Other.2>
 		<Other.3 chs="未安装谷歌浏览器组件">Chromium component not installed.</Other.3>
-</DynamicText>
+	</DynamicText>
+
+	<SYSTEM>
+		<smuispak_showname chs="SMUI 数据子库打包文件">SMUI Sub Library Pak</smuispak_showname>
+		<smuicpak_showname chs="SMUI 分类打包文件">SMUI Category Pak</smuicpak_showname>
+		<smuimpak_showname chs="SMUI 项打包文件">SMUI Item Pak</smuimpak_showname>
+	</SYSTEM>
+	
+
 	
 </data>

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form下载并新建项输入对话框
     Inherits System.Windows.Forms.Form
 
     'Form 重写 Dispose，以清理组件列表。
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form下载并新建项输入对话框
     '注意: 以下过程是 Windows 窗体设计器所必需的
     '可以使用 Windows 窗体设计器修改它。  
     '不要使用代码编辑器修改它。
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DarkTextBox1 = New DarkUI.Controls.DarkTextBox()
@@ -43,6 +43,7 @@ Partial Class Form下载并新建项输入对话框
         '
         'DarkTextBox1
         '
+        Me.DarkTextBox1.AllowDrop = True
         Me.DarkTextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DarkTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(74, Byte), Integer))
@@ -66,6 +67,7 @@ Partial Class Form下载并新建项输入对话框
         '
         'DarkTextBox2
         '
+        Me.DarkTextBox2.AllowDrop = True
         Me.DarkTextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.DarkTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.DarkTextBox2.Font = New System.Drawing.Font("Yu Gothic UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -80,7 +82,7 @@ Partial Class Form下载并新建项输入对话框
         'DarkButton1
         '
         Me.DarkButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DarkButton1.Location = New System.Drawing.Point(265, 262)
+        Me.DarkButton1.Location = New System.Drawing.Point(265, 212)
         Me.DarkButton1.Margin = New System.Windows.Forms.Padding(10)
         Me.DarkButton1.Name = "DarkButton1"
         Me.DarkButton1.Padding = New System.Windows.Forms.Padding(5)
@@ -118,7 +120,7 @@ Partial Class Form下载并新建项输入对话框
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(384, 311)
+        Me.ClientSize = New System.Drawing.Size(384, 261)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.DarkComboBox1)
         Me.Controls.Add(Me.DarkButton1)
@@ -130,7 +132,7 @@ Partial Class Form下载并新建项输入对话框
         Me.ForeColor = System.Drawing.SystemColors.Control
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(400, 350)
+        Me.MinimumSize = New System.Drawing.Size(400, 300)
         Me.Name = "Form下载并新建项输入对话框"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False

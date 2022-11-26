@@ -2,6 +2,7 @@
 Imports Newtonsoft.Json.Linq
 Imports SMUI.Windows.Core.SharedFunction
 Imports Microsoft.VisualBasic.FileIO.FileSystem
+Imports Newtonsoft
 
 Public Class ItemInfoReader
 
@@ -235,7 +236,7 @@ LineUniqueID:
                             If CalculateType.UpdateKeys = True Then
                                 If JsonData.item("UpdateKeys") Is Nothing Then GoTo LineUpdateKeys
                                 For k = 0 To JsonData.item("UpdateKeys").Count - 1
-                                    If InStr(JsonData.item("UpdateKeys").item(k).ToString, "Nexus") > 0 Then
+                                    If InStr(JsonData.item("UpdateKeys").item(k).ToString.ToLower, "nexus") > 0 Then
                                         Dim str = GetModUpdateID(JsonData.item("UpdateKeys").item(k).ToString.ToLower, "nexus")
                                         If IsNumeric(str) Then
                                             If str < 0 Then GoTo UpdateKeysNext

@@ -7,12 +7,13 @@ Imports SMUI.Windows.PakManager
 Public Class Form1
 
 #Region "主窗口"
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SevenZip.SevenZipBase.SetLibraryPath(Application.StartupPath & "\7zFull64.dll")
         加载自定义语言文件()
         Application.DoEvents()
-        Dim graphics As Graphics = Me.CreateGraphics
-        If graphics.DpiX <> 96 Then 高DPI兼容处理_主界面()
+
+
         启动时加载用户设置()
         读取导入导出密码本()
         启动时初始化界面()
@@ -53,7 +54,12 @@ Public Class Form1
         Else
             运行后台服务器检查更新()
         End If
-        If System.Globalization.CultureInfo.CurrentCulture.Name = "zh-CN" And xml_Settings.SelectSingleNode("data/StatisticsOnTheNmberOfParticipatingUsers").InnerText = "True" Then 向服务器发送用户统计()
+
+        Select Case xml_Settings.SelectSingleNode("data/PrivacyChoice").InnerText
+            Case "1", "2"
+                向服务器发送用户统计()
+        End Select
+
         刷新标题栏主信息显示()
         SYS1.检查用户身份组()
         启动后自动登录NEXUSAPI()
@@ -70,6 +76,11 @@ Public Class Form1
                 扫描分类(xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText & "\" & xml_Settings.SelectSingleNode("data/LastUsedSubLibraryName").InnerText)
             End If
         End If
+
+        Dim graphics As Graphics = Me.CreateGraphics
+        If graphics.DpiX <> 96 Then 高DPI兼容处理_主界面()
+
+        谷歌浏览器组件版本提醒()
 
         ST1.是否已启动完毕 = True
         调整项列表列宽()
@@ -145,11 +156,11 @@ Public Class Form1
         sender.ForeColor = ColorTranslator.FromWin32(RGB(240, 240, 240))
     End Sub
 
-    Sub 二级按钮鼠标移上事件(sender As Object, e As EventArgs) Handles LabelUniqueID显示.MouseEnter, Label依赖项数量显示.MouseEnter, Label作者显示.MouseEnter, Label更新地址显示.MouseEnter, Label预览图菜单.MouseEnter, Label项菜单.MouseEnter, Label调试.MouseEnter, Label刷新.MouseEnter, Label描述菜单.MouseEnter, Label筛选.MouseEnter, Label搜索.MouseEnter, Label子库分类菜单.MouseEnter, Label保存并从队列中移除.MouseEnter, Label仅保存.MouseEnter, Label自动完成.MouseEnter, Label移除配置队列中的项.MouseEnter, Label添加文件夹.MouseEnter, Label添加文件.MouseEnter, Label所有命令.MouseEnter, Label刷新项的数据内容.MouseEnter, Label全部复制.MouseEnter, Label参与翻译SMUI.MouseEnter, Label模组更新检查器.MouseEnter, Label存档编辑器.MouseEnter, Label检查模组安装情况.MouseEnter, Label传统管理方式.MouseEnter, Label立即检查更新.MouseEnter, Label插件和扩展内容.MouseEnter, Label角落预览图菜单.MouseEnter, Label移除配置队列里的全部项.MouseEnter
+    Sub 二级按钮鼠标移上事件(sender As Object, e As EventArgs) Handles LabelUniqueID显示.MouseEnter, Label依赖项数量显示.MouseEnter, Label作者显示.MouseEnter, Label更新地址显示.MouseEnter, Label预览图菜单.MouseEnter, Label项菜单.MouseEnter, Label调试.MouseEnter, Label刷新.MouseEnter, Label描述菜单.MouseEnter, Label筛选.MouseEnter, Label搜索.MouseEnter, Label子库分类菜单.MouseEnter, Label保存并从队列中移除.MouseEnter, Label仅保存.MouseEnter, Label自动完成.MouseEnter, Label移除配置队列中的项.MouseEnter, Label添加文件夹.MouseEnter, Label添加文件.MouseEnter, Label所有命令.MouseEnter, Label刷新项的数据内容.MouseEnter, Label全部复制.MouseEnter, Label参与翻译SMUI.MouseEnter, Label模组更新检查器.MouseEnter, Label存档编辑器.MouseEnter, Label检查模组安装情况.MouseEnter, Label传统管理方式.MouseEnter, Label立即检查更新.MouseEnter, Label插件和扩展内容.MouseEnter, Label角落预览图菜单.MouseEnter, Label移除配置队列里的全部项.MouseEnter, Label关于和许可协议.MouseEnter
         sender.BackColor = ColorTranslator.FromWin32(RGB(64, 64, 64))
     End Sub
 
-    Sub 二级按钮鼠标移走事件(sender As Object, e As EventArgs) Handles Label子库分类菜单.MouseLeave, LabelUniqueID显示.MouseLeave, Label依赖项数量显示.MouseLeave, Label作者显示.MouseLeave, Label更新地址显示.MouseLeave, Label项菜单.MouseLeave, Label刷新.MouseLeave, Label搜索.MouseLeave, Label筛选.MouseLeave, Label调试.MouseLeave, Label描述菜单.MouseLeave, Label预览图菜单.MouseLeave, Label保存并从队列中移除.MouseLeave, Label仅保存.MouseLeave, Label自动完成.MouseLeave, Label移除配置队列中的项.MouseLeave, Label添加文件夹.MouseLeave, Label添加文件.MouseLeave, Label所有命令.MouseLeave, Label刷新项的数据内容.MouseLeave, Label全部复制.MouseLeave, Label参与翻译SMUI.MouseLeave, Label模组更新检查器.MouseLeave, Label存档编辑器.MouseLeave, Label检查模组安装情况.MouseLeave, Label传统管理方式.MouseLeave, Label立即检查更新.MouseLeave, Label插件和扩展内容.MouseLeave, Label角落预览图菜单.MouseLeave, Label移除配置队列里的全部项.MouseLeave
+    Sub 二级按钮鼠标移走事件(sender As Object, e As EventArgs) Handles Label子库分类菜单.MouseLeave, LabelUniqueID显示.MouseLeave, Label依赖项数量显示.MouseLeave, Label作者显示.MouseLeave, Label更新地址显示.MouseLeave, Label项菜单.MouseLeave, Label刷新.MouseLeave, Label搜索.MouseLeave, Label筛选.MouseLeave, Label调试.MouseLeave, Label描述菜单.MouseLeave, Label预览图菜单.MouseLeave, Label保存并从队列中移除.MouseLeave, Label仅保存.MouseLeave, Label自动完成.MouseLeave, Label移除配置队列中的项.MouseLeave, Label添加文件夹.MouseLeave, Label添加文件.MouseLeave, Label所有命令.MouseLeave, Label刷新项的数据内容.MouseLeave, Label全部复制.MouseLeave, Label参与翻译SMUI.MouseLeave, Label模组更新检查器.MouseLeave, Label存档编辑器.MouseLeave, Label检查模组安装情况.MouseLeave, Label传统管理方式.MouseLeave, Label立即检查更新.MouseLeave, Label插件和扩展内容.MouseLeave, Label角落预览图菜单.MouseLeave, Label移除配置队列里的全部项.MouseLeave, Label关于和许可协议.MouseLeave
         sender.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
     End Sub
 
@@ -204,9 +215,9 @@ Public Class Form1
         If Me.Panel模组列表.Controls.Count = 0 Then Me.DCM模组列表.Show(MousePosition)
     End Sub
 
-    Private Sub Label下载模组_Click(sender As Object, e As EventArgs) Handles Label下载模组.Click
+    Private Sub Label下载模组_Click(sender As Object, e As EventArgs) Handles Label统计数据.Click
         切换起始页面内容选项卡按钮状态(sender)
-        Me.Panel下载模组.Visible = True
+        Me.Panel统计数据.Visible = True
     End Sub
 
     Private Sub Label主题内容_Click(sender As Object, e As EventArgs) Handles Label主题内容.Click
@@ -220,14 +231,12 @@ Public Class Form1
     End Sub
 
     Private Sub Label关于和许可协议_Click(sender As Object, e As EventArgs) Handles Label关于和许可协议.Click
-        切换起始页面内容选项卡按钮状态(sender)
-        Me.Panel更新历史以及关于和许可协议.Visible = True
-        Me.RichTextBox2.LoadFile(Application.StartupPath & "\User License Agreement.rtf")
+        Process.Start("https://github.com/Lake1059/StardewMUI-5/blob/main/Copyright+License.md")
     End Sub
 
     Private Sub Label查看更新历史_Click(sender As Object, e As EventArgs) Handles Label查看更新历史.Click
         切换起始页面内容选项卡按钮状态(sender)
-        Me.Panel更新历史以及关于和许可协议.Visible = True
+        Me.Panel更新历史.Visible = True
         Me.RichTextBox2.LoadFile(Application.StartupPath & "\updatehistory.rtf")
     End Sub
 #End Region
@@ -256,6 +265,15 @@ Public Class Form1
         Else
             Form搜索.Close()
         End If
+    End Sub
+
+    Private Sub Label模组更新检查器_Click(sender As Object, e As EventArgs) Handles Label模组更新检查器.Click
+        If Form模组检查更新操作台.Visible = False Then
+            Form模组检查更新操作台.Show()
+        End If
+        Form模组检查更新操作台.Focus()
+        Me.检查更新加入表中ToolStripMenuItem.Visible = True
+        Me.检查更新加入表中ToolStripMenuItem1.Visible = True
     End Sub
 
 #End Region
@@ -396,11 +414,6 @@ Public Class Form1
 #End Region
 
 #Region "其他界面调整"
-    Private Sub Panel10_SizeChanged(sender As Object, e As EventArgs) Handles Panel10.SizeChanged
-        If ST1.是否已启动完毕 = False Then Exit Sub
-
-
-    End Sub
 
 #End Region
 
@@ -418,6 +431,10 @@ Public Class Form1
                     Me.DCM1.Show(mouseX - e.X + (Me.Label子库分类菜单.Width - Me.DCM1.Width) + 1, mouseY + (Me.Label子库分类菜单.Height - e.Y) + 1)
                 End If
         End Select
+    End Sub
+
+    Private Sub Label子库分类菜单_Click(sender As Object, e As EventArgs) Handles Label子库分类菜单.Click
+
     End Sub
 
     Private Sub 刷新子库列表ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 刷新子库列表ToolStripMenuItem.Click
@@ -459,13 +476,13 @@ Line1:
 #Region "分类菜单和分类右键菜单"
     Private Sub 刷新分类ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 刷新分类ToolStripMenuItem.Click
         清除模组列表()
-        Dim a As String = 检查并返回当前可用子库路径()
+        Dim a As String = 检查并返回当前所选子库路径()
         If a = "" Then Exit Sub
         扫描分类(a)
     End Sub
 
     Private Sub 新建分类ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 新建分类ToolStripMenuItem.Click
-        Dim a As String = 检查并返回当前可用子库路径()
+        Dim a As String = 检查并返回当前所选子库路径()
         If a = "" Then Exit Sub
         Dim d1 As New InputTextDialog(获取动态多语言文本("data/DynamicText/NewCategory"), 获取动态多语言文本("data/DynamicText/ManageMod.7"),, 500)
         d1.TranslateButtonText(获取动态多语言文本("data/DynamicText/OK"), 获取动态多语言文本("data/DynamicText/Cancel"))
@@ -498,7 +515,7 @@ Line1:
                     Do Until i2 = Me.ListView1.Items.Count
                         If Me.ListView1.Items.Item(i2).Selected = True Then
                             Dim 当前选择的目标子库 As String = s1.Text
-                            Dim 原路径 As String = 检查并返回当前可用子库路径(False) & "\" & Me.ListView1.Items.Item(i2).Text
+                            Dim 原路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView1.Items.Item(i2).Text
                             Dim 目标路径 As String = 检查并返回当前模组数据仓库路径(False) & "\" & 当前选择的目标子库 & "\" & Me.ListView1.Items.Item(i2).Text
                             If My.Computer.FileSystem.DirectoryExists(目标路径) = False Then
                                 My.Computer.FileSystem.MoveDirectory(原路径, 目标路径)
@@ -521,7 +538,7 @@ Line1:
             Dim i As Integer = 0
             Do Until i = Me.ListView1.Items.Count
                 If Me.ListView1.Items.Item(i).Selected = True Then
-                    My.Computer.FileSystem.DeleteDirectory(检查并返回当前可用子库路径(False) & "\" & Me.ListView1.Items.Item(i).Text, FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin, FileIO.UICancelOption.DoNothing)
+                    My.Computer.FileSystem.DeleteDirectory(检查并返回当前所选子库路径(False) & "\" & Me.ListView1.Items.Item(i).Text, FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin, FileIO.UICancelOption.DoNothing)
                     Me.ListView1.Items.Item(i).Remove()
                     i -= 1
                 End If
@@ -542,7 +559,7 @@ Line1:
     End Sub
 
     Private Sub 打开选择分类的文件夹ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开选择分类的文件夹ToolStripMenuItem.Click
-        If Me.ListView1.SelectedItems.Count = 1 Then Process.Start(检查并返回当前可用子库路径() & "\" & Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(0)).Text)
+        If Me.ListView1.SelectedItems.Count = 1 Then Process.Start(检查并返回当前所选子库路径() & "\" & Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(0)).Text)
     End Sub
 
     Private Sub 重命名分类ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 重命名分类ToolStripMenuItem.Click
@@ -552,13 +569,13 @@ Line1:
 Line1:
         Dim s1 As String = a.ShowDialog(Me)
         If s1 = "" Then Exit Sub
-        If My.Computer.FileSystem.DirectoryExists(检查并返回当前可用子库路径(False) & "\" & s1) = True Then
+        If My.Computer.FileSystem.DirectoryExists(检查并返回当前所选子库路径(False) & "\" & s1) = True Then
             Dim b As New SingleSelectionDialog(获取动态多语言文本("data/DynamicText/Negative"), {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DynamicText/ManageMod.6") & vbNewLine & vbNewLine & s1,, 500)
             b.ShowDialog(Me)
             GoTo Line1
         Else
             Dim x As String = Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(0)).Text
-            My.Computer.FileSystem.RenameDirectory(检查并返回当前可用子库路径(False) & "\" & x, s1)
+            My.Computer.FileSystem.RenameDirectory(检查并返回当前所选子库路径(False) & "\" & x, s1)
             Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(0)).Text = s1
             For i = 0 To 当前项列表中项的分类集合.Count - 1
                 If 当前项列表中项的分类集合(i) = x Then 当前项列表中项的分类集合(i) = s1
@@ -575,7 +592,7 @@ Line1:
     End Sub
 
     Private Sub 清除Config缓存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 清除Config缓存ToolStripMenuItem.Click
-        Dim a As String = 检查并返回当前可用子库路径(False)
+        Dim a As String = 检查并返回当前所选子库路径(False)
         Dim p As String() = {}
         For i = 0 To Me.ListView1.SelectedItems.Count - 1
             Dim x As String() = SMUI.Windows.Core.SharedFunction.SearchFolderWithoutSub(a & "\" & Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(i)).Text)
@@ -665,8 +682,8 @@ Line1:
                     Do Until i2 = Me.ListView2.Items.Count
                         If Me.ListView2.Items.Item(i2).Selected = True Then
                             Dim 当前选择的目标分类 As String = s1.Text
-                            Dim 原路径 As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(i2) & "\" & Me.ListView2.Items.Item(i2).Text
-                            Dim 目标路径 As String = 检查并返回当前可用子库路径(False) & "\" & 当前选择的目标分类 & "\" & Me.ListView2.Items.Item(i2).Text
+                            Dim 原路径 As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(i2) & "\" & Me.ListView2.Items.Item(i2).Text
+                            Dim 目标路径 As String = 检查并返回当前所选子库路径(False) & "\" & 当前选择的目标分类 & "\" & Me.ListView2.Items.Item(i2).Text
                             If My.Computer.FileSystem.DirectoryExists(目标路径) = False Then
                                 My.Computer.FileSystem.MoveDirectory(原路径, 目标路径)
                                 Dim Array对象 As New ArrayList(当前项列表中项的分类集合)
@@ -692,7 +709,7 @@ Line1:
             Dim i As Integer = 0
             Do Until i = Me.ListView2.Items.Count
                 If Me.ListView2.Items.Item(i).Selected = True Then
-                    str = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(i) & "\" & Me.ListView2.Items.Item(i).Text
+                    str = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(i) & "\" & Me.ListView2.Items.Item(i).Text
                     My.Computer.FileSystem.DeleteDirectory(str, FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin)
                     Dim Array对象 As New ArrayList(当前项列表中项的分类集合)
                     Array对象.RemoveAt(i)
@@ -841,7 +858,7 @@ Line1:
         If Me.ListView2.SelectedItems.Count <> 1 Then
             Exit Sub
         End If
-        Dim a As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
+        Dim a As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
         If My.Computer.FileSystem.FileExists(a & "\README.rtf") = False Then
             Dim x As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/Yes"), 获取动态多语言文本("data/DynamicText/No")}, 获取动态多语言文本("data/DynamicText/ManageMod.23"))
             Select Case x.ShowDialog(Me)
@@ -868,7 +885,7 @@ jx1:
         If Me.ListView2.SelectedItems.Count <> 1 Then
             Exit Sub
         End If
-        Dim a As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
+        Dim a As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
         Me.RichTextBox1.SaveFile(a & "\README.rtf")
         If My.Computer.FileSystem.FileExists(a & "\README") = True Then My.Computer.FileSystem.DeleteFile(a & "\README", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.SendToRecycleBin)
         Label描述类型.Text = "RTF"
@@ -880,7 +897,7 @@ jx1:
         If Me.ListView2.SelectedItems.Count <> 1 Then
             Exit Sub
         End If
-        Dim a As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
+        Dim a As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
         My.Computer.FileSystem.WriteAllText(a & "\README", Me.RichTextBox1.Text, False)
         If My.Computer.FileSystem.FileExists(a & "\README.rtf") = True Then My.Computer.FileSystem.DeleteFile(a & "\README.rtf", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.SendToRecycleBin)
         Label描述类型.Text = "TXT"
@@ -933,7 +950,7 @@ jx1:
         For k = 0 To Me.ListView2.SelectedItems.Count - 1
             Dim 分类 As String = 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(k))
             Dim 项 As String = Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(k)).Text
-            If My.Computer.FileSystem.DirectoryExists(检查并返回当前可用子库路径(False) & "\" & 分类 & "\" & 项) = False Then
+            If My.Computer.FileSystem.DirectoryExists(检查并返回当前所选子库路径(False) & "\" & 分类 & "\" & 项) = False Then
                 GoTo jx
             End If
             For i = 0 To Me.ListView3.Items.Count - 1
@@ -956,7 +973,7 @@ jx:
             Dim a As New SingleSelectionDialog(获取动态多语言文本("data/DynamicText/Negative"), {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DynamicText/ManageMod.10"))
             Exit Sub
         End If
-        Process.Start(检查并返回当前可用子库路径() & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text)
+        Process.Start(检查并返回当前所选子库路径() & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text)
     End Sub
 
 
@@ -979,7 +996,7 @@ jx:
     Private Sub Label作者显示_MouseDown(sender As Object, e As MouseEventArgs) Handles Label作者显示.MouseDown
         Dim a As DarkContextMenu = 生成作者列表菜单()
         a.Show(MousePosition.X - e.X - 1, MousePosition.Y - e.Y - a.Height)
-        If Panel10.Width < a.Width Then
+        If Panel10.Width <a.Width Then
             a.Show(MousePosition.X - e.X + 1 + (Panel10.Width - a.Width), MousePosition.Y - e.Y - a.Height)
         End If
         If a.Top <> MousePosition.Y - e.Y - a.Height Then a.Top = MousePosition.Y - e.Y - a.Height
@@ -1090,7 +1107,7 @@ jx:
             Exit Sub
         End If
         If ST1.当前用户身份组 = Security.Principal.WindowsBuiltInRole.Administrator Then
-            Dim 配置队列_选中项的路径 As String = 检查并返回当前可用子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
+            Dim 配置队列_选中项的路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
             Dim 要复制的文件和文件夹列表 As String() = e.Data.GetData(GetType(String()))
             For i = 0 To 要复制的文件和文件夹列表.Count - 1
                 Dim a As String = 要复制的文件和文件夹列表(i)
@@ -1109,7 +1126,7 @@ jx:
         If Me.ListView3.SelectedItems.Count <> 1 Then
             Exit Sub
         End If
-        Dim 配置队列_选中项的路径 As String = 检查并返回当前可用子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
+        Dim 配置队列_选中项的路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
         If e.Data.GetDataPresent(DataFormats.FileDrop) = True Then
             Dim 要复制的文件和文件夹列表 As String() = e.Data.GetData(DataFormats.FileDrop)
             For i = 0 To 要复制的文件和文件夹列表.Count - 1
@@ -1164,7 +1181,7 @@ jx:
     End Sub
 
     Private Sub Label刷新项的数据内容_Click(sender As Object, e As EventArgs) Handles Label刷新项的数据内容.Click
-        重新扫描项的数据内容(检查并返回当前可用子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text)
+        重新扫描项的数据内容(检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text)
     End Sub
 
     Private Sub Label添加文件_Click(sender As Object, e As EventArgs) Handles Label添加文件.Click
@@ -1172,7 +1189,7 @@ jx:
         Dim x As New OpenFileDialog With {.Multiselect = True}
         x.ShowDialog(Me)
         If x.FileNames.Count = 0 Then Exit Sub
-        Dim 配置队列_选中项的路径 As String = 检查并返回当前可用子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
+        Dim 配置队列_选中项的路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
         Dim 要复制的文件和文件夹列表 As String() = x.FileNames
         For i = 0 To 要复制的文件和文件夹列表.Count - 1
             Dim a As String = 要复制的文件和文件夹列表(i)
@@ -1186,7 +1203,7 @@ jx:
         Dim x As New WK.Libraries.BetterFolderBrowserNS.BetterFolderBrowser With {.Multiselect = True}
         x.ShowDialog(Me)
         If x.SelectedPaths.Count = 0 Then Exit Sub
-        Dim 配置队列_选中项的路径 As String = 检查并返回当前可用子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
+        Dim 配置队列_选中项的路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
         Dim 要复制的文件和文件夹列表 As String() = x.SelectedPaths
         For i = 0 To 要复制的文件和文件夹列表.Count - 1
             Dim a As String = 要复制的文件和文件夹列表(i)
@@ -1228,7 +1245,7 @@ jx:
         If Me.ListView4.SelectedItems.Count <> 1 Then
             Exit Sub
         End If
-        Dim 模组路径 As String = 检查并返回当前可用子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
+        Dim 模组路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
         Select Case Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(0)).SubItems(1).Text
             Case 获取动态多语言文本("data/DynamicText/Folder")
                 Dim a As New InputTextDialog("", 获取动态多语言文本("data/DynamicText/ManageMod.18"), Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(0)).Text)
@@ -1312,7 +1329,7 @@ jx:
             Exit Sub
         End If
         Dim i As Integer = 0
-        Dim 模组路径 As String = 检查并返回当前可用子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
+        Dim 模组路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
         Do Until i = Me.ListView4.Items.Count
             If Me.ListView4.Items.Item(i).Selected = True Then
                 Select Case Me.ListView4.Items.Item(i).SubItems(1).Text
@@ -1334,6 +1351,18 @@ jx:
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         定时检查安装命令和项数据()
+    End Sub
+
+    Private Sub RichTextBox3_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox3.TextChanged
+
+    End Sub
+
+    Private Sub RichTextBox3_KeyDown(sender As Object, e As KeyEventArgs) Handles RichTextBox3.KeyDown
+        Debug.Print(e.Alt.ToString)
+    End Sub
+
+    Private Sub RichTextBox3_KeyUp(sender As Object, e As KeyEventArgs) Handles RichTextBox3.KeyUp
+        Debug.Print(e.Alt.ToString)
     End Sub
 
 #End Region
@@ -1435,7 +1464,7 @@ jx:
         If Me.ListView2.SelectedItems.Count <> 1 Then
             Exit Sub
         End If
-        Dim str As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
+        Dim str As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
         If My.Computer.FileSystem.DirectoryExists(str & "\Screenshot") = True Then
             System.Diagnostics.Process.Start(str & "\Screenshot")
         Else
@@ -1455,7 +1484,7 @@ jx:
         If Me.ListView2.SelectedItems.Count <> 1 Then
             Exit Sub
         End If
-        Dim str As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
+        Dim str As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
         If My.Computer.FileSystem.DirectoryExists(str & "\Screenshot") = True Then
             My.Computer.FileSystem.DeleteDirectory(str & "\Screenshot", FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin)
             Me.PictureBox1.Image = Nothing
@@ -1467,7 +1496,7 @@ jx:
         If Me.ListView2.SelectedItems.Count <> 1 Then
             Exit Sub
         End If
-        Dim str As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
+        Dim str As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
         If 当前项信息_预览图文件表.Count < 1 Then Exit Sub
         If My.Computer.FileSystem.FileExists(当前项信息_预览图文件表(ST1.全局状态_当前正在显示的预览图索引)) = True Then
             My.Computer.FileSystem.DeleteFile(当前项信息_预览图文件表(ST1.全局状态_当前正在显示的预览图索引), FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin)
@@ -1703,28 +1732,28 @@ jx:
 nextline:
         Dim b As String = a.ShowDialog(Me)
         If b = "" Then Exit Sub
-        Dim c As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\"
+        Dim c As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\"
         If My.Computer.FileSystem.DirectoryExists(c & b) = True Then
             MsgBox(获取动态多语言文本("data/DynamicText/ManageMod.6"), MsgBoxStyle.Exclamation)
             GoTo nextline
         End If
-        My.Computer.FileSystem.RenameDirectory(检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text, b)
+        My.Computer.FileSystem.RenameDirectory(检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text, b)
         Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text = b
     End Sub
 
     Private Sub 用VisualStudioCode打开ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 用VisualStudioCode打开ToolStripMenuItem.Click
         If xml_Settings.SelectSingleNode("data/VisualStudioCodePath").InnerText = "" Then Exit Sub
-        Shell("""" & xml_Settings.SelectSingleNode("data/VisualStudioCodePath").InnerText & """" & " " & """" & 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
+        Shell("""" & xml_Settings.SelectSingleNode("data/VisualStudioCodePath").InnerText & """" & " " & """" & 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
     End Sub
 
     Private Sub 用VisualStudio打开ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 用VisualStudio打开ToolStripMenuItem.Click
         If xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText = "" Then Exit Sub
-        Shell("""" & xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText & """" & " " & """" & 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
+        Shell("""" & xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText & """" & " " & """" & 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
     End Sub
 
     Private Sub 用Notepad打开ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 用Notepad打开ToolStripMenuItem.Click
         If xml_Settings.SelectSingleNode("data/NotepadPath").InnerText = "" Then Exit Sub
-        Shell("""" & xml_Settings.SelectSingleNode("data/NotepadPath").InnerText & """" & " " & """" & 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
+        Shell("""" & xml_Settings.SelectSingleNode("data/NotepadPath").InnerText & """" & " " & """" & 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
     End Sub
 
     Private Sub 可视化清单编辑器ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 可视化清单编辑器ToolStripMenuItem.Click
@@ -1736,7 +1765,7 @@ nextline:
     End Sub
 
     Private Sub 清除Config缓存ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 清除Config缓存ToolStripMenuItem1.Click
-        Dim a As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & "\.config"
+        Dim a As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & "\.config"
         If My.Computer.FileSystem.DirectoryExists(a) = False Then Exit Sub
         My.Computer.FileSystem.DeleteDirectory(a, FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin)
         MsgBox("Finish.")
@@ -1744,6 +1773,22 @@ nextline:
 
 #End Region
 
+#Region "模组检查更新表"
+    Private Sub 检查更新加入表中ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 检查更新加入表中ToolStripMenuItem.Click
+        For i = 0 To Me.ListView1.SelectedItems.Count - 1
+            模组检查更新_添加一个分类的数据到列表中(检查并返回当前所选子库路径(False) & "\" & Me.ListView1.Items(Me.ListView1.SelectedIndices(i)).Text)
+        Next
+    End Sub
+
+    Private Sub 检查更新加入表中ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 检查更新加入表中ToolStripMenuItem1.Click
+        For i = 0 To Me.ListView2.SelectedItems.Count - 1
+            模组检查更新_添加一个项的数据到列表中(检查并返回当前选择分类路径(False) & "\" & Me.ListView2.Items(Me.ListView2.SelectedIndices(i)).Text)
+        Next
+    End Sub
+#End Region
+
+
     ReadOnly 分割线 As Integer = 0
+
 
 End Class

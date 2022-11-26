@@ -76,7 +76,7 @@ Module 管理模组
 
     Public Sub 扫描分类(选择的数据子库 As String)
         Form1.ListView1.Items.Clear()
-        If 检查并返回当前可用子库路径() = "" Then Exit Sub
+        If 检查并返回当前所选子库路径() = "" Then Exit Sub
         Dim a As String() = SharedFunction.SearchFolderWithoutSub(xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText & "\" & xml_Settings.SelectSingleNode("data/LastUsedSubLibraryName").InnerText)
         For i = 0 To a.Count - 1
             Form1.ListView1.Items.Add(a(i))
@@ -151,7 +151,7 @@ Module 管理模组
         清除模组列表()
         Dim a1 As String = Form1.ListView1.Items.Item(Form1.ListView1.SelectedIndices(0)).Text
         Dim mDir As System.IO.DirectoryInfo
-        Dim mDirInfo As New System.IO.DirectoryInfo(检查并返回当前可用子库路径() & "\" & a1)
+        Dim mDirInfo As New System.IO.DirectoryInfo(检查并返回当前所选子库路径() & "\" & a1)
         For Each mDir In mDirInfo.GetDirectories
             Form1.ListView2.Items.Add(mDir.Name)
             ReDim Preserve 当前项列表中项的分类集合(当前项列表中项的分类集合.Count)
@@ -162,7 +162,7 @@ Module 管理模组
 
     Public Sub 刷新项列表数据()
         For i = 0 To Form1.ListView2.Items.Count - 1
-            Dim itempath As String = 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(i) & "\" & Form1.ListView2.Items.Item(i).Text
+            Dim itempath As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(i) & "\" & Form1.ListView2.Items.Item(i).Text
             Dim a As New SMUI.Windows.Core.ItemInfoReader
             Dim ct As New SMUI.Windows.Core.Objects.ItemCalculateType With {
                     .InstallStatus = True,
@@ -346,7 +346,7 @@ Module 管理模组
         重置模组信息显示()
         '没啥卵用的保险措施
         If 当前项列表中项的分类集合.Count <= Form1.ListView2.SelectedIndices(0) Then Exit Sub
-        Dim 项路径 As String = 检查并返回当前可用子库路径() & "\" & 当前项列表中项的分类集合(Form1.ListView2.SelectedIndices(0)) & "\" & Form1.ListView2.Items.Item(Form1.ListView2.SelectedIndices(0)).Text
+        Dim 项路径 As String = 检查并返回当前所选子库路径() & "\" & 当前项列表中项的分类集合(Form1.ListView2.SelectedIndices(0)) & "\" & Form1.ListView2.Items.Item(Form1.ListView2.SelectedIndices(0)).Text
 
         Dim a As New SMUI.Windows.Core.ItemInfoReader
         Dim iCT As SMUI.Windows.Core.Objects.ItemCalculateType
@@ -435,9 +435,11 @@ Module 管理模组
                     ReDim Preserve 当前项信息_预览图文件表(当前项信息_预览图文件表.Count)
                     当前项信息_预览图文件表(当前项信息_预览图文件表.Count - 1) = 文件.FullName
                 Next
-                加载预览图(当前项信息_预览图文件表(0))
-                ST1.全局状态_当前正在显示的预览图索引 = 0
-                Form1.Label预览图计数显示.Text = 当前项信息_预览图文件表.Count & " "
+                If 当前项信息_预览图文件表.Count > 0 Then
+                    加载预览图(当前项信息_预览图文件表(0))
+                    ST1.全局状态_当前正在显示的预览图索引 = 0
+                    Form1.Label预览图计数显示.Text = 当前项信息_预览图文件表.Count & " "
+                End If
             End If
             If Form依赖项表.Visible = True Then Form依赖项表.刷新前置表项()
             校准RichTextBox1的尺寸和位置()
@@ -516,9 +518,12 @@ Module 管理模组
             If Mid(x.Text, 8) <= 0 Then Continue For
             AddHandler a.Items.Add(获取动态多语言文本("data/DynamicText/DirectOnlineUpdate")).Click,
                Sub(s, e)
-                   ST1.当前正在进行更新的单个项的N网ID = Mid(x.Text, 8)
-                   ST1.当前正在进行直接更新的操作类型 = 在线更新操作类型.更新项
-                   显示模式窗体(Form直接联网更新单个项, Form1)
+                   Dim 新的更新窗口 As New Form直接联网更新单个项 With {
+                       .当前正在进行更新的单个项的N网ID = Mid(x.Text, 8),
+                       .当前正在进行直接更新的操作类型 = 在线更新操作类型.更新项,
+                       .当前正在进行更新的单个项路径 = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Form1.ListView2.SelectedIndices(0)) & "\" & Form1.ListView2.Items.Item(Form1.ListView2.SelectedIndices(0)).Text
+                   }
+                   显示窗体(新的更新窗口, Form1)
                End Sub
         Next
 
@@ -535,20 +540,16 @@ Module 管理模组
             AddHandler x.Click,
                 Sub(s, e)
                     If Form直接联网更新单个项.Visible = True Then Exit Sub
-                    Dim sss1 As String = ""
-                    If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" Or ST1.是否正在使用自定义语言包 = True Then
-                        sss1 = "输入你要进行访问的 星露谷 NEXUS 模组的页面 ID"
-                        x.Text = "自由输入 ID 进行更新"
-                    Else
-                        sss1 = "Enter the ID of the NEXUS Stardew Valley mod you want to access."
-                        x.Text = "Enter ID to update"
-                    End If
-                    Dim m1 As New InputTextDialog("Lake1059.Plugin1.UnlockFreeInputID", sss1)
+                    x.Text = 获取动态多语言文本("data/DynamicText/UpdateMod.2")
+                    Dim m1 As New InputTextDialog("Lake1059.Plugin1.UnlockFreeInputID", 获取动态多语言文本("data/DynamicText/UpdateMod.1"))
                     Dim m2 As String = m1.ShowDialog(Form1)
                     If m2 = "" Or m2 Is Nothing Then Exit Sub
-                    ST1.当前正在进行更新的单个项的N网ID = m2
-                    ST1.当前正在进行直接更新的操作类型 = 在线更新操作类型.更新项
-                    显示模式窗体(Form直接联网更新单个项, Form1)
+                    Dim 新的更新窗口 As New Form直接联网更新单个项 With {
+                        .当前正在进行更新的单个项的N网ID = m2,
+                        .当前正在进行直接更新的操作类型 = 在线更新操作类型.更新项,
+                        .当前正在进行更新的单个项路径 = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Form1.ListView2.SelectedIndices(0)) & "\" & Form1.ListView2.Items.Item(Form1.ListView2.SelectedIndices(0)).Text
+                    }
+                    显示窗体(新的更新窗口, Form1)
                 End Sub
         End If
 

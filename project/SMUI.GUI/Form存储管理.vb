@@ -108,12 +108,11 @@ Public Class Form存储管理
         Me.BackgroundWorker1.ReportProgress(3, a)
         a = 0
         a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\updatehistory.rtf").Length
-        a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\updatehistory_old.rtf").Length
         a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\User License Agreement.rtf").Length
         Me.BackgroundWorker1.ReportProgress(4, a)
         a = 0
-        a += GetDirectoryLength(Application.StartupPath & "\locales")
         If ST1.是否安装了谷歌浏览器组件 = True Then
+            a += GetDirectoryLength(Application.StartupPath & "\locales")
             a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\CefSharp.BrowserSubprocess.Core.dll").Length
             a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\CefSharp.BrowserSubprocess.exe").Length
             a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\CefSharp.Core.dll").Length
@@ -132,6 +131,7 @@ Public Class Form存储管理
             a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\snapshot_blob.bin").Length
             a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\v8_context_snapshot.bin").Length
             a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\vk_swiftshader.dll").Length
+            a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\vk_swiftshader_icd.json").Length
             a += FileIO.FileSystem.GetFileInfo(Application.StartupPath & "\vulkan-1.dll").Length
         End If
         Me.BackgroundWorker1.ReportProgress(5, a)

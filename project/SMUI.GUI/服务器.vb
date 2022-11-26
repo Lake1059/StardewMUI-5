@@ -123,11 +123,16 @@ Module 服务器
         AddHandler 服务器发送.DoWork,
            Sub(sender As Object, e As System.ComponentModel.DoWorkEventArgs)
                Try
-                   Dim 软件版本 As String = Application.ProductVersion
-                   Dim 系统名称 As String = My.Computer.Info.OSFullName
+                   Dim 地址传递 As String = ""
+                   If xml_Settings.SelectSingleNode("data/PrivacyChoice").InnerText = "2" Then
+                       地址传递 = "http://47.94.89.191:30003/user"
+                       GoTo jx1
+                   End If
+                   Dim 软件版本 As String = "appver=" & Application.ProductVersion
+                   Dim 系统名称 As String = "&sysname=" & My.Computer.Info.OSFullName
                    Dim MyReg As Microsoft.Win32.RegistryKey = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("HARDWARE\DESCRIPTION\SYSTEM\CentralProcessor\0")
-                   Dim 处理器名称 As String = MyReg.GetValue("ProcessorNameString").ToString()
-                   Dim 内存大小 As String = Format(My.Computer.Info.TotalPhysicalMemory / 1024 / 1024 / 1024, "0.0") & "GB"
+                   Dim 处理器名称 As String = "&cpuname=" & MyReg.GetValue("ProcessorNameString").ToString()
+                   Dim 内存大小 As String = "&ram=" & Format(My.Computer.Info.TotalPhysicalMemory / 1024 / 1024 / 1024, "0.0") & "GB"
                    Dim m As New ManagementClass("Win32_VideoController")
                    Dim mn As ManagementObjectCollection = m.GetInstances()
                    Dim mos As New ManagementObjectSearcher("Select * from Win32_VideoController")
@@ -147,26 +152,28 @@ Module 服务器
                        显卡列表 = "&gpulist=" & DisplayName
                    End If
                    Dim 显示器分辨率 As String = Screen.PrimaryScreen.Bounds.Size.Width & "x" & Screen.PrimaryScreen.Bounds.Size.Height
-                   Dim 显示器颜色位数 As String = mn(0)("CurrentBitsPerPixel")
                    Dim 显示器刷新率 As String = mn(0)("CurrentRefreshRate")
                    Dim g1 As Graphics = Form1.CreateGraphics
                    Dim 屏幕DPI As String = g1.DpiX & "x" & g1.DpiY
-                   Dim 显示器信息 As String = "&screen=" & 显示器分辨率 & " " & 显示器颜色位数 & " bit " & 显示器刷新率 & " fps " & 屏幕DPI & " dpi"
+                   Dim 显示器信息 As String = "&screen=" & 显示器分辨率 & " " & 显示器刷新率 & "FPS " & 屏幕DPI & "DPI"
+                   Dim 用户语言 As String = "&lang=" & xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText
 
                    mn.Dispose()
                    m.Dispose()
 
-                   Dim 谁他妈再攻击服务器祝你妈跟你出门必被压路机压S然后转生到印度 As Boolean = True
-
                    Dim 输出1 As String = "report"
-                   输出1 &= vbNewLine & "sysname=" & 系统名称
-                   输出1 &= vbNewLine & "cpuname=" & 处理器名称
-                   输出1 &= vbNewLine & "ram=" & 内存大小
-                   输出1 &= vbNewLine & "gpulist=" & DisplayName
-                   输出1 &= vbNewLine & "screen=" & 显示器分辨率 & " " & 显示器颜色位数 & " bit " & 显示器刷新率 & " fps " & 屏幕DPI & " dpi"
+                   输出1 &= vbNewLine & 系统名称
+                   输出1 &= vbNewLine & 处理器名称
+                   输出1 &= vbNewLine & 内存大小
+                   输出1 &= vbNewLine & DisplayName
+                   输出1 &= vbNewLine & 显示器信息
                    服务器发送.ReportProgress(1, 输出1)
 
-                   Dim uri As New Uri("http://47.94.89.191:30003/user?appver=" & 软件版本 & "&sysname=" & 系统名称 & "&cpuname=" & 处理器名称 & "&ram=" & 内存大小 & 显卡列表 & 显示器信息)
+                   地址传递 = "http://47.94.89.191:30003/user?" & 软件版本 & 系统名称 & 处理器名称 & 内存大小 & 显卡列表 & 显示器信息 & 用户语言
+
+                   Dim 画个圈圈诅咒那些攻击服务器的弱智孤儿 As Boolean = True
+jx1:
+                   Dim uri As New Uri(地址传递)
                    Dim myReq As HttpWebRequest = DirectCast(WebRequest.Create(uri), HttpWebRequest)
                    myReq.ContinueTimeout = 5000
                    myReq.UserAgent = "StardewMUI 5 Official Application"
@@ -202,7 +209,7 @@ Module 服务器
                            My.Settings.上次发送用户统计的日期 = Now.Year & "/" & Now.Month & "/" & Now.Day
                            My.Settings.Save()
                        Else
-                           添加调试文本("Err " & JsonData.item("code").ToString & "：" & JsonData.item("msg").ToString, Color1.红色)
+                           添加调试文本("Error " & JsonData.item("code").ToString & "：" & JsonData.item("msg").ToString, Color1.红色)
                        End If
                    Else
                        添加调试文本(e.Result, Color1.红色)
@@ -212,7 +219,7 @@ Module 服务器
                End If
            End Sub
         服务器发送.RunWorkerAsync()
-           End Sub
+    End Sub
 
     Public Sub 运行后台服务器获取新闻()
         If ST1.本次启动时候已经获取了新闻 = True Then Exit Sub
@@ -281,7 +288,7 @@ Module 服务器
                             .AutoSize = False,
                             .Height = 40, '35
                             .AutoEllipsis = True,
-                            .Font = New Font("宋体", 11),
+                            .Font = New Font("Microsoft YaHei UI", 11),
                             .ActiveLinkColor = ColorTranslator.FromWin32(RGB(238, 130, 238)),
                             .LinkColor = ColorTranslator.FromWin32(RGB(0, 191, 255)),
                             .LinkBehavior = LinkBehavior.HoverUnderline,
@@ -312,13 +319,11 @@ Module 服务器
                             Case "msg"
                                 AddHandler L1.LinkClicked,
                                 Sub(sender2, e2)
-                                    'Lake1059.MessageBox.对话框.显示提示对话框("", 临时变量_内容, Form1)
                                     MsgBox(临时变量_内容)
                                 End Sub
                             Case "msg<br>"
                                 AddHandler L1.LinkClicked,
                                 Sub(sender2, e2)
-                                    'Lake1059.MessageBox.对话框.显示提示对话框("", 临时变量_内容.Replace("<br>", vbNewLine), Form1)
                                     MsgBox(临时变量_内容.Replace("<br>", vbNewLine))
                                 End Sub
 
@@ -329,8 +334,6 @@ Module 服务器
                 Else
                     Form1.Panel新闻公告.Controls.Add(New Label With {.Text = e.Result, .Dock = DockStyle.Fill, .AutoSize = False})
                 End If
-                'Form1.Panel4.BackgroundImage = ST1.新闻容器背景图存储
-                'GC.Collect()
                 ST1.本次启动时候已经获取了新闻 = True
             End Sub
         Application.DoEvents()

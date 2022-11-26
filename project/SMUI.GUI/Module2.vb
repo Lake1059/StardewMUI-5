@@ -53,27 +53,32 @@ Module Module2
     End Function
 
     Public Sub 刷新标题栏主信息显示()
+        Form1.Text = "StardewMUI 5 Preview Edition " & Application.ProductVersion
+
         Dim a As String
         If My.Computer.FileSystem.DirectoryExists(xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText) = False Then
             a = "Path Not Set"
+            ST1.当前SMAPI版本号 = ""
         ElseIf My.Computer.FileSystem.FileExists(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\StardewModdingAPI.exe") = True Then
-jx1:
             Dim fv As System.Diagnostics.FileVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\StardewModdingAPI.exe")
-            If InStr(fv.ProductVersion.ToLower, "beta") > 0 Then
-                a = "SMAPI BETA"
-                Form1.Text = "StardewMUI 5 - SMAPI " & fv.ProductVersion
-            ElseIf Len(fv.ProductVersion) > 10 Then
-                a = "SMAPI Ready"
-                Form1.Text = "StardewMUI 5 - SMAPI " & fv.ProductVersion
-            Else
-                a = "SMAPI " & fv.ProductVersion
-                Form1.Text = "StardewMUI 5"
-            End If
+            a = "SMAPI " & fv.ProductVersion
+            ST1.当前SMAPI版本号 = fv.ProductVersion
         Else
             a = "No Install SMAPI"
+            ST1.当前SMAPI版本号 = ""
         End If
-        Dim fv2 As System.Diagnostics.FileVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo(Application.ExecutablePath)
-        Form1.Label5.Text = "StardewMUI " & fv2.FileMajorPart & "." & fv2.FileMinorPart & "." & fv2.FileBuildPart & vbNewLine & a
+
+        Dim b As String
+        If My.Computer.FileSystem.FileExists(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\Stardew Valley.exe") = True Then
+            Dim fv2 As System.Diagnostics.FileVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo(xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\Stardew Valley.exe")
+            b = "Stardew Valley " & fv2.FileVersion
+            ST1.当前星露谷版本号 = fv2.FileMajorPart & "." & fv2.FileMinorPart & "." & fv2.FileBuildPart
+        Else
+            b = "SDV Game Not Found"
+            ST1.当前星露谷版本号 = ""
+        End If
+
+        Form1.Label5.Text = b & vbNewLine & a
     End Sub
 
     Public Sub 启动后自动登录NEXUSAPI()
@@ -182,7 +187,7 @@ jx1:
 
 
     Public Function 检查并返回当前选择分类路径(Optional 显示不可用对话框 As Boolean = True) As String
-        Dim a As String = 检查并返回当前可用子库路径(显示不可用对话框)
+        Dim a As String = 检查并返回当前所选子库路径(显示不可用对话框)
         If a = "" Then
             Return "" : Exit Function
         Else
@@ -197,7 +202,7 @@ jx1:
         End If
     End Function
 
-    Public Function 检查并返回当前可用子库路径(Optional 显示不可用对话框 As Boolean = True) As String
+    Public Function 检查并返回当前所选子库路径(Optional 显示不可用对话框 As Boolean = True) As String
         If My.Computer.FileSystem.DirectoryExists(xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText) = False Then
             If 显示不可用对话框 = False Then Return "" : Exit Function
             Dim d1 As New SingleSelectionDialog(获取动态多语言文本("data/DynamicText/Negative"), {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DynamicText/ManageMod.1"))

@@ -3,13 +3,12 @@
 Public Class Form插件和扩展内容
     Private Sub Form插件和扩展内容_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         重置详细信息面板显示()
-
     End Sub
 
     Private Sub Form插件和扩展内容_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
         If Me.WindowState = FormWindowState.Minimized Then Exit Sub
-        Me.ColumnHeader2.Width = 150
-        Me.ColumnHeader3.Width = 200
+        Me.ColumnHeader2.Width = 125
+        Me.ColumnHeader3.Width = 125
         Me.ColumnHeader1.Width = Me.ListView1.Width - Me.ColumnHeader2.Width - Me.ColumnHeader3.Width - ST1.系统滚动条宽度 - 10
     End Sub
 
@@ -32,6 +31,20 @@ Public Class Form插件和扩展内容
                 Me.ListView1.Items.Item(i).Text &= " (Entry Error)"
             End If
         Next
+
+        If DLC解锁状态.插件1 = True Then
+            Me.Label6.Text = "✔" & Mid(Me.Label6.Text, 2)
+        End If
+        If DLC解锁状态.插件2 = True Then
+            Me.Label7.Text = "✔" & Mid(Me.Label7.Text, 2)
+        End If
+        If DLC解锁状态.插件3 = True Then
+            Me.Label8.Text = "✔" & Mid(Me.Label8.Text, 2)
+        End If
+        If DLC解锁状态.插件4 = True Then
+            Me.Label9.Text = "✔" & Mid(Me.Label9.Text, 2)
+        End If
+
     End Sub
 
     Sub 重置详细信息面板显示()

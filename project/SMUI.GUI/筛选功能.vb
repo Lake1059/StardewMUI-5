@@ -87,7 +87,7 @@ Module 筛选功能
         当前项列表中项的分类集合 = {}
         重置模组信息显示()
         Dim mDir As IO.DirectoryInfo
-        Dim mDirInfo As New IO.DirectoryInfo(检查并返回当前可用子库路径(False))
+        Dim mDirInfo As New IO.DirectoryInfo(检查并返回当前所选子库路径(False))
         For Each mDir In mDirInfo.GetDirectories
             Dim mDir2 As IO.DirectoryInfo
             Dim mDirInfo2 As New IO.DirectoryInfo(mDir.FullName)
@@ -112,7 +112,7 @@ Module 筛选功能
         Form1.ListView2.Items.Clear()
         重置模组信息显示()
         Dim mDir As IO.DirectoryInfo
-        Dim mDirInfo As New IO.DirectoryInfo(检查并返回当前可用子库路径(False))
+        Dim mDirInfo As New IO.DirectoryInfo(检查并返回当前所选子库路径(False))
         For Each mDir In mDirInfo.GetDirectories
             Dim mDir2 As IO.DirectoryInfo
             Dim mDirInfo2 As New IO.DirectoryInfo(mDir.FullName)
@@ -136,7 +136,7 @@ Module 筛选功能
         Form1.ListView2.Items.Clear()
         重置模组信息显示()
         Dim mDir As IO.DirectoryInfo
-        Dim mDirInfo As New IO.DirectoryInfo(检查并返回当前可用子库路径(False))
+        Dim mDirInfo As New IO.DirectoryInfo(检查并返回当前所选子库路径(False))
         For Each mDir In mDirInfo.GetDirectories
             Dim mDir2 As IO.DirectoryInfo
             Dim mDirInfo2 As New IO.DirectoryInfo(mDir.FullName)
@@ -163,7 +163,7 @@ Module 筛选功能
         Form1.ListView2.Items.Clear()
         重置模组信息显示()
         Dim mDir As IO.DirectoryInfo
-        Dim mDirInfo As New IO.DirectoryInfo(检查并返回当前可用子库路径(False))
+        Dim mDirInfo As New IO.DirectoryInfo(检查并返回当前所选子库路径(False))
         For Each mDir In mDirInfo.GetDirectories
             Dim mDir2 As IO.DirectoryInfo
             Dim mDirInfo2 As New IO.DirectoryInfo(mDir.FullName)

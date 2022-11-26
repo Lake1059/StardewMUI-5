@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 '查看程序集特性的值
 
 <Assembly: AssemblyTitle("SMUI.GUI")>
-<Assembly: AssemblyDescription("Stardew Valley Modding Manage UI")>
+<Assembly: AssemblyDescription("星露谷物语模组管理解决方案")>
 <Assembly: AssemblyCompany("1059 Studio")>
 <Assembly: AssemblyProduct("StardewMUI 5")>
 <Assembly: AssemblyCopyright("Copyright © 湖边的稻草(1059 Studio) 2019-2022")>
@@ -32,4 +32,4 @@ Imports System.Runtime.InteropServices
 ' <Assembly: AssemblyVersion("1.0.*")>
 
 <Assembly: AssemblyVersion("5.0.0.0")>
-<Assembly: AssemblyFileVersion("5.0.107.0")>
+<Assembly: AssemblyFileVersion("5.0.2022.1124")>

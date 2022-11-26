@@ -1,9 +1,9 @@
-﻿Imports Microsoft.VisualBasic.ApplicationServices
+﻿Imports System.ComponentModel
+Imports System.Runtime.InteropServices
+Imports Microsoft.VisualBasic.ApplicationServices
 Imports SMUI.GUI.Class1
 
 Namespace My
-
-
 
     ' 以下事件可用于 MyApplication: 
     ' Startup:应用程序启动时在创建启动窗体之前引发。
@@ -12,19 +12,26 @@ Namespace My
     ' StartupNextInstance:在启动单实例应用程序且应用程序已处于活动状态时引发。 
     ' NetworkAvailabilityChanged:在连接或断开网络连接时引发。
     Partial Friend Class MyApplication
+
         Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
+            'If e.CommandLine.Count > 0 Then
+            '    Dim a As String = "接收到的命令行"
+            '    For i = 0 To e.CommandLine.Count - 1
+            '        a &= vbNewLine & e.CommandLine(i)
+            '    Next
+            '    MsgBox(a)
+            'End If
 
         End Sub
 
-        'Private Sub MyApplication_UnhandledException(sender As Object, e As UnhandledExceptionEventArgs) Handles Me.UnhandledException
-        '    添加调试文本("[" & e.Exception.Source & "] " & e.Exception.Message & " [" & e.Exception.HResult & "] " & e.Exception.TargetSite.Name, Color1.红色)
-        '    If Form调试.Visible = True Then
-        '        Form调试.Focus()
-        '    Else
-        '        显示窗体(Form调试, Form1)
-        '    End If
-        '    Application.DoEvents()
-        '    Form调试.Focus()
-        'End Sub
+        Private Sub MyApplication_StartupNextInstance(sender As Object, e As StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
+            'If e.CommandLine.Count > 0 Then
+            '    Dim a As String = "接收到的命令行"
+            '    For i = 0 To e.CommandLine.Count - 1
+            '        a &= vbNewLine & e.CommandLine(i)
+            '    Next
+            '    MsgBox(a)
+            'End If
+        End Sub
     End Class
 End Namespace

@@ -4,6 +4,13 @@ Imports SMUI.GUI.Class1
 
 Module 插件管理程序
 
+    Public Class DLC解锁状态
+        Public Shared 插件1 As Boolean = False
+        Public Shared 插件2 As Boolean = False
+        Public Shared 插件3 As Boolean = False
+        Public Shared 插件4 As Boolean = False
+    End Class
+
     Public Class 插件数据
         Public Shared 插件文件列表 As String() = {}
         Public Shared 插件程序集名称列表 As String() = {}
@@ -19,6 +26,28 @@ Module 插件管理程序
 
         Dim 程序集 As Assembly = Assembly.LoadFile(插件路径)
         Dim 系统接口程序 As ShellFile = ShellFile.FromFilePath(插件路径)
+
+        Dim 这是DLC As Boolean = False
+
+        Select Case 程序集.GetName.Name
+            Case "Lake1059.Plugin1.UnlockFreeInputID"
+                DLC解锁状态.插件1 = True
+                这是DLC = True
+                GoTo DLC_Unlock
+            Case "Lake1059.Plugin2.CustomSkinLoader"
+                DLC解锁状态.插件2 = True
+                这是DLC = True
+                GoTo DLC_Unlock
+            Case "Lake1059.Plugin3.UnlockAutoDownloadAndAutoDeployNewItem"
+                DLC解锁状态.插件3 = True
+                这是DLC = True
+                GoTo DLC_Unlock
+            Case "Lake1059.Plugin4.FoundItemsInSmapiReturnResults"
+                DLC解锁状态.插件4 = True
+                这是DLC = True
+                GoTo DLC_Unlock
+        End Select
+
 
         ReDim Preserve 插件数据.插件文件列表(插件数据.插件文件列表.Count)
         插件数据.插件文件列表(插件数据.插件文件列表.Count - 1) = IO.Path.GetFileName(插件路径)
@@ -41,26 +70,29 @@ Module 插件管理程序
         ReDim Preserve 插件数据.插件简要描述列表(插件数据.插件简要描述列表.Count)
         插件数据.插件简要描述列表(插件数据.插件简要描述列表.Count - 1) = ""
 
+DLC_Unlock:
         Try
             Dim 获取类型 As Type = 程序集.GetType(程序集.GetName.Name & ".Entry")
             Dim 创建实例 As Object = Activator.CreateInstance(获取类型)
             Dim 实现方法 As MethodInfo = 获取类型.GetMethod("Entry")
             实现方法.Invoke(创建实例, New Object() {})
 
-            ReDim Preserve 插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count)
-            插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count - 1) = True
+            If 这是DLC = False Then
+                ReDim Preserve 插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count)
+                插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count - 1) = True
+            End If
         Catch ex As Exception
             添加调试文本("[" & ex.Source & "] " & ex.Message & ": " & ex.TargetSite.Name, Color1.红色)
-            ReDim Preserve 插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count)
-            插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count - 1) = False
+            If 这是DLC = False Then
+                ReDim Preserve 插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count)
+                插件数据.插件Entry加载状态(插件数据.插件Entry加载状态.Count - 1) = False
+            End If
             If Form调试.Visible = True Then
                 Form调试.Focus()
             Else
                 显示窗体(Form调试, Form1)
             End If
         End Try
-
-
 
     End Sub
 

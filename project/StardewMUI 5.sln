@@ -24,6 +24,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Lake1059.GitAPI", "Lake1059
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Lake1059.Internet", "Lake1059.Internet\Lake1059.Internet.vbproj", "{2E1AF878-9EBC-426D-BACE-F8501EA01549}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SMUI.FileTypeBinder", "SMUI.FileTypeBinder\SMUI.FileTypeBinder.vbproj", "{DDD3F521-5279-49CF-9CB4-A709D7553AC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{2E1AF878-9EBC-426D-BACE-F8501EA01549}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E1AF878-9EBC-426D-BACE-F8501EA01549}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E1AF878-9EBC-426D-BACE-F8501EA01549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDD3F521-5279-49CF-9CB4-A709D7553AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD3F521-5279-49CF-9CB4-A709D7553AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD3F521-5279-49CF-9CB4-A709D7553AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD3F521-5279-49CF-9CB4-A709D7553AC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

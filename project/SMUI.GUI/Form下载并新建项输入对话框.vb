@@ -1,15 +1,20 @@
-﻿Imports SMUI.GUI.Class1
+﻿Imports CefSharp.DevTools.IndexedDB
+Imports SMUI.GUI.Class1
 Imports SMUI.Windows.PakManager
 
 Public Class Form下载并新建项输入对话框
     Private Sub Form下载并新建项输入对话框_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim a1 As String = Me.DarkComboBox1.Text
-        Me.DarkComboBox1.Items.Clear()
-        Dim k1 As String = 检查并返回当前可用子库路径(False)
+        Dim k1 As String = 检查并返回当前所选子库路径()
         If k1 = "" Then
             Me.Close()
             Exit Sub
         End If
+
+        Dim a1 As String = Me.DarkComboBox1.Text
+        Dim b1 As String = 检查并返回当前选择分类路径(False)
+        If b1 <> "" Then a1 = IO.Path.GetFileName(b1)
+        Me.DarkComboBox1.Items.Clear()
+
         If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "English" Or ST1.是否正在使用自定义语言包 = True Then
             Me.Text = 获取动态多语言文本("data/DownloadAndCreateItemWindow/Title")
             Me.Label1.Text = 获取动态多语言文本("data/DownloadAndCreateItemWindow/A1")
@@ -42,15 +47,19 @@ Public Class Form下载并新建项输入对话框
         End If
         If IsNumeric(Me.DarkTextBox2.Text) = False Then Exit Sub
         If Me.DarkComboBox1.Text = "" Then Exit Sub
-
-        ST1.当前正在进行新建项的项名称 = Me.DarkTextBox1.Text
-        ST1.当前正在进行新建项的目标分类 = Me.DarkComboBox1.Text
-        ST1.当前正在进行直接更新的操作类型 = 在线更新操作类型.新建项
-        ST1.当前正在进行更新的单个项的N网ID = Me.DarkTextBox2.Text
+        Dim 新的更新窗口 As New Form直接联网更新单个项 With {
+            .当前正在进行新建项的项名称 = Me.DarkTextBox1.Text,
+            .当前正在进行新建项的目标分类 = Me.DarkComboBox1.Text,
+            .当前正在进行直接更新的操作类型 = 在线更新操作类型.新建项,
+            .当前正在进行更新的单个项的N网ID = Me.DarkTextBox2.Text
+        }
         Me.Close()
-        显示模式窗体(Form直接联网更新单个项, Form1)
+        显示窗体(新的更新窗口, Form1)
 
     End Sub
 
+    Private Sub DarkTextBox2_TextChanged(sender As Object, e As EventArgs) Handles DarkTextBox2.TextChanged
+        Me.DarkTextBox2.Text = System.Text.RegularExpressions.Regex.Replace(Me.DarkTextBox2.Text, "[^\d]*", "")
+    End Sub
 
 End Class

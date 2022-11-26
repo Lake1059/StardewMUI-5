@@ -4,7 +4,7 @@ Imports SMUI.GUI.Class1
 
 Module 设置管理
 
-    Public Sub 生成应用程序缓存文件夹()
+    Sub 生成应用程序缓存文件夹()
         If My.Computer.FileSystem.DirectoryExists(IO.Path.GetDirectoryName(Path1.应用程序设置文件路径)) = False Then
             My.Computer.FileSystem.CreateDirectory(IO.Path.GetDirectoryName(Path1.应用程序设置文件路径))
         End If
@@ -49,18 +49,20 @@ Module 设置管理
             End Select
             xml_Settings.Save(Path1.应用程序设置文件路径)
         End If
-        If ST1.是否正在使用自定义语言包 = True Then Exit Sub
-        Select Case xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText
-            Case "Chinese"
-                xml_lang.LoadXml(My.Resources.English)
-            Case "English"
-                xml_lang.LoadXml(My.Resources.English)
-                加载界面的多语言()
-            Case Else
-                xml_lang.LoadXml(My.Resources.English)
-                加载界面的多语言()
-        End Select
 
+        If xml_Settings.SelectSingleNode("data/PrivacyChoice").InnerText = "" Then
+            Form隐私选项.ShowDialog()
+        End If
+
+        If ST1.是否正在使用自定义语言包 = False Then
+            Select Case xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText
+                Case "Chinese"
+                    xml_lang.LoadXml(My.Resources.English)
+                Case Else
+                    xml_lang.LoadXml(My.Resources.English)
+                    加载界面的多语言()
+            End Select
+        End If
     End Sub
 
     Private Sub 加载XML设置数据()
@@ -89,23 +91,53 @@ Module 设置管理
     Public Sub 加载图标选择()
         Select Case My.Settings.图标
             Case 1
-                Form1.Icon = My.Resources.ICO防风草
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.防风草, Bitmap).GetHicon())
             Case 2
-                Form1.Icon = My.Resources.ICO陈年蓝月亮葡萄酒
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_2, Bitmap).GetHicon())
             Case 3
-                Form1.Icon = My.Resources.ICO河豚
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_3, Bitmap).GetHicon())
             Case 4
-                Form1.Icon = My.Resources.ICO金色椰子
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_4, Bitmap).GetHicon())
             Case 5
-                Form1.Icon = My.Resources.ICO熔岩菇
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_5, Bitmap).GetHicon())
             Case 6
-                Form1.Icon = My.Resources.ICO神盾药剂
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_6, Bitmap).GetHicon())
             Case 7
-                Form1.Icon = My.Resources.ICO椰林飘香
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_7, Bitmap).GetHicon())
             Case 8
-                Form1.Icon = My.Resources.ICO野山葵
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_8, Bitmap).GetHicon())
             Case 9
-                Form1.Icon = My.Resources.ICO_HC_巧克力
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_9, Bitmap).GetHicon())
+            Case 10
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_10, Bitmap).GetHicon())
+            Case 11
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_11, Bitmap).GetHicon())
+            Case 12
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_12, Bitmap).GetHicon())
+            Case 13
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_13, Bitmap).GetHicon())
+            Case 14
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_14, Bitmap).GetHicon())
+            Case 15
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_15, Bitmap).GetHicon())
+            Case 16
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_16, Bitmap).GetHicon())
+            Case 17
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_17, Bitmap).GetHicon())
+            Case 18
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_18, Bitmap).GetHicon())
+            Case 19
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_19, Bitmap).GetHicon())
+            Case 20
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_20, Bitmap).GetHicon())
+            Case 21
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.HC_巧克力, Bitmap).GetHicon())
+            Case 22
+                'Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_22, Bitmap).GetHicon())
+            Case 23
+                'Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_23, Bitmap).GetHicon())
+            Case 24
+                'Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.MyPic48, Bitmap).GetHicon())
         End Select
     End Sub
 End Module

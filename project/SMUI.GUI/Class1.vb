@@ -20,6 +20,12 @@ Public Class Class1
     ''' </summary>
     Public Shared ReadOnly xml_Settings_Lock As New XmlDocument
 
+    Public Class News
+        Public Shared 新闻标题列表 As String() = {}
+        Public Shared 新闻正文列表 As String() = {}
+        Public Shared 活动标题 As String = ""
+        Public Shared 活动正文 As String = ""
+    End Class
 
     ''' <summary>
     ''' 全局状态
@@ -43,17 +49,14 @@ Public Class Class1
 
         Public Shared NEXUS登录状态 As String = ""
 
-        Public Shared 当前正在进行更新的单个项的N网ID As Integer = 0
-
-        Public Shared 当前正在进行直接更新的操作类型 As 在线更新操作类型
-        Public Shared 当前正在进行新建项的项名称 As String = ""
-        Public Shared 当前正在进行新建项的目标分类 As String = ""
-
         Public Shared 用于内置谷歌浏览器_当前正在更新模组 As Boolean = False
         Public Shared 用于内置谷歌浏览器_获取到的key As String = ""
         Public Shared 用于内置谷歌浏览器_获取到的expires As String = ""
         Public Shared 是否安装了谷歌浏览器组件 As Boolean = False
         Public Shared 用于内置谷歌浏览器_是否已经初始化 As Boolean = False
+
+        Public Shared 当前SMAPI版本号 As String = ""
+        Public Shared 当前星露谷版本号 As String = ""
 
     End Class
 

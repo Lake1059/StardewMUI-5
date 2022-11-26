@@ -8,7 +8,7 @@ Public Class Form导出
         Select Case Me.Text
             Case 获取动态多语言文本("data/DynamicText/ManageMod.28")
                 a.Filter = "Sublibrary package file|*.smuispak"
-                a.FileName = 检查并返回当前可用子库路径(False) & ".smuispak"
+                a.FileName = 检查并返回当前所选子库路径(False) & ".smuispak"
             Case 获取动态多语言文本("data/DynamicText/ManageMod.29")
                 a.Filter = "Category package file|*.smuicpak"
                 If Form1.ListView1.SelectedItems.Count > 1 Then
@@ -89,14 +89,14 @@ Public Class Form导出
 
         Select Case Me.Text
             Case 获取动态多语言文本("data/DynamicText/ManageMod.28")
-                str &= """" & 检查并返回当前可用子库路径(False) & "\" & """" & " "
+                str &= """" & 检查并返回当前所选子库路径(False) & "\" & """" & " "
             Case 获取动态多语言文本("data/DynamicText/ManageMod.29")
                 For i = 0 To Form1.ListView1.SelectedItems.Count - 1
-                    str &= """" & 检查并返回当前可用子库路径(False) & "\" & Form1.ListView1.Items.Item(Form1.ListView1.SelectedIndices(i)).Text & "\" & """" & " "
+                    str &= """" & 检查并返回当前所选子库路径(False) & "\" & Form1.ListView1.Items.Item(Form1.ListView1.SelectedIndices(i)).Text & "\" & """" & " "
                 Next
             Case 获取动态多语言文本("data/DynamicText/ManageMod.30")
                 For i = 0 To Form1.ListView2.SelectedItems.Count - 1
-                    str &= """" & 检查并返回当前可用子库路径(False) & "\" & 当前项列表中项的分类集合(Form1.ListView2.SelectedIndices(i)) & "\" & Form1.ListView2.Items.Item(Form1.ListView2.SelectedIndices(i)).Text & "\" & """" & " "
+                    str &= """" & 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Form1.ListView2.SelectedIndices(i)) & "\" & Form1.ListView2.Items.Item(Form1.ListView2.SelectedIndices(i)).Text & "\" & """" & " "
                 Next
         End Select
 

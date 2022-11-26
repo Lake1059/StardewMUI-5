@@ -14,14 +14,14 @@ Module 界面控制
         Form1.Panel新闻公告.BorderStyle = BorderStyle.None
         Form1.Panel模组列表.Dock = DockStyle.Fill
         Form1.Panel模组列表.BorderStyle = BorderStyle.None
-        Form1.Panel下载模组.Dock = DockStyle.Fill
-        Form1.Panel下载模组.BorderStyle = BorderStyle.None
+        Form1.Panel统计数据.Dock = DockStyle.Fill
+        Form1.Panel统计数据.BorderStyle = BorderStyle.None
         Form1.Panel主题内容.Dock = DockStyle.Fill
         Form1.Panel主题内容.BorderStyle = BorderStyle.None
         Form1.Panel创作者自由面板.Dock = DockStyle.Fill
         Form1.Panel创作者自由面板.BorderStyle = BorderStyle.None
-        Form1.Panel更新历史以及关于和许可协议.Dock = DockStyle.Fill
-        Form1.Panel更新历史以及关于和许可协议.BorderStyle = BorderStyle.None
+        Form1.Panel更新历史.Dock = DockStyle.Fill
+        Form1.Panel更新历史.BorderStyle = BorderStyle.None
 
         Form1.RichTextBox1.AutoWordSelection = False
         Form1.RichTextBox1.LanguageOption = RichTextBoxLanguageOptions.UIFonts
@@ -34,6 +34,11 @@ Module 界面控制
         Form1.RichTextBox4.AutoWordSelection = False
         Form1.RichTextBox4.LanguageOption = RichTextBoxLanguageOptions.UIFonts
         设置富文本框行高(Form1.RichTextBox4, 300)
+
+        配置队列.RTF富文本间接处理.Font = Form1.RichTextBox4.Font
+        配置队列.RTF富文本间接处理.AutoWordSelection = False
+        配置队列.RTF富文本间接处理.LanguageOption = RichTextBoxLanguageOptions.UIFonts
+        设置富文本框行高(配置队列.RTF富文本间接处理, 300)
 
         Form1.Panel起始页面.Visible = True
         Form1.Panel主选项卡.Left = (Form1.Panel主选项卡.Parent.Width - Form1.Panel主选项卡.Width) * 0.5
@@ -117,13 +122,13 @@ Module 界面控制
     Public Sub 切换起始页面内容选项卡按钮状态(sender As Object)
         Form1.Panel新闻公告.Visible = False
         Form1.Panel模组列表.Visible = False
-        Form1.Panel下载模组.Visible = False
+        Form1.Panel统计数据.Visible = False
         Form1.Panel主题内容.Visible = False
         Form1.Panel创作者自由面板.Visible = False
-        Form1.Panel更新历史以及关于和许可协议.Visible = False
+        Form1.Panel更新历史.Visible = False
         Form1.Label新闻公告.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
         Form1.Label模组列表.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
-        Form1.Label下载模组.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
+        Form1.Label统计数据.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
         Form1.Label主题内容.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
         Form1.Label创作者自由面板.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
         Form1.Label关于和许可协议.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\CefSharp.Common.103.0.90\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.103.0.90\build\CefSharp.Common.props')" />
-  <Import Project="..\packages\cef.redist.x86.103.0.9\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.103.0.9\build\cef.redist.x86.props')" />
-  <Import Project="..\packages\cef.redist.x64.103.0.9\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.103.0.9\build\cef.redist.x64.props')" />
+  <Import Project="..\packages\CefSharp.Common.107.1.90\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.107.1.90\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.107.1.9\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.107.1.9\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.107.1.9\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.107.1.9\build\cef.redist.x64.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -17,6 +17,9 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -29,11 +32,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -45,6 +45,8 @@
     <DocumentationFile>SMUI.GUI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
+    <Optimize>true</Optimize>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -75,23 +77,22 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>SMUI.GUI_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D002B896672AE6C737E14B019DED6AFEE64E2F4A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>0E1157DD35D96BA89C57DFF3767713D1235C9F18</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>SMUI.GUI_TemporaryKey.pfx</ManifestKeyFile>
@@ -104,17 +105,20 @@
     <Reference Include="BetterFolderBrowser, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\BetterFolderBrowser.1.2.0\lib\BetterFolderBrowser.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp, Version=103.0.90.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
-      <HintPath>..\packages\CefSharp.Common.103.0.90\lib\net452\CefSharp.dll</HintPath>
+    <Reference Include="CefSharp, Version=107.1.90.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.107.1.90\lib\net452\CefSharp.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp.Core, Version=103.0.90.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
-      <HintPath>..\packages\CefSharp.Common.103.0.90\lib\net452\CefSharp.Core.dll</HintPath>
+    <Reference Include="CefSharp.Core, Version=107.1.90.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.107.1.90\lib\net452\CefSharp.Core.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp.WinForms, Version=103.0.90.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
-      <HintPath>..\packages\CefSharp.WinForms.103.0.90\lib\net462\CefSharp.WinForms.dll</HintPath>
+    <Reference Include="CefSharp.WinForms, Version=107.1.90.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.WinForms.107.1.90\lib\net462\CefSharp.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="DarkUI, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DarkUI.2.0.2\lib\DarkUI.dll</HintPath>
+    </Reference>
+    <Reference Include="IconTool">
+      <HintPath>..\..\IconTool\bin\Debug\IconTool.dll</HintPath>
     </Reference>
     <Reference Include="Imazen.WebP, Version=10.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Imazen.WebP.10.0.1\lib\net45\Imazen.WebP.dll</HintPath>
@@ -216,6 +220,12 @@
     <Compile Include="Form导出.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form导出数据预设操作台.Designer.vb">
+      <DependentUpon>Form导出数据预设操作台.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form导出数据预设操作台.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form批量创建.Designer.vb">
       <DependentUpon>Form批量创建.vb</DependentUpon>
     </Compile>
@@ -240,6 +250,12 @@
     <Compile Include="Form模组检查更新操作台.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form活动.Designer.vb">
+      <DependentUpon>Form活动.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form活动.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form直接联网更新单个项.Designer.vb">
       <DependentUpon>Form直接联网更新单个项.vb</DependentUpon>
     </Compile>
@@ -256,6 +272,12 @@
       <DependentUpon>Form调试.vb</DependentUpon>
     </Compile>
     <Compile Include="Form调试.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form隐私选项.Designer.vb">
+      <DependentUpon>Form隐私选项.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form隐私选项.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -277,12 +299,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TimerSleep.vb" />
     <Compile Include="付费功能解锁.vb" />
     <Compile Include="在线模组列表功能.vb" />
     <Compile Include="多语言.vb" />
     <Compile Include="安装卸载统一后台线程.vb" />
+    <Compile Include="密码本.vb" />
     <Compile Include="插件管理程序.vb" />
     <Compile Include="服务器.vb" />
+    <Compile Include="模组检查更新.vb" />
     <Compile Include="界面控制.vb" />
     <Compile Include="筛选功能.vb" />
     <Compile Include="管理模组.vb" />
@@ -313,6 +338,9 @@
     <EmbeddedResource Include="Form导出.resx">
       <DependentUpon>Form导出.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form导出数据预设操作台.resx">
+      <DependentUpon>Form导出数据预设操作台.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form批量创建.resx">
       <DependentUpon>Form批量创建.vb</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +353,9 @@
     <EmbeddedResource Include="Form模组检查更新操作台.resx">
       <DependentUpon>Form模组检查更新操作台.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form活动.resx">
+      <DependentUpon>Form活动.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form直接联网更新单个项.resx">
       <DependentUpon>Form直接联网更新单个项.vb</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form调试.resx">
       <DependentUpon>Form调试.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form隐私选项.resx">
+      <DependentUpon>Form隐私选项.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -402,16 +436,39 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Parsnip.ico" />
+    <None Include="Resource\MyPic48.png" />
+    <None Include="Resource\MyPic.png" />
+    <None Include="Resource\HC_巧克力.png" />
+    <None Include="Resource\EXEICO-20.png" />
+    <None Include="Resource\EXEICO-19.png" />
+    <None Include="Resource\EXEICO-18.png" />
+    <None Include="Resource\EXEICO-17.png" />
+    <None Include="Resource\EXEICO-16.png" />
+    <None Include="Resource\EXEICO-15.png" />
+    <None Include="Resource\EXEICO-14.png" />
+    <None Include="Resource\EXEICO-13.png" />
+    <None Include="Resource\EXEICO-12.png" />
+    <None Include="Resource\EXEICO-11.png" />
+    <None Include="Resource\EXEICO-10.png" />
+    <None Include="Resource\EXEICO-9.png" />
+    <None Include="Resource\Pufferfish.png" />
+    <None Include="Resource\EXEICO-8.png" />
+    <None Include="Resource\EXEICO-7.png" />
+    <None Include="Resource\EXEICO-6.png" />
+    <None Include="Resource\EXEICO-5.png" />
+    <None Include="Resource\EXEICO-4.png" />
+    <None Include="Resource\EXEICO-3.png" />
+    <None Include="Resource\EXEICO-2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\cef.redist.x64.103.0.9\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.103.0.9\build\cef.redist.x64.props'))" />
-    <Error Condition="!Exists('..\packages\cef.redist.x86.103.0.9\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.103.0.9\build\cef.redist.x86.props'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Common.103.0.90\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.103.0.90\build\CefSharp.Common.props'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Common.103.0.90\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.103.0.90\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x64.107.1.9\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.107.1.9\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.107.1.9\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.107.1.9\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.107.1.90\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.107.1.90\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.107.1.90\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.107.1.90\build\CefSharp.Common.targets'))" />
   </Target>
-  <Import Project="..\packages\CefSharp.Common.103.0.90\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.103.0.90\build\CefSharp.Common.targets')" />
+  <Import Project="..\packages\CefSharp.Common.107.1.90\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.107.1.90\build\CefSharp.Common.targets')" />
 </Project>

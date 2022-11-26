@@ -24,6 +24,7 @@
 	<StatisticsOnTheNmberOfParticipatingUsers>True</StatisticsOnTheNmberOfParticipatingUsers>
 	<SaveInterfaceLayout>True</SaveInterfaceLayout>
 	<DragDropCompatibilityForAdministrator>True</DragDropCompatibilityForAdministrator>
+	<AutoSelectFirstNexusDownloadServer>False</AutoSelectFirstNexusDownloadServer>
 
 	<CategoryPanelWidth>200</CategoryPanelWidth>
 	<DetailsPanelWidth>250</DetailsPanelWidth>
@@ -32,5 +33,9 @@
 
 	<LastUsedSubLibraryName>Default Sub Library</LastUsedSubLibraryName>
 	<LastUsed_DirectDownloadItemUpdateUserMember>False</LastUsed_DirectDownloadItemUpdateUserMember>
+
+	<PrivacyChoice></PrivacyChoice>
+
+	<ChromiumEmbeddedFrameworkVersionTag></ChromiumEmbeddedFrameworkVersionTag>
 	
 </data>

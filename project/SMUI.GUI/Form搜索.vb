@@ -35,7 +35,7 @@ Public Class Form搜索
         If Me.CheckBox1.Checked = True Then a.ST_NotCaseUpperAndLowerLetters = True
         If Me.CheckBox2.Checked = True Then a.ST_NotCaseCHS_ENG_Symbol = True
         If Me.CheckBox3.Checked = True Then a.ST_SingleCharacterFuzzySearch = True
-        Dim stra As String = a.StartSearch(检查并返回当前可用子库路径(False), Me.DarkTextBox1.Text, 搜索类型)
+        Dim stra As String = a.StartSearch(检查并返回当前所选子库路径(False), Me.DarkTextBox1.Text, 搜索类型)
         搜索结果 = a.Results
         e.Result = stra
         ReDim Preserve 搜索历史(搜索历史.Count)
