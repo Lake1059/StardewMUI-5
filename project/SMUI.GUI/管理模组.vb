@@ -527,21 +527,17 @@ Module 管理模组
                End Sub
         Next
 
-        If 付费功能解锁.解锁自由输入直接更新项功能的NEXUSID = True Then
+        If DLC.CustomInputExtension = True Then
             Dim x As New ToolStripMenuItem With {
-                .Image = My.Resources.NEXUS
+                .Image = My.Resources.NEXUS,
+                .Text = 获取动态多语言文本("data/DynamicText/UpdateMod.2")
             }
-            If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "Chinese" Or ST1.是否正在使用自定义语言包 = True Then
-                x.Text = "自由输入 ID 进行更新"
-            Else
-                x.Text = "Enter ID to update"
-            End If
             a.Items.Add(x)
             AddHandler x.Click,
                 Sub(s, e)
                     If Form直接联网更新单个项.Visible = True Then Exit Sub
                     x.Text = 获取动态多语言文本("data/DynamicText/UpdateMod.2")
-                    Dim m1 As New InputTextDialog("Lake1059.Plugin1.UnlockFreeInputID", 获取动态多语言文本("data/DynamicText/UpdateMod.1"))
+                    Dim m1 As New InputTextDialog("", 获取动态多语言文本("data/DynamicText/UpdateMod.1"))
                     Dim m2 As String = m1.ShowDialog(Form1)
                     If m2 = "" Or m2 Is Nothing Then Exit Sub
                     Dim 新的更新窗口 As New Form直接联网更新单个项 With {

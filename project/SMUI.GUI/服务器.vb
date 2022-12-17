@@ -13,6 +13,10 @@ Module 服务器
             添加调试文本(获取动态多语言文本("data/DynamicText/Sever.0"), Color1.绿色)
             Exit Sub
         End If
+        If ST1.当前是否正在使用Steam版本 = True Then
+            添加调试文本(获取动态多语言文本("data/DynamicText/Sever.11"), Color1.绿色)
+            Exit Sub
+        End If
         正在进行更新 = True
         Form1.Label更新状态标记.Text = 获取动态多语言文本("data/DynamicText/Sever.1")
         Dim 服务器获取_更新 As New System.ComponentModel.BackgroundWorker

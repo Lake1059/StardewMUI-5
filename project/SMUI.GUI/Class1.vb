@@ -58,6 +58,8 @@ Public Class Class1
         Public Shared 当前SMAPI版本号 As String = ""
         Public Shared 当前星露谷版本号 As String = ""
 
+        Public Shared 当前是否正在使用Steam版本 As Boolean = False
+
     End Class
 
     ''' <summary>
@@ -67,17 +69,18 @@ Public Class Class1
         Shared ReadOnly wsh As New IWshRuntimeLibrary.IWshShell_Class
         Public Shared ReadOnly 桌面路径 As String = wsh.SpecialFolders.Item("Desktop")
         Public Shared ReadOnly AppDataRoaming As String = wsh.SpecialFolders.Item("AppData")
-        Public Shared ReadOnly 星露谷存档路径 As String = wsh.SpecialFolders.Item("AppData") & "\StardewValley\Saves"
-        Public Shared ReadOnly SMAPI日志文件夹路径 As String = wsh.SpecialFolders.Item("AppData") & "\StardewValley\ErrorLogs"
-        Public Shared ReadOnly 应用程序用户数据路径 As String = "C:\Users\Public\1059 Studio\SMUI Client 5 Cache"
-        Public Shared ReadOnly 更新安装程序文件路径 As String = "C:\Users\Public\1059 Studio\SMUI Client 5 Cache\Update\StardewMUI 5 Installer.exe"
-        Public Shared ReadOnly 应用程序设置文件路径 As String = "C:\Users\Public\1059 Studio\SMUI Client 5 Cache\Settings.xml"
-        Public Shared ReadOnly 开始菜单快捷方式路径 As String = wsh.SpecialFolders.Item("AppData") & "\Microsoft\Windows\Start Menu\Programs\StardewMUI 5\SMUI.GUI.lnk"
-        Public Shared ReadOnly 桌面快捷方式路径 As String = wsh.SpecialFolders.Item("Desktop") & "\SMUI.GUI.lnk"
-        Public Shared ReadOnly 应用程序插件数据路径 As String = "C:\Users\Public\1059 Studio\SMUI Client 5 Cache\Plugin"
+        Public Shared ReadOnly 星露谷存档路径 As String = AppDataRoaming & "\StardewValley\Saves"
+        Public Shared ReadOnly SMAPI日志文件夹路径 As String = AppDataRoaming & "\StardewValley\ErrorLogs"
+        Public Shared ReadOnly 应用程序用户数据路径 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache"
+        Public Shared ReadOnly 更新安装程序文件路径 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache\Update\StardewMUI 5 Installer.exe"
+        Public Shared ReadOnly 应用程序设置文件路径 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache\Settings.xml"
+        Public Shared ReadOnly 开始菜单快捷方式路径 As String = AppDataRoaming & "\Microsoft\Windows\Start Menu\Programs\StardewMUI 5\SMUI.GUI.lnk"
 
-        Public Shared ReadOnly 临时自动下载路径 As String = "C:\Users\Public\1059 Studio\SMUI Client 5 Cache\Download"
-        Public Shared ReadOnly 临时自动解压路径 As String = "C:\Users\Public\1059 Studio\SMUI Client 5 Cache\Decompress"
+        Public Shared ReadOnly 桌面快捷方式路径 As String = 桌面路径 & "\SMUI.GUI.lnk"
+        Public Shared ReadOnly 应用程序插件数据路径 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache\Plugin"
+        Public Shared ReadOnly 临时自动下载路径 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache\Download"
+        Public Shared ReadOnly 临时自动解压路径 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache\Decompress"
+        Public Shared ReadOnly 用于发行版的DLC路径 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache\DLC"
     End Class
 
     ''' <summary>

@@ -13,7 +13,6 @@ Public Class Form1
         加载自定义语言文件()
         Application.DoEvents()
 
-
         启动时加载用户设置()
         读取导入导出密码本()
         启动时初始化界面()
@@ -48,13 +47,11 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-
         If IO.Path.GetFileName(IO.Path.GetDirectoryName(Application.ExecutablePath)).ToLower = "debug" Then
             添加调试文本(获取动态多语言文本("data/DynamicText/Sever.10"), Color1.黄色)
         Else
             运行后台服务器检查更新()
         End If
-
         Select Case xml_Settings.SelectSingleNode("data/PrivacyChoice").InnerText
             Case "1", "2"
                 向服务器发送用户统计()
@@ -86,8 +83,13 @@ Public Class Form1
         调整项列表列宽()
         '=============================================
         扫描插件并加载()
+        If 验证第三方插件是否违反服务条款() = True Then
+            MsgBox(获取动态多语言文本("data/DLC/P1"), MsgBoxStyle.Exclamation)
+            End
+        End If
+        加载DLC()
         Application.DoEvents()
-        If 付费功能解锁.解锁直接从N网下载并新建项的功能 = True Then Me.下载并新建项ToolStripMenuItem.Visible = True
+        If DLC.CustomInputExtension = True Then Me.下载并新建项ToolStripMenuItem.Visible = True
         '=============================================
         DeveloperEvent.Raise_StartLoadedEvent()
     End Sub
@@ -1569,10 +1571,6 @@ jx:
 
 #Region "内容中心"
 
-    Private Sub StardewMUI5NEXUSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StardewMUI5NEXUSToolStripMenuItem.Click
-        Process.Start("https://www.nexusmods.com/stardewvalley/mods/12230")
-    End Sub
-
     Private Sub 产品简体中文维基ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 产品简体中文维基ToolStripMenuItem.Click
         Process.Start("https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki")
     End Sub
@@ -1591,10 +1589,6 @@ jx:
 
     Private Sub 欢迎赞助ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 欢迎赞助ToolStripMenuItem.Click
         Process.Start("https://afdian.net/@1059Studio")
-    End Sub
-
-    Private Sub SupportMeOnKofiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SupportMeOnKofiToolStripMenuItem.Click
-        Process.Start("https://ko-fi.com/lake1059")
     End Sub
 
     Private Sub ContactMeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContactMeToolStripMenuItem.Click

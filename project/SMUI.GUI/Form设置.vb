@@ -8,7 +8,6 @@ Imports SMUI.Windows.PakManager
 
 Public Class Form设置
 
-
     Sub 一级按钮鼠标移上事件(sender As Object, e As EventArgs) Handles Label9.MouseEnter, Label7.MouseEnter, Label确定.MouseEnter, Label应用.MouseEnter, Label4.MouseEnter, Label28.MouseEnter, Label24.MouseEnter, Label10.MouseEnter, Label取消.MouseEnter
         sender.BackColor = ColorTranslator.FromWin32(RGB(100, 100, 100))
 
@@ -55,7 +54,6 @@ Public Class Form设置
             Me.CheckBox7.Text = 获取动态多语言文本("data/SettingsWindow/A31")
             Me.CheckBox5.Text = 获取动态多语言文本("data/SettingsWindow/A32")
             Me.CheckBox1.Text = 获取动态多语言文本("data/SettingsWindow/A33")
-            Me.CheckBox3.Text = 获取动态多语言文本("data/SettingsWindow/A34")
             Me.LinkLabel打开隐私设置.Text = 获取动态多语言文本("data/SettingsWindow/B1")
             Me.Label界面尺寸.Text = 获取动态多语言文本("data/SettingsWindow/A34")
             Me.Label13.Text = 获取动态多语言文本("data/SettingsWindow/A35")
@@ -64,6 +62,12 @@ Public Class Form设置
             Me.Label图标.Text = 获取动态多语言文本("data/SettingsWindow/A38")
             Me.Label32.Text = 获取动态多语言文本("data/SettingsWindow/A39")
             Me.CheckBox2.Text = 获取动态多语言文本("data/SettingsWindow/A40")
+            Me.CheckBox3.Text = 获取动态多语言文本("data/SettingsWindow/A41")
+            Me.Label11.Text = 获取动态多语言文本("data/SettingsWindow/A42")
+            Me.Label16.Text = 获取动态多语言文本("data/SettingsWindow/A43")
+            Me.Label35.Text = 获取动态多语言文本("data/SettingsWindow/A44")
+            Me.Label3.Text = 获取动态多语言文本("data/SettingsWindow/A45")
+            'Me.Label35.Text = 获取动态多语言文本("data/SettingsWindow/A46")
         End If
 
     End Sub
@@ -195,7 +199,7 @@ Public Class Form设置
         Me.CheckBox3.Checked = xml_Settings.SelectSingleNode("data/AutoSelectFirstNexusDownloadServer").InnerText
         Me.TrackBar1.Value = xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText
         Me.TrackBar2.Value = xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText
-
+        Me.TrackBar6.Value = xml_Settings.SelectSingleNode("data/ItemsHeightAdd").InnerText
     End Sub
 
     Public Sub 保存设置()
@@ -256,7 +260,8 @@ Public Class Form设置
         xml_Settings.SelectSingleNode("data/AutoSelectFirstNexusDownloadServer").InnerText = Me.CheckBox1.Checked
         xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText = Me.TrackBar1.Value
         xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText = Me.TrackBar2.Value
-
+        xml_Settings.SelectSingleNode("data/ItemsHeightAdd").InnerText = Me.TrackBar6.Value
+        Form1.ImageList1.ImageSize = New Size(3, 25 + Me.TrackBar6.Value)
 
         xml_Settings.SelectSingleNode("data/MainWindowWidth").InnerText = Form1.Width
         xml_Settings.SelectSingleNode("data/MainWindowHeight").InnerText = Form1.Height
@@ -415,7 +420,7 @@ R1:
                 Case "1"
                     AddHandler a.Click,
                         Sub()
-                            选择的图标Image = My.Resources.防风草 : My.Settings.图标 = 1
+                            选择的图标Image = My.Resources.EXEICO_1 : My.Settings.图标 = 1
                             挑选图标按钮确认执行()
                         End Sub
                 Case "2"
@@ -424,138 +429,138 @@ R1:
                             选择的图标Image = My.Resources.EXEICO_2 : My.Settings.图标 = 2
                             挑选图标按钮确认执行()
                         End Sub
-                Case "3"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_3 : My.Settings.图标 = 3
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "4"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_4 : My.Settings.图标 = 4
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "5"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_5 : My.Settings.图标 = 5
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "6"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_6 : My.Settings.图标 = 6
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "7"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_7 : My.Settings.图标 = 7
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "8"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_8 : My.Settings.图标 = 8
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "9"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_9 : My.Settings.图标 = 9
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "10"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_10 : My.Settings.图标 = 10
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "11"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_11 : My.Settings.图标 = 11
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "12"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_12 : My.Settings.图标 = 12
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "13"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_13 : My.Settings.图标 = 13
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "14"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_14 : My.Settings.图标 = 14
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "15"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_15 : My.Settings.图标 = 15
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "16"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_16 : My.Settings.图标 = 16
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "17"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_17 : My.Settings.图标 = 17
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "18"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_18 : My.Settings.图标 = 18
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "19"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_19 : My.Settings.图标 = 19
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "20"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_20 : My.Settings.图标 = 20
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "21"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.HC_巧克力 : My.Settings.图标 = 21
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "22"
-                    AddHandler a.Click,
-                        Sub()
-                            '选择的图标Image = My.Resources.EXEICO_22 : My.Settings.图标 =22
-                            '挑选图标按钮确认执行()
-                        End Sub
-                Case "23"
-                    AddHandler a.Click,
-                        Sub()
-                            '选择的图标Image = My.Resources.EXEICO_23 : My.Settings.图标 =23
-                            '挑选图标按钮确认执行()
-                        End Sub
-                Case "24"
-                    AddHandler a.Click,
-                        Sub()
-                            '选择的图标Image = My.Resources.MyPic : My.Settings.图标 =24
-                            '挑选图标按钮确认执行()
-                        End Sub
+                    '        Case "3"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_3 : My.Settings.图标 = 3
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "4"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_4 : My.Settings.图标 = 4
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "5"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_5 : My.Settings.图标 = 5
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "6"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_6 : My.Settings.图标 = 6
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "7"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_7 : My.Settings.图标 = 7
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "8"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_8 : My.Settings.图标 = 8
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "9"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_9 : My.Settings.图标 = 9
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "10"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_10 : My.Settings.图标 = 10
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "11"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_11 : My.Settings.图标 = 11
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "12"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_12 : My.Settings.图标 = 12
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "13"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_13 : My.Settings.图标 = 13
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "14"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_14 : My.Settings.图标 = 14
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "15"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_15 : My.Settings.图标 = 15
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "16"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_16 : My.Settings.图标 = 16
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "17"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_17 : My.Settings.图标 = 17
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "18"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_18 : My.Settings.图标 = 18
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "19"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_19 : My.Settings.图标 = 19
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "20"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.EXEICO_20 : My.Settings.图标 = 20
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "21"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    选择的图标Image = My.Resources.HC_巧克力 : My.Settings.图标 = 21
+                    '                    挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "22"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    '选择的图标Image = My.Resources.EXEICO_22 : My.Settings.图标 =22
+                    '                    '挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "23"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    '选择的图标Image = My.Resources.EXEICO_23 : My.Settings.图标 =23
+                    '                    '挑选图标按钮确认执行()
+                    '                End Sub
+                    '        Case "24"
+                    '            AddHandler a.Click,
+                    '                Sub()
+                    '                    '选择的图标Image = My.Resources.MyPic : My.Settings.图标 =24
+                    '                    '挑选图标按钮确认执行()
+                    '                End Sub
             End Select
         Next
     End Sub

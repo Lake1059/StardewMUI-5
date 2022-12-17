@@ -31,6 +31,7 @@ Partial Class Form插件和扩展内容
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -44,7 +45,6 @@ Partial Class Form插件和扩展内容
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -118,6 +118,17 @@ Partial Class Form插件和扩展内容
         Me.Panel4.Size = New System.Drawing.Size(460, 575)
         Me.Panel4.TabIndex = 11
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!)
+        Me.Label10.Location = New System.Drawing.Point(10, 131)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(218, 19)
+        Me.Label10.TabIndex = 13
+        Me.Label10.Text = "❌ DLC 5 - Distribution Extension"
+        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -125,9 +136,9 @@ Partial Class Form插件和扩展内容
         Me.Label9.Location = New System.Drawing.Point(10, 102)
         Me.Label9.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(362, 19)
+        Me.Label9.Size = New System.Drawing.Size(239, 19)
         Me.Label9.TabIndex = 12
-        Me.Label9.Text = "❌ Lake1059.Plugin4 - 在模组更新管理操作台中直接找到项"
+        Me.Label9.Text = "❌ DLC 4 - Check Updates Extension"
         '
         'Label8
         '
@@ -136,9 +147,9 @@ Partial Class Form插件和扩展内容
         Me.Label8.Location = New System.Drawing.Point(10, 73)
         Me.Label8.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(297, 19)
+        Me.Label8.Size = New System.Drawing.Size(206, 19)
         Me.Label8.TabIndex = 2
-        Me.Label8.Text = "❌ Lake1059.Plugin3 - 直接下载新模组并新建项"
+        Me.Label8.Text = "❌ DLC 3 - New Item Extension"
         '
         'Label7
         '
@@ -147,9 +158,9 @@ Partial Class Form插件和扩展内容
         Me.Label7.Location = New System.Drawing.Point(10, 44)
         Me.Label7.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(258, 19)
+        Me.Label7.Size = New System.Drawing.Size(155, 19)
         Me.Label7.TabIndex = 1
-        Me.Label7.Text = "❌ Lake1059.Plugin2 - 免费的皮肤加载器"
+        Me.Label7.Text = "❌ DLC 2 - Skin Loader"
         '
         'Label6
         '
@@ -158,9 +169,9 @@ Partial Class Form插件和扩展内容
         Me.Label6.Location = New System.Drawing.Point(10, 15)
         Me.Label6.Margin = New System.Windows.Forms.Padding(10, 15, 10, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(328, 19)
+        Me.Label6.Size = New System.Drawing.Size(231, 19)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "❌ Lake1059.Plugin1 - 自由输入 NEXUS ID 来更新项"
+        Me.Label6.Text = "❌ DLC 1 - Custom Input Extension"
         '
         'Label5
         '
@@ -263,17 +274,6 @@ Partial Class Form插件和扩展内容
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!)
-        Me.Label10.Location = New System.Drawing.Point(10, 131)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(336, 19)
-        Me.Label10.TabIndex = 13
-        Me.Label10.Text = "❌ Lake1059.Plugin5 - 数据分发预设管理器（未发布）"
         '
         'Form插件和扩展内容
         '

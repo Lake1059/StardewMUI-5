@@ -39,13 +39,13 @@ Public Class Form模组检查更新操作台
         Me.RichTextBox1.LanguageOption = RichTextBoxLanguageOptions.UIFonts
         设置富文本框行高(Me.RichTextBox1, 300)
 
-        If 付费功能解锁.解锁直接在模组检查更新操作台的结果中查找项 = True Then
+        If DLC.CheckUpdatesExtension = True Then
             Me.Label41.Visible = True
             Me.Label40.Visible = True
             Me.Label43.Visible = True
             Me.Label42.Visible = True
         End If
-        If 付费功能解锁.解锁自由输入直接更新项功能的NEXUSID = True Then
+        If DLC.CustomInputExtension = True Then
             Me.自由输入NEXUSIDToolStripMenuItem.Visible = True
         End If
 
@@ -70,7 +70,7 @@ Public Class Form模组检查更新操作台
             Me.Label2.Width = xml_lang.SelectSingleNode("data/ModCheckUpdateManageWindow/A2").Attributes.GetNamedItem("width").InnerText
             Me.Label3.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A3")
             Me.Label3.Width = xml_lang.SelectSingleNode("data/ModCheckUpdateManageWindow/A3").Attributes.GetNamedItem("width").InnerText
-            Me.Label6.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A5")
+            Me.Label6.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A4")
             Me.Label7.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A5")
             Me.CheckBox1.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A6")
             Me.CheckBox2.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A7")
@@ -79,7 +79,7 @@ Public Class Form模组检查更新操作台
             Me.CheckBox5.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A10")
             Me.CheckBox6.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A11")
             Me.CheckBox7.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A12")
-            Me.DarkButton2.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/13")
+            Me.DarkButton2.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A13")
             Me.Label10.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A14")
             Me.Label13.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A15")
             Me.Label15.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A16")
@@ -117,6 +117,7 @@ A21")
             Me.Label32.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A42")
             Me.Label29.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A43")
             Me.Label34.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A44")
+            Me.选中所有可更新的项蓝色ToolStripMenuItem.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A45")
         End If
     End Sub
 

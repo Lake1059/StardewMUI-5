@@ -121,62 +121,11 @@
   <data name="English" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\English.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
-  <data name="EXEICO_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_17" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_18" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_19" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-19.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EXEICO_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\EXEICO_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EXEICO_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EXEICO_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\EXEICO-9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resource\EXEICO_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fandom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\fandom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -186,12 +135,6 @@
   </data>
   <data name="Github" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Github.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HC_巧克力" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\HC_巧克力.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="kofi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\kofi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ModDrop_White32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\ModDrop-White32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -204,9 +147,6 @@
   </data>
   <data name="Paypal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Paypal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pufferfish" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Pufferfish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SettingsEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\SettingsEmpty.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
@@ -258,9 +198,6 @@
   </data>
   <data name="蓝" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\蓝.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="防风草" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\防风草.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="青" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\青.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

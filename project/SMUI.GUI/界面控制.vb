@@ -61,6 +61,13 @@ Module 界面控制
         Form1.ListView1.ForeColor = Color1.白色
         Form1.ListView2.ForeColor = Color1.白色
         Form1.RichTextBox1.ForeColor = Color1.白色
+
+        If ST1.当前是否正在使用Steam版本 = True Then
+            Form1.Label更新状态标记.Text = 获取动态多语言文本("data/DynamicText/Sever.11 ")
+            Form1.Label立即检查更新.Enabled = False
+        End If
+
+        'Form1.ImageList1.ImageSize = New Size(3, 25 + xml_Settings.SelectSingleNode("data/ItemsHeightAdd").InnerText)
     End Sub
 
     Public Sub 校准RichTextBox1的尺寸和位置()

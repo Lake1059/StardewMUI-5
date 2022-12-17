@@ -323,10 +323,6 @@
 		<A31 chs="自动获取新闻公告">Automatically get news</A31>
 		<A32 chs="保存用户调整后的界面布局">Save the interface layout adjusted by the user</A32>
 		<A33 chs="启用管理员身份下的拖拽兼容选项">Enable drag-and-drop compatibility option under admin</A33>
-		<A34 chs="自动选择首个 NEXUS 下载服务器（由 NEXUS 账户设置决定）">Automatically select the first NEXUS download server</A34>
-		
-		<B1 chs="打开隐私设置">Open Privacy Settings</B1>
-		
 		<A34 chs="   界面尺寸">   Interface size</A34>
 		<A35 chs="分类栏区域宽度（200-400）">Category panel area width (200-400)</A35>
 		<A36 chs="描述栏区域宽度（250-500）">Description panel area width (250-500)</A36>
@@ -334,6 +330,15 @@
 		<A38 chs="   图标">   Icons</A38>
 		<A39 chs="挑选你喜欢的图标（立即生效，可能在下次启动计算机时才完全生效）/crlf/更新后快捷方式将被重置，请再手动设置">Pick the icon you like (it will take effect immediately, or next time you start the computer) /crlf/ The shortcut will be reset after the update, please set it manually.</A39>
 		<A40 chs="在桌面创建快捷方式">Create a shortcut on the desktop</A40>
+		<A41 chs="自动选择首个 NEXUS 下载服务器（由 NEXUS 账户设置决定）">Automatically select the first NEXUS download server</A41>
+		<A42 chs="主窗口宽度（像素）（1200-2560）"></A42>
+		<A43 chs="主窗口高度（像素）（705-1440）"></A43>
+		<A44 chs="全局项高度增益（0-20）"></A44>
+		<A45 chs="全局服务器访问超时毫秒（3000-10000）"></A45>
+		<A46 chs=""></A46>
+		
+		
+		<B1 chs="打开隐私设置">Open Privacy Settings</B1>	
 	</SettingsWindow>
 
 	<DependenciesListWindow>
@@ -430,70 +435,71 @@
 		<A3 chs="步骤三：在本地库中找到项" width="200">Step3: Find item in local</A3>
 		
 		<A4 chs=" 在主窗口的【管理模组】页面中，在分类列表和项列表的右键菜单中选择【加入检查更新表】来将数据添加到列表中，或者直接拖入包含清单文件的模组文件夹">In the [Manage Mod] tab of the main window, select [Add to check update List] in the right-click menu of the category list and item list to add data to the list, or directly drag the mod folder containing the manifest file.</A4>
-		<A5 chs="发送数据选项"></A5>
-		<A6 chs="发送 SMAPI 版本信息"></A6>
-		<A7 chs="发送 Stardew Valley 版本号"></A7>
-		<A8 chs="发送操作系统平台名称"></A8>
-		<A9 chs="让接口返回完整数据"></A9>
-		<A10 chs="发送所有更新键"></A10>
-		<A11 chs="发送所有本地版本"></A11>
-		<A12 chs="发送所有运行态"></A12>
-		<A13 chs="发送数据：下一步"></A13>
+		<A5 chs="发送数据选项">Send data options</A5>
+		<A6 chs="发送 SMAPI 版本信息">Send SMAPI version</A6>
+		<A7 chs="发送 Stardew Valley 版本号">Send Stardew Valley version</A7>
+		<A8 chs="发送操作系统平台名称">Send OS platform name</A8>
+		<A9 chs="让接口返回完整数据">Return complete data</A9>
+		<A10 chs="发送所有更新键">Send all update keys</A10>
+		<A11 chs="发送所有本地版本">Send all local versions</A11>
+		<A12 chs="发送所有运行态">Send all running status</A12>
+		<A13 chs="发送数据：下一步">Sending data: the next step</A13>
 		<A14 chs=" UniqueID"> UniqueID</A14>
-		<A15 chs=" 更新键"></A15>
-		<A16 chs=" 本地版本"></A16>
-		<A17 chs=" 当前正常运行"></A17>
-		<A18 chs="编辑单个条目"></A18>
-		<A19 chs="移除选中"></A19>
-		<A20 chs="移除全部"></A20>
-		<A21 chs="批量修改"></A21>
-		<A22 chs="批量修改：更新键"></A22>
-		<A23 chs="批量修改：本地版本"></A23>
-		<A24 chs="批量修改：运行态"></A24>
+		<A15 chs=" 更新键"> Update keys</A15>
+		<A16 chs=" 本地版本"> Local version</A16>
+		<A17 chs=" 当前正常运行"> Running normally</A17>
+		<A18 chs="编辑单个条目">Edit a single entry</A18>
+		<A19 chs="移除选中">Remove selected</A19>
+		<A20 chs="移除全部">Remove all</A20>
+		<A21 chs="批量修改">Batch Edit</A21>
+		<A22 chs="批量修改：更新键">Bulk edit: update keys</A22>
+		<A23 chs="批量修改：本地版本">Bulk edit: local versions</A23>
+		<A24 chs="批量修改：运行态">Batch edit: running state</A24>
 
-		<A25 chs=" 查阅从 smapi.io 返回的数据"></A25>
-		<A26 chs=" 详细数据菜单"></A26>
-		<A27 chs="包含的 UniqueID"></A27>
-		<A28 chs="打开建议更新版本的地址"></A28>
-		<A29 chs="其他模组平台 ID"></A29>
-		<A30 chs="GitHub 存储库地址"></A30>
-		<A30.1 chs="没有 GitHub 地址"></A30.1>
-		<A31 chs="自定义资源地址"></A31>
-		<A32 chs="主要版本地址"></A32>
-		<A33 chs="其他版本地址"></A33>
-		<A34 chs="兼容性描述"></A34>
-		<A35 chs="额外兼容性和测试版信息"></A35>
-		<A36 chs="添加全部条目到下一步" width="150"></A36>
-		<A37 chs="添加选中条目到下一步" width="150"></A37>
-		<A38 chs="清空此表数据并返回" width="150"></A38>
-		<A39 chs="仅返回" width="80"></A39>
-		<A40 chs=" 模组名称"></A40>
-		<A41 chs=" UniqueID"></A41>
-		<A42 chs=" 建议更新版本"></A42>
-		<A43 chs=" 更新键"></A43>
-		<A44 chs=" 兼容性描述"></A44>
+		<A25 chs=" 查阅从 smapi.io 返回的数据"> Consult the data returned from smapi.io</A25>
+		<A26 chs=" 详细数据菜单"> Detailed data menu</A26>
+		<A27 chs="包含的 UniqueID">Contains UniqueID</A27>
+		<A28 chs="打开建议更新版本的地址">Suggested update version</A28>
+		<A29 chs="其他模组平台 ID">Other Mod Platform IDs</A29>
+		<A30 chs="GitHub 存储库地址">GitHub repository address</A30>
+		<A30.1 chs="没有 GitHub 地址">没有 GitHub 地址</A30.1>
+		<A31 chs="自定义资源地址">Custom resource address</A31>
+		<A32 chs="主要版本地址">Main version address</A32>
+		<A33 chs="其他版本地址">Other version address</A33>
+		<A34 chs="兼容性描述">Compatibility description</A34>
+		<A35 chs="额外兼容性和测试版信息">Additional Information</A35>
+		<A36 chs="添加全部条目到下一步" width="200">Add all to next step</A36>
+		<A37 chs="添加选中条目到下一步" width="230">Add selected to next step</A37>
+		<A38 chs="清空此表数据并返回" width="150">Clear and return</A38>
+		<A39 chs="仅返回" width="80">Return</A39>
+		<A40 chs=" 模组名称"> Mod name</A40>
+		<A41 chs=" UniqueID"> UniqueID</A41>
+		<A42 chs=" 建议更新版本"> Suggest version</A42>
+		<A43 chs=" 更新键"> Update key</A43>
+		<A44 chs=" 兼容性描述"> Compatibility</A44>
+		<A45 chs="选中所有可更新的项（蓝色）"></A45>
 
-		<S1 chs=" 正在收集数据"></S1>
-		<S2 chs=" 正在转换数据"></S2>
-		<S3 chs=" 正在连接 SMAPI 服务器"></S3>
-		<S4 chs=" 正在转换对象"></S4>
+		<S1 chs=" 正在收集数据"> Collecting data...</S1>
+		<S2 chs=" 正在转换数据"> Converting data...</S2>
+		<S3 chs=" 正在连接 SMAPI 服务器"> Connecting to SMAPI server...</S3>
+		<S4 chs=" 正在转换对象"> Converting object</S4>
 		<S5 chs="已是最新">is up to date</S5>
 		<S6 chs="无 Nexus">no nexus id</S6>
-		<S7 chs="已找到："></S7>
-		<S8 chs="重复的对象："></S8>
+		<S7 chs="已找到：">Found: </S7>
+		<S8 chs="重复的对象：">Duplicate objects: </S8>
 		<S8.1 chs="在：">At: </S8.1>
-		<S9 chs="未能找到包含此对象的项："></S9>
-		<S10 chs="查找结束"></S10>
-		<S11 chs="已添加条目数量："></S11>
+		<S9 chs="未能找到包含此对象的项：">Not found: </S9>
+		<S10 chs="查找结束">End of search</S10>
+		<S11 chs="已添加条目数量：">Number of entries added: </S11>
 
 	</ModCheckUpdateManageWindow>
 
 	<PrivacyChoiceWindow>
 		<A1 chs="隐私选项">Privacy Choice</A1>
-		<A2 chs="参与用户统计，并上传这些数据"></A2>
-		<A3 chs="参与用户统计，但不愿意上传你的数据，我们仍会收到您的公网 IP 地址"></A3>
-		<A4 chs="不参与统计，我们不会收到你的任何数据"></A4>
-		<A5 chs="确认选择"></A5>
+		<A2 chs="参与用户统计，并上传这些数据">Participate in user statistics and upload these data.</A2>
+		<A3 chs="参与用户统计，但不愿意上传你的数据，我们仍会收到您的公网 IP 地址">Participate in user statistics, but do not want to upload your data, we will still receive your public IP address.</A3>
+		<A4 chs="不参与统计，我们不会收到你的任何数据">Do not participate in statistics, we will not receive any data from you</A4>
+		<A5 chs="确认选择">Confirm selection</A5>
 	</PrivacyChoiceWindow>
 	
 	
@@ -523,7 +529,7 @@
 		<WindowsMF_2 chs="管理员：激活拖拽"></WindowsMF_2>
 		<neverRemindAgain chs="不再提醒">Never remind again</neverRemindAgain>
 
-		<ChromiumVersionWarn chs="当前 SMUI 版本需要使用的 Chromium 组件版本号为：{1}，请记得前往维基下载对应版本的 Chromium Embedded Framework 组件安装程序，如果版本不对应，可能无法正常使用浏览器功能">The version number of the Chromium component required for the current SMUI version is: {1}, please remember to go to the wiki to download the corresponding version of the Chromium Embedded Framework component installer, if the version does not match, the browser function may not work normally.</ChromiumVersionWarn>
+		<ChromiumVersionWarn chs="当前 SMUI 版本需要使用的 Chromium 组件版本号为：{1}，请记得前往维基下载对应版本的 Chromium Embedded Framework 组件安装程序，如果版本不对应将无法使用浏览器功能">The version number of the Chromium component required for the current SMUI version is: {1}, please remember to go to the wiki to download the corresponding version of the Chromium Embedded Framework component installer, if the version does not match, the browser function will not work normally.</ChromiumVersionWarn>
 		
 		<LoggedNexusWebApi chs="已登录 NEXUS WEB API">Logged Nexus API</LoggedNexusWebApi>
 		<NotLogInNexusWebApi chs="未登录 NEXUS WEB API">Not Login Nexus API</NotLogInNexusWebApi>
@@ -687,6 +693,7 @@
 		<Sever.8 chs="无网络">No Network</Sever.8>
 		<Sever.9 chs="成功发送了用户统计">User statistics sent successfully.</Sever.9>
 		<Sever.10 chs="当前位于 Debug 文件夹中，检查更新自动禁用以防止在调试时浪费服务器资源">Currently in the Debug folder, check for updates is automatically disabled to prevent wasting server resources while debugging</Sever.10>
+		<Sever.11 chs="Steam 版本的软件更新由 Steam 管理">Currently using the Steam version, software updates are handled by Steam.</Sever.11>
 
 		<Settings.1 chs="选择星露谷游戏文件夹">Select Stardew Valley game folder.</Settings.1>
 		<Settings.2 chs="选择程序自动找到的或者你可以自己浏览文件夹">Choose what the program has automatically found or you can browse the folder yourself.</Settings.2>
@@ -710,6 +717,10 @@
 		<smuicpak_showname chs="SMUI 分类打包文件">SMUI Category Pak</smuicpak_showname>
 		<smuimpak_showname chs="SMUI 项打包文件">SMUI Item Pak</smuimpak_showname>
 	</SYSTEM>
+
+	<DLC>
+		<P1 chs="检测到有第三方插件存在违反服务条款的行为，程序将立即停止运行，请将违规的插件删除后再启动产品">If a third-party plug-in is detected that violates the terms of service, the program will stop running immediately. Please delete the violating plug-in before starting the product.</P1>
+	</DLC>
 	
 
 	

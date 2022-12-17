@@ -69,6 +69,8 @@ Partial Class Form设置
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Panel界面尺寸 = New System.Windows.Forms.Panel()
+        Me.TrackBar6 = New System.Windows.Forms.TrackBar()
+        Me.Label35 = New System.Windows.Forms.Label()
         Me.TrackBar5 = New System.Windows.Forms.TrackBar()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TrackBar4 = New System.Windows.Forms.TrackBar()
@@ -159,6 +161,7 @@ Partial Class Form设置
         Me.Panel2.SuspendLayout()
         Me.Panel字体样式.SuspendLayout()
         Me.Panel界面尺寸.SuspendLayout()
+        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -283,7 +286,7 @@ Partial Class Form设置
         Me.Panel图标.Controls.Add(Me.Panel2)
         Me.Panel图标.Controls.Add(Me.Label32)
         Me.Panel图标.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel图标.Location = New System.Drawing.Point(0, 2683)
+        Me.Panel图标.Location = New System.Drawing.Point(0, 2746)
         Me.Panel图标.Name = "Panel图标"
         Me.Panel图标.Size = New System.Drawing.Size(666, 379)
         Me.Panel图标.TabIndex = 10
@@ -376,7 +379,6 @@ Partial Class Form设置
         Me.Button21.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button21.Image = CType(resources.GetObject("Button21.Image"), System.Drawing.Image)
         Me.Button21.Location = New System.Drawing.Point(306, 158)
         Me.Button21.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button21.Name = "Button21"
@@ -390,7 +392,6 @@ Partial Class Form设置
         Me.Button20.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button20.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_20
         Me.Button20.Location = New System.Drawing.Point(232, 158)
         Me.Button20.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button20.Name = "Button20"
@@ -404,7 +405,6 @@ Partial Class Form设置
         Me.Button19.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button19.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button19.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_19
         Me.Button19.Location = New System.Drawing.Point(158, 158)
         Me.Button19.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button19.Name = "Button19"
@@ -418,7 +418,6 @@ Partial Class Form设置
         Me.Button18.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button18.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button18.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_18
         Me.Button18.Location = New System.Drawing.Point(84, 158)
         Me.Button18.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button18.Name = "Button18"
@@ -432,7 +431,6 @@ Partial Class Form设置
         Me.Button17.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button17.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_17
         Me.Button17.Location = New System.Drawing.Point(10, 158)
         Me.Button17.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button17.Name = "Button17"
@@ -446,7 +444,6 @@ Partial Class Form设置
         Me.Button16.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_16
         Me.Button16.Location = New System.Drawing.Point(528, 84)
         Me.Button16.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button16.Name = "Button16"
@@ -460,7 +457,6 @@ Partial Class Form设置
         Me.Button15.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button15.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_15
         Me.Button15.Location = New System.Drawing.Point(454, 84)
         Me.Button15.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button15.Name = "Button15"
@@ -474,7 +470,6 @@ Partial Class Form设置
         Me.Button14.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button14.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_14
         Me.Button14.Location = New System.Drawing.Point(380, 84)
         Me.Button14.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button14.Name = "Button14"
@@ -488,7 +483,6 @@ Partial Class Form设置
         Me.Button13.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button13.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_13
         Me.Button13.Location = New System.Drawing.Point(306, 84)
         Me.Button13.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button13.Name = "Button13"
@@ -502,7 +496,6 @@ Partial Class Form设置
         Me.Button12.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_12
         Me.Button12.Location = New System.Drawing.Point(232, 84)
         Me.Button12.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button12.Name = "Button12"
@@ -516,7 +509,6 @@ Partial Class Form设置
         Me.Button11.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_11
         Me.Button11.Location = New System.Drawing.Point(158, 84)
         Me.Button11.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button11.Name = "Button11"
@@ -530,7 +522,6 @@ Partial Class Form设置
         Me.Button10.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_10
         Me.Button10.Location = New System.Drawing.Point(84, 84)
         Me.Button10.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button10.Name = "Button10"
@@ -544,7 +535,6 @@ Partial Class Form设置
         Me.Button9.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_9
         Me.Button9.Location = New System.Drawing.Point(10, 84)
         Me.Button9.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button9.Name = "Button9"
@@ -558,7 +548,6 @@ Partial Class Form设置
         Me.Button8.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_8
         Me.Button8.Location = New System.Drawing.Point(528, 10)
         Me.Button8.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button8.Name = "Button8"
@@ -572,7 +561,6 @@ Partial Class Form设置
         Me.Button7.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_7
         Me.Button7.Location = New System.Drawing.Point(454, 10)
         Me.Button7.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button7.Name = "Button7"
@@ -586,7 +574,6 @@ Partial Class Form设置
         Me.Button6.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_6
         Me.Button6.Location = New System.Drawing.Point(380, 10)
         Me.Button6.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button6.Name = "Button6"
@@ -600,7 +587,6 @@ Partial Class Form设置
         Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_5
         Me.Button5.Location = New System.Drawing.Point(306, 10)
         Me.Button5.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button5.Name = "Button5"
@@ -614,7 +600,6 @@ Partial Class Form设置
         Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_4
         Me.Button4.Location = New System.Drawing.Point(232, 10)
         Me.Button4.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button4.Name = "Button4"
@@ -628,7 +613,6 @@ Partial Class Form设置
         Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_3
         Me.Button3.Location = New System.Drawing.Point(158, 10)
         Me.Button3.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button3.Name = "Button3"
@@ -656,7 +640,6 @@ Partial Class Form设置
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = Global.SMUI.GUI.My.Resources.Resources.防风草
         Me.Button1.Location = New System.Drawing.Point(10, 10)
         Me.Button1.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Button1.Name = "Button1"
@@ -687,7 +670,7 @@ Partial Class Form设置
         Me.Panel字体样式.Controls.Add(Me.Label23)
         Me.Panel字体样式.Controls.Add(Me.Label27)
         Me.Panel字体样式.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel字体样式.Location = New System.Drawing.Point(0, 2408)
+        Me.Panel字体样式.Location = New System.Drawing.Point(0, 2471)
         Me.Panel字体样式.Name = "Panel字体样式"
         Me.Panel字体样式.Size = New System.Drawing.Size(666, 275)
         Me.Panel字体样式.TabIndex = 9
@@ -781,6 +764,8 @@ Partial Class Form设置
         '
         'Panel界面尺寸
         '
+        Me.Panel界面尺寸.Controls.Add(Me.TrackBar6)
+        Me.Panel界面尺寸.Controls.Add(Me.Label35)
         Me.Panel界面尺寸.Controls.Add(Me.TrackBar5)
         Me.Panel界面尺寸.Controls.Add(Me.Label16)
         Me.Panel界面尺寸.Controls.Add(Me.TrackBar4)
@@ -794,24 +779,44 @@ Partial Class Form设置
         Me.Panel界面尺寸.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel界面尺寸.Location = New System.Drawing.Point(0, 2028)
         Me.Panel界面尺寸.Name = "Panel界面尺寸"
-        Me.Panel界面尺寸.Size = New System.Drawing.Size(666, 380)
+        Me.Panel界面尺寸.Size = New System.Drawing.Size(666, 443)
         Me.Panel界面尺寸.TabIndex = 8
         Me.Panel界面尺寸.Visible = False
+        '
+        'TrackBar6
+        '
+        Me.TrackBar6.Cursor = System.Windows.Forms.Cursors.SizeWE
+        Me.TrackBar6.Location = New System.Drawing.Point(23, 375)
+        Me.TrackBar6.Margin = New System.Windows.Forms.Padding(0)
+        Me.TrackBar6.Maximum = 20
+        Me.TrackBar6.Name = "TrackBar6"
+        Me.TrackBar6.Size = New System.Drawing.Size(200, 45)
+        Me.TrackBar6.TabIndex = 35
+        Me.TrackBar6.TickStyle = System.Windows.Forms.TickStyle.Both
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(20, 348)
+        Me.Label35.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(142, 17)
+        Me.Label35.TabIndex = 34
+        Me.Label35.Text = "全局项高度增益（0-20）"
         '
         'TrackBar5
         '
         Me.TrackBar5.Cursor = System.Windows.Forms.Cursors.SizeWE
         Me.TrackBar5.Location = New System.Drawing.Point(23, 293)
         Me.TrackBar5.Margin = New System.Windows.Forms.Padding(0)
-        Me.TrackBar5.Maximum = 500
-        Me.TrackBar5.Minimum = 250
+        Me.TrackBar5.Maximum = 1440
+        Me.TrackBar5.Minimum = 705
         Me.TrackBar5.Name = "TrackBar5"
         Me.TrackBar5.Size = New System.Drawing.Size(200, 45)
-        Me.TrackBar5.SmallChange = 10
         Me.TrackBar5.TabIndex = 33
-        Me.TrackBar5.TickFrequency = 50
+        Me.TrackBar5.TickFrequency = 100
         Me.TrackBar5.TickStyle = System.Windows.Forms.TickStyle.Both
-        Me.TrackBar5.Value = 250
+        Me.TrackBar5.Value = 705
         '
         'Label16
         '
@@ -819,24 +824,23 @@ Partial Class Form设置
         Me.Label16.Location = New System.Drawing.Point(20, 266)
         Me.Label16.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(177, 17)
+        Me.Label16.Size = New System.Drawing.Size(194, 17)
         Me.Label16.TabIndex = 32
-        Me.Label16.Text = "主窗口高度（像素）（705-∞）"
+        Me.Label16.Text = "主窗口高度（像素）（705-1440）"
         '
         'TrackBar4
         '
         Me.TrackBar4.Cursor = System.Windows.Forms.Cursors.SizeWE
         Me.TrackBar4.Location = New System.Drawing.Point(23, 211)
         Me.TrackBar4.Margin = New System.Windows.Forms.Padding(0)
-        Me.TrackBar4.Maximum = 500
-        Me.TrackBar4.Minimum = 250
+        Me.TrackBar4.Maximum = 2560
+        Me.TrackBar4.Minimum = 1200
         Me.TrackBar4.Name = "TrackBar4"
         Me.TrackBar4.Size = New System.Drawing.Size(200, 45)
-        Me.TrackBar4.SmallChange = 10
         Me.TrackBar4.TabIndex = 31
-        Me.TrackBar4.TickFrequency = 50
+        Me.TrackBar4.TickFrequency = 100
         Me.TrackBar4.TickStyle = System.Windows.Forms.TickStyle.Both
-        Me.TrackBar4.Value = 250
+        Me.TrackBar4.Value = 1200
         '
         'Label11
         '
@@ -844,9 +848,9 @@ Partial Class Form设置
         Me.Label11.Location = New System.Drawing.Point(20, 184)
         Me.Label11.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(184, 17)
+        Me.Label11.Size = New System.Drawing.Size(201, 17)
         Me.Label11.TabIndex = 30
-        Me.Label11.Text = "主窗口宽度（像素）（1200-∞）"
+        Me.Label11.Text = "主窗口宽度（像素）（1200-2560）"
         '
         'TrackBar3
         '
@@ -882,7 +886,6 @@ Partial Class Form设置
         Me.TrackBar2.Minimum = 250
         Me.TrackBar2.Name = "TrackBar2"
         Me.TrackBar2.Size = New System.Drawing.Size(200, 45)
-        Me.TrackBar2.SmallChange = 10
         Me.TrackBar2.TabIndex = 27
         Me.TrackBar2.TickFrequency = 50
         Me.TrackBar2.TickStyle = System.Windows.Forms.TickStyle.Both
@@ -907,7 +910,6 @@ Partial Class Form设置
         Me.TrackBar1.Minimum = 200
         Me.TrackBar1.Name = "TrackBar1"
         Me.TrackBar1.Size = New System.Drawing.Size(200, 45)
-        Me.TrackBar1.SmallChange = 10
         Me.TrackBar1.TabIndex = 25
         Me.TrackBar1.TickFrequency = 50
         Me.TrackBar1.TickStyle = System.Windows.Forms.TickStyle.Both
@@ -1863,6 +1865,7 @@ Partial Class Form设置
         Me.Panel字体样式.PerformLayout()
         Me.Panel界面尺寸.ResumeLayout(False)
         Me.Panel界面尺寸.PerformLayout()
+        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2022,4 +2025,6 @@ Partial Class Form设置
     Friend WithEvents Button19 As Button
     Friend WithEvents Button18 As Button
     Friend WithEvents Button17 As Button
+    Friend WithEvents TrackBar6 As TrackBar
+    Friend WithEvents Label35 As Label
 End Class

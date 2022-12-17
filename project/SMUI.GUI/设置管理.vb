@@ -14,12 +14,18 @@ Module 设置管理
         If My.Computer.FileSystem.DirectoryExists(Path1.应用程序插件数据路径) = False Then
             My.Computer.FileSystem.CreateDirectory(Path1.应用程序插件数据路径)
         End If
+        If My.Computer.FileSystem.DirectoryExists(Path1.用于发行版的DLC路径) = False Then
+            My.Computer.FileSystem.CreateDirectory(Path1.用于发行版的DLC路径)
+        End If
     End Sub
 
     Public Sub 启动时加载用户设置()
         xml_Settings_Lock.LoadXml(My.Resources.SettingsEmpty)
         加载图标选择()
         生成应用程序缓存文件夹()
+        If My.Computer.FileSystem.FileExists(Application.StartupPath & "\steam_appid.txt") = True Then
+            ST1.当前是否正在使用Steam版本 = True
+        End If
         If My.Computer.FileSystem.FileExists(Path1.应用程序设置文件路径) = True Then
             加载XML设置数据()
             更新XML设置数据()
@@ -91,53 +97,53 @@ Module 设置管理
     Public Sub 加载图标选择()
         Select Case My.Settings.图标
             Case 1
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.防风草, Bitmap).GetHicon())
+                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_1, Bitmap).GetHicon())
             Case 2
                 Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_2, Bitmap).GetHicon())
-            Case 3
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_3, Bitmap).GetHicon())
-            Case 4
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_4, Bitmap).GetHicon())
-            Case 5
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_5, Bitmap).GetHicon())
-            Case 6
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_6, Bitmap).GetHicon())
-            Case 7
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_7, Bitmap).GetHicon())
-            Case 8
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_8, Bitmap).GetHicon())
-            Case 9
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_9, Bitmap).GetHicon())
-            Case 10
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_10, Bitmap).GetHicon())
-            Case 11
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_11, Bitmap).GetHicon())
-            Case 12
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_12, Bitmap).GetHicon())
-            Case 13
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_13, Bitmap).GetHicon())
-            Case 14
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_14, Bitmap).GetHicon())
-            Case 15
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_15, Bitmap).GetHicon())
-            Case 16
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_16, Bitmap).GetHicon())
-            Case 17
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_17, Bitmap).GetHicon())
-            Case 18
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_18, Bitmap).GetHicon())
-            Case 19
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_19, Bitmap).GetHicon())
-            Case 20
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_20, Bitmap).GetHicon())
-            Case 21
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.HC_巧克力, Bitmap).GetHicon())
-            Case 22
-                'Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_22, Bitmap).GetHicon())
-            Case 23
-                'Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_23, Bitmap).GetHicon())
-            Case 24
-                'Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.MyPic48, Bitmap).GetHicon())
+                'Case 3
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_3, Bitmap).GetHicon())
+                'Case 4
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_4, Bitmap).GetHicon())
+                'Case 5
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_5, Bitmap).GetHicon())
+                'Case 6
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_6, Bitmap).GetHicon())
+                'Case 7
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_7, Bitmap).GetHicon())
+                'Case 8
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_8, Bitmap).GetHicon())
+                'Case 9
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_9, Bitmap).GetHicon())
+                'Case 10
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_10, Bitmap).GetHicon())
+                'Case 11
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_11, Bitmap).GetHicon())
+                'Case 12
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_12, Bitmap).GetHicon())
+                'Case 13
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_13, Bitmap).GetHicon())
+                'Case 14
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_14, Bitmap).GetHicon())
+                'Case 15
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_15, Bitmap).GetHicon())
+                'Case 16
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_16, Bitmap).GetHicon())
+                'Case 17
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_17, Bitmap).GetHicon())
+                'Case 18
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_18, Bitmap).GetHicon())
+                'Case 19
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_19, Bitmap).GetHicon())
+                'Case 20
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_20, Bitmap).GetHicon())
+                'Case 21
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.HC_巧克力, Bitmap).GetHicon())
+                'Case 22
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_22, Bitmap).GetHicon())
+                'Case 23
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_23, Bitmap).GetHicon())
+                'Case 24
+                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.MyPic48, Bitmap).GetHicon())
         End Select
     End Sub
 End Module

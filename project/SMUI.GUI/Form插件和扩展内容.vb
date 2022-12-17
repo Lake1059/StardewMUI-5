@@ -32,16 +32,16 @@ Public Class Form插件和扩展内容
             End If
         Next
 
-        If DLC解锁状态.插件1 = True Then
+        If DLC解锁状态.DLC1 = True Then
             Me.Label6.Text = "✔" & Mid(Me.Label6.Text, 2)
         End If
-        If DLC解锁状态.插件2 = True Then
+        If DLC解锁状态.DLC2 = True Then
             Me.Label7.Text = "✔" & Mid(Me.Label7.Text, 2)
         End If
-        If DLC解锁状态.插件3 = True Then
+        If DLC解锁状态.DLC3 = True Then
             Me.Label8.Text = "✔" & Mid(Me.Label8.Text, 2)
         End If
-        If DLC解锁状态.插件4 = True Then
+        If DLC解锁状态.DLC4 = True Then
             Me.Label9.Text = "✔" & Mid(Me.Label9.Text, 2)
         End If
 

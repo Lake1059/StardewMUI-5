@@ -79,99 +79,9 @@ Namespace My.Resources
         '''<summary>
         '''  查找 System.Drawing.Bitmap 类型的本地化资源。
         '''</summary>
-        Friend ReadOnly Property EXEICO_10() As System.Drawing.Bitmap
+        Friend ReadOnly Property EXEICO_1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_10", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_11() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_11", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_12() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_12", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_13() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_13", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_14() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_14", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_15() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_15", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_16() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_16", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_17() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_17", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_18() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_18", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_19() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_19", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("EXEICO_1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -182,86 +92,6 @@ Namespace My.Resources
         Friend ReadOnly Property EXEICO_2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("EXEICO_2", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_20() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_20", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_3() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_3", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_4() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_4", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_5() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_5", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_6() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_6", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_7() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_7", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_8() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_8", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property EXEICO_9() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("EXEICO_9", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -292,26 +122,6 @@ Namespace My.Resources
         Friend ReadOnly Property Github() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Github", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property HC_巧克力() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("HC_巧克力", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property kofi() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("kofi", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -352,16 +162,6 @@ Namespace My.Resources
         Friend ReadOnly Property Paypal() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Paypal", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property Pufferfish() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Pufferfish", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -545,16 +345,6 @@ Namespace My.Resources
         Friend ReadOnly Property 蓝() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("蓝", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
-        '''</summary>
-        Friend ReadOnly Property 防风草() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("防风草", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

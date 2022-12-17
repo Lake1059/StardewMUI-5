@@ -22,7 +22,7 @@ Public Class Form1
                     key.SetValue("", "SMUI Sub-library Package File")
             End Select
             Dim keySub As RegistryKey = key.CreateSubKey("DefaultIcon")
-            keySub.SetValue("", Application.StartupPath & "\img\子库打包.ico")
+            keySub.SetValue("", Application.StartupPath & "\img\sub-library.ico")
             keySub = key.CreateSubKey("shell")
             keySub = keySub.CreateSubKey("open")
             Select Case System.Globalization.CultureInfo.CurrentCulture.Name
@@ -52,7 +52,7 @@ Public Class Form1
                     key.SetValue("", "SMUI category data package file")
             End Select
             Dim keySub2 As RegistryKey = key.CreateSubKey("DefaultIcon")
-            keySub2.SetValue("", Application.StartupPath & "\img\分类打包.ico")
+            keySub2.SetValue("", Application.StartupPath & "\img\category.ico")
             keySub2 = key.CreateSubKey("shell")
             keySub2 = keySub2.CreateSubKey("open")
             Select Case System.Globalization.CultureInfo.CurrentCulture.Name
@@ -82,7 +82,7 @@ Public Class Form1
                     key.SetValue("", "SMUI item data package file")
             End Select
             Dim keySub3 As RegistryKey = key.CreateSubKey("DefaultIcon")
-            keySub3.SetValue("", Application.StartupPath & "\img\项打包.ico")
+            keySub3.SetValue("", Application.StartupPath & "\img\item.ico")
             keySub3 = key.CreateSubKey("shell")
             keySub3 = keySub3.CreateSubKey("open")
             Select Case System.Globalization.CultureInfo.CurrentCulture.Name

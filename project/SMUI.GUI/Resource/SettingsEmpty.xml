@@ -30,12 +30,12 @@
 	<DetailsPanelWidth>250</DetailsPanelWidth>
 	<MainWindowWidth>1200</MainWindowWidth>
 	<MainWindowHeight>705</MainWindowHeight>
+	<ItemsHeightAdd>0</ItemsHeightAdd>
 
 	<LastUsedSubLibraryName>Default Sub Library</LastUsedSubLibraryName>
 	<LastUsed_DirectDownloadItemUpdateUserMember>False</LastUsed_DirectDownloadItemUpdateUserMember>
 
 	<PrivacyChoice></PrivacyChoice>
-
 	<ChromiumEmbeddedFrameworkVersionTag></ChromiumEmbeddedFrameworkVersionTag>
 	
 </data>
