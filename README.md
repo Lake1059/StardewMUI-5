@@ -20,7 +20,7 @@ https://lake1059.lanzouv.com/b0daefzoh 密码:smui（如果有）
 
 ## 授权
 开源不等于免费，此产品是部分内容付费模式，不是完全免费产品  
-用户通过购买 DLC 来解锁付费的内容，国内唯一销售点：https://afdian.net/a/1059Studio?tab=shop
+用户通过购买 DLC 来解锁付费的内容，国内唯一销售点：https://afdian.net/a/1059Studio?tab=shop  
 接入 SMUI 管理模式的第三方产品必须获得我的商业授权才可进行盈利行为  
 详细许可信息、版权声明、授权说明，请查看 [Copyright+License.md](https://github.com/Lake1059/StardewMUI-5/blob/main/Copyright+License.md)
 
