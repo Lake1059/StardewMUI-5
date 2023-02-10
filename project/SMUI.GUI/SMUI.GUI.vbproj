@@ -77,13 +77,13 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -138,7 +138,7 @@
       <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=20de82c62b055c88, processorArchitecture=MSIL">
       <HintPath>..\packages\SevenZipSharp.0.64\lib\SevenZipSharp.dll</HintPath>
@@ -200,6 +200,12 @@
       <DependentUpon>Form依赖项表.vb</DependentUpon>
     </Compile>
     <Compile Include="Form依赖项表.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form全局检查模组安装情况.Designer.vb">
+      <DependentUpon>Form全局检查模组安装情况.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form全局检查模组安装情况.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form存储管理.Designer.vb">
@@ -329,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form依赖项表.resx">
       <DependentUpon>Form依赖项表.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form全局检查模组安装情况.resx">
+      <DependentUpon>Form全局检查模组安装情况.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form存储管理.resx">
       <DependentUpon>Form存储管理.vb</DependentUpon>

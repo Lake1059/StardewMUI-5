@@ -31,11 +31,6 @@
         Dim ContentPackFor As Boolean
         Dim Dependencies As Boolean
 
-        'Dim NotInstalledFolder As Boolean
-        'Dim NotCopiedFolder As Boolean
-        'Dim NotReplacedFile As Boolean
-        'Dim NotCopiedFile As Boolean
-
     End Structure
 
     Public Enum CDTask
@@ -57,4 +52,7 @@
 
         SUB_D_EX_IN = 51
     End Enum
+
+
+
 End Class

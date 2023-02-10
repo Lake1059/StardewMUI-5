@@ -4,22 +4,31 @@
 ## StardewMUI 5
 本产品是 1059 Studio 的 星露谷 SMUI 模组管理器系列 最后一代产品  
 使用 .NET Framework 4.8 运行库，仅支持 64 位 Windows 系统  
-可用于 Windows 版本：7 SP1、8、8.1、10、11，建议使用 Windows 10 专业版
+可用于 Windows 版本：7 SP1、8、8.1、10、11，建议使用 Windows 10 专业版  
+不支持任何第三方 Win32 窗口美化程序
 
 NEXUSMODS：https://www.nexusmods.com/stardewvalley/mods/12230  
-（页面仅用于国际宣传，请在仓库发行版下载最新版安装程序）
+（N网页面仅用于国际宣传，请在仓库发行版下载最新版安装程序）
 
 https://github.com/Lake1059/StardewMUI-5/releases/latest  
 https://gitee.com/Lake1059/StardewMUI-5/releases/latest
 
+产品本体安装程序不包含 CEF 浏览器组件，需要自行额外安装
 安装 StardewMUI Chromium Embedded Framework 来使用软件内浏览器功能  
-https://lake1059.lanzouv.com/b0daefzoh 密码:smui  
+https://lake1059.lanzouv.com/b0daefzoh 密码:smui（如果有）  
 [Google Drive](https://drive.google.com/drive/folders/1UDZoHUOibIeFACRkn0ZI_DzaT_Zb4sA2?usp=sharing)
 
 ## 授权
 开源不等于免费，此产品是部分内容付费模式，不是完全免费产品  
+用户通过购买 DLC 来解锁付费的内容，国内唯一销售点：https://afdian.net/a/1059Studio?tab=shop
 接入 SMUI 管理模式的第三方产品必须获得我的商业授权才可进行盈利行为  
 详细许可信息、版权声明、授权说明，请查看 [Copyright+License.md](https://github.com/Lake1059/StardewMUI-5/blob/main/Copyright+License.md)
+
+## 维基
+请在维基上获取本产品的所有官方教程和技术文档，所有注册用户均可修改
+
+中文维基：https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki  
+English Wiki: https://stardewmui.fandom.com/wiki/StardewMUI_Wiki
 
 ## 简介
 星露谷 SMUI 项目的主要目的并不是为了简化安装模组  
@@ -52,15 +61,6 @@ SMUI.GUI 用户操作软件的设计目标人群是已经学会原始安装模�
 完全透明的用户数据收集且不涉及任何个人隐私，我们不与任何第三方分享数据  
 用户数据仅用于分析用户群体情况并细微影响产品开发，不会长期保存
 
-## 维基
-请在维基上获取本产品的所有官方教程和技术文档
-
-中文维基：https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki  
-English Wiki: https://stardewmui.fandom.com/wiki/StardewMUI_Wiki
-
-维基所有注册用户均可修改，不存在任何收费，谨防诈骗  
-如果你觉得有讲的不清楚的欢迎修正
-
 ## 配置要求
 + 建议使用 i5 - 7代 及以上性能的任意平台处理器
 + 预计将使用 50 MB ~ 200 MB 的物理内存  
@@ -70,7 +70,7 @@ English Wiki: https://stardewmui.fandom.com/wiki/StardewMUI_Wiki
 （请定期使用内容中心菜单里的存储管理功能，将不需要的数据清除）  
 + 建议使用能够流畅访问 NEXUS、Github、Gitee 的无线网络或宽带连接，或者使用 VPN
 
-## 社区
+## 社区交流
 QQ群：738313040（人满清人）  
-国内聊天室：https://kook.top/yW15HU （超级大群）  
-Discord: https://discord.gg/tZufMZRzyC （我暂时没有心思发展国际市场）
+国内聊天室：https://kook.top/yW15HU  
+在哔哩哔哩关注开发者：https://space.bilibili.com/319785096

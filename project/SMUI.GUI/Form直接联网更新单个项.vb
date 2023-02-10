@@ -479,7 +479,25 @@ Public Class Form直接联网更新单个项
         Dim msg1 As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S12"), 150, 500)
         msg1.ShowDialog(Me)
         Process.Start(这份进程正在使用的临时解压目录)
-        Form1.配置部署ToolStripMenuItem.PerformClick()
+        For k = 0 To Form1.ListView2.SelectedItems.Count - 1
+            Dim 分类 As String = 当前项列表中项的分类集合(Form1.ListView2.SelectedIndices(k))
+            Dim 项 As String = Form1.ListView2.Items.Item(Form1.ListView2.SelectedIndices(k)).Text
+            If My.Computer.FileSystem.DirectoryExists(检查并返回当前所选子库路径(False) & "\" & 分类 & "\" & 项) = False Then
+                GoTo jx
+            End If
+            For i = 0 To Form1.ListView3.Items.Count - 1
+                If Form1.ListView3.Items.Item(i).Text = 分类 And Form1.ListView3.Items.Item(i).SubItems(1).Text = 项 Then
+                    GoTo jx
+                End If
+            Next
+            Form1.ListView3.Items.Add(分类)
+            Form1.ListView3.Items.Item(Form1.ListView3.Items.Count - 1).SubItems.Add(项)
+jx:
+        Next
+        If Form1.ListView3.SelectedItems.Count = 0 Then Form1.ListView3.Items.Item(Form1.ListView3.Items.Count - 1).Selected = True
+        If Form1.ListView3.Items.Count = 1 Then
+            Form1.模拟按下配置队列选项卡切换按钮()
+        End If
         Me.Close()
     End Sub
 

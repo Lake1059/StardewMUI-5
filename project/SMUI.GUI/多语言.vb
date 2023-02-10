@@ -143,6 +143,7 @@ Module 多语言
         Form1.在写字板中编辑RTFToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.50").InnerText
         Form1.保存到TXT纯文本ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.51").InnerText
         Form1.保存到RTF富文本ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.52").InnerText
+        Form1.删除所有自定义描述ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.52.1").InnerText
         Form1.切换滚动条显示ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.53").InnerText
         Form1.设置选中内容的字体ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.54").InnerText
         Form1.设置选中内容的颜色ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.55").InnerText

@@ -10,6 +10,9 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SevenZip.SevenZipBase.SetLibraryPath(Application.StartupPath & "\7zFull64.dll")
+        Dim currentGraphics As Graphics = Me.CreateGraphics
+        ST1.全局DPI比例 = currentGraphics.DpiX / 96
+        SingleSelectionDialog.GlobalDpixRatio = ST1.全局DPI比例
         加载自定义语言文件()
         Application.DoEvents()
 
@@ -89,7 +92,7 @@ Public Class Form1
         End If
         加载DLC()
         Application.DoEvents()
-        If DLC.CustomInputExtension = True Then Me.下载并新建项ToolStripMenuItem.Visible = True
+        If DLC.NewItemExtension = True Then Me.下载并新建项ToolStripMenuItem.Visible = True
         '=============================================
         DeveloperEvent.Raise_StartLoadedEvent()
     End Sub
@@ -276,6 +279,13 @@ Public Class Form1
         Form模组检查更新操作台.Focus()
         Me.检查更新加入表中ToolStripMenuItem.Visible = True
         Me.检查更新加入表中ToolStripMenuItem1.Visible = True
+    End Sub
+
+    Private Sub Label检查模组安装情况_Click(sender As Object, e As EventArgs) Handles Label检查模组安装情况.Click
+        If Form全局检查模组安装情况.Visible = False Then
+            Form全局检查模组安装情况.Show()
+        End If
+        Form全局检查模组安装情况.Focus()
     End Sub
 
 #End Region
@@ -883,18 +893,6 @@ jx1:
         b.ShowDialog(Me)
     End Sub
 
-    Private Sub 保存到RTF富文本ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 保存到RTF富文本ToolStripMenuItem.Click
-        If Me.ListView2.SelectedItems.Count <> 1 Then
-            Exit Sub
-        End If
-        Dim a As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
-        Me.RichTextBox1.SaveFile(a & "\README.rtf")
-        If My.Computer.FileSystem.FileExists(a & "\README") = True Then My.Computer.FileSystem.DeleteFile(a & "\README", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.SendToRecycleBin)
-        Label描述类型.Text = "RTF"
-        Dim x As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/Yes")}, 获取动态多语言文本("data/DynamicText/ManageMod.21"))
-        x.ShowDialog(Me)
-    End Sub
-
     Private Sub 保存到TXT纯文本ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 保存到TXT纯文本ToolStripMenuItem.Click
         If Me.ListView2.SelectedItems.Count <> 1 Then
             Exit Sub
@@ -903,7 +901,32 @@ jx1:
         My.Computer.FileSystem.WriteAllText(a & "\README", Me.RichTextBox1.Text, False)
         If My.Computer.FileSystem.FileExists(a & "\README.rtf") = True Then My.Computer.FileSystem.DeleteFile(a & "\README.rtf", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.SendToRecycleBin)
         Label描述类型.Text = "TXT"
-        Dim x As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/Yes")}, 获取动态多语言文本("data/DynamicText/ManageMod.22"))
+        Dim x As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DynamicText/ManageMod.22"))
+        x.ShowDialog(Me)
+    End Sub
+
+    Private Sub 保存到RTF富文本ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 保存到RTF富文本ToolStripMenuItem.Click
+        If Me.ListView2.SelectedItems.Count <> 1 Then
+            Exit Sub
+        End If
+        Dim a As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
+        Me.RichTextBox1.SaveFile(a & "\README.rtf")
+        If My.Computer.FileSystem.FileExists(a & "\README") = True Then My.Computer.FileSystem.DeleteFile(a & "\README", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.SendToRecycleBin)
+        Label描述类型.Text = "RTF"
+        Dim x As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DynamicText/ManageMod.21"))
+        x.ShowDialog(Me)
+    End Sub
+
+    Private Sub 删除所有自定义描述ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 删除所有自定义描述ToolStripMenuItem.Click
+        If Me.ListView2.SelectedItems.Count <> 1 Then
+            Exit Sub
+        End If
+        Dim a As String = 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text
+        If My.Computer.FileSystem.FileExists(a & "\README") = True Then My.Computer.FileSystem.DeleteFile(a & "\README", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.SendToRecycleBin)
+        If My.Computer.FileSystem.FileExists(a & "\README.txt") = True Then My.Computer.FileSystem.DeleteFile(a & "\README.txt", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.SendToRecycleBin)
+        If My.Computer.FileSystem.FileExists(a & "\README.rtf") = True Then My.Computer.FileSystem.DeleteFile(a & "\README.rtf", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.SendToRecycleBin)
+        Me.RichTextBox1.Text = ""
+        Dim x As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DynamicText/ManageMod.35"))
         x.ShowDialog(Me)
     End Sub
 

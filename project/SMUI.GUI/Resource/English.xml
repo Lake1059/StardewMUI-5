@@ -123,6 +123,7 @@
 		<ManagePanel.50 chs="在写字板中编辑 RTF">Edit RTF in WordPad</ManagePanel.50>
 		<ManagePanel.51 chs="保存到 TXT 纯文本">Save to TXT plain text</ManagePanel.51>
 		<ManagePanel.52 chs="保存到 RTF 富文本">Save to RTF Rich Text</ManagePanel.52>
+		<ManagePanel.52.1 chs="删除所有自定义描述">Delete all user-defined descriptions.</ManagePanel.52.1>
 		<ManagePanel.53 chs="切换滚动条显示">Toggle scroll bar display</ManagePanel.53>
 		<ManagePanel.54 chs="设置选中内容的字体">Set font of selected content</ManagePanel.54>
 		<ManagePanel.55 chs="设置选中内容的颜色">Set color of selected content</ManagePanel.55>
@@ -221,7 +222,7 @@
 		
 		<A1 chs="文件夹名称不匹配">Folder name does not match.</A1>
 		<A2 chs="清单文件放置目录不正确">The manifest file is placed in the wrong path.</A2>
-		<A3 chs="暂不支持非 CDCD 命令的自动更新">Automatic update of non-CDCD commands is not supported yet.</A3>
+		<A3 chs="自动更新处理尚不能支持部分安装命令的自动处理">The automatic update feature does not yet support automatic processing of some installation commands.</A3>
 		<A4 chs="文件夹数量和 CDCD 命令数量不匹配">The number of folders does not match the number of CDCD commands.</A4>
 		<A5 chs="当前使用会员下载">Using Premium download</A5>
 		<A6 chs="当前使用免费下载">Using free download</A6>
@@ -494,6 +495,17 @@
 
 	</ModCheckUpdateManageWindow>
 
+	<GlobalModsInstallationCheckWindow>
+		<Title chs="全局检查模组安装情况"></Title>
+		<A1 chs="开始全局检查"></A1>
+		<A2 chs=""></A2>
+		
+		<L1 chs="扫描到的 UniqueID 总数"></L1>
+		
+	</GlobalModsInstallationCheckWindow>
+	
+	
+
 	<PrivacyChoiceWindow>
 		<A1 chs="隐私选项">Privacy Choice</A1>
 		<A2 chs="参与用户统计，并上传这些数据">Participate in user statistics and upload these data.</A2>
@@ -598,6 +610,7 @@
 		<ManageMod.32 chs="如果你忘记了设置的密码，可以到用户配置文件夹，用记事本或其他编辑器打开最后的 7za.bat 批处理文件查看即可，但是请不要运行它，防止造成意外事故">If you forget the password you set, you can go to the user configuration folder and open the final 7za.bat batch file with Notepad or other editors to view it, but please do not run it to prevent accidents.</ManageMod.32>
 		<ManageMod.33 chs="当前项已经在配置队列中，请去那里进行重命名操作">The current item is already in the deploy queue, please go there to rename.</ManageMod.33>
 		<ManageMod.34 chs="重命名项：">Rename Item: </ManageMod.34>
+		<ManageMod.35 chs="已删除所有自定义描述到回收站">All custom descriptions have been deleted to the Recycle bin.</ManageMod.35>
 
 		<UpdateMod.1 chs="输入你要进行访问的 星露谷 NEXUS 模组的页面 ID">Enter the ID of the NEXUS Stardew Valley mod you want to access.</UpdateMod.1>
 		<UpdateMod.2 chs="自由输入 ID 进行更新">Enter ID to update</UpdateMod.2>

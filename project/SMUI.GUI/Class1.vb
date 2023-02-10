@@ -59,6 +59,7 @@ Public Class Class1
         Public Shared 当前星露谷版本号 As String = ""
 
         Public Shared 当前是否正在使用Steam版本 As Boolean = False
+        Public Shared 全局DPI比例 As Single = 1
 
     End Class
 

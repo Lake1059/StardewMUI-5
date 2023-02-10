@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("星露谷物语模组管理解决方案")>
 <Assembly: AssemblyCompany("1059 Studio")>
 <Assembly: AssemblyProduct("StardewMUI 5")>
-<Assembly: AssemblyCopyright("Copyright © 湖边的稻草(1059 Studio) 2019-2022")>
+<Assembly: AssemblyCopyright("Copyright © 湖边的稻草(1059 Studio) 2019-2023")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -32,4 +32,4 @@ Imports System.Runtime.InteropServices
 ' <Assembly: AssemblyVersion("1.0.*")>
 
 <Assembly: AssemblyVersion("5.0.0.0")>
-<Assembly: AssemblyFileVersion("5.1.1.0")>
+<Assembly: AssemblyFileVersion("5.1.5.0")>

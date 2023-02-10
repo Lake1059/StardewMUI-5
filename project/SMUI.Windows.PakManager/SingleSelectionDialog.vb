@@ -3,6 +3,7 @@ Imports System.Windows.Forms
 
 Public Class SingleSelectionDialog
     Private ReadOnly newDialog As New Form多项单选对话框
+    Public Shared GlobalDpixRatio As Single = 1
 
     Public Sub New(Title As String, SelectionGroup As String(), Optional Description As String = "", Optional DescriptionPanelHeight As Integer = 77, Optional WindowWidth As Integer = 300)
         If SelectionGroup Is Nothing Then Err.Raise(10001,, "SelectionGroup is nothing")
@@ -14,12 +15,13 @@ Public Class SingleSelectionDialog
             newDialog.Panel1.Height = 0
         Else
             newDialog.Label1.Text = Description
-            newDialog.Panel1.Height = DescriptionPanelHeight
+            newDialog.Panel1.Height = DescriptionPanelHeight * GlobalDpixRatio
         End If
+
         For i = 0 To SelectionGroup.Count - 1
             Dim a As New Label With {
                 .Dock = DockStyle.Bottom,
-                .Height = 35,
+                .Height = 35 * GlobalDpixRatio,
                 .BackColor = ColorTranslator.FromWin32(RGB(50, 50, 50)),
                 .ForeColor = SystemColors.Control,
                 .TextAlign = ContentAlignment.MiddleLeft,
@@ -46,9 +48,10 @@ Public Class SingleSelectionDialog
             newDialog.Panel2.Controls.Add(a)
             a.SendToBack()
         Next
-        newDialog.Panel2.Height = SelectionGroup.Count * 45 + 10
-        newDialog.MinimumSize = New Size(WindowWidth, 40 + newDialog.Panel1.Height + newDialog.Panel2.Height)
+        newDialog.Panel2.Height = SelectionGroup.Count * (35 * GlobalDpixRatio + 10) + newDialog.Panel2.Padding.Bottom
+        newDialog.MinimumSize = New Size(WindowWidth, 40 + DescriptionPanelHeight * GlobalDpixRatio + newDialog.Panel2.Height)
         newDialog.Height = newDialog.MinimumSize.Height
+
     End Sub
 
     ''' <summary>
