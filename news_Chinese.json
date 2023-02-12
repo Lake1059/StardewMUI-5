@@ -1,34 +1,34 @@
 {
     "Object": [
         {
-            "Title": "加入 Kaiheila 聊天室服务器",
-            "Subtitle": "免费的 5000 人群，岂不美哉",
-            "Type": "link",
-            "Body": "https://kaihei.co/yW15HU"
+            "Title": "上架 Steam 失败，已拥有 Steam 版用户可继续使用并获取更新",
+            "Subtitle": "审核最终以类别不合适为由终止了审核",
+            "Type": "msg",
+            "Body": "心疼我的100美元"
         },
         {
-            "Title": "加入 Discord 聊天室服务器",
-            "Subtitle": "国内用户可使用 Steam++ 软件代理访问",
-            "Type": "link",
-            "Body": "https://discord.gg/tZufMZRzyC"
-        },
-        {
-            "Title": "加入开发者群，提出开发建议",
-            "Subtitle": "咸鱼吧务在线摸鱼",
-            "Type": "link",
-            "Body": "https://qm.qq.com/cgi-bin/qm/qr?k=iofvyDF4uW1WwUCZEX6QMxeOZb1bZHEP"
-        },
-        {
-            "Title": "在哔哩哔哩关注我",
-            "Subtitle": "某不知名的动态区UP主",
-            "Type": "link",
-            "Body": "https://space.bilibili.com/319785096"
-        },
-        {
-            "Title": "关注维基获取最新的教程和技术文档",
-            "Subtitle": "https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki",
+            "Title": "查阅中文维基",
+            "Subtitle": "没有维基是研究不出来的，静下心来慢慢研究，急是没用的",
             "Type": "link",
             "Body": "https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki"
+        },
+        {
+            "Title": "安装 CEF 组件以使用内置浏览器功能",
+            "Subtitle": "非N网会员使用在线更新模组功能需要调用 Chromium Embedded Framework",
+            "Type": "link",
+            "Body": "https://stardewmui.fandom.com/zh/wiki/%E5%AE%89%E8%A3%85_StardewMUI_Chromium_Embedded_Framework"
+        },
+        {
+            "Title": "购买 DLC 以解锁高级功能",
+            "Subtitle": "在我的赞助页上购买",
+            "Type": "link",
+            "Body": "https://afdian.net/a/1059Studio?tab=shop"
+        },
+        {
+            "Title": "跨平台通用库文件已发布",
+            "Subtitle": "各路开发者可使用 .NET 直接开发 Windows、Android、Linux、macOS 上的 SMUI",
+            "Type": "link",
+            "Body": "https://github.com/Lake1059/SMUI.MultiPlatform"
         },
     ]
 }
