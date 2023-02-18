@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 '查看程序集特性的值
 
-<Assembly: AssemblyTitle("SMUI.GUI")>
-<Assembly: AssemblyDescription("星露谷物语模组管理解决方案")>
+<Assembly: AssemblyTitle("SMUI.SaveEditor")>
+<Assembly: AssemblyDescription("SMUI.SaveEditor")>
 <Assembly: AssemblyCompany("1059 Studio")>
-<Assembly: AssemblyProduct("StardewMUI 5")>
-<Assembly: AssemblyCopyright("Copyright © 湖边的稻草(1059 Studio) 2019-2023")>
+<Assembly: AssemblyProduct("SMUI.SaveEditor")>
+<Assembly: AssemblyCopyright("Copyright © 1059 Studio 2023")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 '如果此项目向 COM 公开，则下列 GUID 用于 typelib 的 ID
-<Assembly: Guid("7cb780b1-d9fc-4bee-a494-c999f8cf7263")>
+<Assembly: Guid("5dc8dcbc-c1f4-400e-b23d-cb20491ec0d4")>
 
 ' 程序集的版本信息由下列四个值组成: 
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 '通过使用 "*"，如下所示:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("5.0.0.0")>
-<Assembly: AssemblyFileVersion("5.1.6.0")>
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>

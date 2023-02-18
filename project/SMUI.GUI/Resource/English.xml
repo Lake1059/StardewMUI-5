@@ -20,6 +20,7 @@
 		<StartPanel.1 chs="检查模组安装情况">Check Mods/crlf/Installation</StartPanel.1>
 		<StartPanel.2 chs="传统管理方式">Traditional Manage</StartPanel.2>
 		<StartPanel.3 chs="存档编辑器">Save Editor</StartPanel.3>
+		<StartPanel.3.msg1 chs="存档编辑器没有正确安装，请重新运行安装程序，或者在 Steam 应用程序属性中检查文件完整性！">The save editor did not install correctly, please re-run the installer, or check file integrity in the Steam application properties!</StartPanel.3.msg1>
 		<StartPanel.4 chs="模组更新管理操作台">Mods Update/crlf/Manager</StartPanel.4>
 		<StartPanel.5 chs="插件和扩展内容">Plugins Extensions</StartPanel.5>
 		<StartPanel.6 chs="新闻公告">News</StartPanel.6>

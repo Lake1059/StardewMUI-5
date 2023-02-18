@@ -13,8 +13,9 @@ NEXUSMODS：https://www.nexusmods.com/stardewvalley/mods/12230
 https://github.com/Lake1059/StardewMUI-5/releases/latest  
 https://gitee.com/Lake1059/StardewMUI-5/releases/latest
 
-产品本体安装程序不包含 CEF 浏览器组件，需要自行额外安装  
+## 额外组件
 安装 StardewMUI Chromium Embedded Framework 来使用软件内浏览器功能  
+非N网会员必装，N网会员可不装（N网的限制，非会员需要额外参数才能通过接口下载模组）  
 https://lake1059.lanzouv.com/b0daefzoh 密码:smui（如果有）  
 [Google Drive](https://drive.google.com/drive/folders/1UDZoHUOibIeFACRkn0ZI_DzaT_Zb4sA2?usp=sharing)
 
@@ -52,6 +53,8 @@ SMUI.GUI 用户操作软件的设计目标人群是已经学会原始安装模�
 + 打包数据便于与朋友分享
 + 方便的依赖项检查功能
 + 超强的搜索功能
++ 全局模组安装情况检查
++ 可扩展式存档编辑器
 + 支持插件，无限制扩展功能
 + 完全开源，安全有保障
 + 全程无广告，沉浸式体验

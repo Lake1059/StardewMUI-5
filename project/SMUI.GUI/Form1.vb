@@ -288,7 +288,17 @@ Public Class Form1
         Form全局检查模组安装情况.Focus()
     End Sub
 
+    Private Sub Label存档编辑器_Click(sender As Object, e As EventArgs) Handles Label存档编辑器.Click
+        If My.Computer.FileSystem.FileExists(Application.StartupPath & "\SMUI.SaveEditor.exe") = True Then
+            Shell(Application.StartupPath & "\SMUI.SaveEditor.exe", AppWinStyle.NormalFocus)
+        Else
+            Dim a As New SMUI.Windows.PakManager.SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/MainWindow/StartPanel.3.msg1"), 150, 500)
+            a.ShowDialog(Me)
+        End If
+    End Sub
+
 #End Region
+
 
 #Region "列表视图焦点屏蔽"
 
@@ -1806,6 +1816,5 @@ nextline:
 
 
     ReadOnly 分割线 As Integer = 0
-
 
 End Class
