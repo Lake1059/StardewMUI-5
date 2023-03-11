@@ -38,8 +38,6 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LabelRunSMAPI = New System.Windows.Forms.Label()
         Me.Panel起始页面 = New System.Windows.Forms.Panel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label插件和扩展内容 = New System.Windows.Forms.Label()
         Me.Label立即检查更新 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -386,8 +384,6 @@ Partial Class Form1
         Me.Panel主选项卡.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel起始页面.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel更新历史.SuspendLayout()
@@ -632,8 +628,6 @@ Partial Class Form1
         'Panel起始页面
         '
         Me.Panel起始页面.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel起始页面.Controls.Add(Me.PictureBox3)
-        Me.Panel起始页面.Controls.Add(Me.PictureBox2)
         Me.Panel起始页面.Controls.Add(Me.Label插件和扩展内容)
         Me.Panel起始页面.Controls.Add(Me.Label立即检查更新)
         Me.Panel起始页面.Controls.Add(Me.Panel6)
@@ -656,30 +650,6 @@ Partial Class Form1
         Me.Panel起始页面.Size = New System.Drawing.Size(911, 492)
         Me.Panel起始页面.TabIndex = 1
         Me.Panel起始页面.Visible = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.Location = New System.Drawing.Point(749, 270)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(10)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(150, 107)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 21
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Location = New System.Drawing.Point(10, 270)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(10)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(150, 107)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 20
-        Me.PictureBox2.TabStop = False
         '
         'Label插件和扩展内容
         '
@@ -807,6 +777,7 @@ Partial Class Form1
         '
         'Panel创作者自由面板
         '
+        Me.Panel创作者自由面板.BackColor = System.Drawing.Color.Transparent
         Me.Panel创作者自由面板.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel创作者自由面板.Location = New System.Drawing.Point(245, 24)
         Me.Panel创作者自由面板.Name = "Panel创作者自由面板"
@@ -4005,8 +3976,8 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1184, 666)
-        Me.Controls.Add(Me.Panel起始页面)
         Me.Controls.Add(Me.Panel管理模组)
+        Me.Controls.Add(Me.Panel起始页面)
         Me.Controls.Add(Me.Panel配置队列)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ButtonF)
@@ -4024,8 +3995,6 @@ Partial Class Form1
         Me.Panel主选项卡.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel起始页面.ResumeLayout(False)
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel更新历史.ResumeLayout(False)
@@ -4389,8 +4358,6 @@ Partial Class Form1
     Friend WithEvents ToolStripSeparator34 As ToolStripSeparator
     Friend WithEvents 缩放处理ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator35 As ToolStripSeparator
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents DCM内容中心 As DarkUI.Controls.DarkContextMenu
     Friend WithEvents 应用程序目录集ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 星露谷目录集ToolStripMenuItem As ToolStripMenuItem

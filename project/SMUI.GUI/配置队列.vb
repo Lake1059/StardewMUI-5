@@ -303,10 +303,11 @@ Module 配置队列
 
     Public Sub 定时检查安装命令和项数据()
         If Form1.ListView3.SelectedItems.Count <> 1 Then Exit Sub
-        If Form1.RichTextBox3.Text = "" Then
-            Form1.RichTextBox4.Text = ""
-            Exit Sub
-        End If
+        '我也不知道为啥要写这段，直接不要还能修个bug，当初为啥要写来着？无所谓了，先注释吧
+        'If Form1.RichTextBox3.Text = "" Then
+        '    Form1.RichTextBox4.Text = ""
+        '    Exit Sub
+        'End If
         Form1.RichTextBox4.Text = ""
         RTF富文本间接处理.Text = ""
         Dim 存在错误 As Boolean = False

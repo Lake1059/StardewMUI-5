@@ -134,27 +134,31 @@ Public Class DeveloperMethod
 
     Public Class UserSkin
 
+        Public Shared Function GetStartPanelCenterPanelSize() As Size
+            Return Form1.Panel4.Size
+        End Function
+
         Public Shared Sub AddImageToStartPanelCenterPanel(img As Image, Optional laypout As ImageLayout = ImageLayout.None)
+            If DLC解锁状态.DLC2 = False Then Exit Sub
             Form1.Panel4.BackgroundImage = img
             Form1.Panel4.BackgroundImageLayout = laypout
         End Sub
 
-        Public Shared Sub AddImageToStartPanelLeftPictureBox(img As Image, Optional laypout As ImageLayout = ImageLayout.None)
-            Form1.PictureBox2.BackgroundImage = img
-            Form1.PictureBox2.BackgroundImageLayout = laypout
-        End Sub
-
-        Public Shared Sub AddImageToStartPanelRightPictureBox(img As Image, Optional laypout As ImageLayout = ImageLayout.None)
-            Form1.PictureBox3.BackgroundImage = img
-            Form1.PictureBox3.BackgroundImageLayout = laypout
-
-        End Sub
+        Public Shared Function GetManagePanelCategoryListviewSize() As Size
+            Return Form1.ListView1.Size
+        End Function
 
         Public Shared Sub AddImageToManagePanelCategoryListview(img As Image)
+            If DLC解锁状态.DLC2 = False Then Exit Sub
             Form1.ListView1.BackgroundImage = img
         End Sub
 
+        Public Shared Function GetManagePanelItemListviewSize() As Size
+            Return Form1.ListView2.Size
+        End Function
+
         Public Shared Sub AddImageToManagePanelItemListview(img As Image)
+            If DLC解锁状态.DLC2 = False Then Exit Sub
             Form1.ListView2.BackgroundImage = img
         End Sub
 

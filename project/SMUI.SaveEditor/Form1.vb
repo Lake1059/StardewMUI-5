@@ -17,7 +17,7 @@ Public Class Form1
             Dim 目录 As New System.IO.DirectoryInfo(wsh.SpecialFolders.Item("AppData") & "\1059 Studio\SMUI Client 5 Cache\SaveEditorUserItem")
             For Each 文件 In 目录.GetFiles("*.*")
                 Me.ListView1.Items.Add(IO.Path.GetFileNameWithoutExtension(文件.Name))
-                Me.ListView1.Items.Item(Me.ListView1.Items.Count - 1).Group = Me.ListView1.Groups(1)
+                Me.ListView1.Items.Item(Me.ListView1.Items.Count - 1).Group = Me.ListView1.Groups(2)
                 Dim line As String() = My.Computer.FileSystem.ReadAllText(文件.FullName).Split(vbNewLine)
                 For i = 0 To line.Count - 1
                     If i > 0 Then

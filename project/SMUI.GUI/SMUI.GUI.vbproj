@@ -305,7 +305,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Steam功能.vb" />
     <Compile Include="TimerSleep.vb" />
     <Compile Include="DLC.vb" />
     <Compile Include="在线模组列表功能.vb" />

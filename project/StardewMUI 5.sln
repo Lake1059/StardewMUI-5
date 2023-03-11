@@ -26,6 +26,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Lake1059.Internet", "Lake10
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SMUI.FileTypeBinder", "SMUI.FileTypeBinder\SMUI.FileTypeBinder.vbproj", "{DDD3F521-5279-49CF-9CB4-A709D7553AC8}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SMUI.SaveEditor", "SMUI.SaveEditor\SMUI.SaveEditor.vbproj", "{53FB3B65-BB94-4573-BB6B-8A1E19284BFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{DDD3F521-5279-49CF-9CB4-A709D7553AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDD3F521-5279-49CF-9CB4-A709D7553AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDD3F521-5279-49CF-9CB4-A709D7553AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53FB3B65-BB94-4573-BB6B-8A1E19284BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53FB3B65-BB94-4573-BB6B-8A1E19284BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53FB3B65-BB94-4573-BB6B-8A1E19284BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53FB3B65-BB94-4573-BB6B-8A1E19284BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

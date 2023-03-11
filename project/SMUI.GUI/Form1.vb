@@ -98,6 +98,9 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
+
+
+
         e.Cancel = False
         xml_Settings.SelectSingleNode("data/MainWindowWidth").InnerText = Me.Width
         xml_Settings.SelectSingleNode("data/MainWindowHeight").InnerText = Me.Height

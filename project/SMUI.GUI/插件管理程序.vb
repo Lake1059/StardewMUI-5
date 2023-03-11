@@ -35,7 +35,7 @@ Module 插件管理程序
                 DLC解锁状态.DLC1 = True
                 这是DLC = True
                 GoTo DLC_Unlock
-            Case "SMUI.DLC2.SkinLoader"
+            Case "SMUI.DLC2.CustomSkinLoader"
                 DLC解锁状态.DLC2 = True
                 这是DLC = True
                 GoTo DLC_Unlock
