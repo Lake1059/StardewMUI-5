@@ -1,12 +1,6 @@
 {
     "Object": [
         {
-            "Title": "上架 Steam 失败，已拥有 Steam 版用户可继续使用并获取更新",
-            "Subtitle": "审核最终以类别不合适为由终止了审核",
-            "Type": "msg",
-            "Body": "心疼我的100美元"
-        },
-        {
             "Title": "查阅中文维基",
             "Subtitle": "没有维基是研究不出来的，静下心来慢慢研究，急是没用的",
             "Type": "link",
@@ -17,18 +11,6 @@
             "Subtitle": "非N网会员使用在线更新模组功能需要调用 Chromium Embedded Framework",
             "Type": "link",
             "Body": "https://stardewmui.fandom.com/zh/wiki/%E5%AE%89%E8%A3%85_StardewMUI_Chromium_Embedded_Framework"
-        },
-        {
-            "Title": "DLC 2 已重制上架，捆绑包限量销售中",
-            "Subtitle": "在我的赞助页上购买",
-            "Type": "link",
-            "Body": "https://afdian.net/a/1059Studio?tab=shop"
-        },
-        {
-            "Title": "跨平台通用库文件已发布",
-            "Subtitle": "各路开发者可使用 .NET 直接开发 Windows、Android、Linux、macOS 上的 SMUI",
-            "Type": "link",
-            "Body": "https://github.com/Lake1059/SMUI.MultiPlatform"
         },
     ]
 }

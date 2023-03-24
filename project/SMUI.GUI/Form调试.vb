@@ -10,8 +10,9 @@ Public Class Form调试
 
     Private Sub Form调试_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
         If Me.WindowState = FormWindowState.Minimized Then Exit Sub
-        Me.RichTextBox1.Width = Me.Width + ST1.系统滚动条宽度
-        Me.RichTextBox1.RightMargin = Me.Width - 30
+        Me.RichTextBox1.Width = Me.Width - ST1.系统滚动条宽度 - 3
+        Me.RichTextBox1.Height = Me.Height - 50
+        Me.RichTextBox1.RightMargin = Me.RichTextBox1.Width - ST1.系统滚动条宽度 - 20
     End Sub
 
     Private Sub Form调试_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing

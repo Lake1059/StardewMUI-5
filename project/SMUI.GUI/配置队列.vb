@@ -303,11 +303,12 @@ Module 配置队列
 
     Public Sub 定时检查安装命令和项数据()
         If Form1.ListView3.SelectedItems.Count <> 1 Then Exit Sub
-        '我也不知道为啥要写这段，直接不要还能修个bug，当初为啥要写来着？无所谓了，先注释吧
-        'If Form1.RichTextBox3.Text = "" Then
-        '    Form1.RichTextBox4.Text = ""
-        '    Exit Sub
-        'End If
+        'RNM这儿不要动，不知道为什么就会抽风
+        If Form1.RichTextBox3.Text = "" Then
+            Form1.RichTextBox4.Text = ""
+            Exit Sub
+        End If
+
         Form1.RichTextBox4.Text = ""
         RTF富文本间接处理.Text = ""
         Dim 存在错误 As Boolean = False
@@ -464,6 +465,9 @@ Module 配置队列
         End If
 
         Dim 存在错误2 As Boolean = False
+
+
+
         For i = 0 To Form1.ListView4.Items.Count - 1
             Select Case Form1.ListView4.Items.Item(i).SubItems(1).Text
                 Case 获取动态多语言文本("data/DynamicText/Folder")

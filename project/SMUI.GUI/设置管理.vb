@@ -1,5 +1,6 @@
 ﻿
 Imports System.Xml
+Imports DarkUI.Controls
 Imports SMUI.GUI.Class1
 
 Module 设置管理
@@ -33,6 +34,19 @@ Module 设置管理
                 Form1.Width = xml_Settings.SelectSingleNode("data/MainWindowWidth").InnerText
                 Form1.Height = xml_Settings.SelectSingleNode("data/MainWindowHeight").InnerText
             End If
+            If xml_Settings.SelectSingleNode("data/ItemsHeightAdd").InnerText <> "0" Then
+                Dim int1 As Integer = xml_Settings.SelectSingleNode("data/ItemsHeightAdd").InnerText
+                Form1.ListView1.StateImageList.ImageSize = New Size(3, 25 + int1)
+                Form1.ListView2.StateImageList.ImageSize = New Size(3, 25 + int1)
+                重新加载列表视图的彩图块()
+            End If
+            If xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText > 200 Then
+                Form1.Panel9.Width = xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText
+            End If
+            If xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText > 250 Then
+                Form1.Panel10.Width = xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText
+            End If
+            加载主窗口字体设置()
         Else
             xml_Settings.LoadXml(My.Resources.SettingsEmpty)
             Select Case System.Globalization.CultureInfo.CurrentCulture.Name
@@ -95,55 +109,52 @@ Module 设置管理
     End Sub
 
     Public Sub 加载图标选择()
-        Select Case My.Settings.图标
-            Case 1
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_1, Bitmap).GetHicon())
-            Case 2
-                Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_2, Bitmap).GetHicon())
-                'Case 3
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_3, Bitmap).GetHicon())
-                'Case 4
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_4, Bitmap).GetHicon())
-                'Case 5
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_5, Bitmap).GetHicon())
-                'Case 6
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_6, Bitmap).GetHicon())
-                'Case 7
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_7, Bitmap).GetHicon())
-                'Case 8
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_8, Bitmap).GetHicon())
-                'Case 9
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_9, Bitmap).GetHicon())
-                'Case 10
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_10, Bitmap).GetHicon())
-                'Case 11
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_11, Bitmap).GetHicon())
-                'Case 12
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_12, Bitmap).GetHicon())
-                'Case 13
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_13, Bitmap).GetHicon())
-                'Case 14
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_14, Bitmap).GetHicon())
-                'Case 15
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_15, Bitmap).GetHicon())
-                'Case 16
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_16, Bitmap).GetHicon())
-                'Case 17
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_17, Bitmap).GetHicon())
-                'Case 18
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_18, Bitmap).GetHicon())
-                'Case 19
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_19, Bitmap).GetHicon())
-                'Case 20
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_20, Bitmap).GetHicon())
-                'Case 21
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.HC_巧克力, Bitmap).GetHicon())
-                'Case 22
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_22, Bitmap).GetHicon())
-                'Case 23
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.EXEICO_23, Bitmap).GetHicon())
-                'Case 24
-                '    Form1.Icon = Icon.FromHandle(DirectCast(My.Resources.MyPic48, Bitmap).GetHicon())
-        End Select
+        If My.Computer.FileSystem.FileExists(Path1.应用程序用户数据路径 & "\app.png") = True Then
+            Using fs As New IO.FileStream(Path1.应用程序用户数据路径 & "\app.png", IO.FileMode.Open, IO.FileAccess.Read)
+                Dim img1 As Bitmap = Image.FromStream(fs)
+                Form1.Icon = Icon.FromHandle(img1.GetHicon())
+                fs.Close()
+            End Using
+        End If
     End Sub
+
+    Public Sub 重新加载列表视图的彩图块()
+        Form1.ImageList1.Images.Clear()
+        Form1.ImageList1.Images.Add(My.Resources.白_1)
+        Form1.ImageList1.Images.Add(My.Resources.红_1)
+        Form1.ImageList1.Images.Add(My.Resources.橙_1)
+        Form1.ImageList1.Images.Add(My.Resources.黄_1)
+        Form1.ImageList1.Images.Add(My.Resources.绿_1)
+        Form1.ImageList1.Images.Add(My.Resources.青_1)
+        Form1.ImageList1.Images.Add(My.Resources.蓝_1)
+        Form1.ImageList1.Images.Add(My.Resources.紫_1)
+    End Sub
+
+    Public Sub 加载主窗口字体设置()
+        If xml_Settings.SelectSingleNode("data/FontName9pt").InnerText = "" Then Exit Sub
+        If xml_Settings.SelectSingleNode("data/FontName9pt").InnerText = "Microsoft YaHei UI" Then Exit Sub
+        Form1.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM1.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM2.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM3.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM4.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM5.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM6.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM7.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM8.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM9.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM10.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM11.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM12.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM13.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM内容中心.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM应用程序目录集.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM模组列表.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM游戏目录集.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM链接汇总.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+
+    End Sub
+
+
+
 End Module

@@ -1,8 +1,7 @@
 ﻿
-Imports System.IO
+Imports System.Drawing.Text
 Imports System.Text
 Imports System.Xml
-Imports CefSharp.DevTools.Emulation
 Imports SMUI.GUI.Class1
 Imports SMUI.Windows.PakManager
 
@@ -19,7 +18,18 @@ Public Class Form设置
     End Sub
 
     Private Sub Form设置_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        挑选图标的绑定按钮事件()
+        If My.Computer.FileSystem.FileExists(Path1.应用程序用户数据路径 & "\app.png") = True Then
+            Using fs As New IO.FileStream(Path1.应用程序用户数据路径 & "\app.png", IO.FileMode.Open, IO.FileAccess.Read)
+                Me.Button1.Image = Image.FromStream(fs)
+                fs.Close()
+            End Using
+        Else
+            Me.Button1.Image = My.Resources.EXEICO_1.GetThumbnailImage(128, 128, Nothing, IntPtr.Zero)
+        End If
+        Me.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Me.Panel1.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Me.Panel9.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText, 9.75)
+
         读取设置()
         If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "English" Or ST1.是否正在使用自定义语言包 = True Then
             Me.Text = 获取动态多语言文本("data/SettingsWindow/Title")
@@ -61,13 +71,13 @@ Public Class Form设置
             Me.Label字体样式.Text = 获取动态多语言文本("data/SettingsWindow/A37")
             Me.Label图标.Text = 获取动态多语言文本("data/SettingsWindow/A38")
             Me.Label32.Text = 获取动态多语言文本("data/SettingsWindow/A39")
-            Me.CheckBox2.Text = 获取动态多语言文本("data/SettingsWindow/A40")
+            Me.DarkButton5.Text = 获取动态多语言文本("data/SettingsWindow/A40")
             Me.CheckBox3.Text = 获取动态多语言文本("data/SettingsWindow/A41")
             Me.Label11.Text = 获取动态多语言文本("data/SettingsWindow/A42")
             Me.Label16.Text = 获取动态多语言文本("data/SettingsWindow/A43")
             Me.Label35.Text = 获取动态多语言文本("data/SettingsWindow/A44")
             Me.Label3.Text = 获取动态多语言文本("data/SettingsWindow/A45")
-            'Me.Label35.Text = 获取动态多语言文本("data/SettingsWindow/A46")
+            Me.Label36.Text = 获取动态多语言文本("data/SettingsWindow/A46")
         End If
 
     End Sub
@@ -132,6 +142,17 @@ Public Class Form设置
     Private Sub Label字体样式_Click(sender As Object, e As EventArgs) Handles Label字体样式.Click
         切换选项卡控制颜色(sender)
         Me.Panel字体样式.Visible = True
+        If Me.ComboBox1.Items.Count = 0 Then
+            Dim fonts As New InstalledFontCollection()
+            For Each family As FontFamily In fonts.Families
+                Me.ComboBox1.Items.Add(family.Name)
+                Me.ComboBox2.Items.Add(family.Name)
+            Next
+            Me.ComboBox1.Text = xml_Settings.SelectSingleNode("data/FontName9pt").InnerText
+            Me.ComboBox2.Text = xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText
+            Me.Label30.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+            Me.Label31.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText, 9.75)
+        End If
     End Sub
 
     Private Sub Label图标_Click(sender As Object, e As EventArgs) Handles Label图标.Click
@@ -200,6 +221,8 @@ Public Class Form设置
         Me.TrackBar1.Value = xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText
         Me.TrackBar2.Value = xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText
         Me.TrackBar6.Value = xml_Settings.SelectSingleNode("data/ItemsHeightAdd").InnerText
+        Me.DarkTextBox1.Text = xml_Settings.SelectSingleNode("data/MainWindowWidth").InnerText
+        Me.DarkTextBox2.Text = xml_Settings.SelectSingleNode("data/MainWindowHeight").InnerText
     End Sub
 
     Public Sub 保存设置()
@@ -259,14 +282,34 @@ Public Class Form设置
         xml_Settings.SelectSingleNode("data/DragDropCompatibilityForAdministrator").InnerText = Me.CheckBox1.Checked
         xml_Settings.SelectSingleNode("data/AutoSelectFirstNexusDownloadServer").InnerText = Me.CheckBox1.Checked
         xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText = Me.TrackBar1.Value
+        Form1.Panel9.Width = Me.TrackBar1.Value
         xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText = Me.TrackBar2.Value
+        Form1.Panel10.Width = Me.TrackBar2.Value
         xml_Settings.SelectSingleNode("data/ItemsHeightAdd").InnerText = Me.TrackBar6.Value
-        Form1.ImageList1.ImageSize = New Size(3, 25 + Me.TrackBar6.Value)
+        Form1.ListView1.StateImageList.ImageSize = New Size(3, 25 + Me.TrackBar6.Value)
+        Form1.ListView2.StateImageList.ImageSize = New Size(3, 25 + Me.TrackBar6.Value)
+        重新加载列表视图的彩图块()
 
-        xml_Settings.SelectSingleNode("data/MainWindowWidth").InnerText = Form1.Width
-        xml_Settings.SelectSingleNode("data/MainWindowHeight").InnerText = Form1.Height
+        Form1.Width = Me.DarkTextBox1.Text
+        xml_Settings.SelectSingleNode("data/MainWindowWidth").InnerText = Me.DarkTextBox1.Text
+        Form1.Height = Me.DarkTextBox2.Text
+        xml_Settings.SelectSingleNode("data/MainWindowHeight").InnerText = Me.DarkTextBox2.Text
+
+        校准分类栏的尺寸()
+        校准描述栏的尺寸()
+        校准项视图栏的尺寸()
+
+        xml_Settings.SelectSingleNode("data/FontName9pt").InnerText = Me.ComboBox1.Text
+        加载主窗口字体设置()
+
+        xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText = Me.ComboBox2.Text
+        Me.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Me.Panel1.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Me.Panel9.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText, 9.75)
+
         xml_Settings.Save(Path1.应用程序设置文件路径)
-        刷新标题栏主信息显示()
+        If 是否改动了关键路径 = True Then 刷新标题栏主信息显示()
+
         If Me.TextBox11.Text = "" Then Form1.Label7.Text = ""
     End Sub
 
@@ -412,167 +455,6 @@ R1:
         End Select
     End Sub
 
-    Dim 选择的图标Image As Image
-
-    Public Sub 挑选图标的绑定按钮事件()
-        For Each a As Button In Me.Panel2.Controls
-            Select Case a.Tag
-                Case "1"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_1 : My.Settings.图标 = 1
-                            挑选图标按钮确认执行()
-                        End Sub
-                Case "2"
-                    AddHandler a.Click,
-                        Sub()
-                            选择的图标Image = My.Resources.EXEICO_2 : My.Settings.图标 = 2
-                            挑选图标按钮确认执行()
-                        End Sub
-                    '        Case "3"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_3 : My.Settings.图标 = 3
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "4"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_4 : My.Settings.图标 = 4
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "5"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_5 : My.Settings.图标 = 5
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "6"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_6 : My.Settings.图标 = 6
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "7"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_7 : My.Settings.图标 = 7
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "8"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_8 : My.Settings.图标 = 8
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "9"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_9 : My.Settings.图标 = 9
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "10"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_10 : My.Settings.图标 = 10
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "11"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_11 : My.Settings.图标 = 11
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "12"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_12 : My.Settings.图标 = 12
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "13"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_13 : My.Settings.图标 = 13
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "14"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_14 : My.Settings.图标 = 14
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "15"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_15 : My.Settings.图标 = 15
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "16"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_16 : My.Settings.图标 = 16
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "17"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_17 : My.Settings.图标 = 17
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "18"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_18 : My.Settings.图标 = 18
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "19"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_19 : My.Settings.图标 = 19
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "20"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.EXEICO_20 : My.Settings.图标 = 20
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "21"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    选择的图标Image = My.Resources.HC_巧克力 : My.Settings.图标 = 21
-                    '                    挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "22"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    '选择的图标Image = My.Resources.EXEICO_22 : My.Settings.图标 =22
-                    '                    '挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "23"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    '选择的图标Image = My.Resources.EXEICO_23 : My.Settings.图标 =23
-                    '                    '挑选图标按钮确认执行()
-                    '                End Sub
-                    '        Case "24"
-                    '            AddHandler a.Click,
-                    '                Sub()
-                    '                    '选择的图标Image = My.Resources.MyPic : My.Settings.图标 =24
-                    '                    '挑选图标按钮确认执行()
-                    '                End Sub
-            End Select
-        Next
-    End Sub
-
-    Public Sub 挑选图标按钮确认执行()
-        Dim icoimg As Icon = Icon.FromHandle(DirectCast(选择的图标Image, Bitmap).GetHicon())
-        Form1.Icon = icoimg
-        IconTool.Tool1.SaveToIcon(选择的图标Image, 选择的图标Image.Size, Path1.应用程序用户数据路径 & "\ico.ico")
-        If My.Computer.FileSystem.FileExists(Path1.开始菜单快捷方式路径) = True Then 创建快捷方式(Application.ExecutablePath, Path1.应用程序用户数据路径 & "\ico.ico", Path1.开始菜单快捷方式路径)
-        If My.Computer.FileSystem.FileExists(Path1.桌面快捷方式路径) = True Or Me.CheckBox2.Checked = True Then 创建快捷方式(Application.ExecutablePath, Path1.应用程序用户数据路径 & "\ico.ico", Path1.桌面快捷方式路径)
-    End Sub
-
     Private Sub DarkButton1_Click(sender As Object, e As EventArgs) Handles DarkButton1.Click
         Dim a As New SMUI.Windows.Nexus.GetUserInfo With {
             .ST_ApiKey = Me.TextBox11.Text
@@ -669,6 +551,26 @@ R1:
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim a As New SingleSelectionDialog("盖~亚~", {"我并没有在这里藏了 114514 个彩蛋", "这几个按钮其实没什么作用", "但是不放就显得很单调，所以就单纯的凑个数，反正也没有什么功能"}, My.Resources.About, 350, 500)
+        a.ShowDialog(Form1)
+    End Sub
+
+    Private Sub DarkButton5_Click(sender As Object, e As EventArgs) Handles DarkButton5.Click
+        IconTool.Tool1.SaveToIcon(Me.Button1.Image, Me.Button1.Image.Size, Path1.应用程序用户数据路径 & "\ico.ico")
+        If My.Computer.FileSystem.FileExists(Path1.开始菜单快捷方式路径) = True Then 创建快捷方式(Application.ExecutablePath, Path1.应用程序用户数据路径 & "\ico.ico", Path1.开始菜单快捷方式路径)
+        创建快捷方式(Application.ExecutablePath, Path1.应用程序用户数据路径 & "\ico.ico", Path1.桌面快捷方式路径)
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If Me.ComboBox1.Text <> "" Then
+            Me.Label30.Font = New Font(Me.ComboBox1.Text, 9)
+        End If
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        If Me.ComboBox2.Text <> "" Then
+            Me.Label31.Font = New Font(Me.ComboBox2.Text, 9.75)
+        End If
 
     End Sub
 End Class

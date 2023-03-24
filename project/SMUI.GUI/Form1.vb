@@ -4,6 +4,7 @@ Imports SMUI.GUI.Class1
 Imports SMUI.Windows.Core
 Imports SMUI.Windows.PakManager
 
+
 Public Class Form1
 
 #Region "主窗口"
@@ -341,7 +342,6 @@ Public Class Form1
 
 #Region "列表视图所有操作"
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-        DeveloperEvent.Raise_CategoryListviewSelectedIndexChangedEvent()
         Select Case Me.ListView1.SelectedItems.Count
             Case 1
                 刷新项列表()
@@ -350,7 +350,7 @@ Public Class Form1
                 If ST1.是否处于搜索筛选结果 = True Then Exit Sub
                 清除模组列表()
         End Select
-
+        DeveloperEvent.Raise_CategoryListviewSelectedIndexChangedEvent()
     End Sub
 
     Private Sub ListView1_DragEnter(sender As Object, e As DragEventArgs) Handles ListView1.DragEnter
@@ -1034,7 +1034,7 @@ jx:
     Private Sub Label作者显示_MouseDown(sender As Object, e As MouseEventArgs) Handles Label作者显示.MouseDown
         Dim a As DarkContextMenu = 生成作者列表菜单()
         a.Show(MousePosition.X - e.X - 1, MousePosition.Y - e.Y - a.Height)
-        If Panel10.Width <a.Width Then
+        If Panel10.Width < a.Width Then
             a.Show(MousePosition.X - e.X + 1 + (Panel10.Width - a.Width), MousePosition.Y - e.Y - a.Height)
         End If
         If a.Top <> MousePosition.Y - e.Y - a.Height Then a.Top = MousePosition.Y - e.Y - a.Height
@@ -1815,6 +1815,7 @@ nextline:
             模组检查更新_添加一个项的数据到列表中(检查并返回当前选择分类路径(False) & "\" & Me.ListView2.Items(Me.ListView2.SelectedIndices(i)).Text)
         Next
     End Sub
+
 #End Region
 
 

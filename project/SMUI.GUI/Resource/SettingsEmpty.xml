@@ -32,6 +32,9 @@
 	<MainWindowHeight>705</MainWindowHeight>
 	<ItemsHeightAdd>0</ItemsHeightAdd>
 
+	<FontName9pt>Microsoft YaHei UI</FontName9pt>
+	<FontName9.75pt>Microsoft YaHei UI</FontName9.75pt>
+
 	<LastUsedSubLibraryName>Default Sub Library</LastUsedSubLibraryName>
 	<LastUsed_DirectDownloadItemUpdateUserMember>False</LastUsed_DirectDownloadItemUpdateUserMember>
 

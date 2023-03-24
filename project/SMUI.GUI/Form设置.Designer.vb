@@ -31,49 +31,24 @@ Partial Class Form设置
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel图标 = New System.Windows.Forms.Panel()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button24 = New System.Windows.Forms.Button()
-        Me.Button23 = New System.Windows.Forms.Button()
-        Me.Button22 = New System.Windows.Forms.Button()
-        Me.Button21 = New System.Windows.Forms.Button()
-        Me.Button20 = New System.Windows.Forms.Button()
-        Me.Button19 = New System.Windows.Forms.Button()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DarkButton5 = New DarkUI.Controls.DarkButton()
+        Me.Label36 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Panel字体样式 = New System.Windows.Forms.Panel()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.DarkDropdownList3 = New DarkUI.Controls.DarkDropdownList()
-        Me.DarkDropdownList2 = New DarkUI.Controls.DarkDropdownList()
-        Me.DarkDropdownList1 = New DarkUI.Controls.DarkDropdownList()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
         Me.Panel界面尺寸 = New System.Windows.Forms.Panel()
+        Me.DarkTextBox2 = New DarkUI.Controls.DarkTextBox()
+        Me.DarkTextBox1 = New DarkUI.Controls.DarkTextBox()
         Me.TrackBar6 = New System.Windows.Forms.TrackBar()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.TrackBar5 = New System.Windows.Forms.TrackBar()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.TrackBar4 = New System.Windows.Forms.TrackBar()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TrackBar3 = New System.Windows.Forms.TrackBar()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -162,8 +137,6 @@ Partial Class Form设置
         Me.Panel字体样式.SuspendLayout()
         Me.Panel界面尺寸.SuspendLayout()
         CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -199,7 +172,6 @@ Partial Class Form设置
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label取消.AutoEllipsis = True
         Me.Label取消.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label取消.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label取消.ForeColor = System.Drawing.SystemColors.Control
         Me.Label取消.Location = New System.Drawing.Point(644, 10)
         Me.Label取消.Margin = New System.Windows.Forms.Padding(0, 10, 10, 10)
@@ -226,7 +198,6 @@ Partial Class Form设置
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label应用.AutoEllipsis = True
         Me.Label应用.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label应用.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label应用.ForeColor = System.Drawing.SystemColors.Control
         Me.Label应用.Location = New System.Drawing.Point(724, 10)
         Me.Label应用.Margin = New System.Windows.Forms.Padding(0, 10, 10, 10)
@@ -242,7 +213,6 @@ Partial Class Form设置
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label确定.AutoEllipsis = True
         Me.Label确定.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label确定.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label确定.ForeColor = System.Drawing.SystemColors.Control
         Me.Label确定.Location = New System.Drawing.Point(804, 10)
         Me.Label确定.Margin = New System.Windows.Forms.Padding(0, 10, 10, 10)
@@ -282,7 +252,6 @@ Partial Class Form设置
         '
         'Panel图标
         '
-        Me.Panel图标.Controls.Add(Me.CheckBox2)
         Me.Panel图标.Controls.Add(Me.Panel2)
         Me.Panel图标.Controls.Add(Me.Label32)
         Me.Panel图标.Dock = System.Windows.Forms.DockStyle.Top
@@ -292,42 +261,10 @@ Partial Class Form设置
         Me.Panel图标.TabIndex = 10
         Me.Panel图标.Visible = False
         '
-        'CheckBox2
-        '
-        Me.CheckBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(23, 337)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(135, 21)
-        Me.CheckBox2.TabIndex = 27
-        Me.CheckBox2.Text = "在桌面创建快捷方式"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Button24)
-        Me.Panel2.Controls.Add(Me.Button23)
-        Me.Panel2.Controls.Add(Me.Button22)
-        Me.Panel2.Controls.Add(Me.Button21)
-        Me.Panel2.Controls.Add(Me.Button20)
-        Me.Panel2.Controls.Add(Me.Button19)
-        Me.Panel2.Controls.Add(Me.Button18)
-        Me.Panel2.Controls.Add(Me.Button17)
-        Me.Panel2.Controls.Add(Me.Button16)
-        Me.Panel2.Controls.Add(Me.Button15)
-        Me.Panel2.Controls.Add(Me.Button14)
-        Me.Panel2.Controls.Add(Me.Button13)
-        Me.Panel2.Controls.Add(Me.Button12)
-        Me.Panel2.Controls.Add(Me.Button11)
-        Me.Panel2.Controls.Add(Me.Button10)
-        Me.Panel2.Controls.Add(Me.Button9)
-        Me.Panel2.Controls.Add(Me.Button8)
-        Me.Panel2.Controls.Add(Me.Button7)
-        Me.Panel2.Controls.Add(Me.Button6)
-        Me.Panel2.Controls.Add(Me.Button5)
-        Me.Panel2.Controls.Add(Me.Button4)
-        Me.Panel2.Controls.Add(Me.Button3)
-        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Controls.Add(Me.DarkButton5)
+        Me.Panel2.Controls.Add(Me.Label36)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Location = New System.Drawing.Point(23, 74)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(20)
@@ -335,305 +272,28 @@ Partial Class Form设置
         Me.Panel2.Size = New System.Drawing.Size(631, 233)
         Me.Panel2.TabIndex = 26
         '
-        'Button24
+        'DarkButton5
         '
-        Me.Button24.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button24.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button24.Location = New System.Drawing.Point(528, 158)
-        Me.Button24.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button24.Name = "Button24"
-        Me.Button24.Size = New System.Drawing.Size(64, 64)
-        Me.Button24.TabIndex = 48
-        Me.Button24.Tag = "24"
-        Me.Button24.UseVisualStyleBackColor = True
+        Me.DarkButton5.Location = New System.Drawing.Point(10, 170)
+        Me.DarkButton5.Margin = New System.Windows.Forms.Padding(0)
+        Me.DarkButton5.Name = "DarkButton5"
+        Me.DarkButton5.Padding = New System.Windows.Forms.Padding(5)
+        Me.DarkButton5.Size = New System.Drawing.Size(150, 30)
+        Me.DarkButton5.TabIndex = 27
+        Me.DarkButton5.Text = "桌面快捷方式"
         '
-        'Button23
+        'Label36
         '
-        Me.Button23.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button23.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button23.Location = New System.Drawing.Point(454, 158)
-        Me.Button23.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(64, 64)
-        Me.Button23.TabIndex = 47
-        Me.Button23.Tag = "23"
-        Me.Button23.UseVisualStyleBackColor = True
-        '
-        'Button22
-        '
-        Me.Button22.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button22.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button22.Location = New System.Drawing.Point(380, 158)
-        Me.Button22.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(64, 64)
-        Me.Button22.TabIndex = 46
-        Me.Button22.Tag = "22"
-        Me.Button22.UseVisualStyleBackColor = True
-        '
-        'Button21
-        '
-        Me.Button21.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button21.Location = New System.Drawing.Point(306, 158)
-        Me.Button21.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(64, 64)
-        Me.Button21.TabIndex = 45
-        Me.Button21.Tag = "21"
-        Me.Button21.UseVisualStyleBackColor = True
-        '
-        'Button20
-        '
-        Me.Button20.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button20.Location = New System.Drawing.Point(232, 158)
-        Me.Button20.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(64, 64)
-        Me.Button20.TabIndex = 44
-        Me.Button20.Tag = "20"
-        Me.Button20.UseVisualStyleBackColor = True
-        '
-        'Button19
-        '
-        Me.Button19.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button19.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button19.Location = New System.Drawing.Point(158, 158)
-        Me.Button19.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(64, 64)
-        Me.Button19.TabIndex = 43
-        Me.Button19.Tag = "19"
-        Me.Button19.UseVisualStyleBackColor = True
-        '
-        'Button18
-        '
-        Me.Button18.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button18.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button18.Location = New System.Drawing.Point(84, 158)
-        Me.Button18.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(64, 64)
-        Me.Button18.TabIndex = 42
-        Me.Button18.Tag = "18"
-        Me.Button18.UseVisualStyleBackColor = True
-        '
-        'Button17
-        '
-        Me.Button17.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button17.Location = New System.Drawing.Point(10, 158)
-        Me.Button17.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(64, 64)
-        Me.Button17.TabIndex = 41
-        Me.Button17.Tag = "17"
-        Me.Button17.UseVisualStyleBackColor = True
-        '
-        'Button16
-        '
-        Me.Button16.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.Location = New System.Drawing.Point(528, 84)
-        Me.Button16.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(64, 64)
-        Me.Button16.TabIndex = 40
-        Me.Button16.Tag = "16"
-        Me.Button16.UseVisualStyleBackColor = True
-        '
-        'Button15
-        '
-        Me.Button15.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button15.Location = New System.Drawing.Point(454, 84)
-        Me.Button15.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(64, 64)
-        Me.Button15.TabIndex = 39
-        Me.Button15.Tag = "15"
-        Me.Button15.UseVisualStyleBackColor = True
-        '
-        'Button14
-        '
-        Me.Button14.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button14.Location = New System.Drawing.Point(380, 84)
-        Me.Button14.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(64, 64)
-        Me.Button14.TabIndex = 38
-        Me.Button14.Tag = "14"
-        Me.Button14.UseVisualStyleBackColor = True
-        '
-        'Button13
-        '
-        Me.Button13.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button13.Location = New System.Drawing.Point(306, 84)
-        Me.Button13.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(64, 64)
-        Me.Button13.TabIndex = 37
-        Me.Button13.Tag = "13"
-        Me.Button13.UseVisualStyleBackColor = True
-        '
-        'Button12
-        '
-        Me.Button12.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Location = New System.Drawing.Point(232, 84)
-        Me.Button12.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(64, 64)
-        Me.Button12.TabIndex = 36
-        Me.Button12.Tag = "12"
-        Me.Button12.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.Location = New System.Drawing.Point(158, 84)
-        Me.Button11.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(64, 64)
-        Me.Button11.TabIndex = 35
-        Me.Button11.Tag = "11"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Location = New System.Drawing.Point(84, 84)
-        Me.Button10.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(64, 64)
-        Me.Button10.TabIndex = 34
-        Me.Button10.Tag = "10"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Location = New System.Drawing.Point(10, 84)
-        Me.Button9.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(64, 64)
-        Me.Button9.TabIndex = 33
-        Me.Button9.Tag = "9"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Button8
-        '
-        Me.Button8.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Location = New System.Drawing.Point(528, 10)
-        Me.Button8.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(64, 64)
-        Me.Button8.TabIndex = 32
-        Me.Button8.Tag = "8"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Location = New System.Drawing.Point(454, 10)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(64, 64)
-        Me.Button7.TabIndex = 31
-        Me.Button7.Tag = "7"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Location = New System.Drawing.Point(380, 10)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(64, 64)
-        Me.Button6.TabIndex = 30
-        Me.Button6.Tag = "6"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(306, 10)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(64, 64)
-        Me.Button5.TabIndex = 29
-        Me.Button5.Tag = "5"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Location = New System.Drawing.Point(232, 10)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(64, 64)
-        Me.Button4.TabIndex = 28
-        Me.Button4.Tag = "4"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(158, 10)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(64, 64)
-        Me.Button3.TabIndex = 27
-        Me.Button3.Tag = "3"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Image = Global.SMUI.GUI.My.Resources.Resources.EXEICO_2
-        Me.Button2.Location = New System.Drawing.Point(84, 10)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(64, 64)
-        Me.Button2.TabIndex = 26
-        Me.Button2.Tag = "2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Label36.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label36.AutoEllipsis = True
+        Me.Label36.Location = New System.Drawing.Point(170, 10)
+        Me.Label36.Margin = New System.Windows.Forms.Padding(10)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(451, 150)
+        Me.Label36.TabIndex = 26
+        Me.Label36.Text = "若要更改图标，请在用户数据文件夹下放置 app.png 文件" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "若选择在桌面创建一个快捷方式，程序将生成一个 ico.ico 文件" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "快捷方式存在期间，请不要" &
+    "删除生成的文件"
         '
         'Button1
         '
@@ -641,9 +301,9 @@ Partial Class Form设置
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Location = New System.Drawing.Point(10, 10)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(10, 10, 0, 10)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(64, 64)
+        Me.Button1.Size = New System.Drawing.Size(150, 150)
         Me.Button1.TabIndex = 25
         Me.Button1.Tag = "1"
         Me.Button1.UseVisualStyleBackColor = True
@@ -654,21 +314,18 @@ Partial Class Form设置
         Me.Label32.Location = New System.Drawing.Point(20, 20)
         Me.Label32.Margin = New System.Windows.Forms.Padding(20, 20, 0, 0)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(416, 34)
+        Me.Label32.Size = New System.Drawing.Size(116, 17)
         Me.Label32.TabIndex = 24
-        Me.Label32.Text = "挑选你喜欢的图标（不出意外的话是立即生效，出意外的话就重启电脑生效）" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "更新后快捷方式将被重置，请再手动设置"
+        Me.Label32.Text = "自定义应用程序图标"
         '
         'Panel字体样式
         '
+        Me.Panel字体样式.Controls.Add(Me.ComboBox2)
+        Me.Panel字体样式.Controls.Add(Me.ComboBox1)
         Me.Panel字体样式.Controls.Add(Me.Label31)
         Me.Panel字体样式.Controls.Add(Me.Label30)
-        Me.Panel字体样式.Controls.Add(Me.Label26)
-        Me.Panel字体样式.Controls.Add(Me.DarkDropdownList3)
-        Me.Panel字体样式.Controls.Add(Me.DarkDropdownList2)
-        Me.Panel字体样式.Controls.Add(Me.DarkDropdownList1)
         Me.Panel字体样式.Controls.Add(Me.Label17)
         Me.Panel字体样式.Controls.Add(Me.Label23)
-        Me.Panel字体样式.Controls.Add(Me.Label27)
         Me.Panel字体样式.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel字体样式.Location = New System.Drawing.Point(0, 2471)
         Me.Panel字体样式.Name = "Panel字体样式"
@@ -676,66 +333,57 @@ Partial Class Form设置
         Me.Panel字体样式.TabIndex = 9
         Me.Panel字体样式.Visible = False
         '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(22, 122)
+        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(0)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(250, 25)
+        Me.ComboBox2.TabIndex = 35
+        Me.ComboBox2.TabStop = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(22, 50)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(0)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(250, 25)
+        Me.ComboBox1.TabIndex = 1
+        Me.ComboBox1.TabStop = False
+        '
         'Label31
         '
         Me.Label31.AutoEllipsis = True
+        Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!)
-        Me.Label31.Location = New System.Drawing.Point(326, 166)
+        Me.Label31.Location = New System.Drawing.Point(278, 123)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(328, 53)
+        Me.Label31.Size = New System.Drawing.Size(209, 19)
         Me.Label31.TabIndex = 34
         Me.Label31.Text = "字体样式 1234567890 ABCDEFG"
         '
         'Label30
         '
         Me.Label30.AutoEllipsis = True
-        Me.Label30.Location = New System.Drawing.Point(326, 93)
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(279, 53)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(328, 53)
+        Me.Label30.Size = New System.Drawing.Size(189, 17)
         Me.Label30.TabIndex = 33
         Me.Label30.Text = "字体样式 1234567890 ABCDEFG"
-        '
-        'Label26
-        '
-        Me.Label26.AutoEllipsis = True
-        Me.Label26.Font = New System.Drawing.Font("Microsoft YaHei UI", 8.25!)
-        Me.Label26.Location = New System.Drawing.Point(326, 20)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(328, 53)
-        Me.Label26.TabIndex = 32
-        Me.Label26.Text = "字体样式 1234567890 ABCDEFG"
-        '
-        'DarkDropdownList3
-        '
-        Me.DarkDropdownList3.Location = New System.Drawing.Point(23, 193)
-        Me.DarkDropdownList3.Margin = New System.Windows.Forms.Padding(0)
-        Me.DarkDropdownList3.Name = "DarkDropdownList3"
-        Me.DarkDropdownList3.Size = New System.Drawing.Size(250, 26)
-        Me.DarkDropdownList3.TabIndex = 31
-        Me.DarkDropdownList3.Text = "DarkDropdownList3"
-        '
-        'DarkDropdownList2
-        '
-        Me.DarkDropdownList2.Location = New System.Drawing.Point(23, 120)
-        Me.DarkDropdownList2.Margin = New System.Windows.Forms.Padding(0)
-        Me.DarkDropdownList2.Name = "DarkDropdownList2"
-        Me.DarkDropdownList2.Size = New System.Drawing.Size(250, 26)
-        Me.DarkDropdownList2.TabIndex = 30
-        Me.DarkDropdownList2.Text = "DarkDropdownList2"
-        '
-        'DarkDropdownList1
-        '
-        Me.DarkDropdownList1.Location = New System.Drawing.Point(23, 47)
-        Me.DarkDropdownList1.Margin = New System.Windows.Forms.Padding(0)
-        Me.DarkDropdownList1.Name = "DarkDropdownList1"
-        Me.DarkDropdownList1.Size = New System.Drawing.Size(250, 26)
-        Me.DarkDropdownList1.TabIndex = 29
-        Me.DarkDropdownList1.Text = "DarkDropdownList1"
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(20, 166)
+        Me.Label17.Location = New System.Drawing.Point(19, 95)
         Me.Label17.Margin = New System.Windows.Forms.Padding(20, 20, 0, 10)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(48, 17)
@@ -745,30 +393,20 @@ Partial Class Form设置
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(20, 93)
+        Me.Label23.Location = New System.Drawing.Point(20, 23)
         Me.Label23.Margin = New System.Windows.Forms.Padding(20, 20, 0, 10)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(31, 17)
         Me.Label23.TabIndex = 25
         Me.Label23.Text = "9 pt"
         '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(20, 20)
-        Me.Label27.Margin = New System.Windows.Forms.Padding(20, 20, 0, 10)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(48, 17)
-        Me.Label27.TabIndex = 24
-        Me.Label27.Text = "8.25 pt"
-        '
         'Panel界面尺寸
         '
+        Me.Panel界面尺寸.Controls.Add(Me.DarkTextBox2)
+        Me.Panel界面尺寸.Controls.Add(Me.DarkTextBox1)
         Me.Panel界面尺寸.Controls.Add(Me.TrackBar6)
         Me.Panel界面尺寸.Controls.Add(Me.Label35)
-        Me.Panel界面尺寸.Controls.Add(Me.TrackBar5)
         Me.Panel界面尺寸.Controls.Add(Me.Label16)
-        Me.Panel界面尺寸.Controls.Add(Me.TrackBar4)
         Me.Panel界面尺寸.Controls.Add(Me.Label11)
         Me.Panel界面尺寸.Controls.Add(Me.TrackBar3)
         Me.Panel界面尺寸.Controls.Add(Me.Label3)
@@ -783,74 +421,70 @@ Partial Class Form设置
         Me.Panel界面尺寸.TabIndex = 8
         Me.Panel界面尺寸.Visible = False
         '
+        'DarkTextBox2
+        '
+        Me.DarkTextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.DarkTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.DarkTextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.DarkTextBox2.Location = New System.Drawing.Point(23, 353)
+        Me.DarkTextBox2.Margin = New System.Windows.Forms.Padding(0)
+        Me.DarkTextBox2.Name = "DarkTextBox2"
+        Me.DarkTextBox2.Size = New System.Drawing.Size(100, 23)
+        Me.DarkTextBox2.TabIndex = 37
+        '
+        'DarkTextBox1
+        '
+        Me.DarkTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.DarkTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.DarkTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.DarkTextBox1.Location = New System.Drawing.Point(23, 293)
+        Me.DarkTextBox1.Margin = New System.Windows.Forms.Padding(0)
+        Me.DarkTextBox1.Name = "DarkTextBox1"
+        Me.DarkTextBox1.Size = New System.Drawing.Size(100, 23)
+        Me.DarkTextBox1.TabIndex = 36
+        '
         'TrackBar6
         '
         Me.TrackBar6.Cursor = System.Windows.Forms.Cursors.SizeWE
-        Me.TrackBar6.Location = New System.Drawing.Point(23, 375)
+        Me.TrackBar6.Location = New System.Drawing.Point(23, 211)
         Me.TrackBar6.Margin = New System.Windows.Forms.Padding(0)
-        Me.TrackBar6.Maximum = 20
+        Me.TrackBar6.Maximum = 30
         Me.TrackBar6.Name = "TrackBar6"
         Me.TrackBar6.Size = New System.Drawing.Size(200, 45)
+        Me.TrackBar6.SmallChange = 5
         Me.TrackBar6.TabIndex = 35
+        Me.TrackBar6.TickFrequency = 5
         Me.TrackBar6.TickStyle = System.Windows.Forms.TickStyle.Both
         '
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(20, 348)
+        Me.Label35.Location = New System.Drawing.Point(20, 184)
         Me.Label35.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(142, 17)
         Me.Label35.TabIndex = 34
-        Me.Label35.Text = "全局项高度增益（0-20）"
-        '
-        'TrackBar5
-        '
-        Me.TrackBar5.Cursor = System.Windows.Forms.Cursors.SizeWE
-        Me.TrackBar5.Location = New System.Drawing.Point(23, 293)
-        Me.TrackBar5.Margin = New System.Windows.Forms.Padding(0)
-        Me.TrackBar5.Maximum = 1440
-        Me.TrackBar5.Minimum = 705
-        Me.TrackBar5.Name = "TrackBar5"
-        Me.TrackBar5.Size = New System.Drawing.Size(200, 45)
-        Me.TrackBar5.TabIndex = 33
-        Me.TrackBar5.TickFrequency = 100
-        Me.TrackBar5.TickStyle = System.Windows.Forms.TickStyle.Both
-        Me.TrackBar5.Value = 705
+        Me.Label35.Text = "全局项高度增益（0-30）"
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(20, 266)
+        Me.Label16.Location = New System.Drawing.Point(20, 326)
         Me.Label16.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(194, 17)
+        Me.Label16.Size = New System.Drawing.Size(116, 17)
         Me.Label16.TabIndex = 32
-        Me.Label16.Text = "主窗口高度（像素）（705-1440）"
-        '
-        'TrackBar4
-        '
-        Me.TrackBar4.Cursor = System.Windows.Forms.Cursors.SizeWE
-        Me.TrackBar4.Location = New System.Drawing.Point(23, 211)
-        Me.TrackBar4.Margin = New System.Windows.Forms.Padding(0)
-        Me.TrackBar4.Maximum = 2560
-        Me.TrackBar4.Minimum = 1200
-        Me.TrackBar4.Name = "TrackBar4"
-        Me.TrackBar4.Size = New System.Drawing.Size(200, 45)
-        Me.TrackBar4.TabIndex = 31
-        Me.TrackBar4.TickFrequency = 100
-        Me.TrackBar4.TickStyle = System.Windows.Forms.TickStyle.Both
-        Me.TrackBar4.Value = 1200
+        Me.Label16.Text = "主窗口高度（像素）"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(20, 184)
+        Me.Label11.Location = New System.Drawing.Point(20, 266)
         Me.Label11.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(201, 17)
+        Me.Label11.Size = New System.Drawing.Size(116, 17)
         Me.Label11.TabIndex = 30
-        Me.Label11.Text = "主窗口宽度（像素）（1200-2560）"
+        Me.Label11.Text = "主窗口宽度（像素）"
         '
         'TrackBar3
         '
@@ -1702,6 +1336,7 @@ Partial Class Form设置
         Me.Panel9.Controls.Add(Me.Label关键路径)
         Me.Panel9.Controls.Add(Me.Label40)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel9.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel9.Location = New System.Drawing.Point(0, 51)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(201, 533)
@@ -1711,7 +1346,6 @@ Partial Class Form设置
         '
         Me.Label图标.AutoEllipsis = True
         Me.Label图标.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label图标.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label图标.ForeColor = System.Drawing.Color.Silver
         Me.Label图标.Location = New System.Drawing.Point(0, 400)
         Me.Label图标.Name = "Label图标"
@@ -1724,7 +1358,6 @@ Partial Class Form设置
         '
         Me.Label字体样式.AutoEllipsis = True
         Me.Label字体样式.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label字体样式.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label字体样式.ForeColor = System.Drawing.Color.Silver
         Me.Label字体样式.Location = New System.Drawing.Point(0, 350)
         Me.Label字体样式.Name = "Label字体样式"
@@ -1737,7 +1370,6 @@ Partial Class Form设置
         '
         Me.Label界面尺寸.AutoEllipsis = True
         Me.Label界面尺寸.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label界面尺寸.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label界面尺寸.ForeColor = System.Drawing.Color.Silver
         Me.Label界面尺寸.Location = New System.Drawing.Point(0, 300)
         Me.Label界面尺寸.Name = "Label界面尺寸"
@@ -1750,7 +1382,6 @@ Partial Class Form设置
         '
         Me.Label功能.AutoEllipsis = True
         Me.Label功能.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label功能.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label功能.ForeColor = System.Drawing.Color.Silver
         Me.Label功能.Location = New System.Drawing.Point(0, 250)
         Me.Label功能.Name = "Label功能"
@@ -1763,7 +1394,6 @@ Partial Class Form设置
         '
         Me.Label启动项.AutoEllipsis = True
         Me.Label启动项.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label启动项.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label启动项.ForeColor = System.Drawing.Color.Silver
         Me.Label启动项.Location = New System.Drawing.Point(0, 200)
         Me.Label启动项.Name = "Label启动项"
@@ -1776,7 +1406,6 @@ Partial Class Form设置
         '
         Me.Label网络服务.AutoEllipsis = True
         Me.Label网络服务.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label网络服务.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label网络服务.ForeColor = System.Drawing.Color.Silver
         Me.Label网络服务.Location = New System.Drawing.Point(0, 150)
         Me.Label网络服务.Name = "Label网络服务"
@@ -1789,7 +1418,6 @@ Partial Class Form设置
         '
         Me.Label地区和语言.AutoEllipsis = True
         Me.Label地区和语言.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label地区和语言.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label地区和语言.ForeColor = System.Drawing.Color.Silver
         Me.Label地区和语言.Location = New System.Drawing.Point(0, 100)
         Me.Label地区和语言.Name = "Label地区和语言"
@@ -1802,7 +1430,6 @@ Partial Class Form设置
         '
         Me.Label可选路径.AutoEllipsis = True
         Me.Label可选路径.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label可选路径.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label可选路径.ForeColor = System.Drawing.Color.Silver
         Me.Label可选路径.Location = New System.Drawing.Point(0, 50)
         Me.Label可选路径.Name = "Label可选路径"
@@ -1815,7 +1442,6 @@ Partial Class Form设置
         '
         Me.Label关键路径.AutoEllipsis = True
         Me.Label关键路径.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label关键路径.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label关键路径.ForeColor = System.Drawing.Color.Silver
         Me.Label关键路径.Location = New System.Drawing.Point(0, 0)
         Me.Label关键路径.Name = "Label关键路径"
@@ -1866,8 +1492,6 @@ Partial Class Form设置
         Me.Panel界面尺寸.ResumeLayout(False)
         Me.Panel界面尺寸.PerformLayout()
         CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1966,18 +1590,8 @@ Partial Class Form设置
     Friend WithEvents Panel图标 As Panel
     Friend WithEvents Label32 As Label
     Friend WithEvents Panel字体样式 As Panel
-    Friend WithEvents Label27 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents Label取消 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label1 As Label
@@ -1998,33 +1612,18 @@ Partial Class Form设置
     Friend WithEvents LinkLabel打开隐私设置 As LinkLabel
     Friend WithEvents TrackBar3 As TrackBar
     Friend WithEvents Label3 As Label
-    Friend WithEvents TrackBar5 As TrackBar
     Friend WithEvents Label16 As Label
-    Friend WithEvents TrackBar4 As TrackBar
     Friend WithEvents Label11 As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents DarkDropdownList1 As DarkUI.Controls.DarkDropdownList
-    Friend WithEvents DarkDropdownList3 As DarkUI.Controls.DarkDropdownList
-    Friend WithEvents DarkDropdownList2 As DarkUI.Controls.DarkDropdownList
     Friend WithEvents Label31 As Label
     Friend WithEvents Label30 As Label
-    Friend WithEvents Label26 As Label
     Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents Button16 As Button
-    Friend WithEvents Button15 As Button
-    Friend WithEvents Button14 As Button
-    Friend WithEvents Button13 As Button
-    Friend WithEvents Button12 As Button
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button10 As Button
-    Friend WithEvents Button24 As Button
-    Friend WithEvents Button23 As Button
-    Friend WithEvents Button22 As Button
-    Friend WithEvents Button21 As Button
-    Friend WithEvents Button20 As Button
-    Friend WithEvents Button19 As Button
-    Friend WithEvents Button18 As Button
-    Friend WithEvents Button17 As Button
     Friend WithEvents TrackBar6 As TrackBar
     Friend WithEvents Label35 As Label
+    Friend WithEvents DarkTextBox2 As DarkUI.Controls.DarkTextBox
+    Friend WithEvents DarkTextBox1 As DarkUI.Controls.DarkTextBox
+    Friend WithEvents Label36 As Label
+    Friend WithEvents DarkButton5 As DarkUI.Controls.DarkButton
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBox2 As ComboBox
 End Class

@@ -5,9 +5,6 @@
     <Setting Name="上次发送用户统计的日期" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="图标" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
-    </Setting>
     <Setting Name="普通字体" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Microsoft YaHei UI, 9pt</Value>
     </Setting>

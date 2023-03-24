@@ -19,9 +19,14 @@
     End Function
 
     Public Shared Function GetModUpdateID(ByVal OneLineText As String, ByVal FindID As String) As String
-        Dim x1, x2, x3
-        x1 = InStr(OneLineText.ToLower, FindID.ToLower) + Len(FindID.ToLower)
-        x2 = Mid(OneLineText.ToLower, x1)
+        Dim x0, x1, x2, x3
+        If InStr(OneLineText, "@") > 0 Then
+            x0 = Mid(OneLineText, 1, InStr(OneLineText, "@") - 1)
+        Else
+            x0 = OneLineText
+        End If
+        x1 = InStr(x0.ToLower, FindID.ToLower) + Len(FindID.ToLower)
+        x2 = Mid(x0.ToLower, x1)
         x3 = Replace(x2, " ", "")
         x3 = Replace(x3, ":", "")
         Return x3

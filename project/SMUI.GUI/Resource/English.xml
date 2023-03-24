@@ -330,14 +330,14 @@
 		<A36 chs="描述栏区域宽度（250-500）">Description panel area width (250-500)</A36>
 		<A37 chs="   字体样式">   Font style</A37>
 		<A38 chs="   图标">   Icons</A38>
-		<A39 chs="挑选你喜欢的图标（立即生效，可能在下次启动计算机时才完全生效）/crlf/更新后快捷方式将被重置，请再手动设置">Pick the icon you like (it will take effect immediately, or next time you start the computer) /crlf/ The shortcut will be reset after the update, please set it manually.</A39>
-		<A40 chs="在桌面创建快捷方式">Create a shortcut on the desktop</A40>
+		<A39 chs="自定义应用程序图标">Custom App Icon.</A39>
+		<A40 chs="桌面快捷方式">Desktop Shortcut</A40>
 		<A41 chs="自动选择首个 NEXUS 下载服务器（由 NEXUS 账户设置决定）">Automatically select the first NEXUS download server</A41>
-		<A42 chs="主窗口宽度（像素）（1200-2560）"></A42>
-		<A43 chs="主窗口高度（像素）（705-1440）"></A43>
+		<A42 chs="主窗口宽度（像素）"></A42>
+		<A43 chs="主窗口高度（像素）"></A43>
 		<A44 chs="全局项高度增益（0-20）"></A44>
 		<A45 chs="全局服务器访问超时毫秒（3000-10000）"></A45>
-		<A46 chs=""></A46>
+		<A46 chs="">To change the icon, place app.png file under user data folder./crlf//crlf/If you choose to create a shortcut on the desktop, the program will generate an ico.ico file./crlf/Please do not delete the generated files while the shortcut exists.</A46>
 		
 		
 		<B1 chs="打开隐私设置">Open Privacy Settings</B1>	

@@ -46,29 +46,39 @@ Module 界面控制
         Form1.Label分类计数显示.Parent = Form1.Label子库分类菜单
         Form1.Label预览图计数显示.Parent = Form1.Label预览图菜单
 
-        'Application.DoEvents()
-        Form1.ListView1.Width = Form1.Panel9.Width + ST1.系统滚动条宽度
-        Form1.ListView2.Width = Form1.Panel11.Width - 5 '+ ST1.系统滚动条宽度
-
-        Form1.RichTextBox1.Width = Form1.Panel10.Width + ST1.系统滚动条宽度
-        Form1.RichTextBox1.Height = Form1.Label1.Height
-        Form1.RichTextBox1.Location = Form1.Label1.Location
-        Form1.RichTextBox1.RightMargin = Form1.RichTextBox1.Width - ST1.系统滚动条宽度 - 12
-
-
-        Form1.ListView1.Columns.Item(0).Width = Form1.ListView1.Width - 5 - ST1.系统滚动条宽度
-
-        Form1.ListView1.ForeColor = Color1.白色
-        Form1.ListView2.ForeColor = Color1.白色
-        Form1.RichTextBox1.ForeColor = Color1.白色
+        校准分类栏的尺寸()
+        校准描述栏的尺寸()
+        校准项视图栏的尺寸()
 
         If ST1.当前是否正在使用Steam版本 = True Then
             Form1.Label更新状态标记.Text = 获取动态多语言文本("data/DynamicText/Sever.11 ")
             Form1.Label立即检查更新.Enabled = False
         End If
 
-        'Form1.ImageList1.ImageSize = New Size(3, 25 + xml_Settings.SelectSingleNode("data/ItemsHeightAdd").InnerText)
     End Sub
+
+
+    Public Sub 校准分类栏的尺寸()
+        Form1.ListView1.Width = Form1.Panel9.Width + ST1.系统滚动条宽度
+        Form1.ListView1.Columns.Item(0).Width = Form1.ListView1.Width - 5 - ST1.系统滚动条宽度
+        'Form1.ListView1.ForeColor = Color1.白色
+    End Sub
+
+    Public Sub 校准描述栏的尺寸()
+        Form1.RichTextBox1.Width = Form1.Panel10.Width + ST1.系统滚动条宽度
+        Form1.RichTextBox1.Height = Form1.Label1.Height
+        Form1.RichTextBox1.Location = Form1.Label1.Location
+        Form1.RichTextBox1.RightMargin = Form1.RichTextBox1.Width - ST1.系统滚动条宽度 - 12
+        Form1.RichTextBox1.ForeColor = Color1.白色
+    End Sub
+
+    Public Sub 校准项视图栏的尺寸()
+        Form1.ListView2.Width = Form1.Panel11.Width - 5
+        Form1.ListView2.Columns.Item(0).Width = Form1.ListView2.Width - Form1.ListView2.Columns.Item(1).Width - Form1.ListView2.Columns.Item(2).Width - Form1.ListView2.Columns.Item(3).Width - 5 - ST1.系统滚动条宽度
+        'Form1.ListView2.ForeColor = Color1.白色
+
+    End Sub
+
 
     Public Sub 校准RichTextBox1的尺寸和位置()
         Form1.RichTextBox1.Width = Form1.Panel10.Width + ST1.系统滚动条宽度

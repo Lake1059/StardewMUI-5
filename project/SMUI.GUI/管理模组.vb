@@ -78,6 +78,7 @@ Module 管理模组
         Form1.ListView1.Items.Clear()
         If 检查并返回当前所选子库路径() = "" Then Exit Sub
         Dim a As String() = SharedFunction.SearchFolderWithoutSub(xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText & "\" & xml_Settings.SelectSingleNode("data/LastUsedSubLibraryName").InnerText)
+        Form1.ListView1.BeginUpdate()
         For i = 0 To a.Count - 1
             Form1.ListView1.Items.Add(a(i))
             Dim b1 As String = xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText & "\" & xml_Settings.SelectSingleNode("data/LastUsedSubLibraryName").InnerText & "\" & a(i)
@@ -131,6 +132,7 @@ Module 管理模组
                 End Select
             End If
         Next
+        Form1.ListView1.EndUpdate()
         Form1.Label分类计数显示.Text = Form1.ListView1.Items.Count
         DeveloperEvent.Raise_CategoryListUpdatedEvent()
     End Sub
@@ -152,12 +154,14 @@ Module 管理模组
         Dim a1 As String = Form1.ListView1.Items.Item(Form1.ListView1.SelectedIndices(0)).Text
         Dim mDir As System.IO.DirectoryInfo
         Dim mDirInfo As New System.IO.DirectoryInfo(检查并返回当前所选子库路径() & "\" & a1)
+        Form1.ListView2.BeginUpdate()
         For Each mDir In mDirInfo.GetDirectories
             Form1.ListView2.Items.Add(mDir.Name)
             ReDim Preserve 当前项列表中项的分类集合(当前项列表中项的分类集合.Count)
             当前项列表中项的分类集合(当前项列表中项的分类集合.Count - 1) = a1
         Next
         刷新项列表数据()
+        Form1.ListView2.EndUpdate()
     End Sub
 
     Public Sub 刷新项列表数据()
@@ -444,7 +448,7 @@ Module 管理模组
             If Form依赖项表.Visible = True Then Form依赖项表.刷新前置表项()
             校准RichTextBox1的尺寸和位置()
         Else
-            Dim x As New SingleSelectionDialog("CORE ERROR", {获取动态多语言文本("data/DynamicText/OK")}, a.ErrorString)
+            Dim x As New SingleSelectionDialog("CORE ERROR", {获取动态多语言文本("data/DynamicText/OK")}, a.ErrorString, 100, 400)
             x.ShowDialog(Form1)
         End If
 
@@ -465,26 +469,32 @@ Module 管理模组
     Public Sub 加载预览图(ByVal 文件 As String)
         Select Case IO.Path.GetExtension(文件).ToLower
             Case ".jpg", ".jpeg", ".png", ".bmp"
-                Dim fs As New IO.FileStream(文件, IO.FileMode.Open, IO.FileAccess.Read)
-                Form1.Panel预览图.Visible = True
-                Form1.PictureBox1.Image = Image.FromStream(fs)
-                fs.Close()
+                Using fs As New IO.FileStream(文件, IO.FileMode.Open, IO.FileAccess.Read)
+                    Form1.Panel预览图.Visible = True
+                    Form1.PictureBox1.Image = Image.FromStream(fs)
+                    fs.Close()
+                End Using
             Case ".gif"
-                Dim img As Image = Image.FromFile(文件)
-                Dim mstr As New IO.MemoryStream()
-                img.Save(mstr, Imaging.ImageFormat.Gif)
-                Form1.Panel预览图.Visible = True
-                Form1.PictureBox1.Image = Image.FromStream(mstr)
-                img.Dispose()
+                Using img As Image = Image.FromFile(文件)
+                    Dim mstr As New IO.MemoryStream()
+                    img.Save(mstr, Imaging.ImageFormat.Gif)
+                    Form1.Panel预览图.Visible = True
+                    Form1.PictureBox1.Image = Image.FromStream(mstr)
+                    img.Dispose()
+                End Using
             Case ".webp"
                 'Imazen.WebP.Extern.LoadLibrary.LoadByPath(Application.StartupPath & "\libwebp.dll", False)
-                Dim bytes As Byte() = IO.File.ReadAllBytes(文件)
-                Dim newdec As New Imazen.WebP.SimpleDecoder()
-                Dim img As Bitmap = newdec.DecodeFromBytes(bytes, bytes.Length)
-                Form1.Panel预览图.Visible = True
-                Form1.PictureBox1.Image = img
-                'Application.DoEvents()
-                'img.Dispose()
+                Try
+                    Dim bytes As Byte() = IO.File.ReadAllBytes(文件)
+                    Using img As Bitmap = New Imazen.WebP.SimpleDecoder().DecodeFromBytes(bytes, bytes.Length)
+                        Form1.Panel预览图.Visible = True
+                        Form1.PictureBox1.Image = img
+                        Application.DoEvents()
+                    End Using
+                Catch ex As Exception
+                    Form1.Panel预览图.Visible = False
+                    Form1.PictureBox1.Image = Nothing
+                End Try
         End Select
         Form1.ToolTip1.SetToolTip(Form1.PictureBox1, ST1.全局状态_当前正在显示的预览图索引 + 1 & "/" & 当前项信息_预览图文件表.Count)
     End Sub

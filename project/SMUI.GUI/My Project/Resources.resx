@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="About" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\About.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
   <data name="English" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\English.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
@@ -181,28 +184,52 @@
   <data name="橙" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\橙.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="橙_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\橙-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="爱发电" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\爱发电.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="白" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\白.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="白_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\白-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="紫" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\紫.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="紫_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\紫-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="红" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\红.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="红_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\红-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="绿" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\绿.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="绿_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\绿-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="蓝" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\蓝.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="蓝_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\蓝-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="青" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\青.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="青_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\青-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="黄" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\黄.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="黄_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\黄-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

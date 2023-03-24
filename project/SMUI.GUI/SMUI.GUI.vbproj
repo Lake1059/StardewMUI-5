@@ -92,10 +92,10 @@
     <AssemblyOriginatorKeyFile>SMUI.GUI_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>0E1157DD35D96BA89C57DFF3767713D1235C9F18</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>3FF7EE53AAF3CD7C477F41CC19CE3CC7C4EE8560</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SMUI.GUI_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>SMUI.GUI_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestTimestampUrl>
@@ -206,6 +206,12 @@
       <DependentUpon>Form全局检查模组安装情况.vb</DependentUpon>
     </Compile>
     <Compile Include="Form全局检查模组安装情况.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form分发.Designer.vb">
+      <DependentUpon>Form分发.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form分发.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form存储管理.Designer.vb">
@@ -338,6 +344,9 @@
     <EmbeddedResource Include="Form全局检查模组安装情况.resx">
       <DependentUpon>Form全局检查模组安装情况.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form分发.resx">
+      <DependentUpon>Form分发.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form存储管理.resx">
       <DependentUpon>Form存储管理.vb</DependentUpon>
     </EmbeddedResource>
@@ -400,6 +409,7 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="SMUI.GUI_1_TemporaryKey.pfx" />
     <None Include="SMUI.GUI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -442,10 +452,28 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="open-box.ico" />
     <Content Include="Parsnip.ico" />
+    <None Include="Resource\About.txt" />
+    <None Include="Resource\紫-1.png" />
+    <None Include="Resource\青-1.png" />
+    <None Include="Resource\绿-1.png" />
+    <None Include="Resource\蓝-1.png" />
+    <None Include="Resource\黄-1.png" />
+    <None Include="Resource\红-1.png" />
+    <None Include="Resource\橙-1.png" />
+    <None Include="Resource\白-1.png" />
     <None Include="Resource\EXEICO_2.png" />
     <None Include="Resource\EXEICO_1.png" />
   </ItemGroup>

@@ -162,7 +162,6 @@ Partial Class Form1
         Me.斜体ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.下划线ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.删除线ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.设置字体ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.查看选中分类的属性ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.激活拖拽ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -184,6 +183,7 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label角落预览图菜单 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.设置字体ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DCM10 = New DarkUI.Controls.DarkContextMenu()
         Me.全选ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.反选ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -450,7 +450,6 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.LabelRunSMAPI)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1184, 62)
@@ -461,7 +460,6 @@ Partial Class Form1
         Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoEllipsis = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label7.Location = New System.Drawing.Point(814, 11)
         Me.Label7.Margin = New System.Windows.Forms.Padding(0)
         Me.Label7.Name = "Label7"
@@ -477,7 +475,6 @@ Partial Class Form1
         Me.Label内容中心.AutoEllipsis = True
         Me.Label内容中心.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label内容中心.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label内容中心.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label内容中心.ForeColor = System.Drawing.SystemColors.Control
         Me.Label内容中心.Location = New System.Drawing.Point(1024, 10)
         Me.Label内容中心.Margin = New System.Windows.Forms.Padding(10)
@@ -494,7 +491,6 @@ Partial Class Form1
         Me.Label设置选项.AutoEllipsis = True
         Me.Label设置选项.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label设置选项.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label设置选项.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label设置选项.ForeColor = System.Drawing.SystemColors.Control
         Me.Label设置选项.Location = New System.Drawing.Point(1104, 10)
         Me.Label设置选项.Margin = New System.Windows.Forms.Padding(0, 10, 10, 10)
@@ -509,7 +505,6 @@ Partial Class Form1
         Me.Panel主选项卡.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Panel主选项卡.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Panel主选项卡.Controls.Add(Me.Panel3)
-        Me.Panel主选项卡.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel主选项卡.Location = New System.Drawing.Point(450, 31)
         Me.Panel主选项卡.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel主选项卡.Name = "Panel主选项卡"
@@ -524,7 +519,6 @@ Partial Class Form1
         Me.Panel3.Controls.Add(Me.Label管理模组)
         Me.Panel3.Controls.Add(Me.Label起始页面)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel3.Location = New System.Drawing.Point(1, 1)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(300, 30)
@@ -535,7 +529,6 @@ Partial Class Form1
         Me.Label配置队列.AutoEllipsis = True
         Me.Label配置队列.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.Label配置队列.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label配置队列.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label配置队列.Location = New System.Drawing.Point(200, 0)
         Me.Label配置队列.Margin = New System.Windows.Forms.Padding(0)
         Me.Label配置队列.Name = "Label配置队列"
@@ -549,7 +542,6 @@ Partial Class Form1
         Me.Label管理模组.AutoEllipsis = True
         Me.Label管理模组.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.Label管理模组.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label管理模组.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label管理模组.Location = New System.Drawing.Point(100, 0)
         Me.Label管理模组.Margin = New System.Windows.Forms.Padding(0)
         Me.Label管理模组.Name = "Label管理模组"
@@ -563,7 +555,6 @@ Partial Class Form1
         Me.Label起始页面.AutoEllipsis = True
         Me.Label起始页面.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.Label起始页面.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label起始页面.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label起始页面.Location = New System.Drawing.Point(0, 0)
         Me.Label起始页面.Margin = New System.Windows.Forms.Padding(0)
         Me.Label起始页面.Name = "Label起始页面"
@@ -599,7 +590,6 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoEllipsis = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label5.Location = New System.Drawing.Point(170, 11)
         Me.Label5.Margin = New System.Windows.Forms.Padding(0)
         Me.Label5.Name = "Label5"
@@ -644,7 +634,6 @@ Partial Class Form1
         Me.Panel起始页面.Controls.Add(Me.Label统计数据)
         Me.Panel起始页面.Controls.Add(Me.Label新闻公告)
         Me.Panel起始页面.Controls.Add(Me.Label模组列表)
-        Me.Panel起始页面.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel起始页面.Location = New System.Drawing.Point(37, 126)
         Me.Panel起始页面.Name = "Panel起始页面"
         Me.Panel起始页面.Size = New System.Drawing.Size(911, 492)
@@ -655,7 +644,6 @@ Partial Class Form1
         '
         Me.Label插件和扩展内容.AutoEllipsis = True
         Me.Label插件和扩展内容.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label插件和扩展内容.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label插件和扩展内容.Location = New System.Drawing.Point(10, 218)
         Me.Label插件和扩展内容.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label插件和扩展内容.Name = "Label插件和扩展内容"
@@ -669,7 +657,6 @@ Partial Class Form1
         Me.Label立即检查更新.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label立即检查更新.AutoEllipsis = True
         Me.Label立即检查更新.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label立即检查更新.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label立即检查更新.Location = New System.Drawing.Point(10, 439)
         Me.Label立即检查更新.Margin = New System.Windows.Forms.Padding(10, 0, 10, 10)
         Me.Label立即检查更新.Name = "Label立即检查更新"
@@ -706,7 +693,6 @@ Partial Class Form1
         Me.Label查看更新历史.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label查看更新历史.AutoEllipsis = True
         Me.Label查看更新历史.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label查看更新历史.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label查看更新历史.Location = New System.Drawing.Point(749, 439)
         Me.Label查看更新历史.Margin = New System.Windows.Forms.Padding(10, 0, 10, 10)
         Me.Label查看更新历史.Name = "Label查看更新历史"
@@ -720,7 +706,6 @@ Partial Class Form1
         Me.Label参与翻译SMUI.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label参与翻译SMUI.AutoEllipsis = True
         Me.Label参与翻译SMUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label参与翻译SMUI.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label参与翻译SMUI.Location = New System.Drawing.Point(10, 387)
         Me.Label参与翻译SMUI.Margin = New System.Windows.Forms.Padding(10, 0, 10, 10)
         Me.Label参与翻译SMUI.Name = "Label参与翻译SMUI"
@@ -733,7 +718,6 @@ Partial Class Form1
         '
         Me.Label模组更新检查器.AutoEllipsis = True
         Me.Label模组更新检查器.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label模组更新检查器.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label模组更新检查器.Location = New System.Drawing.Point(10, 166)
         Me.Label模组更新检查器.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label模组更新检查器.Name = "Label模组更新检查器"
@@ -747,7 +731,6 @@ Partial Class Form1
         Me.Label关于和许可协议.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label关于和许可协议.AutoEllipsis = True
         Me.Label关于和许可协议.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label关于和许可协议.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label关于和许可协议.Location = New System.Drawing.Point(749, 387)
         Me.Label关于和许可协议.Margin = New System.Windows.Forms.Padding(10, 0, 10, 10)
         Me.Label关于和许可协议.Name = "Label关于和许可协议"
@@ -859,7 +842,6 @@ Partial Class Form1
         '
         Me.Label存档编辑器.AutoEllipsis = True
         Me.Label存档编辑器.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label存档编辑器.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label存档编辑器.Location = New System.Drawing.Point(10, 114)
         Me.Label存档编辑器.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label存档编辑器.Name = "Label存档编辑器"
@@ -872,7 +854,6 @@ Partial Class Form1
         '
         Me.Label传统管理方式.AutoEllipsis = True
         Me.Label传统管理方式.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label传统管理方式.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label传统管理方式.Location = New System.Drawing.Point(10, 62)
         Me.Label传统管理方式.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label传统管理方式.Name = "Label传统管理方式"
@@ -886,7 +867,6 @@ Partial Class Form1
         Me.Label创作者自由面板.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label创作者自由面板.AutoEllipsis = True
         Me.Label创作者自由面板.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label创作者自由面板.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label创作者自由面板.Location = New System.Drawing.Point(749, 218)
         Me.Label创作者自由面板.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label创作者自由面板.Name = "Label创作者自由面板"
@@ -899,7 +879,6 @@ Partial Class Form1
         '
         Me.Label检查模组安装情况.AutoEllipsis = True
         Me.Label检查模组安装情况.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label检查模组安装情况.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label检查模组安装情况.Location = New System.Drawing.Point(10, 10)
         Me.Label检查模组安装情况.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label检查模组安装情况.Name = "Label检查模组安装情况"
@@ -913,7 +892,6 @@ Partial Class Form1
         Me.Label主题内容.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label主题内容.AutoEllipsis = True
         Me.Label主题内容.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label主题内容.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label主题内容.Location = New System.Drawing.Point(749, 166)
         Me.Label主题内容.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label主题内容.Name = "Label主题内容"
@@ -927,7 +905,6 @@ Partial Class Form1
         Me.Label统计数据.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label统计数据.AutoEllipsis = True
         Me.Label统计数据.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label统计数据.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label统计数据.Location = New System.Drawing.Point(749, 114)
         Me.Label统计数据.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label统计数据.Name = "Label统计数据"
@@ -941,7 +918,6 @@ Partial Class Form1
         Me.Label新闻公告.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label新闻公告.AutoEllipsis = True
         Me.Label新闻公告.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label新闻公告.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label新闻公告.Location = New System.Drawing.Point(749, 10)
         Me.Label新闻公告.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label新闻公告.Name = "Label新闻公告"
@@ -956,7 +932,6 @@ Partial Class Form1
         Me.Label模组列表.AutoEllipsis = True
         Me.Label模组列表.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label模组列表.ContextMenuStrip = Me.DCM模组列表
-        Me.Label模组列表.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label模组列表.Location = New System.Drawing.Point(749, 62)
         Me.Label模组列表.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
         Me.Label模组列表.Name = "Label模组列表"
@@ -1033,7 +1008,6 @@ Partial Class Form1
         Me.Panel管理模组.Controls.Add(Me.Panel10)
         Me.Panel管理模组.Controls.Add(Me.Panel9)
         Me.Panel管理模组.Controls.Add(Me.Panel2)
-        Me.Panel管理模组.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel管理模组.Location = New System.Drawing.Point(60, 105)
         Me.Panel管理模组.Name = "Panel管理模组"
         Me.Panel管理模组.Size = New System.Drawing.Size(955, 544)
@@ -1328,7 +1302,6 @@ Partial Class Form1
         Me.Panel12.Controls.Add(Me.Label调试)
         Me.Panel12.Controls.Add(Me.Label10)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel12.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel12.Location = New System.Drawing.Point(0, 0)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel12.Name = "Panel12"
@@ -1443,7 +1416,6 @@ Partial Class Form1
         Me.Panel10.Controls.Add(Me.Panel预览图)
         Me.Panel10.Controls.Add(Me.Panel13)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel10.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel10.Location = New System.Drawing.Point(703, 0)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(250, 511)
@@ -1581,7 +1553,6 @@ Partial Class Form1
         Me.Panel15.Controls.Add(Me.Label预览图菜单)
         Me.Panel15.Controls.Add(Me.Label36)
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel15.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel15.Location = New System.Drawing.Point(0, 1)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(250, 31)
@@ -1640,7 +1611,6 @@ Partial Class Form1
         Me.Panel13.Controls.Add(Me.Label描述类型)
         Me.Panel13.Controls.Add(Me.Label11)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel13.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel13.Location = New System.Drawing.Point(0, 0)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(250, 31)
@@ -1697,7 +1667,6 @@ Partial Class Form1
         Me.Panel9.Controls.Add(Me.Label14)
         Me.Panel9.Controls.Add(Me.Panel5)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel9.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(200, 511)
@@ -1888,7 +1857,7 @@ Partial Class Form1
         Me.DCM4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.DCM4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.标准字体ToolStripMenuItem, Me.ToolStripSeparator7, Me.粗体ToolStripMenuItem, Me.斜体ToolStripMenuItem, Me.下划线ToolStripMenuItem, Me.删除线ToolStripMenuItem})
         Me.DCM4.Name = "DarkContextMenu1"
-        Me.DCM4.OwnerItem = Me.设置字体ToolStripMenuItem
+        Me.DCM4.OwnerItem = Me.设置字体ToolStripMenuItem1
         Me.DCM4.ShowImageMargin = False
         Me.DCM4.ShowItemToolTips = False
         Me.DCM4.Size = New System.Drawing.Size(100, 121)
@@ -1944,15 +1913,6 @@ Partial Class Form1
         Me.删除线ToolStripMenuItem.Name = "删除线ToolStripMenuItem"
         Me.删除线ToolStripMenuItem.Size = New System.Drawing.Size(99, 22)
         Me.删除线ToolStripMenuItem.Text = "删除线"
-        '
-        '设置字体ToolStripMenuItem1
-        '
-        Me.设置字体ToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.设置字体ToolStripMenuItem1.DropDown = Me.DCM4
-        Me.设置字体ToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.设置字体ToolStripMenuItem1.Name = "设置字体ToolStripMenuItem1"
-        Me.设置字体ToolStripMenuItem1.Size = New System.Drawing.Size(147, 22)
-        Me.设置字体ToolStripMenuItem1.Text = "设置字体"
         '
         '查看选中分类的属性ToolStripMenuItem
         '
@@ -2011,7 +1971,6 @@ Partial Class Form1
         Me.Panel5.Controls.Add(Me.Label子库分类菜单)
         Me.Panel5.Controls.Add(Me.Label9)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(200, 31)
@@ -2066,7 +2025,6 @@ Partial Class Form1
         Me.Panel2.Controls.Add(Me.Label角落预览图菜单)
         Me.Panel2.Controls.Add(Me.Label13)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel2.Location = New System.Drawing.Point(0, 511)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(953, 31)
@@ -2184,6 +2142,15 @@ Partial Class Form1
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(953, 1)
         Me.Label13.TabIndex = 8
+        '
+        '设置字体ToolStripMenuItem1
+        '
+        Me.设置字体ToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.设置字体ToolStripMenuItem1.DropDown = Me.DCM4
+        Me.设置字体ToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.设置字体ToolStripMenuItem1.Name = "设置字体ToolStripMenuItem1"
+        Me.设置字体ToolStripMenuItem1.Size = New System.Drawing.Size(147, 22)
+        Me.设置字体ToolStripMenuItem1.Text = "设置字体"
         '
         'DCM10
         '
@@ -2762,7 +2729,6 @@ Partial Class Form1
         Me.Panel配置队列.Controls.Add(Me.Label51)
         Me.Panel配置队列.Controls.Add(Me.Panel配置队列上方面板)
         Me.Panel配置队列.Controls.Add(Me.Panel配置队列顶部面板)
-        Me.Panel配置队列.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel配置队列.Location = New System.Drawing.Point(98, 78)
         Me.Panel配置队列.Name = "Panel配置队列"
         Me.Panel配置队列.Size = New System.Drawing.Size(968, 526)
@@ -2830,7 +2796,6 @@ Partial Class Form1
         Me.Panel25.Controls.Add(Me.Label64)
         Me.Panel25.Controls.Add(Me.Label65)
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel25.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel25.Location = New System.Drawing.Point(0, 0)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(465, 31)
@@ -2943,7 +2908,6 @@ Partial Class Form1
         Me.Panel24.Controls.Add(Me.Label61)
         Me.Panel24.Controls.Add(Me.Label62)
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel24.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel24.Location = New System.Drawing.Point(0, 0)
         Me.Panel24.Name = "Panel24"
         Me.Panel24.Size = New System.Drawing.Size(500, 31)
@@ -3200,7 +3164,6 @@ Partial Class Form1
         Me.Panel23.Controls.Add(Me.Label58)
         Me.Panel23.Controls.Add(Me.Label60)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel23.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel23.Location = New System.Drawing.Point(0, 0)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(465, 31)
@@ -3334,7 +3297,6 @@ Partial Class Form1
         Me.Panel22.Controls.Add(Me.Label56)
         Me.Panel22.Controls.Add(Me.Label59)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel22.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(500, 31)
@@ -3806,7 +3768,6 @@ Partial Class Form1
         Me.DCM应用程序目录集.ImageScalingSize = New System.Drawing.Size(23, 23)
         Me.DCM应用程序目录集.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.软件安装目录ToolStripMenuItem, Me.用户配置数据文件夹ToolStripMenuItem, Me.插件目录ToolStripMenuItem, Me.下载更新目录ToolStripMenuItem, Me.谷歌浏览器缓存目录ToolStripMenuItem})
         Me.DCM应用程序目录集.Name = "DCM应用程序目录集"
-        Me.DCM应用程序目录集.OwnerItem = Me.应用程序目录集ToolStripMenuItem
         Me.DCM应用程序目录集.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.DCM应用程序目录集.Size = New System.Drawing.Size(192, 154)
         '
@@ -3825,7 +3786,7 @@ Partial Class Form1
         Me.用户配置数据文件夹ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.用户配置数据文件夹ToolStripMenuItem.Name = "用户配置数据文件夹ToolStripMenuItem"
         Me.用户配置数据文件夹ToolStripMenuItem.Size = New System.Drawing.Size(191, 30)
-        Me.用户配置数据文件夹ToolStripMenuItem.Text = "用户配置数据文件夹"
+        Me.用户配置数据文件夹ToolStripMenuItem.Text = "用户数据文件夹"
         '
         '插件目录ToolStripMenuItem
         '
@@ -3977,12 +3938,12 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1184, 666)
         Me.Controls.Add(Me.Panel管理模组)
-        Me.Controls.Add(Me.Panel起始页面)
         Me.Controls.Add(Me.Panel配置队列)
+        Me.Controls.Add(Me.Panel起始页面)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ButtonF)
         Me.DoubleBuffered = True
-        Me.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.ForeColor = System.Drawing.SystemColors.Control
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

@@ -29,7 +29,6 @@ Partial Class Form调试
         '
         Me.RichTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Left
         Me.RichTextBox1.EnableAutoDragDrop = True
         Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.RichTextBox1.ForeColor = System.Drawing.SystemColors.Control
@@ -38,7 +37,7 @@ Partial Class Form调试
         Me.RichTextBox1.ReadOnly = True
         Me.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical
         Me.RichTextBox1.ShowSelectionMargin = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(748, 460)
+        Me.RichTextBox1.Size = New System.Drawing.Size(748, 457)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = "Press Delete key to clear all text."
         '
