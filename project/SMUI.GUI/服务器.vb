@@ -244,8 +244,6 @@ jx1:
         Dim 新闻_类型 As String() = {}
         Dim 新闻_内容 As String() = {}
 
-
-
         AddHandler 服务器获取_新闻.DoWork,
             Sub(sender As Object, e As System.ComponentModel.DoWorkEventArgs)
                 Dim a As New Lake1059.GitAPI.TextFileString
@@ -295,7 +293,7 @@ jx1:
                             .AutoSize = False,
                             .Height = 40 * ST1.全局DPI比例, '35
                             .AutoEllipsis = True,
-                            .Font = New Font("Microsoft YaHei UI", 11),
+                            .Font = New Font(Form1.Font.Name, 11),
                             .ActiveLinkColor = ColorTranslator.FromWin32(RGB(238, 130, 238)),
                             .LinkColor = ColorTranslator.FromWin32(RGB(0, 191, 255)),
                             .LinkBehavior = LinkBehavior.HoverUnderline,
@@ -310,7 +308,7 @@ jx1:
                             .AutoSize = False,
                             .AutoEllipsis = True,
                             .Height = 25 * ST1.全局DPI比例,
-                            .Font = New Font("Microsoft YaHei UI", 9),
+                            .Font = New Font(Form1.Font.Name, 9),
                             .ForeColor = Color.Silver,
                             .BackColor = Color.Transparent
                          }

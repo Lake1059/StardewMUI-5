@@ -333,9 +333,9 @@
 		<A39 chs="自定义应用程序图标">Custom App Icon.</A39>
 		<A40 chs="桌面快捷方式">Desktop Shortcut</A40>
 		<A41 chs="自动选择首个 NEXUS 下载服务器（由 NEXUS 账户设置决定）">Automatically select the first NEXUS download server</A41>
-		<A42 chs="主窗口宽度（像素）"></A42>
-		<A43 chs="主窗口高度（像素）"></A43>
-		<A44 chs="全局项高度增益（0-20）"></A44>
+		<A42 chs="主窗口宽度（像素）">Main window width</A42>
+		<A43 chs="主窗口高度（像素）">Main window height</A43>
+		<A44 chs="全局项高度增益（0-20）">Item height adds</A44>
 		<A45 chs="全局服务器访问超时毫秒（3000-10000）"></A45>
 		<A46 chs="">To change the icon, place app.png file under user data folder./crlf//crlf/If you choose to create a shortcut on the desktop, the program will generate an ico.ico file./crlf/Please do not delete the generated files while the shortcut exists.</A46>
 		

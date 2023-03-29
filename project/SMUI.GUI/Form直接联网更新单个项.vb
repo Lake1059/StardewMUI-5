@@ -29,7 +29,7 @@ Public Class Form直接联网更新单个项
         Me.Panel2.Dock = DockStyle.Fill : Me.Panel3.Dock = DockStyle.Fill
         Me.Panel2.Visible = True
         Me.Label2.Width = 0
-
+        Me.Font = Form1.Font
     End Sub
 
     Private Sub Form直接联网更新单个项_Shown(sender As Object, e As EventArgs) Handles Me.Shown

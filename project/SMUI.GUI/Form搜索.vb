@@ -66,7 +66,7 @@ Public Class Form搜索
 
     End Sub
 
-    Dim a As New DarkUI.Controls.DarkContextMenu With {
+    ReadOnly a As New DarkUI.Controls.DarkContextMenu With {
         .ShowImageMargin = False,
         .DropShadowEnabled = False,
         .ShowCheckMargin = False
@@ -89,7 +89,7 @@ Public Class Form搜索
     End Sub
 
     Private Sub Form搜索_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.Font = Form1.Font
     End Sub
 
     Private Sub Form搜索_Shown(sender As Object, e As EventArgs) Handles Me.Shown

@@ -1,4 +1,3 @@
-![GitHub all releases](https://img.shields.io/github/downloads/Lake1059/StardewMUI-5/total?color=blue&label=GitHub%20发行版全部下载次数&style=flat-square)
 ![GitHub release (latest by date and asset including pre-releases)](https://img.shields.io/github/downloads-pre/Lake1059/StardewMUI-5/latest/StardewMUI.5.Installer.exe?color=blue&label=最新版本下载数量&style=flat-square)
 
 ## StardewMUI 5

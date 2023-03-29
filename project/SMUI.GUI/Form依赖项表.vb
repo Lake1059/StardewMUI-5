@@ -24,6 +24,9 @@ Public Class Form依赖项表
             Me.复制整个列表ToolStripMenuItem.Text = 获取动态多语言文本("data/DependenciesListWindow/A5")
         End If
         Me.ListView1.ForeColor = Color1.白色
+        Me.Font = Form1.Font
+        Me.DarkContextMenu1.Font = Form1.Font
+        Me.DarkContextMenu2.Font = Form1.Font
     End Sub
 
     Private Sub Form依赖项表_Shown(sender As Object, e As EventArgs) Handles Me.Shown

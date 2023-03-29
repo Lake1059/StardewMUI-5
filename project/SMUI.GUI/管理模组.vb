@@ -3,6 +3,9 @@ Imports SMUI.Windows.PakManager
 Imports SMUI.Windows.Core
 Imports DarkUI.Controls
 Imports SMUI.GUI.Class1
+Imports System.Drawing.Imaging
+Imports Imazen.WebP.Extern
+Imports System.IO
 
 Module 管理模组
 
@@ -114,21 +117,21 @@ Module 管理模组
             If My.Computer.FileSystem.FileExists(b1 & "\Font") = True Then
                 Select Case My.Computer.FileSystem.ReadAllText(b1 & "\Font")
                     Case "BD"
-                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = New Font(My.Settings.普通字体.Name, 9, FontStyle.Bold)
+                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = New Font(Form1.Font.Name, 9, FontStyle.Bold)
                     Case "LC"
-                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = New Font(My.Settings.普通字体.Name, 9, FontStyle.Italic)
+                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = New Font(Form1.Font.Name, 9, FontStyle.Italic)
                     Case "UL"
-                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = New Font(My.Settings.普通字体.Name, 9, FontStyle.Underline)
+                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = New Font(Form1.Font.Name, 9, FontStyle.Underline)
                     Case "SO"
-                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = New Font(My.Settings.普通字体.Name, 9, FontStyle.Strikeout)
-                    Case "BD+UL"
-                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = Font1.粗体下划线
-                    Case "BD+SO"
-                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = Font1.粗体删除线
-                    Case "LC+UL"
-                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = Font1.斜体下划线
-                    Case "LC+SO"
-                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = Font1.斜体删除线
+                        Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = New Font(Form1.Font.Name, 9, FontStyle.Strikeout)
+                        'Case "BD+UL"
+                        '    Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = Font1.粗体下划线
+                        'Case "BD+SO"
+                        '    Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = Font1.粗体删除线
+                        'Case "LC+UL"
+                        '    Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = Font1.斜体下划线
+                        'Case "LC+SO"
+                        '    Form1.ListView1.Items.Item(Form1.ListView1.Items.Count - 1).Font = Font1.斜体删除线
                 End Select
             End If
         Next
@@ -225,21 +228,21 @@ Module 管理模组
                 If My.Computer.FileSystem.FileExists(itempath & "\Font") = True Then
                     Select Case My.Computer.FileSystem.ReadAllText(itempath & "\Font")
                         Case "BD"
-                            Form1.ListView2.Items.Item(i).Font = New Font(My.Settings.普通字体.Name, 9, FontStyle.Bold)
+                            Form1.ListView2.Items.Item(i).Font = New Font(Form1.Font.Name, 9, FontStyle.Bold)
                         Case "LC"
-                            Form1.ListView2.Items.Item(i).Font = New Font(My.Settings.普通字体.Name, 9, FontStyle.Italic)
+                            Form1.ListView2.Items.Item(i).Font = New Font(Form1.Font.Name, 9, FontStyle.Italic)
                         Case "UL"
-                            Form1.ListView2.Items.Item(i).Font = New Font(My.Settings.普通字体.Name, 9, FontStyle.Underline)
+                            Form1.ListView2.Items.Item(i).Font = New Font(Form1.Font.Name, 9, FontStyle.Underline)
                         Case "SO"
-                            Form1.ListView2.Items.Item(i).Font = New Font(My.Settings.普通字体.Name, 9, FontStyle.Strikeout)
-                        Case "BD+UL"
-                            Form1.ListView2.Items.Item(i).Font = Font1.粗体下划线
-                        Case "BD+SO"
-                            Form1.ListView2.Items.Item(i).Font = Font1.粗体删除线
-                        Case "LC+UL"
-                            Form1.ListView2.Items.Item(i).Font = Font1.斜体下划线
-                        Case "LC+SO"
-                            Form1.ListView2.Items.Item(i).Font = Font1.斜体删除线
+                            Form1.ListView2.Items.Item(i).Font = New Font(Form1.Font.Name, 9, FontStyle.Strikeout)
+                            'Case "BD+UL"
+                            '    Form1.ListView2.Items.Item(i).Font = Font1.粗体下划线
+                            'Case "BD+SO"
+                            '    Form1.ListView2.Items.Item(i).Font = Font1.粗体删除线
+                            'Case "LC+UL"
+                            '    Form1.ListView2.Items.Item(i).Font = Font1.斜体下划线
+                            'Case "LC+SO"
+                            '    Form1.ListView2.Items.Item(i).Font = Font1.斜体删除线
                     End Select
                 End If
 
@@ -487,9 +490,31 @@ Module 管理模组
                 Try
                     Dim bytes As Byte() = IO.File.ReadAllBytes(文件)
                     Using img As Bitmap = New Imazen.WebP.SimpleDecoder().DecodeFromBytes(bytes, bytes.Length)
+                        Dim s As Integer = img.GetFrameCount(FrameDimension.Page)
+                        Dim mstr As New IO.MemoryStream()
+                        If s = 1 Then
+                            img.Save(mstr, Imaging.ImageFormat.Png)
+                            Dim newImagePath As String = IO.Path.GetDirectoryName(文件) & "\" & IO.Path.GetFileNameWithoutExtension(文件) & ".png"
+                            Using fs As New FileStream(newImagePath, FileMode.Create)
+                                mstr.WriteTo(fs)
+                            End Using
+                            If My.Computer.FileSystem.FileExists(文件) = True Then My.Computer.FileSystem.DeleteFile(文件)
+                            当前项信息_预览图文件表(ST1.全局状态_当前正在显示的预览图索引) = newImagePath
+                        ElseIf s > 1 Then
+                            img.Save(mstr, Imaging.ImageFormat.Gif)
+                            Dim newImagePath As String = IO.Path.GetDirectoryName(文件) & "\" & IO.Path.GetFileNameWithoutExtension(文件) & ".gif"
+                            Using fs As New FileStream(newImagePath, FileMode.Create)
+                                mstr.WriteTo(fs)
+                            End Using
+                            If My.Computer.FileSystem.FileExists(文件) = True Then My.Computer.FileSystem.DeleteFile(文件)
+                            当前项信息_预览图文件表(ST1.全局状态_当前正在显示的预览图索引) = newImagePath
+                        Else
+                            Exit Try
+                        End If
                         Form1.Panel预览图.Visible = True
-                        Form1.PictureBox1.Image = img
+                        Form1.PictureBox1.Image = Image.FromStream(mstr)
                         Application.DoEvents()
+                        mstr.Dispose()
                     End Using
                 Catch ex As Exception
                     Form1.Panel预览图.Visible = False
@@ -498,7 +523,6 @@ Module 管理模组
         End Select
         Form1.ToolTip1.SetToolTip(Form1.PictureBox1, ST1.全局状态_当前正在显示的预览图索引 + 1 & "/" & 当前项信息_预览图文件表.Count)
     End Sub
-
 
 
     Public Function 生成更新地址表菜单() As DarkContextMenu
@@ -511,6 +535,7 @@ Module 管理模组
         a.DropShadowEnabled = False
         a.ShowCheckMargin = False
         a.BackColor = SystemColors.Control
+        a.Font = Form1.Font
         For i = 0 To 当前项信息_N网ID列表.Count - 1
             Dim x As New ToolStripMenuItem With {
                 .Image = My.Resources.NEXUS,
@@ -611,6 +636,7 @@ jx1:
         a.DropShadowEnabled = False
         a.ShowCheckMargin = False
         a.BackColor = SystemColors.Control
+        a.Font = Form1.Font
         For i = 0 To 当前项信息_UniqueID列表.Count - 1
             Dim x As New ToolStripMenuItem With {
                 .Image = My.Resources.SMAPI,
@@ -636,6 +662,7 @@ jx1:
         a.DropShadowEnabled = False
         a.ShowCheckMargin = False
         a.BackColor = SystemColors.Control
+        a.Font = Form1.Font
         For i = 0 To 当前项信息_作者列表.Count - 1
             Dim x As New ToolStripMenuItem With {
                 .Image = My.Resources.NEXUS,

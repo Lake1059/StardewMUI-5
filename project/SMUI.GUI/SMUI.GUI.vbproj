@@ -95,7 +95,7 @@
     <ManifestCertificateThumbprint>3FF7EE53AAF3CD7C477F41CC19CE3CC7C4EE8560</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SMUI.GUI_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>SMUI.GUI_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestTimestampUrl>
@@ -409,7 +409,6 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="SMUI.GUI_1_TemporaryKey.pfx" />
     <None Include="SMUI.GUI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
