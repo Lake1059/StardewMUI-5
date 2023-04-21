@@ -24,6 +24,9 @@ https://lake1059.lanzouv.com/b0daefzoh 密码:smui（如果有）
 接入 SMUI 管理模式的第三方产品必须获得我的商业授权才可进行盈利行为  
 详细许可信息、版权声明、授权说明，请查看 [Copyright+License.md](https://github.com/Lake1059/StardewMUI-5/blob/main/Copyright+License.md)
 
+**For international users, I'm selling DLC on Payhip, payment can be made with paypal, debit or credit card.**
+**https://payhip.com/1059Studio**
+
 ## 维基
 请在维基上获取本产品的所有官方教程和技术文档，所有注册用户均可修改
 
