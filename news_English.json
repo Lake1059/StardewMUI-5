@@ -2,33 +2,21 @@
     "Object": [
         {
             "Title": "Join our KOOK server",
-            "Subtitle": "We have decided to shut down Discord server.",
+            "Subtitle": "KOOK is more suitable for my needs, so I did not choose Discord.",
             "Type": "link",
             "Body": "https://kook.top/yW15HU"
         },
         {
             "Title": "Simplified Chinese Wiki always up to date.",
-            "Subtitle": "The default language of this software is Simplified Chinese.",
+            "Subtitle": "You can use machine translation. I don't have much time to update the English wiki.",
             "Type": "link",
             "Body": "https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki"
         },
         {
-            "Title": "The English wiki is still under writing and may take a while.",
-            "Subtitle": "https://stardewmui.fandom.com/wiki/StardewMUI_Wiki",
+            "Title": "Buy DLC content in My Shop",
+            "Subtitle": "Access to StardewMUI 5 DLC Shop",
             "Type": "link",
-            "Body": "https://stardewmui.fandom.com/wiki/StardewMUI_Wiki"
-        },
-        {
-            "Title": "If you find this helpful, consider supporting me on ko-fi",
-            "Subtitle": "Buy a Coffee for Lake1059",
-            "Type": "link",
-            "Body": "https://ko-fi.com/lake1059"
-        },
-        {
-            "Title": "If you want, please share it with your friends.",
-            "Subtitle": "SMU cannot rely on NEXUS popularity data to continue attracting others.",
-            "Type": "msg",
-            "Body": "Because the software has an automatic self-updating function, most users only need to download it once on NEXUS. When leaving from the latest popular list of NEXUS, it will no longer be able to rely on downloads and any data to attract others, and will need you in the future. pass on to others."
+            "Body": "https://payhip.com/1059Studio"
         },
     ]
 }

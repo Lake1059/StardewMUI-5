@@ -1,16 +1,10 @@
 {
     "Object": [
         {
-            "Title": "查阅中文维基",
-            "Subtitle": "没有维基是研究不出来的，静下心来慢慢研究，急是没用的",
-            "Type": "link",
-            "Body": "https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki"
-        },
-        {
-            "Title": "安装 CEF 组件以使用内置浏览器功能",
-            "Subtitle": "非N网会员使用在线更新模组功能需要调用 Chromium Embedded Framework",
-            "Type": "link",
-            "Body": "https://stardewmui.fandom.com/zh/wiki/%E5%AE%89%E8%A3%85_StardewMUI_Chromium_Embedded_Framework"
+            "Title": "若要查看中文在线内容，请将在线内容服务器设置为 Gitee",
+            "Subtitle": "我暂时没有心思处理 Github 上的中文内容",
+            "Type": "msg",
+            "Body": "别看了，快去"
         },
     ]
 }

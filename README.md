@@ -1,5 +1,7 @@
 ![GitHub release (latest by date and asset including pre-releases)](https://img.shields.io/github/downloads-pre/Lake1059/StardewMUI-5/latest/StardewMUI.5.Installer.exe?color=blue&label=最新版本下载数量&style=flat-square)
 
+简体中文 | [English](https://github.com/Lake1059/StardewMUI-5/blob/main/README_en.md)
+
 ## StardewMUI 5
 本产品是 1059 Studio 的 星露谷 SMUI 模组管理器系列 最后一代产品  
 使用 .NET Framework 4.8 运行库，仅支持 64 位 Windows 系统  
@@ -23,9 +25,6 @@ https://lake1059.lanzouv.com/b0daefzoh 密码:smui（如果有）
 用户通过购买 DLC 来解锁付费的内容，国内唯一销售点：https://afdian.net/a/1059Studio?tab=shop  
 接入 SMUI 管理模式的第三方产品必须获得我的商业授权才可进行盈利行为  
 详细许可信息、版权声明、授权说明，请查看 [Copyright+License.md](https://github.com/Lake1059/StardewMUI-5/blob/main/Copyright+License.md)
-
-**For international users, I'm selling DLC on Payhip, payment can be made with paypal, debit or credit card.**
-**https://payhip.com/1059Studio**
 
 ## 维基
 请在维基上获取本产品的所有官方教程和技术文档，所有注册用户均可修改
