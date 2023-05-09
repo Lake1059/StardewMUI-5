@@ -18,6 +18,7 @@
 
 	<StartOptions>1</StartOptions>
 	<UserStartOptions></UserStartOptions>
+	<SMAPIAdditionalParameters></SMAPIAdditionalParameters>
 
 	<AutoCheckSMUIUpdates>True</AutoCheckSMUIUpdates>
 	<AutoGetNews>True</AutoGetNews>

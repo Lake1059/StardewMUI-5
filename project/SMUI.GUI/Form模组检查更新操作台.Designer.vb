@@ -35,8 +35,6 @@ Partial Class Form模组检查更新操作台
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DarkContextMenu1 = New DarkUI.Controls.DarkContextMenu()
-        Me.编辑单个条目ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.移除选中ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.移除全部ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
@@ -283,33 +281,17 @@ Partial Class Form模组检查更新操作台
         '
         Me.DarkContextMenu1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.DarkContextMenu1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.DarkContextMenu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.编辑单个条目ToolStripMenuItem, Me.ToolStripSeparator1, Me.移除选中ToolStripMenuItem, Me.移除全部ToolStripMenuItem, Me.ToolStripSeparator2, Me.批量修改ToolStripMenuItem, Me.管理员激活拖拽ToolStripMenuItem})
+        Me.DarkContextMenu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.移除选中ToolStripMenuItem, Me.移除全部ToolStripMenuItem, Me.ToolStripSeparator2, Me.批量修改ToolStripMenuItem, Me.管理员激活拖拽ToolStripMenuItem})
         Me.DarkContextMenu1.Name = "DarkContextMenu1"
         Me.DarkContextMenu1.ShowImageMargin = False
-        Me.DarkContextMenu1.Size = New System.Drawing.Size(148, 128)
-        '
-        '编辑单个条目ToolStripMenuItem
-        '
-        Me.编辑单个条目ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.编辑单个条目ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.编辑单个条目ToolStripMenuItem.Name = "编辑单个条目ToolStripMenuItem"
-        Me.编辑单个条目ToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
-        Me.编辑单个条目ToolStripMenuItem.Text = "编辑单个条目"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.ToolStripSeparator1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.ToolStripSeparator1.Margin = New System.Windows.Forms.Padding(0, 0, 0, 1)
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(144, 6)
+        Me.DarkContextMenu1.Size = New System.Drawing.Size(148, 99)
         '
         '移除选中ToolStripMenuItem
         '
         Me.移除选中ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.移除选中ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.移除选中ToolStripMenuItem.Name = "移除选中ToolStripMenuItem"
-        Me.移除选中ToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.移除选中ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.移除选中ToolStripMenuItem.Text = "移除选中"
         '
         '移除全部ToolStripMenuItem
@@ -317,7 +299,7 @@ Partial Class Form模组检查更新操作台
         Me.移除全部ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.移除全部ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.移除全部ToolStripMenuItem.Name = "移除全部ToolStripMenuItem"
-        Me.移除全部ToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.移除全部ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.移除全部ToolStripMenuItem.Text = "移除全部"
         '
         'ToolStripSeparator2
@@ -326,7 +308,7 @@ Partial Class Form模组检查更新操作台
         Me.ToolStripSeparator2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.ToolStripSeparator2.Margin = New System.Windows.Forms.Padding(0, 0, 0, 1)
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(144, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(152, 6)
         '
         '批量修改ToolStripMenuItem
         '
@@ -343,7 +325,6 @@ Partial Class Form模组检查更新操作台
         Me.DarkContextMenu2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.DarkContextMenu2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.批量修改更新键ToolStripMenuItem, Me.批量修改本地版本ToolStripMenuItem, Me.批量修改运行态ToolStripMenuItem})
         Me.DarkContextMenu2.Name = "DarkContextMenu1"
-        Me.DarkContextMenu2.OwnerItem = Me.批量修改ToolStripMenuItem
         Me.DarkContextMenu2.ShowImageMargin = False
         Me.DarkContextMenu2.Size = New System.Drawing.Size(160, 70)
         '
@@ -376,7 +357,7 @@ Partial Class Form模组检查更新操作台
         Me.管理员激活拖拽ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.管理员激活拖拽ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.管理员激活拖拽ToolStripMenuItem.Name = "管理员激活拖拽ToolStripMenuItem"
-        Me.管理员激活拖拽ToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.管理员激活拖拽ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.管理员激活拖拽ToolStripMenuItem.Text = "管理员：激活拖拽"
         Me.管理员激活拖拽ToolStripMenuItem.Visible = False
         '
@@ -1661,8 +1642,8 @@ Partial Class Form模组检查更新操作台
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1184, 666)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Line1)
         Me.Controls.Add(Me.Panel1)
@@ -1739,8 +1720,6 @@ Partial Class Form模组检查更新操作台
     Friend WithEvents Label15 As Label
     Friend WithEvents ListView1 As ListView
     Friend WithEvents DarkContextMenu1 As DarkUI.Controls.DarkContextMenu
-    Friend WithEvents 编辑单个条目ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents 移除选中ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader

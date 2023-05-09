@@ -64,6 +64,8 @@ Partial Class Form设置
         Me.CheckBox7 = New System.Windows.Forms.CheckBox()
         Me.CheckBox8 = New System.Windows.Forms.CheckBox()
         Me.Panel启动项 = New System.Windows.Forms.Panel()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.RadioButton13 = New System.Windows.Forms.RadioButton()
         Me.RadioButton12 = New System.Windows.Forms.RadioButton()
@@ -255,7 +257,7 @@ Partial Class Form设置
         Me.Panel图标.Controls.Add(Me.Panel2)
         Me.Panel图标.Controls.Add(Me.Label32)
         Me.Panel图标.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel图标.Location = New System.Drawing.Point(0, 2746)
+        Me.Panel图标.Location = New System.Drawing.Point(0, 2835)
         Me.Panel图标.Name = "Panel图标"
         Me.Panel图标.Size = New System.Drawing.Size(666, 379)
         Me.Panel图标.TabIndex = 10
@@ -327,7 +329,7 @@ Partial Class Form设置
         Me.Panel字体样式.Controls.Add(Me.Label17)
         Me.Panel字体样式.Controls.Add(Me.Label23)
         Me.Panel字体样式.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel字体样式.Location = New System.Drawing.Point(0, 2471)
+        Me.Panel字体样式.Location = New System.Drawing.Point(0, 2560)
         Me.Panel字体样式.Name = "Panel字体样式"
         Me.Panel字体样式.Size = New System.Drawing.Size(666, 275)
         Me.Panel字体样式.TabIndex = 9
@@ -415,7 +417,7 @@ Partial Class Form设置
         Me.Panel界面尺寸.Controls.Add(Me.TrackBar1)
         Me.Panel界面尺寸.Controls.Add(Me.Label13)
         Me.Panel界面尺寸.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel界面尺寸.Location = New System.Drawing.Point(0, 2028)
+        Me.Panel界面尺寸.Location = New System.Drawing.Point(0, 2117)
         Me.Panel界面尺寸.Name = "Panel界面尺寸"
         Me.Panel界面尺寸.Size = New System.Drawing.Size(666, 443)
         Me.Panel界面尺寸.TabIndex = 8
@@ -568,7 +570,7 @@ Partial Class Form设置
         Me.Panel功能.Controls.Add(Me.CheckBox7)
         Me.Panel功能.Controls.Add(Me.CheckBox8)
         Me.Panel功能.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel功能.Location = New System.Drawing.Point(0, 1728)
+        Me.Panel功能.Location = New System.Drawing.Point(0, 1817)
         Me.Panel功能.Name = "Panel功能"
         Me.Panel功能.Size = New System.Drawing.Size(666, 300)
         Me.Panel功能.TabIndex = 6
@@ -655,6 +657,8 @@ Partial Class Form设置
         '
         'Panel启动项
         '
+        Me.Panel启动项.Controls.Add(Me.Label26)
+        Me.Panel启动项.Controls.Add(Me.TextBox1)
         Me.Panel启动项.Controls.Add(Me.TextBox10)
         Me.Panel启动项.Controls.Add(Me.RadioButton13)
         Me.Panel启动项.Controls.Add(Me.RadioButton12)
@@ -663,16 +667,37 @@ Partial Class Form设置
         Me.Panel启动项.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel启动项.Location = New System.Drawing.Point(0, 1495)
         Me.Panel启动项.Name = "Panel启动项"
-        Me.Panel启动项.Size = New System.Drawing.Size(666, 233)
+        Me.Panel启动项.Size = New System.Drawing.Size(666, 322)
         Me.Panel启动项.TabIndex = 5
         Me.Panel启动项.Visible = False
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(17, 82)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(20, 10, 10, 0)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(254, 17)
+        Me.Label26.TabIndex = 25
+        Me.Label26.Text = "SMAPI 附加参数（对正常启动和重定向生效）"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.ForeColor = System.Drawing.Color.Silver
+        Me.TextBox1.Location = New System.Drawing.Point(20, 109)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(535, 23)
+        Me.TextBox1.TabIndex = 24
         '
         'TextBox10
         '
         Me.TextBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox10.ForeColor = System.Drawing.Color.Silver
-        Me.TextBox10.Location = New System.Drawing.Point(20, 144)
+        Me.TextBox10.Location = New System.Drawing.Point(20, 204)
         Me.TextBox10.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(535, 23)
@@ -681,7 +706,7 @@ Partial Class Form设置
         'RadioButton13
         '
         Me.RadioButton13.AutoSize = True
-        Me.RadioButton13.Location = New System.Drawing.Point(20, 113)
+        Me.RadioButton13.Location = New System.Drawing.Point(20, 173)
         Me.RadioButton13.Margin = New System.Windows.Forms.Padding(20, 10, 10, 0)
         Me.RadioButton13.Name = "RadioButton13"
         Me.RadioButton13.Size = New System.Drawing.Size(98, 21)
@@ -693,7 +718,7 @@ Partial Class Form设置
         'RadioButton12
         '
         Me.RadioButton12.AutoSize = True
-        Me.RadioButton12.Location = New System.Drawing.Point(20, 82)
+        Me.RadioButton12.Location = New System.Drawing.Point(20, 142)
         Me.RadioButton12.Margin = New System.Windows.Forms.Padding(20, 10, 10, 0)
         Me.RadioButton12.Name = "RadioButton12"
         Me.RadioButton12.Size = New System.Drawing.Size(244, 21)
@@ -705,16 +730,14 @@ Partial Class Form设置
         'RadioButton9
         '
         Me.RadioButton9.AutoSize = True
-        Me.RadioButton9.Enabled = False
         Me.RadioButton9.Location = New System.Drawing.Point(20, 51)
         Me.RadioButton9.Margin = New System.Windows.Forms.Padding(20, 10, 10, 0)
         Me.RadioButton9.Name = "RadioButton9"
-        Me.RadioButton9.Size = New System.Drawing.Size(62, 21)
+        Me.RadioButton9.Size = New System.Drawing.Size(144, 21)
         Me.RadioButton9.TabIndex = 16
         Me.RadioButton9.TabStop = True
-        Me.RadioButton9.Text = "Empty"
+        Me.RadioButton9.Text = "重定向 SMAPI 控制台"
         Me.RadioButton9.UseVisualStyleBackColor = True
-        Me.RadioButton9.Visible = False
         '
         'RadioButton8
         '
@@ -1626,4 +1649,6 @@ Partial Class Form设置
     Friend WithEvents DarkButton5 As DarkUI.Controls.DarkButton
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label26 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

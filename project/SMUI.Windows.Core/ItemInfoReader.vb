@@ -173,6 +173,9 @@ LineAuthor:
                             If CalculateType.Version = True Then
                                 If JsonData.item("Version") IsNot Nothing Then
                                     Dim str1 As String = JsonData.item("Version").ToString
+                                    If InStr(str1, "MajorVersion") > 0 Then
+                                        str1 = ReadSemanticVersion(str1)
+                                    End If
                                     If str1 = "" Then GoTo LineVersion
                                     For y = 0 To Version.Length - 1
                                         If Replace(Version(y), " ", "").ToLower = Replace(str1, " ", "").ToLower Then GoTo LineVersion

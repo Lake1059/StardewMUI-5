@@ -17,6 +17,14 @@ Public Class Form设置
 
     End Sub
 
+    Sub 加载设置窗口的字体()
+        If xml_Settings.SelectSingleNode("data/FontName9pt").InnerText = "" Then Exit Sub
+        If xml_Settings.SelectSingleNode("data/FontName9pt").InnerText = "Microsoft YaHei UI" Then Exit Sub
+        Me.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Me.Panel1.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Me.Panel9.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText, 9.75)
+    End Sub
+
     Private Sub Form设置_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If My.Computer.FileSystem.FileExists(Path1.应用程序用户数据路径 & "\app.png") = True Then
             Using fs As New IO.FileStream(Path1.应用程序用户数据路径 & "\app.png", IO.FileMode.Open, IO.FileAccess.Read)
@@ -26,9 +34,8 @@ Public Class Form设置
         Else
             Me.Button1.Image = My.Resources.EXEICO_1.GetThumbnailImage(128, 128, Nothing, IntPtr.Zero)
         End If
-        Me.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
-        Me.Panel1.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
-        Me.Panel9.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText, 9.75)
+
+        加载设置窗口的字体()
 
         读取设置()
         If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "English" Or ST1.是否正在使用自定义语言包 = True Then
@@ -212,6 +219,7 @@ Public Class Form设置
                 Me.RadioButton13.Checked = True
         End Select
         Me.TextBox10.Text = xml_Settings.SelectSingleNode("data/UserStartOptions").InnerText
+        Me.TextBox1.Text = xml_Settings.SelectSingleNode("data/SMAPIAdditionalParameters").InnerText
         Me.CheckBox8.Checked = xml_Settings.SelectSingleNode("data/AutoCheckSMUIUpdates").InnerText
         Me.CheckBox7.Checked = xml_Settings.SelectSingleNode("data/AutoGetNews").InnerText
         'Me.CheckBox6.Checked = xml_Settings.SelectSingleNode("data/StatisticsOnTheNmberOfParticipatingUsers").InnerText
@@ -275,6 +283,7 @@ Public Class Form设置
             xml_Settings.SelectSingleNode("data/StartOptions").InnerText = 4
         End If
         xml_Settings.SelectSingleNode("data/UserStartOptions").InnerText = Me.TextBox10.Text
+        xml_Settings.SelectSingleNode("data/SMAPIAdditionalParameters").InnerText = Me.TextBox1.Text
         xml_Settings.SelectSingleNode("data/AutoCheckSMUIUpdates").InnerText = Me.CheckBox8.Checked
         xml_Settings.SelectSingleNode("data/AutoGetNews").InnerText = Me.CheckBox7.Checked
         'xml_Settings.SelectSingleNode("data/StatisticsOnTheNmberOfParticipatingUsers").InnerText = Me.CheckBox6.Checked
@@ -299,10 +308,14 @@ Public Class Form设置
         校准描述栏的尺寸()
         校准项视图栏的尺寸()
 
-        xml_Settings.SelectSingleNode("data/FontName9pt").InnerText = Me.ComboBox1.Text
-        加载主窗口字体设置()
+        If Me.ComboBox1.Text <> "" Then
+            xml_Settings.SelectSingleNode("data/FontName9pt").InnerText = Me.ComboBox1.Text
+            加载主窗口字体设置()
+        End If
+        If Me.ComboBox2.Text <> "" Then
+            xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText = Me.ComboBox2.Text
+        End If
 
-        xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText = Me.ComboBox2.Text
         Me.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
         Me.Panel1.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
         Me.Panel9.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText, 9.75)
@@ -353,7 +366,7 @@ Public Class Form设置
             p1(p1.Count - 1) = MyReg2.GetValue("PATH").ToString()
         End If
         '这届的小白真是日了狗了，连个游戏文件夹都找不到，就TM这技术还玩单机游戏？
-        Dim diskMayBe As String() = {"C", "D", "E", "F", "G", "H"} ', "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+        Dim diskMayBe As String() = {"C", "D", "E", "F"} ', "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
         For i = 0 To diskMayBe.Count - 1
             If My.Computer.FileSystem.FileExists(diskMayBe(i) & ":\Program Files\Steam\steamapps\common\Stardew Valley" & "\Stardew Valley.exe") = True Then
                 If Array.IndexOf(p1, diskMayBe(i) & ":\Program Files\Steam\steamapps\common\Stardew Valley") = -1 Then

@@ -318,6 +318,7 @@
 		<A24 chs="Github 私人令牌">Github personal token</A24>
 		<A25 chs="   启动项">   Startup way</A25>
 		<A26 chs="正常启动 SMAPI">Start SMAPI normally</A26>
+		<A26.1 chs="重定向 SMAPI 控制台（高级）">Redirect SMAPI Console (Advanced)</A26.1>
 		<A27 chs="启动 Natural Color - Reshade">Start Natural Color - Reshade</A27>
 		<A28 chs="自定义启动项">Custom startup command line</A28>
 		<A29 chs="   功能">   Features</A29>
@@ -450,7 +451,7 @@
 		<A15 chs=" 更新键"> Update keys</A15>
 		<A16 chs=" 本地版本"> Local version</A16>
 		<A17 chs=" 当前正常运行"> Running normally</A17>
-		<A18 chs="编辑单个条目">Edit a single entry</A18>
+		<!--<A18 chs="编辑单个条目">Edit a single entry</A18>-->
 		<A19 chs="移除选中">Remove selected</A19>
 		<A20 chs="移除全部">Remove all</A20>
 		<A21 chs="批量修改">Batch Edit</A21>

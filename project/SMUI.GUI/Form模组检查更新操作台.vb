@@ -8,6 +8,8 @@ Imports SMUI.Windows.SmapiWebAPI.Objects
 Imports Microsoft.VisualBasic.FileIO.FileSystem
 Imports SMUI.Windows.PakManager
 Imports Microsoft.VisualBasic.Devices
+Imports System.Diagnostics.Eventing.Reader
+Imports CefSharp.DevTools.Overlay
 
 Public Class Form模组检查更新操作台
 
@@ -84,7 +86,6 @@ Public Class Form模组检查更新操作台
             Me.Label13.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A15")
             Me.Label15.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A16")
             Me.Label17.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A17")
-            Me.编辑单个条目ToolStripMenuItem.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A18")
             Me.移除选中ToolStripMenuItem.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A19")
             Me.移除全部ToolStripMenuItem.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A20")
             Me.批量修改ToolStripMenuItem.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/
@@ -161,12 +162,16 @@ A21")
         e.Handled = True
     End Sub
 
+    Dim 建议更新的版本地址 As String = ""
+
 
     Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.SelectedIndexChanged
         If Me.ListView2.SelectedItems.Count <> 1 Then
             Me.ListBox1.Items.Clear()
+            建议更新的版本地址 = ""
             Me.LinkLabel2.Text = "NEXUSMODS"
             Me.LinkLabel3.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A30")
+            Me.LinkLabel7.Text = 获取动态多语言文本("data/ModCheckUpdateManageWindow/A34")
         Else
             For i = 0 To SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).id.Count - 1
                 Me.ListBox1.Items.Add(SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).id(i))
@@ -181,8 +186,11 @@ A21")
             Else
                 Me.LinkLabel3.Text = "No GitHub"
             End If
-
-
+            If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).compatibilitySummary <> "" Then
+                Me.LinkLabel7.Text = Mid(SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).compatibilitySummary, 1, 20)
+            Else
+                Me.LinkLabel7.Text = "null"
+            End If
         End If
     End Sub
 
@@ -193,6 +201,111 @@ A21")
     Private Sub ListView2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ListView2.KeyPress
         e.Handled = True
     End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        If Me.ListView2.SelectedItems.Count <> 1 Then Exit Sub
+        Process.Start(SMAPI返回数据动态表.suggestedUpdate_url(Me.ListView2.SelectedIndices(0)))
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        If Me.ListView2.SelectedItems.Count <> 1 Then Exit Sub
+        Process.Start(SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).nexusID)
+    End Sub
+
+    Private Sub LinkLabel8_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel8.LinkClicked
+        Dim 地址数组 As String() = {}
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).modDropID <> "" Then
+            ReDim Preserve 地址数组(地址数组.Count)
+            地址数组(地址数组.Count - 1) = "https://www.moddrop.com/stardew-valley/mods/" & SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).modDropID
+        End If
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).curseForgeKey <> "" Then
+            ReDim Preserve 地址数组(地址数组.Count)
+            地址数组(地址数组.Count - 1) = "https://www.curseforge.com/stardewvalley/mods/" & SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).curseForgeKey
+        End If
+        If 地址数组.Count = 0 Then Exit Sub
+        Dim a As New SingleSelectionDialog("", 地址数组, "Other", , 500)
+        Dim b As Integer = a.ShowDialog(Me)
+        Select Case b
+            Case 0, 1
+                Process.Start(地址数组(b))
+        End Select
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).gitHubRepo <> "" Then
+            Process.Start("https://github.com/" & SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).gitHubRepo)
+        End If
+    End Sub
+
+    Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel4.LinkClicked
+        Dim 地址数组 As String() = {}
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).customUrl <> "" Then
+            ReDim Preserve 地址数组(地址数组.Count)
+            地址数组(地址数组.Count - 1) = SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).customUrl
+        End If
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).customSourseUrl <> "" Then
+            ReDim Preserve 地址数组(地址数组.Count)
+            地址数组(地址数组.Count - 1) = SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).customSourseUrl
+        End If
+        If 地址数组.Count = 0 Then Exit Sub
+        Dim a As New SingleSelectionDialog("", 地址数组, "Custom", , 500)
+        Dim b As Integer = a.ShowDialog(Me)
+        Select Case b
+            Case 0, 1
+                Process.Start(地址数组(b))
+        End Select
+    End Sub
+
+    Private Sub LinkLabel5_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel5.LinkClicked
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).main_url <> "" Then
+            Process.Start(SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).main_url)
+        End If
+    End Sub
+
+    Private Sub LinkLabel6_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel6.LinkClicked
+        Dim 地址数组 As String() = {}
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).optional_url <> "" Then
+            ReDim Preserve 地址数组(地址数组.Count)
+            地址数组(地址数组.Count - 1) = "Optional: " & SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).optional_url
+        End If
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).unofficial_url <> "" Then
+            ReDim Preserve 地址数组(地址数组.Count)
+            地址数组(地址数组.Count - 1) = "Unofficial: " & SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).unofficial_url
+        End If
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).unofficialForBeta_url <> "" Then
+            ReDim Preserve 地址数组(地址数组.Count)
+            地址数组(地址数组.Count - 1) = "Unofficial For Beta: " & SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).unofficialForBeta_url
+        End If
+        If 地址数组.Count = 0 Then Exit Sub
+        Dim a As New SingleSelectionDialog("", 地址数组, "Other", , 750)
+        Dim b As Integer = a.ShowDialog(Me)
+        Select Case b
+            Case 0, 1, 2
+                Process.Start(地址数组(b))
+        End Select
+    End Sub
+
+    Private Sub LinkLabel7_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel7.LinkClicked
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).compatibilitySummary <> "" Then
+            Dim a As New SingleSelectionDialog("", {"OK"}, SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).compatibilitySummary, , 750)
+            a.ShowDialog(Me)
+        End If
+    End Sub
+
+    Private Sub LinkLabel9_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel9.LinkClicked
+        Dim 描述 As String = ""
+        If SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).betaCompatibilitySummary <> "" Then
+            描述 &= "Beta: " & SMAPI返回数据动态表.metadata(Me.ListView2.SelectedIndices(0)).compatibilitySummary & vbNewLine & vbNewLine
+        End If
+        If 描述 = "" Then Exit Sub
+        Dim a As New SingleSelectionDialog("", {"OK", "Copy"}, 描述, 200, 500)
+        Dim b As Integer = a.ShowDialog(Me)
+        Select Case b
+            Case 1
+                Clipboard.SetText(描述)
+        End Select
+    End Sub
+
 
     Sub 重置返回列表详细信息显示()
         Me.ListBox1.Items.Clear()
@@ -289,6 +402,7 @@ A21")
         SMAPI返回数据动态表 = res
 
         Me.ListView2.Items.Clear()
+        添加调试文本("SMAPI server returned " & res.id.Count & " results.", Color.Aqua)
 
         For i = 0 To res.id.Count - 1
             Me.ListView2.Items.Add(res.metadata(i).name)
@@ -419,7 +533,11 @@ A21")
                             Me.ListView1.Items(Me.ListView1.Items.Count - 1).SubItems.Add("")
                         End If
                         If JsonData.item("Verison") IsNot Nothing Then
-                            Me.ListView1.Items(Me.ListView1.Items.Count - 1).SubItems.Add(JsonData.item("Verison").ToString)
+                            Dim str1 As String = JsonData.item("Version").ToString
+                            If InStr(str1, "MajorVersion") > 0 Then
+                                str1 = SMUI.Windows.Core.ItemInfoReader.ReadSemanticVersion(str1)
+                            End If
+                            Me.ListView1.Items(Me.ListView1.Items.Count - 1).SubItems.Add(str1)
                         Else
                             Me.ListView1.Items(Me.ListView1.Items.Count - 1).SubItems.Add("")
                         End If
@@ -460,7 +578,11 @@ A21")
                         Me.ListView1.Items(Me.ListView1.Items.Count - 1).SubItems.Add("")
                     End If
                     If JsonData.item("Version") IsNot Nothing Then
-                        Me.ListView1.Items(Me.ListView1.Items.Count - 1).SubItems.Add(JsonData.item("Version").ToString)
+                        Dim str1 As String = JsonData.item("Version").ToString
+                        If InStr(str1, "MajorVersion") > 0 Then
+                            str1 = SMUI.Windows.Core.ItemInfoReader.ReadSemanticVersion(str1)
+                        End If
+                        Me.ListView1.Items(Me.ListView1.Items.Count - 1).SubItems.Add(str1)
                     Else
                         Me.ListView1.Items(Me.ListView1.Items.Count - 1).SubItems.Add("")
                     End If
@@ -617,5 +739,32 @@ A21")
         Dim mouseX As Integer = MousePosition.X
         Dim mouseY As Integer = MousePosition.Y
         Me.DarkContextMenu3.Show(mouseX - e.X + (Me.Label45.Width - Me.DarkContextMenu3.Width) + 1, mouseY + (Me.Label45.Height - e.Y) + 1)
+    End Sub
+
+    Private Sub 批量修改更新键ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 批量修改更新键ToolStripMenuItem.Click
+        Dim a As New InputTextDialog("", "NEXUS ID")
+        Dim b As String = a.ShowDialog(Me)
+        If b = "" Then Exit Sub
+        For i = 0 To Me.ListView1.SelectedItems.Count - 1
+            Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(i)).SubItems(1).Text = b
+        Next
+    End Sub
+
+    Private Sub 批量修改本地版本ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 批量修改本地版本ToolStripMenuItem.Click
+        Dim a As New InputTextDialog("", "Verison")
+        Dim b As String = a.ShowDialog(Me)
+        If b = "" Then Exit Sub
+        For i = 0 To Me.ListView1.SelectedItems.Count - 1
+            Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(i)).SubItems(2).Text = b
+        Next
+    End Sub
+
+    Private Sub 批量修改运行态ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 批量修改运行态ToolStripMenuItem.Click
+        Dim a As New InputTextDialog("", "true or false")
+        Dim b As String = a.ShowDialog(Me)
+        If b = "" Then Exit Sub
+        For i = 0 To Me.ListView1.SelectedItems.Count - 1
+            Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(i)).SubItems(3).Text = b
+        Next
     End Sub
 End Class

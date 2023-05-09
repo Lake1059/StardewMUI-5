@@ -30,6 +30,7 @@ Module 界面控制
         Form1.RichTextBox3.AutoWordSelection = False
         Form1.RichTextBox3.LanguageOption = RichTextBoxLanguageOptions.UIFonts
         设置富文本框行高(Form1.RichTextBox3, 300)
+        Form1.RichTextBox3.Height = 1
 
         Form1.RichTextBox4.AutoWordSelection = False
         Form1.RichTextBox4.LanguageOption = RichTextBoxLanguageOptions.UIFonts
@@ -88,15 +89,17 @@ Module 界面控制
     End Sub
 
     Public Sub 校准RichTextBox3的尺寸和位置()
-        Form1.RichTextBox3.Width = Form1.Panel17.Width + ST1.系统滚动条宽度 + 2
-        Form1.RichTextBox3.Height = Form1.Label6.Height
-        Form1.RichTextBox3.Location = Form1.Label6.Location
-        Form1.RichTextBox3.RightMargin = Form1.RichTextBox3.Width - 17 + ST1.系统滚动条宽度
+        On Error Resume Next
+        Form1.RichTextBox3.Width = Form1.Panel18.Width - 5
+        Form1.RichTextBox3.Height = Form1.Label8.Height
+        Form1.RichTextBox3.Location = Form1.Label8.Location
+        Form1.RichTextBox3.RightMargin = Form1.RichTextBox3.Width - 17 - ST1.系统滚动条宽度
     End Sub
     Public Sub 校准RichTextBox4的尺寸和位置()
-        Form1.RichTextBox4.Width = Form1.Panel18.Width + ST1.系统滚动条宽度 + 2
-        Form1.RichTextBox4.Height = Form1.Label8.Height
-        Form1.RichTextBox4.Location = Form1.Label8.Location
+        On Error Resume Next
+        Form1.RichTextBox4.Width = Form1.Panel17.Width + ST1.系统滚动条宽度 + 2
+        Form1.RichTextBox4.Height = Form1.Label6.Height
+        Form1.RichTextBox4.Location = Form1.Label6.Location
         Form1.RichTextBox4.RightMargin = Form1.RichTextBox4.Width - 17 + ST1.系统滚动条宽度
     End Sub
 
@@ -112,6 +115,7 @@ Module 界面控制
         Form1.ColumnHeader8.Width = Form1.ListView4.Width - Form1.ColumnHeader9.Width - 25
         校准RichTextBox3的尺寸和位置()
         校准RichTextBox4的尺寸和位置()
+
         ST1.是否已经初始化了配置队列选项卡界面 = True
 
     End Sub

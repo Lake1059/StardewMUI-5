@@ -147,6 +147,7 @@ Module 设置管理
         Form1.DCM11.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
         Form1.DCM12.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
         Form1.DCM13.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+        Form1.DCM14.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
         Form1.DCM内容中心.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
         Form1.DCM应用程序目录集.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
         Form1.DCM模组列表.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)

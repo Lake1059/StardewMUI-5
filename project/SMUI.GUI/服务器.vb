@@ -166,11 +166,11 @@ Module 服务器
                    m.Dispose()
 
                    Dim 输出1 As String = "report"
-                   输出1 &= vbNewLine & 系统名称
-                   输出1 &= vbNewLine & 处理器名称
-                   输出1 &= vbNewLine & 内存大小
-                   输出1 &= vbNewLine & DisplayName
-                   输出1 &= vbNewLine & 显示器信息
+                   输出1 &= vbNewLine & "SYSTEM: " & 系统名称.Replace("&sysname=", "")
+                   输出1 &= vbNewLine & "CPU: " & 处理器名称.Replace("&cpuname=", "")
+                   输出1 &= vbNewLine & "RAM: " & 内存大小.Replace("&ram=", "")
+                   输出1 &= vbNewLine & "GPU: " & vbNewLine & DisplayName
+                   输出1 &= vbNewLine & "SCREEN: " & 显示器信息.Replace("&screen=", "")
                    服务器发送.ReportProgress(1, 输出1)
 
                    地址传递 = "http://47.94.89.191:30003/user?" & 软件版本 & 系统名称 & 处理器名称 & 内存大小 & 显卡列表 & 显示器信息 & 用户语言

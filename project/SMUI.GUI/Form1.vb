@@ -99,9 +99,6 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles MyBase.Closing
-
-
-
         e.Cancel = False
         xml_Settings.SelectSingleNode("data/MainWindowWidth").InnerText = Me.Width
         xml_Settings.SelectSingleNode("data/MainWindowHeight").InnerText = Me.Height
@@ -302,7 +299,6 @@ Public Class Form1
     End Sub
 
 #End Region
-
 
 #Region "列表视图焦点屏蔽"
 
@@ -1350,18 +1346,6 @@ jx:
         End If
     End Sub
 
-    Private Sub 提取压缩包ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 提取压缩包ToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub 拿出内容ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 拿出内容ToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub 内容套层ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 内容套层ToolStripMenuItem.Click
-
-    End Sub
-
     Private Sub 删除ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 删除ToolStripMenuItem.Click
         If Me.ListView4.SelectedItems.Count = 0 Then
             Exit Sub
@@ -1387,6 +1371,68 @@ jx:
         Loop
     End Sub
 
+    Private Sub 提取压缩包ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 提取压缩包ToolStripMenuItem.Click
+        If Me.ListView3.SelectedItems.Count <> 1 Then Exit Sub
+        If Me.ListView4.SelectedItems.Count <> 1 Then Exit Sub
+        If Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(0)).SubItems(1).Text <> 获取动态多语言文本("data/DynamicText/File") Then Exit Sub
+        Dim 配置队列_选中项的路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
+        Dim 压缩包路径 As String = 配置队列_选中项的路径 & "\" & Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(0)).Text
+        Select Case IO.Path.GetExtension(压缩包路径)
+            Case ".7z", ".zip"
+                Dim zip1 As New SevenZip.SevenZipExtractor(压缩包路径)
+                For i As Integer = 0 To zip1.ArchiveFileData.Count - 1
+                    zip1.ExtractFiles(配置队列_选中项的路径 & "\", zip1.ArchiveFileData(i).Index)
+                Next
+                zip1.Dispose()
+        End Select
+        重新扫描项的数据内容(检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text)
+    End Sub
+
+    Private Sub 拿出内容ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 拿出内容ToolStripMenuItem.Click
+        If Me.ListView3.SelectedItems.Count <> 1 Then Exit Sub
+        If Me.ListView4.SelectedItems.Count <> 1 Then Exit Sub
+        If Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(0)).SubItems(1).Text <> 获取动态多语言文本("data/DynamicText/Folder") Then Exit Sub
+        Dim 配置队列_选中项的路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
+        Dim 文件夹路径 As String = 配置队列_选中项的路径 & "\" & Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(0)).Text
+        Dim mFileInfo As System.IO.FileInfo
+        Dim mDir As System.IO.DirectoryInfo
+        Dim mDirInfo As New System.IO.DirectoryInfo(文件夹路径)
+        For Each mDir In mDirInfo.GetDirectories
+            My.Computer.FileSystem.MoveDirectory(mDir.FullName, 配置队列_选中项的路径 & "\" & mDir.Name, True)
+        Next
+        For Each mFileInfo In mDirInfo.GetFiles("*.*")
+            My.Computer.FileSystem.MoveFile(mFileInfo.FullName, 配置队列_选中项的路径 & "\" & mFileInfo.Name, True)
+        Next
+        重新扫描项的数据内容(检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text)
+    End Sub
+
+    Private Sub 内容套层ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 内容套层ToolStripMenuItem.Click
+        If Me.ListView3.SelectedItems.Count <> 1 Then Exit Sub
+        If Me.ListView4.SelectedItems.Count <> 1 Then Exit Sub
+        Dim 配置队列_选中项的路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
+        Dim a As New InputTextDialog("", "New Folder Name")
+        Dim b As String = a.ShowDialog(Me)
+        If b = "" Then Exit Sub
+        Dim 新文件夹路径 As String = 配置队列_选中项的路径 & "\" & b
+        If My.Computer.FileSystem.DirectoryExists(新文件夹路径) = False Then
+            My.Computer.FileSystem.CreateDirectory(新文件夹路径)
+        End If
+        For i = 0 To Me.ListView4.SelectedItems.Count - 1
+            Select Case Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(i)).SubItems(1).Text
+                Case 获取动态多语言文本("data/DynamicText/Folder")
+                    My.Computer.FileSystem.MoveDirectory(配置队列_选中项的路径 & "\" & Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(i)).Text, 新文件夹路径 & "\" & Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(i)).Text, True)
+                Case 获取动态多语言文本("data/DynamicText/File")
+                    My.Computer.FileSystem.MoveFile(配置队列_选中项的路径 & "\" & Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(i)).Text, 新文件夹路径 & "\" & Me.ListView4.Items.Item(Me.ListView4.SelectedIndices(i)).Text, True)
+            End Select
+        Next
+        重新扫描项的数据内容(检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text)
+    End Sub
+
+    Private Sub Folder1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Folder1ToolStripMenuItem.Click
+        Dim 配置队列_选中项的路径 As String = 检查并返回当前所选子库路径(False) & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).Text & "\" & Me.ListView3.Items.Item(Me.ListView3.SelectedIndices(0)).SubItems(1).Text
+        Process.Start(IO.Path.GetDirectoryName(配置队列_选中项的路径))
+    End Sub
+
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         定时检查安装命令和项数据()
     End Sub
@@ -1396,11 +1442,11 @@ jx:
     End Sub
 
     Private Sub RichTextBox3_KeyDown(sender As Object, e As KeyEventArgs) Handles RichTextBox3.KeyDown
-        Debug.Print(e.Alt.ToString)
+
     End Sub
 
     Private Sub RichTextBox3_KeyUp(sender As Object, e As KeyEventArgs) Handles RichTextBox3.KeyUp
-        Debug.Print(e.Alt.ToString)
+
     End Sub
 
 #End Region
@@ -1425,7 +1471,7 @@ jx:
                 Case "1"
                     Me.LabelRunSMAPI.Text = "Run SMAPI"
                 Case "2"
-                    Me.LabelRunSMAPI.Text = "Run Steam"
+                    Me.LabelRunSMAPI.Text = "Redirect SMAPI"
                 Case "3"
                     Me.LabelRunSMAPI.Text = "Run NCR"
                 Case "4"
@@ -1450,19 +1496,16 @@ jx:
                 a.StartInfo.FileName = xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\StardewModdingAPI.exe"
                 a.StartInfo.WorkingDirectory = xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText
                 a.StartInfo.UseShellExecute = True
+                a.StartInfo.Arguments = xml_Settings.SelectSingleNode("data/SMAPIAdditionalParameters").InnerText
                 a.Start()
             Case "2"
-                'Dim a As New Process
-                'a.StartInfo.FileName = "steam.exe"
-                ''a.StartInfo.WorkingDirectory = xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText
-                'a.StartInfo.UseShellExecute = True
-                'a.StartInfo.Arguments = "-applaunch 413150"
-                'a.Start()
+                Form重定向SMAPI输出.Show()
             Case "3"
                 Dim a As New Process
                 a.StartInfo.FileName = xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText & "\Natural Color - Launcher.bat"
                 a.StartInfo.WorkingDirectory = xml_Settings.SelectSingleNode("data/StardewValleyGamePath").InnerText
                 a.StartInfo.UseShellExecute = True
+                a.StartInfo.Arguments = xml_Settings.SelectSingleNode("data/SMAPIAdditionalParameters").InnerText
                 a.Start()
             Case "4"
                 Shell(xml_Settings.SelectSingleNode("data/UserStartOptions").InnerText, AppWinStyle.NormalFocus)
@@ -1624,7 +1667,11 @@ jx:
     End Sub
 
     Private Sub 欢迎赞助ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 欢迎赞助ToolStripMenuItem.Click
-        Process.Start("https://afdian.net/@1059Studio")
+        Process.Start("https://afdian.net/a/1059Studio?tab=shop")
+    End Sub
+
+    Private Sub BuyDLCOnPayhipToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuyDLCOnPayhipToolStripMenuItem.Click
+        Process.Start("https://payhip.com/1059Studio")
     End Sub
 
     Private Sub ContactMeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContactMeToolStripMenuItem.Click
@@ -1820,5 +1867,6 @@ nextline:
 
 
     ReadOnly 分割线 As Integer = 0
+
 
 End Class
