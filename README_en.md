@@ -1,6 +1,6 @@
 ![GitHub release (latest by date and asset including pre-releases)](https://img.shields.io/github/downloads-pre/Lake1059/StardewMUI-5/latest/StardewMUI.5.Installer.exe?color=blue&label=The%20number%20of%20downloads%20of%20the%20latest%20version&style=flat-square)
 
-[¼òÌåÖÐÎÄ](https://github.com/Lake1059/StardewMUI-5/blob/main/README.md) | English
+[Chinese](https://github.com/Lake1059/StardewMUI-5/blob/main/README.md) | English
 
 ## StardewMUI 5
 The best Stardew Valley mod management solution, with a little complexity and a little preparation time, you will get unprecedented mod management efficiency.

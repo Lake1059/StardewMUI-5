@@ -2,6 +2,21 @@
 
 Public Class Form全局检查模组安装情况
     Private Sub Form全局检查模组安装情况_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If xml_Settings.SelectSingleNode("data/InterfaceLanguage").InnerText = "English" Or ST1.是否正在使用自定义语言包 = True Then
+            Me.Text = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/Title”)
+            Me.DarkButton1.Text = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/A1”)
+
+            Me.ListView1.Items.Item(0).Text = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/L1”)
+            Me.ListView1.Groups(0).Header = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/A2”)
+            Me.ListView1.Groups(1).Header = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/A3”)
+            Me.ListView1.Groups(2).Header = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/A4”)
+            Me.ListView1.Groups(4).Header = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/A5”)
+            Me.ListView1.Groups(5).Header = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/A6”)
+            Me.ListView1.Groups(6).Header = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/A7”)
+            Me.ListView1.Groups(7).Header = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/A8”)
+            Me.ListView1.Groups(8).Header = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/A9”)
+            Me.ListView1.Groups(9).Header = 获取动态多语言文本(“data/GlobalModsInstallationCheckWindow/A10”)
+        End If
 
     End Sub
 

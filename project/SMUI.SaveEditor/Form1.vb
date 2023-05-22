@@ -72,13 +72,13 @@ Public Class Form1
             Select Case Me.ListView1.Items.Item(i).SubItems(1).Text
                 Case "SaveGameInfo"
                     If xmldoc1.SelectSingleNode(Me.ListView1.Items.Item(i).SubItems(2).Text) Is Nothing Then
-                        Me.ListView1.Items.Item(i).SubItems(3).Text = "找不到此节点"
+                        Me.ListView1.Items.Item(i).SubItems(3).Text = "找不到此节点 not found"
                         Continue For
                     End If
                     Me.ListView1.Items.Item(i).SubItems(3).Text = xmldoc1.SelectSingleNode(Me.ListView1.Items.Item(i).SubItems(2).Text).InnerText
                 Case "[game]"
                     If xmldoc2.SelectSingleNode(Me.ListView1.Items.Item(i).SubItems(2).Text) Is Nothing Then
-                        Me.ListView1.Items.Item(i).SubItems(3).Text = "找不到此节点"
+                        Me.ListView1.Items.Item(i).SubItems(3).Text = "找不到此节点 not found"
                         Continue For
                     End If
                     Me.ListView1.Items.Item(i).SubItems(3).Text = xmldoc2.SelectSingleNode(Me.ListView1.Items.Item(i).SubItems(2).Text).InnerText
@@ -100,7 +100,7 @@ Public Class Form1
                 If xmldoc2.SelectSingleNode(Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(0)).SubItems(2).Text) Is Nothing Then Exit Sub
         End Select
 
-        Dim a As New SMUI.Windows.PakManager.InputTextDialog("", "输入新的值", Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(0)).SubItems(3).Text)
+        Dim a As New SMUI.Windows.PakManager.InputTextDialog("", "New value", Me.ListView1.Items.Item(Me.ListView1.SelectedIndices(0)).SubItems(3).Text)
         Dim s1 As String = a.ShowDialog(Me)
 
         If s1 <> "" Then
@@ -123,9 +123,9 @@ Public Class Form1
         If My.Computer.FileSystem.DirectoryExists(存档路径 & "\" & 选择存档ToolStripMenuItem.Text) = True Then
             xmldoc1.Save(存档路径 & "\" & 选择存档ToolStripMenuItem.Text & "\" & "SaveGameInfo")
             xmldoc2.Save(存档路径 & "\" & 选择存档ToolStripMenuItem.Text & "\" & 选择存档ToolStripMenuItem.Text)
-            MsgBox("已保存存档：" & 选择存档ToolStripMenuItem.Text)
+            MsgBox("Saved: " & 选择存档ToolStripMenuItem.Text)
         Else
-            MsgBox("存档文件夹不存在，无法保存", MsgBoxStyle.Critical)
+            MsgBox("存档文件夹不存在，无法保存" & vbNewLine & vbNewLine & "Save folder does not exist, cannot save.", MsgBoxStyle.Critical)
         End If
     End Sub
 
@@ -139,5 +139,9 @@ Public Class Form1
 
     Private Sub ListView1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ListView1.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+
     End Sub
 End Class

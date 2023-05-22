@@ -64,6 +64,8 @@ Public Class Form设置
             Me.Label33.Text = 获取动态多语言文本("data/SettingsWindow/A24")
             Me.Label启动项.Text = 获取动态多语言文本("data/SettingsWindow/A25")
             Me.RadioButton8.Text = 获取动态多语言文本("data/SettingsWindow/A26")
+            Me.RadioButton9.Text = 获取动态多语言文本("data/SettingsWindow/A26.1")
+            Me.Label26.Text = 获取动态多语言文本("data/SettingsWindow/A26.2")
             Me.RadioButton12.Text = 获取动态多语言文本("data/SettingsWindow/A27")
             Me.RadioButton13.Text = 获取动态多语言文本("data/SettingsWindow/A28")
             Me.Label功能.Text = 获取动态多语言文本("data/SettingsWindow/A29")

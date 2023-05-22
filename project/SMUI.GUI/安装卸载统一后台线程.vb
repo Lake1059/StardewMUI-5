@@ -1,4 +1,6 @@
-﻿Imports SMUI.GUI.Class1
+﻿Imports System.Threading
+Imports SMUI.GUI.Class1
+Imports SMUI.Windows.PakManager
 
 Module 安装卸载统一后台线程
 
@@ -58,53 +60,12 @@ Module 安装卸载统一后台线程
 
         AddHandler 后台线程.DoWork,
             Sub(s, e)
+
                 Select Case 安装还是卸载
                     Case 后台操作类型.批量创建项
-                        后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.7"))
-                        For i = 0 To 要批量创建项的路径数据列表.Count - 1
-                            Dim str_1 As String = 检查并返回当前所选子库路径(False) & "\" & 自动创建项的目标分类 & "\" & IO.Path.GetFileName(要批量创建项的路径数据列表(i))
-                            Dim str_2 As String = IO.Path.GetFileName(要批量创建项的路径数据列表(i))
-                            If My.Computer.FileSystem.DirectoryExists(str_1) = True Then
-                                后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.8") & str_2)
-                            Else
-                                后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.9") & str_2)
-                                My.Computer.FileSystem.CreateDirectory(str_1)
-                                后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.10") & str_2)
-                                My.Computer.FileSystem.CopyDirectory(要批量创建项的路径数据列表(i), str_1 & "\" & str_2)
-                                后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.11"))
-                                My.Computer.FileSystem.WriteAllText(str_1 & "\Code", "CDCD" & vbNewLine & str_2, False)
-                                后台线程.ReportProgress(30, 获取动态多语言文本("data/DynamicText/InstallMessage.12"))
-                            End If
-                        Next
-                        Exit Sub
+                        GoTo Line_批量创建项
                     Case 后台操作类型.创建一个项
-                        后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.7"))
-                        Dim str_1 As String = 检查并返回当前所选子库路径(False) & "\" & 自动创建项的目标分类 & "\" & 要创建一个项的项名称
-                        Dim str_2 As String = 要创建一个项的项名称
-                        If My.Computer.FileSystem.DirectoryExists(str_1) = True Then
-                            后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.8") & str_2)
-                        Else
-                            后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.9") & str_2)
-                            My.Computer.FileSystem.CreateDirectory(str_1)
-                            For i = 0 To 要创建一个项的路径数据列表.Count - 1
-                                Dim str_3 As String = IO.Path.GetFileName(要创建一个项的路径数据列表(i))
-                                后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.10") & str_3)
-                                My.Computer.FileSystem.CopyDirectory(要创建一个项的路径数据列表(i), str_1 & "\" & str_3)
-                            Next
-                            后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.11") & str_2)
-                            Dim str_安装命令 As String = ""
-                            For i = 0 To 要创建一个项的路径数据列表.Count - 1
-                                If str_安装命令 = "" Then
-                                    str_安装命令 = "CDCD" & vbNewLine & IO.Path.GetFileName(要创建一个项的路径数据列表(i))
-                                Else
-                                    str_安装命令 &= vbNewLine & "CDCD" & vbNewLine & IO.Path.GetFileName(要创建一个项的路径数据列表(i))
-                                End If
-                            Next
-                            My.Computer.FileSystem.WriteAllText(str_1 & "\Code", str_安装命令, False)
-                            后台线程.ReportProgress(30, 获取动态多语言文本("data/DynamicText/InstallMessage.12"))
-                        End If
-                        Exit Sub
-                    Case Else
+                        GoTo Line_创建一个项
                 End Select
 
                 后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.13"))
@@ -136,7 +97,7 @@ Module 安装卸载统一后台线程
                                         后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.20") & a.Task_Parameter1(i2))
                                     Case SMUI.Windows.Core.Objects.CDTask.CDGRF
                                         后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.21") & a.Task_Parameter2(i2))
-                                    Case SMUI.Windows.Core.Objects.CDTask.CDGCF
+                                    Case SMUI.Windows.Core.Objects.CDTask.CDGCF, Windows.Core.Objects.CDTask.CDGCF_SHA, Windows.Core.Objects.CDTask.CDGCF_SHA_BYTE
                                         后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.22") & a.Task_Parameter2(i2))
                                     Case SMUI.Windows.Core.Objects.CDTask.CDF
                                         后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.23") & a.Task_Parameter2(i2))
@@ -144,6 +105,38 @@ Module 安装卸载统一后台线程
                                         后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.24"))
                                     Case SMUI.Windows.Core.Objects.CDTask.SUB_D_EX_IN
                                         后台线程.ReportProgress(20, 获取动态多语言文本("data/DynamicText/InstallMessage.25") & vbNewLine & a.Task_Parameter1(i2).Replace("|", vbNewLine))
+                                    Case SMUI.Windows.Core.Objects.CDTask.CR_APP_SHELL_IN, SMUI.Windows.Core.Objects.CDTask.CR_APP_SHELL_P_IN
+                                        后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.48") & a.Task_Parameter1(i2))
+                                        If My.Computer.FileSystem.FileExists(a.GamePath & "\" & a.Task_Parameter1(i2)) = False Then
+                                            后台线程.ReportProgress(50, 获取动态多语言文本("data/DynamicText/InstallMessage.56") & a.Task_Parameter1(i2))
+                                            后台线程.ReportProgress(50, 获取动态多语言文本("data/DynamicText/InstallMessage.27"))
+                                            For y1 = i2 - 1 To 0 Step -1
+                                                Dim xyz1 As String = a.PerformUnInstall(y1)
+                                                If xyz1 <> "" Then 后台线程.ReportProgress(50, xyz1)
+                                            Next
+                                            Exit For
+                                        End If
+                                        Dim p1 As New Process
+                                        p1.StartInfo.FileName = a.GamePath & "\" & a.Task_Parameter1(i2)
+                                        p1.StartInfo.WorkingDirectory = IO.Path.GetDirectoryName(p1.StartInfo.FileName)
+                                        If a.Task_Code(i2) = SMUI.Windows.Core.Objects.CDTask.CR_APP_SHELL_P_IN Then
+                                            p1.StartInfo.Arguments = a.Task_Parameter2(i2)
+                                        End If
+                                        p1.Start()
+                                        p1.WaitForExit()
+                                        Dim ms1 As New SingleSelectionDialog(线程ID, {获取动态多语言文本("data/DynamicText/InstallMessage.51"), 获取动态多语言文本("data/DynamicText/InstallMessage.52"), 获取动态多语言文本("data/DynamicText/InstallMessage.53")}, 获取动态多语言文本("data/DynamicText/InstallMessage.49"), , 400)
+                                        ms1.SetTopWindow()
+                                        Select Case ms1.ShowDialog()
+                                            Case -1, 1
+                                                后台线程.ReportProgress(50, 获取动态多语言文本("data/DynamicText/InstallMessage.27"))
+                                                For y1 = i2 - 1 To 0 Step -1
+                                                    Dim xyz1 As String = a.PerformUnInstall(y1)
+                                                    If xyz1 <> "" Then 后台线程.ReportProgress(50, xyz1)
+                                                Next
+                                                Exit For
+                                            Case 2
+                                                Exit For
+                                        End Select
                                 End Select
                                 Dim abc2 As String = a.PerformInstall(i2)
                                 If abc2 <> "" Then
@@ -171,7 +164,7 @@ Module 安装卸载统一后台线程
                                         Else
                                             后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.32") & a.Task_Parameter2(i2))
                                         End If
-                                    Case SMUI.Windows.Core.Objects.CDTask.CDGCF
+                                    Case SMUI.Windows.Core.Objects.CDTask.CDGCF, Windows.Core.Objects.CDTask.CDGCF_SHA, Windows.Core.Objects.CDTask.CDGCF_SHA_BYTE
                                         后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.33") & a.Task_Parameter2(i2))
                                     Case SMUI.Windows.Core.Objects.CDTask.CDF
                                         If My.Computer.FileSystem.FileExists(a.GameBackupPath & "\" & a.Task_Parameter2(i2)) = True Then
@@ -181,6 +174,26 @@ Module 安装卸载统一后台线程
                                         End If
                                     Case SMUI.Windows.Core.Objects.CDTask.CDVD
                                         后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.34"))
+                                    Case SMUI.Windows.Core.Objects.CDTask.CR_APP_SHELL_UN, SMUI.Windows.Core.Objects.CDTask.CR_APP_SHELL_P_UN
+                                        后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.48") & a.Task_Parameter1(i2))
+                                        If My.Computer.FileSystem.FileExists(a.GamePath & "\" & a.Task_Parameter1(i2)) = False Then
+                                            后台线程.ReportProgress(50, 获取动态多语言文本("data/DynamicText/InstallMessage.56") & a.Task_Parameter1(i2))
+                                            后台线程.ReportProgress(50, 获取动态多语言文本("data/DynamicText/InstallMessage.35"))
+                                            Exit For
+                                        End If
+                                        Dim p1 As New Process
+                                        p1.StartInfo.FileName = a.GamePath & "\" & a.Task_Parameter1(i2)
+                                        p1.StartInfo.WorkingDirectory = IO.Path.GetDirectoryName(p1.StartInfo.FileName)
+                                        If a.Task_Code(i2) = SMUI.Windows.Core.Objects.CDTask.CR_APP_SHELL_P_UN Then
+                                            p1.StartInfo.Arguments = a.Task_Parameter2(i2)
+                                        End If
+                                        p1.Start()
+                                        p1.WaitForExit()
+                                        Dim ms1 As New SingleSelectionDialog(线程ID, {获取动态多语言文本("data/DynamicText/InstallMessage.54"), 获取动态多语言文本("data/DynamicText/InstallMessage.55")}, 获取动态多语言文本("data/DynamicText/InstallMessage.50"), , 400)
+                                        ms1.SetTopWindow()
+                                        If ms1.ShowDialog() = 1 Then Exit For
+                                    Case SMUI.Windows.Core.Objects.CDTask.CR_UN_CANCEL
+                                        Exit For
                                 End Select
                                 Dim abc2 As String = a.PerformUnInstall(i2)
                                 If abc2 <> "" Then
@@ -231,6 +244,58 @@ Module 安装卸载统一后台线程
                     End Select
 
                 Next
+                Exit Sub
+
+Line_批量创建项:
+#Region "批量创建项"
+                后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.7"))
+                For i = 0 To 要批量创建项的路径数据列表.Count - 1
+                    Dim str1 As String = 检查并返回当前所选子库路径(False) & "\" & 自动创建项的目标分类 & "\" & IO.Path.GetFileName(要批量创建项的路径数据列表(i))
+                    Dim str2 As String = IO.Path.GetFileName(要批量创建项的路径数据列表(i))
+                    If My.Computer.FileSystem.DirectoryExists(str1) = True Then
+                        后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.8") & str2)
+                    Else
+                        后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.9") & str2)
+                        My.Computer.FileSystem.CreateDirectory(str1)
+                        后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.10") & str2)
+                        My.Computer.FileSystem.CopyDirectory(要批量创建项的路径数据列表(i), str1 & "\" & str2)
+                        后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.11"))
+                        My.Computer.FileSystem.WriteAllText(str1 & "\Code", "CDCD" & vbNewLine & str2, False)
+                        后台线程.ReportProgress(30, 获取动态多语言文本("data/DynamicText/InstallMessage.12"))
+                    End If
+                Next
+                Exit Sub
+#End Region
+
+Line_创建一个项:
+#Region "创建一个项"
+                后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.7"))
+                Dim str_1 As String = 检查并返回当前所选子库路径(False) & "\" & 自动创建项的目标分类 & "\" & 要创建一个项的项名称
+                Dim str_2 As String = 要创建一个项的项名称
+                If My.Computer.FileSystem.DirectoryExists(str_1) = True Then
+                    后台线程.ReportProgress(40, 获取动态多语言文本("data/DynamicText/InstallMessage.8") & str_2)
+                Else
+                    后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.9") & str_2)
+                    My.Computer.FileSystem.CreateDirectory(str_1)
+                    For i = 0 To 要创建一个项的路径数据列表.Count - 1
+                        Dim str_3 As String = IO.Path.GetFileName(要创建一个项的路径数据列表(i))
+                        后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.10") & str_3)
+                        My.Computer.FileSystem.CopyDirectory(要创建一个项的路径数据列表(i), str_1 & "\" & str_3)
+                    Next
+                    后台线程.ReportProgress(10, 获取动态多语言文本("data/DynamicText/InstallMessage.11") & str_2)
+                    Dim str_安装命令 As String = ""
+                    For i = 0 To 要创建一个项的路径数据列表.Count - 1
+                        If str_安装命令 = "" Then
+                            str_安装命令 = "CDCD" & vbNewLine & IO.Path.GetFileName(要创建一个项的路径数据列表(i))
+                        Else
+                            str_安装命令 &= vbNewLine & "CDCD" & vbNewLine & IO.Path.GetFileName(要创建一个项的路径数据列表(i))
+                        End If
+                    Next
+                    My.Computer.FileSystem.WriteAllText(str_1 & "\Code", str_安装命令, False)
+                    后台线程.ReportProgress(30, 获取动态多语言文本("data/DynamicText/InstallMessage.12"))
+                End If
+                Exit Sub
+#End Region
 
             End Sub
 
@@ -238,7 +303,7 @@ Module 安装卸载统一后台线程
             Sub(s, e)
                 '用进度数值控制输出字的颜色
                 Select Case e.ProgressPercentage
-                    Case 10 '黑色
+                    Case 10 '白色
                         添加调试文本(线程ID & " " & e.UserState, Color1.白色)
                     Case 20 '蓝色
                         添加调试文本(线程ID & " " & e.UserState, Color1.蓝色)
@@ -292,5 +357,7 @@ Module 安装卸载统一后台线程
             End Sub
         后台线程.RunWorkerAsync()
     End Sub
+
+
 
 End Module

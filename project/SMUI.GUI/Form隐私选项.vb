@@ -22,7 +22,7 @@ Public Class Form隐私选项
             Me.RadioButton3.Text = 获取动态多语言文本("data/PrivacyChoiceWindow/A4")
             Me.DarkButton1.Text = 获取动态多语言文本("data/PrivacyChoiceWindow/A5")
         End If
-
+        Me.Icon = Form1.Icon
 
 
     End Sub

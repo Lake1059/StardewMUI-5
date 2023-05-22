@@ -607,6 +607,7 @@ Partial Class Form设置
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Checked = True
         Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox1.Enabled = False
         Me.CheckBox1.Location = New System.Drawing.Point(20, 113)
         Me.CheckBox1.Margin = New System.Windows.Forms.Padding(20, 10, 10, 0)
         Me.CheckBox1.Name = "CheckBox1"

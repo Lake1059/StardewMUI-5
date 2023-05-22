@@ -33,6 +33,7 @@ Partial Class Form全局检查模组安装情况
         Dim ListViewGroup9 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("无意义的文件夹", System.Windows.Forms.HorizontalAlignment.Left)
         Dim ListViewGroup10 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("无意义的文件", System.Windows.Forms.HorizontalAlignment.Left)
         Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"扫描到的 UniqueID 总数", "", "", ""}, -1)
+        Dim ListViewGroup11 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("计算情况", System.Windows.Forms.HorizontalAlignment.Left)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DarkButton1 = New DarkUI.Controls.DarkButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -114,7 +115,9 @@ Partial Class Form全局检查模组安装情况
         Me.ListView1.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3, ListViewGroup4, ListViewGroup5, ListViewGroup6, ListViewGroup7, ListViewGroup8, ListViewGroup9, ListViewGroup10})
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.HideSelection = False
-        ListViewItem1.Group = ListViewGroup1
+        ListViewGroup11.Header = "计算情况"
+        ListViewGroup11.Name = "ListViewGroup1"
+        ListViewItem1.Group = ListViewGroup11
         Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
         Me.ListView1.Name = "ListView1"
@@ -125,22 +128,22 @@ Partial Class Form全局检查模组安装情况
         '
         'ColumnHeader1
         '
-        Me.ColumnHeader1.Text = "项目名称"
+        Me.ColumnHeader1.Text = "Name"
         Me.ColumnHeader1.Width = 200
         '
         'ColumnHeader2
         '
-        Me.ColumnHeader2.Text = "值1\名称"
+        Me.ColumnHeader2.Text = "Value1\Name"
         Me.ColumnHeader2.Width = 200
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "值2\UniqueID"
+        Me.ColumnHeader3.Text = "Value2\UniqueID"
         Me.ColumnHeader3.Width = 200
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "值3"
+        Me.ColumnHeader4.Text = "Value3"
         Me.ColumnHeader4.Width = 200
         '
         'Form全局检查模组安装情况

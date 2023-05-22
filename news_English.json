@@ -2,19 +2,19 @@
     "Object": [
         {
             "Title": "Join our KOOK server",
-            "Subtitle": "KOOK is more suitable for my needs, so I did not choose Discord.",
+            "Subtitle": "Ask for help or report bugs.",
             "Type": "link",
             "Body": "https://kook.top/yW15HU"
         },
         {
-            "Title": "Simplified Chinese Wiki always up to date.",
-            "Subtitle": "You can use machine translation. I don't have much time to update the English wiki.",
+            "Title": "Learn from wiki.",
+            "Subtitle": "For the complete content, please go to the Chinese Wiki.",
             "Type": "link",
-            "Body": "https://stardewmui.fandom.com/zh/wiki/StardewMUI_Wiki"
+            "Body": "https://stardewmui.fandom.com/wiki/StardewMUI_Wiki"
         },
         {
-            "Title": "Buy DLC content in My Shop",
-            "Subtitle": "Access to StardewMUI 5 DLC Shop",
+            "Title": "Buy DLC in My Shop",
+            "Subtitle": "Buy only when you need to enhance your experience.",
             "Type": "link",
             "Body": "https://payhip.com/1059Studio"
         },

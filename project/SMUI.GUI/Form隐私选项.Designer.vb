@@ -44,6 +44,9 @@ Partial Class Form隐私选项
         '
         'TextBox1
         '
+        Me.TextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
@@ -60,6 +63,7 @@ Partial Class Form隐私选项
         '
         'DarkButton1
         '
+        Me.DarkButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DarkButton1.Enabled = False
         Me.DarkButton1.Location = New System.Drawing.Point(35, 397)
         Me.DarkButton1.Margin = New System.Windows.Forms.Padding(0, 10, 0, 20)
@@ -72,6 +76,7 @@ Partial Class Form隐私选项
         '
         'RadioButton1
         '
+        Me.RadioButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Location = New System.Drawing.Point(35, 299)
         Me.RadioButton1.Margin = New System.Windows.Forms.Padding(5)
@@ -83,6 +88,7 @@ Partial Class Form隐私选项
         '
         'RadioButton2
         '
+        Me.RadioButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Location = New System.Drawing.Point(35, 330)
         Me.RadioButton2.Margin = New System.Windows.Forms.Padding(5)
@@ -94,6 +100,7 @@ Partial Class Form隐私选项
         '
         'RadioButton3
         '
+        Me.RadioButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Location = New System.Drawing.Point(35, 361)
         Me.RadioButton3.Margin = New System.Windows.Forms.Padding(5)
@@ -118,10 +125,8 @@ Partial Class Form隐私选项
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.ForeColor = System.Drawing.SystemColors.Control
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(700, 500)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(700, 500)
         Me.Name = "Form隐私选项"

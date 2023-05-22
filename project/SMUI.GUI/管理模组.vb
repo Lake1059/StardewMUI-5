@@ -283,6 +283,10 @@ Module 管理模组
                 Return 获取动态多语言文本("data/DynamicText/InstallStatus.30")
             Case Objects.InstallStatus.FileNotCopied
                 Return 获取动态多语言文本("data/DynamicText/InstallStatus.31")
+            Case Objects.InstallStatus.FileCopiedAndSHAVerified
+                Return 获取动态多语言文本("data/DynamicText/InstallStatus.32")
+            Case Objects.InstallStatus.FileCopiedAndSHAFailed
+                Return 获取动态多语言文本("data/DynamicText/InstallStatus.33")
             Case Objects.InstallStatus.NeedCopyFile
                 Return 获取动态多语言文本("data/DynamicText/InstallStatus.35")
             Case Objects.InstallStatus.CoverContent
@@ -304,10 +308,10 @@ Module 管理模组
             Case Objects.InstallStatus.Incomplete
                 哪个项.StateImageIndex = 5
                 哪个项.ForeColor = Color1.青色
-            Case Objects.InstallStatus.FolderCopied, Objects.InstallStatus.FileCopied, Objects.InstallStatus.FileReplaced, Objects.InstallStatus.AdditionalContent, Objects.InstallStatus.CoverContent
+            Case Objects.InstallStatus.FolderCopied, Objects.InstallStatus.FileCopied, Objects.InstallStatus.FileReplaced, Objects.InstallStatus.AdditionalContent, Objects.InstallStatus.CoverContent, Objects.InstallStatus.FileCopiedAndSHAVerified
                 哪个项.StateImageIndex = 7
                 哪个项.ForeColor = Color1.紫色
-            Case Objects.InstallStatus.NeedCopyFile
+            Case Objects.InstallStatus.NeedCopyFile, Objects.InstallStatus.FileCopiedAndSHAFailed
                 哪个项.StateImageIndex = 6
                 哪个项.ForeColor = Color1.蓝色
             Case Objects.InstallStatus.NotDeployed

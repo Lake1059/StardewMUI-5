@@ -18,6 +18,7 @@ Public Class SingleSelectionDialog
             newDialog.Panel1.Height = DescriptionPanelHeight * GlobalDpixRatio
         End If
 
+
         For i = 0 To SelectionGroup.Count - 1
             Dim a As New Label With {
                 .Dock = DockStyle.Bottom,
@@ -73,5 +74,14 @@ Public Class SingleSelectionDialog
         newDialog.ShowDialog()
         Return newDialog.选择了哪个项
     End Function
+
+    Public Sub SetOwner(owner As Form)
+        newDialog.Owner = owner
+    End Sub
+
+    Public Sub SetTopWindow()
+        newDialog.TopMost = True
+    End Sub
+
 
 End Class

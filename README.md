@@ -8,7 +8,7 @@
 可用于 Windows 版本：7 SP1、8、8.1、10、11，建议使用 Windows 10 专业版  
 不支持任何第三方 Win32 窗口美化程序
 
-NEXUSMODS：https://www.nexusmods.com/stardewvalley/mods/12230  
+NEXUSMODS：https://www.nexusmods.com/stardewvalley/mods/16646
 （N网页面仅用于国际宣传，请在仓库发行版下载最新版安装程序）
 
 https://github.com/Lake1059/StardewMUI-5/releases/latest  

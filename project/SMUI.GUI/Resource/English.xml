@@ -212,14 +212,16 @@
 		<S10 chs="正在评估">Evaluating ...</S10>
 		<S_10_1 chs="评估成功，正在更新数据">Evaluation succeeded, data updating ...</S_10_1>
 		<S11 chs="已自动完成更新项">Update item has been completed automatically.</S11>
-		<S12 chs="存在验证不通过的内容，为了避免意外情况不能自动完成，请在配置队列中手动操作，程序将自动打开解压目录。你还可以在调试窗口中查看具体的情况">There is content that does not pass the verification. In order to avoid unexpected situations, it cannot be completed automatically. Please manually operate in the deploy queue, and the program will automatically open the decompression directory. You can also see the specific situation in the debug window.</S12>
+		<S12 chs="存在验证不通过的内容，为了避免意外情况不能自动完成，请在配置队列中手动操作，程序将自动打开解压目录。以下是不能自动完成的因素：">There are contents that do not pass the verification. In order to avoid accidents that cannot be completed automatically, please manually operate in the deploy queue, and the program will automatically open the decompression directory. Here are the factors that cannot be done automatically:</S12>
 		<S13 chs="正在等待浏览器完成页面加载">Waiting for the browser to finish loading the page ...</S13>
 		<S14 chs="正在删除临时解压的数据，请稍后">Deleting temporarily decompressed data, please wait ...</S14>
 		<S15 chs="已完成自动新建项">Auto Creat New Item Completed.</S15>
 		<S16 chs="解压出的内容不能自动编写安装命令，请手动编写">The decompressed content cannot automatically write the installation command, please write it manually.</S16>
 		<S17 chs="正在转移解压出的内容到新的项">Moving unpacked content to new item.</S17>
 		<S18 chs="不支持此格式：">This format is not supported: </S18>
-		<S19 chs="不支持 RAR 格式的压缩文件（由于授权的问题，将永远不会考虑支持，请联系作者不要上传此格式，应使用 zip 或者 7z）">Compressed files in RAR format are not supported (due to licensing issues, support will never be considered, please contact the author Do not upload this format, use zip or 7z.</S19>
+		<S19 chs="不支持 RAR 格式的压缩文件（由于商用授权的问题，将永远不会考虑支持，请联系作者不要上传此格式，应使用 zip 或者 7z）">Compressed files in RAR format are not supported (due to licensing issues, support will never be considered, please contact the author Do not upload this format, use zip or 7z.</S19>
+		<S20 chs="处理中">Processing</S20>
+		<S21 chs="正在清理">Cleaning</S21>	
 		
 		<A1 chs="文件夹名称不匹配">Folder name does not match.</A1>
 		<A2 chs="清单文件放置目录不正确">The manifest file is placed in the wrong path.</A2>
@@ -231,14 +233,16 @@
 		<A8 chs="解压出的内容不包含文件夹或文件夹是空的">The extracted content does not contain a folder or the folder is empty.</A8>
 		<A9 chs="检测到 manifest.json 直接存在于解压出的根位置">Detected that manifest.json exists directly in the unzipped root location.</A9>
 		<A10 chs="检测到原本使用 CDMAD 的文件夹现在却可以使用 CDCD">Detected folder that used to use CDMAD, but now can use CDCD</A10>
+		<A11 chs="解压的内容不包含任何文件夹，此模组无法自动处理，程序将自动打开解压目录。">The unpacked content does not contain any folders, which this mod cannot handle automatically, program will automatically open the unzipped directory.</A11>
+
 			
-		<Chromium.1 chs="正在等待页面完成加载 ... 请不要点击下载按钮，程序将自动取出需要的参数">Waiting for page to finish loading...</Chromium.1>
+		<Chromium.1 chs="正在等待页面完成加载 ... 请不要点击下载按钮，程序将自动取出需要的参数">Waiting for page to finish loading...  Do net</Chromium.1>
 		<!--用不着，别翻译   no use, don't translate-->
 		<!--<Chromium.2 chs="成功拿到参数，自动关闭页面">Successfully get the parameters, automatically close the page.</Chromium.2>-->
 		<Chromium.3 chs="无法获取到参数，请在顶部菜单中恢复任务并刷新重试，顺便请确保打开的模组页面也是已经登录状态，如果不是就再点一下登录，必须登录了才会有参数">Unable to get parameters, please resume the task in the top menu and refresh and try again. Make sure that the opened mod page is also logged in. If not, click to log in again. You must log in to have parameters.</Chromium.3>
-		<!--挂起一词需要使用重置来翻译，中文写作挂起是为了国内大众理解方便，而专业术语中挂起的意思是中断 must read this tip-->
-		<Chromium.4 chs="直接更新项流程的参数检测程序已重新挂起，请刷新页面或者继续等待">The parameter detector of the direct update item process has been reset, please refresh the page or continue to wait</Chromium.4>	
-	</DirectOnlineUpdateWindow>
+		<Chromium.4 chs="直接更新项流程的参数检测程序已重新启用，请刷新页面或者继续等待">The parameter detector of the direct update item process has been reset, please refresh the page or continue to wait</Chromium.4>	
+	
+</DirectOnlineUpdateWindow>
 	
 	<ChromiumWindow>	
 		<M1 chs="中断的任务继续选项">Continue Task</M1>
@@ -318,8 +322,9 @@
 		<A24 chs="Github 私人令牌">Github personal token</A24>
 		<A25 chs="   启动项">   Startup way</A25>
 		<A26 chs="正常启动 SMAPI">Start SMAPI normally</A26>
-		<A26.1 chs="重定向 SMAPI 控制台（高级）">Redirect SMAPI Console (Advanced)</A26.1>
-		<A27 chs="启动 Natural Color - Reshade">Start Natural Color - Reshade</A27>
+		<A26.1 chs="重定向 SMAPI 控制台（调试）">Redirect SMAPI Console (test)</A26.1>
+		<A26.2 chs="SMAPI 附加参数（对正常启动和重定向生效）">SMAPI additional parameters (valid for normal startup and redirection)</A26.2>
+		<A27 chs="启动 Natural Color - Reshade（已弃用）">Start Natural Color - Reshade (deprecated)</A27>
 		<A28 chs="自定义启动项">Custom startup command line</A28>
 		<A29 chs="   功能">   Features</A29>
 		<A30 chs="自动检查更新">Automatically check for updates</A30>
@@ -336,9 +341,9 @@
 		<A41 chs="自动选择首个 NEXUS 下载服务器（由 NEXUS 账户设置决定）">Automatically select the first NEXUS download server</A41>
 		<A42 chs="主窗口宽度（像素）">Main window width</A42>
 		<A43 chs="主窗口高度（像素）">Main window height</A43>
-		<A44 chs="全局项高度增益（0-20）">Item height adds</A44>
-		<A45 chs="全局服务器访问超时毫秒（3000-10000）"></A45>
-		<A46 chs="">To change the icon, place app.png file under user data folder./crlf//crlf/If you choose to create a shortcut on the desktop, the program will generate an ico.ico file./crlf/Please do not delete the generated files while the shortcut exists.</A46>
+		<A44 chs="全局项高度增益（0-20）">Item height adds (0-20)</A44>
+		<A45 chs="全局服务器访问超时毫秒（3000-10000）">Server Timeout milliseconds (3000-10000)</A45>
+		<A46 chs="若要更改图标，请在用户数据文件夹下放置 app.png 文件/crlf//crlf/若选择在桌面创建一个快捷方式，程序将生成一个 ico.ico 文件/crlf/快捷方式存在期间，请不要删除生成的文件">To change the icon, place app.png file under user data folder./crlf//crlf/If you choose to create a shortcut on the desktop, the program will generate an ico.ico file./crlf/Please do not delete the generated files while the shortcut exists.</A46>
 		
 		
 		<B1 chs="打开隐私设置">Open Privacy Settings</B1>	
@@ -437,7 +442,7 @@
 		<A2 chs="步骤二：选择接收到的数据" width="200">Step2: Select received data</A2>
 		<A3 chs="步骤三：在本地库中找到项" width="200">Step3: Find item in local</A3>
 		
-		<A4 chs=" 在主窗口的【管理模组】页面中，在分类列表和项列表的右键菜单中选择【加入检查更新表】来将数据添加到列表中，或者直接拖入包含清单文件的模组文件夹">In the [Manage Mod] tab of the main window, select [Add to check update List] in the right-click menu of the category list and item list to add data to the list, or directly drag the mod folder containing the manifest file.</A4>
+		<A4 chs=" 在主窗口的【管理模组】页面中，在分类列表和项列表的右键菜单中选择【加入检查更新表】来将数据添加到列表中，或者直接拖入包含清单文件的模组文件夹">In the [Manage Mod] tab, select [Add to check update List] in the right-click menu of the category list and item list to add data to the list, or directly drag the mod folder containing the manifest file.</A4>
 		<A5 chs="发送数据选项">Send data options</A5>
 		<A6 chs="发送 SMAPI 版本信息">Send SMAPI version</A6>
 		<A7 chs="发送 Stardew Valley 版本号">Send Stardew Valley version</A7>
@@ -498,12 +503,18 @@
 	</ModCheckUpdateManageWindow>
 
 	<GlobalModsInstallationCheckWindow>
-		<Title chs="全局检查模组安装情况"></Title>
-		<A1 chs="开始全局检查"></A1>
-		<A2 chs=""></A2>
-		
-		<L1 chs="扫描到的 UniqueID 总数"></L1>
-		
+		<Title chs="全局检查模组安装情况">Check the installation of mods globally</Title>
+		<A1 chs="开始全局检查">Start global check</A1>
+		<A2 chs="计算情况">Calculation</A2>
+		<A3 chs="未安装内容包依赖">Content pack dependencies not installed</A3>
+		<A4 chs="未安装其他依赖项">Other dependencies not installed</A4>
+		<A5 chs="其他依赖项版本过低">Other dependency versions out of date</A5>
+		<A6 chs="需要更高版本的 SMAPI">A newer version of SMAPI is required</A6>
+		<A7 chs="套娃放置的模组">Multi-level nested mods</A7>
+		<A8 chs="没有 UniqueID 的模组">Mods without UniqueID</A8>
+		<A9 chs="无意义的文件夹">Meaningless folder</A9>
+		<A10 chs="无意义的文件">Meaningless file</A10>
+		<L1 chs="扫描到的 UniqueID 总数">UniqueIDs scanned.</L1>	
 	</GlobalModsInstallationCheckWindow>
 	
 	
@@ -567,13 +578,15 @@
 		<InstallStatus.21 chs="文件未替换">File Not Replaced</InstallStatus.21>
 		<InstallStatus.30 chs="文件已复制">File Copied</InstallStatus.30>
 		<InstallStatus.31 chs="文件未复制">File Not Copied</InstallStatus.31>
+		<InstallStatus.32 chs="文件已复制并验证">File Copied + Verified</InstallStatus.32>
+		<InstallStatus.33 chs="文件已复制但验证失败">File Copied + SHA Failed</InstallStatus.33>
 		<InstallStatus.35 chs="需要复制文件">Need Copy File</InstallStatus.35>
 		<InstallStatus.40 chs="覆盖 Content">Cover Content</InstallStatus.40>
 
 		<InstallStatus.UpdateAvailable chs="更新可用">Update Available</InstallStatus.UpdateAvailable>
 		<InstallStatus.YouInstalledNewOne chs="已有新的">Installed New One</InstallStatus.YouInstalledNewOne>
 		<InstallStatus.OnlineUpdateAvailable chs="在线更新可用">Online Update Available</InstallStatus.OnlineUpdateAvailable>
-
+		
 		<ManageMod.1 chs="当前模组数据仓库路径不可用">The current Mod Repository path is unavailable.</ManageMod.1>
 		<ManageMod.2 chs="你还没有选择要使用哪个子库">You haven't chosen which Sub Library to use.</ManageMod.2>
 		<ManageMod.3 chs="请先选择一个分类（只选一个）">Please select a category first. (only one, not more)</ManageMod.3>
@@ -663,15 +676,18 @@
 		<InstallMessage.44 chs="本地更新完成">Local update finish</InstallMessage.44>
 		<InstallMessage.45 chs="线程结束">Thread End</InstallMessage.45>
 		<InstallMessage.46 chs="项本地更新已完成，请刷新查看版本和状态">Items local updated completed, please refresh to see version and status.</InstallMessage.46>
-		<InstallMessage.47 chs="错误">Error</InstallMessage.47>
+		<InstallMessage.47 chs="错误">Error</InstallMessage.47>		
+		<InstallMessage.48 chs="运行外部程序：">Run external program: </InstallMessage.48>
 		
-		<InstallMessage.48 chs=""></InstallMessage.48>
-		<InstallMessage.49 chs=""></InstallMessage.49>
-		<InstallMessage.50 chs=""></InstallMessage.50>
-		<InstallMessage.51 chs=""></InstallMessage.51>
-		<InstallMessage.52 chs=""></InstallMessage.52>
-		<InstallMessage.53 chs=""></InstallMessage.53>
-		<InstallMessage.54 chs=""></InstallMessage.54>
+		<InstallMessage.49 chs="你是否在刚才的外部程序中完成了安装？">Did you finish the installation in the external program just now?</InstallMessage.49>
+		<InstallMessage.50 chs="你是否在刚才的外部程序中完成了卸载？">Did you finish uninstalling in the external program just now?</InstallMessage.50>
+		<InstallMessage.51 chs="完成了安装，继续后续操作">Completed, continue with the follow-up operation.</InstallMessage.51>
+		<InstallMessage.52 chs="未完成安装，撤销本次安装">Not completed, undo this installation.</InstallMessage.52>
+		<InstallMessage.53 chs="未完成安装，但就此结束">Not completed, but ended the operation.</InstallMessage.53>
+		<InstallMessage.54 chs="完成了卸载，继续后续操作">Completed, continue with the follow-up operation.</InstallMessage.54>
+		<InstallMessage.55 chs="未完成卸载，就此结束">Not completed, but ended the operation.</InstallMessage.55>
+		<InstallMessage.56 chs="找不到要运行的外部程序：">Could not find external program to run: </InstallMessage.56>
+		<InstallMessage.57 chs=""></InstallMessage.57>
 
 		<Deploy.1 chs="原路径已不存在，无法保存">The original path no longer exists and cannot be saved.</Deploy.1>
 		<Deploy.2 chs="要进行重命名项的目标路径已存在，请重新取名">The target path of the item to be renamed already exists, please rename.</Deploy.2>
@@ -696,6 +712,9 @@
 		<Deploy.21 chs="已使用控制命令解锁允许 CDCD 套娃">Unlocked with control command to allow CDCD multi-level folders.</Deploy.21>
 		<Deploy.22 chs="未编写命令的对象：">Objects with no commands written: </Deploy.22>
 		<Deploy.23 chs="已使用控制命令解锁允许任何文件添加到项中">Unlocked with control command to allow any file tcan add to item.</Deploy.23>
+		<Deploy.24 chs="设置的字节块数值不能转换为整型数字：">The set byte block value cannot be converted to a long integer: </Deploy.24>
+		<Deploy.25 chs="未设置字节块数值">byte block value not set.</Deploy.25>
+		
 		
 		<Sever.0 chs="检测到绿色版模式标记文件，检查更新功能已禁用">Portable mode flag file detected, check for updates disabled.</Sever.0>
 		<Sever.1 chs="正在连接服务器...">Connecting to server...</Sever.1>

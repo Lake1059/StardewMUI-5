@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports System.Threading
 Imports SMUI.GUI.Class1
 Imports SMUI.Windows.PakManager
 
@@ -49,11 +48,14 @@ Public Class Form直接联网更新单个项
         e.Cancel = False
         On Error Resume Next
         是否终止下载 = True
-        Me.BackgroundWorker1.CancelAsync()
-        Me.BackgroundWorker2.CancelAsync()
-        Me.BackgroundWorker3.CancelAsync()
-        Me.BackgroundWorker4.CancelAsync()
-        Me.BackgroundWorker5.CancelAsync()
+        If Me.BackgroundWorker1.IsBusy Then Me.BackgroundWorker1.CancelAsync()
+        If Me.BackgroundWorker2.IsBusy Then Me.BackgroundWorker2.CancelAsync()
+        If Me.BackgroundWorker3.IsBusy Then
+            Me.BackgroundWorker3.CancelAsync()
+            Me.BackgroundWorker3.Dispose()
+        End If
+        If Me.BackgroundWorker4.IsBusy Then Me.BackgroundWorker4.CancelAsync()
+        If Me.BackgroundWorker5.IsBusy Then Me.BackgroundWorker5.CancelAsync()
     End Sub
 
     Private Sub Form直接联网更新单个项_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -304,7 +306,9 @@ Public Class Form直接联网更新单个项
     Private Sub BackgroundWorker4_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker4.DoWork
         Try
             Dim zip1 As New SevenZip.SevenZipExtractor(保存位置)
+            解压文件总数 = zip1.ArchiveFileData.Count
             For i As Integer = 0 To zip1.ArchiveFileData.Count - 1
+                Me.BackgroundWorker4.ReportProgress(i + 1)
                 zip1.ExtractFiles(这份进程正在使用的临时解压目录 & "\", zip1.ArchiveFileData(i).Index)
             Next
             zip1.Dispose()
@@ -312,6 +316,14 @@ Public Class Form直接联网更新单个项
         Catch ex As Exception
             e.Result = ex.Message
         End Try
+    End Sub
+
+    Dim 解压文件总数 As Integer = 0
+
+    Private Sub BackgroundWorker4_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles BackgroundWorker4.ProgressChanged
+        Me.Label5.Text = Format((e.ProgressPercentage / 解压文件总数) * 100, "0.0") & "%"
+        Me.Label2.Width = e.ProgressPercentage / 解压文件总数 * Me.Label2.Parent.Width
+        Me.Label3.Text = e.ProgressPercentage & " / " & 解压文件总数
     End Sub
 
     Private Sub BackgroundWorker4_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker4.RunWorkerCompleted
@@ -324,9 +336,18 @@ Public Class Form直接联网更新单个项
         End If
         '开始评估
         Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S10")
+        Me.Label5.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S20")
+        Me.Label3.Text = ""
         Application.DoEvents()
 
         Dim 解压出的文件夹列表 As String() = SMUI.Windows.Core.SharedFunction.SearchFolderWithoutSub(这份进程正在使用的临时解压目录)
+        If 解压出的文件夹列表.Count = 0 Then
+            Dim msg As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/A11"),, 500)
+            msg.ShowDialog(Me)
+            Process.Start(这份进程正在使用的临时解压目录)
+            Me.Close()
+            Exit Sub
+        End If
         Dim 单层套娃兼容后_解压出的文件夹列表 As String() = {}
         Dim 实际解压路径算起位置 As String = ""
         If 解压出的文件夹列表.Count = 1 And My.Computer.FileSystem.FileExists(这份进程正在使用的临时解压目录 & "\" & 解压出的文件夹列表(0) & "\manifest.json") = False Then
@@ -355,36 +376,36 @@ Public Class Form直接联网更新单个项
                         Case SMUI.Windows.Core.Objects.CDTask.CDCD
                             CDCD计数 += 1
                             If My.Computer.FileSystem.DirectoryExists(实际解压路径算起位置 & "\" & myItemCode.Task_Parameter1(i)) = False Then
-                                更新项评估不通过操作()
+                                更新项评估不通过操作(获取动态多语言文本("data/DirectOnlineUpdateWindow/A1"))
                                 添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A1"), Color1.黄色)
                                 Exit Sub
                             End If
                             If My.Computer.FileSystem.FileExists(实际解压路径算起位置 & "\" & myItemCode.Task_Parameter1(i) & "\manifest.json") = False Then
                                 If InStr(纯文本安装命令_检测控制命令用, "CR-CDS-CDCD-AMD") > 0 Then Continue For
-                                更新项评估不通过操作()
+                                更新项评估不通过操作(获取动态多语言文本("data/DirectOnlineUpdateWindow/A2"))
                                 添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A2"), Color1.黄色)
                                 Exit Sub
                             End If
                         Case Windows.Core.Objects.CDTask.CDMAD
                             CDCD计数 += 1   '也算
                             If My.Computer.FileSystem.DirectoryExists(实际解压路径算起位置 & "\" & myItemCode.Task_Parameter1(i)) = False Then
-                                更新项评估不通过操作()
+                                更新项评估不通过操作(获取动态多语言文本("data/DirectOnlineUpdateWindow/A1"))
                                 添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A1"), Color1.黄色)
                                 Exit Sub
                             End If
                             If My.Computer.FileSystem.FileExists(实际解压路径算起位置 & "\" & myItemCode.Task_Parameter1(i) & "\manifest.json") = True Then
-                                更新项评估不通过操作()
+                                更新项评估不通过操作(获取动态多语言文本("data/DirectOnlineUpdateWindow/A10"))
                                 添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A10"), Color1.黄色)
                                 Exit Sub
                             End If
                         Case SMUI.Windows.Core.Objects.CDTask.CDGCD, SMUI.Windows.Core.Objects.CDTask.CDGCF, SMUI.Windows.Core.Objects.CDTask.CDGRF, SMUI.Windows.Core.Objects.CDTask.CDVD, SMUI.Windows.Core.Objects.CDTask.CDF
-                            更新项评估不通过操作()
+                            更新项评估不通过操作(获取动态多语言文本("data/DirectOnlineUpdateWindow/A3"))
                             添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A3"), Color1.黄色)
                             Exit Sub
                     End Select
                 Next
                 If CDCD计数 <> 准备处理的文件夹列表.Count Then
-                    更新项评估不通过操作()
+                    更新项评估不通过操作(获取动态多语言文本("data/DirectOnlineUpdateWindow/A4"))
                     添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A4"), Color1.黄色)
                     Exit Sub
                 End If
@@ -407,7 +428,7 @@ Public Class Form直接联网更新单个项
                 Next
                 Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S11")
                 Application.DoEvents()
-                TimerSleep.Sleep(1500)
+                TimerSleep.Sleep(1200)
 
             Case 在线更新操作类型.新建项
 
@@ -438,18 +459,18 @@ Public Class Form直接联网更新单个项
 
 
                 If 准备处理的文件夹列表.Count = 0 Then
-                    新建项评估不通过操作()
+                    新建项评估不通过操作(获取动态多语言文本("data/DirectOnlineUpdateWindow/A8"))
                     添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A8"), Color1.黄色)
                     Exit Sub
                 End If
                 If My.Computer.FileSystem.FileExists(新建项完整路径 & "\manifest.json") = True Then
-                    新建项评估不通过操作()
+                    新建项评估不通过操作(获取动态多语言文本("data/DirectOnlineUpdateWindow/A9"))
                     添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A9"), Color1.黄色)
                     Exit Sub
                 End If
                 For i = 0 To 准备处理的文件夹列表.Count - 1
                     If My.Computer.FileSystem.FileExists(新建项完整路径 & "\" & 准备处理的文件夹列表(i) & "\manifest.json") = False Then
-                        新建项评估不通过操作()
+                        新建项评估不通过操作(获取动态多语言文本("data/DirectOnlineUpdateWindow/A7"))
                         添加调试文本(获取动态多语言文本("data/DirectOnlineUpdateWindow/A7"), Color1.黄色)
                         Exit Sub
                     Else
@@ -464,19 +485,20 @@ Public Class Form直接联网更新单个项
                 My.Computer.FileSystem.WriteAllText(新建项完整路径 & "\Code", 自动编写的安装命令, False, System.Text.Encoding.UTF8)
                 Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S15")
                 Application.DoEvents()
-                TimerSleep.Sleep(1500)
+                TimerSleep.Sleep(1200)
         End Select
 
         If My.Computer.FileSystem.DirectoryExists(这份进程正在使用的临时解压目录) = True Then
             Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S14")
+            Me.Label5.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S21")
             Application.DoEvents()
             My.Computer.FileSystem.DeleteDirectory(这份进程正在使用的临时解压目录, FileIO.DeleteDirectoryOption.DeleteAllContents)
         End If
         Me.Close()
     End Sub
 
-    Sub 更新项评估不通过操作()
-        Dim msg1 As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S12"), 150, 500)
+    Sub 更新项评估不通过操作(Optional 不能自动完成的原因 As String = "")
+        Dim msg1 As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S12") & vbNewLine & vbNewLine & 不能自动完成的原因, 150, 500)
         msg1.ShowDialog(Me)
         Process.Start(这份进程正在使用的临时解压目录)
         For k = 0 To Form1.ListView2.SelectedItems.Count - 1
@@ -501,8 +523,8 @@ jx:
         Me.Close()
     End Sub
 
-    Sub 新建项评估不通过操作()
-        Dim msg1 As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S12"), 150, 500)
+    Sub 新建项评估不通过操作(Optional 评估不通过的原因 As String = "")
+        Dim msg1 As New SingleSelectionDialog("", {获取动态多语言文本("data/DynamicText/OK")}, 获取动态多语言文本("data/DirectOnlineUpdateWindow/S12") & vbNewLine & vbNewLine & 评估不通过的原因, 150, 500)
         msg1.ShowDialog(Me)
         Process.Start(这份进程正在使用的临时解压目录)
         For i = 0 To Form1.ListView3.Items.Count - 1

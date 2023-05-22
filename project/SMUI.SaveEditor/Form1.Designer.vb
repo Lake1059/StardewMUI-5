@@ -23,9 +23,9 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ListViewGroup1 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("程序关键信息（非专业人员请勿修改，否则后果自负）", System.Windows.Forms.HorizontalAlignment.Left)
-        Dim ListViewGroup2 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("程序内置项", System.Windows.Forms.HorizontalAlignment.Left)
-        Dim ListViewGroup3 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("用户自定义项", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup1 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("程序关键信息 Program Key Information", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup2 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("程序内置项 Program built-ins", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup3 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("用户自定义项 User defined items", System.Windows.Forms.HorizontalAlignment.Left)
         Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"玩家名字（存档列表显示）", "SaveGameInfo", "Farmer/name"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, Nothing)
         Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"玩家名字（游戏内实际）", "[game]", "SaveGame/player/name"}, -1, System.Drawing.SystemColors.WindowText, System.Drawing.Color.Empty, Nothing)
         Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"农场名字（存档列表显示）", "SaveGameInfo", "Farmer/farmName"}, -1)
@@ -95,21 +95,21 @@ Partial Class Form1
         '扫描存档ToolStripMenuItem
         '
         Me.扫描存档ToolStripMenuItem.Name = "扫描存档ToolStripMenuItem"
-        Me.扫描存档ToolStripMenuItem.Size = New System.Drawing.Size(68, 28)
-        Me.扫描存档ToolStripMenuItem.Text = "扫描存档"
+        Me.扫描存档ToolStripMenuItem.Size = New System.Drawing.Size(130, 28)
+        Me.扫描存档ToolStripMenuItem.Text = "扫描存档 Scan Save"
         '
         '选择存档ToolStripMenuItem
         '
         Me.选择存档ToolStripMenuItem.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.选择存档ToolStripMenuItem.Name = "选择存档ToolStripMenuItem"
-        Me.选择存档ToolStripMenuItem.Size = New System.Drawing.Size(68, 28)
-        Me.选择存档ToolStripMenuItem.Text = "选择存档"
+        Me.选择存档ToolStripMenuItem.Size = New System.Drawing.Size(149, 28)
+        Me.选择存档ToolStripMenuItem.Text = "选择存档 Choose Save"
         '
         '保存存档ToolStripMenuItem
         '
         Me.保存存档ToolStripMenuItem.Name = "保存存档ToolStripMenuItem"
-        Me.保存存档ToolStripMenuItem.Size = New System.Drawing.Size(68, 28)
-        Me.保存存档ToolStripMenuItem.Text = "保存存档"
+        Me.保存存档ToolStripMenuItem.Size = New System.Drawing.Size(99, 28)
+        Me.保存存档ToolStripMenuItem.Text = "保存存档 Save"
         '
         '编辑数组ToolStripMenuItem
         '
@@ -134,11 +134,11 @@ Partial Class Form1
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListView1.FullRowSelect = True
-        ListViewGroup1.Header = "程序关键信息（非专业人员请勿修改，否则后果自负）"
+        ListViewGroup1.Header = "程序关键信息 Program Key Information"
         ListViewGroup1.Name = "ListViewGroup3"
-        ListViewGroup2.Header = "程序内置项"
+        ListViewGroup2.Header = "程序内置项 Program built-ins"
         ListViewGroup2.Name = "ListViewGroup1"
-        ListViewGroup3.Header = "用户自定义项"
+        ListViewGroup3.Header = "用户自定义项 User defined items"
         ListViewGroup3.Name = "ListViewGroup2"
         Me.ListView1.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3})
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
@@ -189,22 +189,22 @@ Partial Class Form1
         '
         'ColumnHeader1
         '
-        Me.ColumnHeader1.Text = "属性"
+        Me.ColumnHeader1.Text = "属性 Attributes"
         Me.ColumnHeader1.Width = 200
         '
         'ColumnHeader2
         '
-        Me.ColumnHeader2.Text = "文件"
+        Me.ColumnHeader2.Text = "文件 File"
         Me.ColumnHeader2.Width = 125
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "XML 节点路径"
+        Me.ColumnHeader3.Text = "XML 节点路径 XML node path"
         Me.ColumnHeader3.Width = 300
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "值"
+        Me.ColumnHeader4.Text = "值 Value"
         Me.ColumnHeader4.Width = 200
         '
         'ContextMenuStrip2
@@ -213,25 +213,25 @@ Partial Class Form1
         Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.修改值ToolStripMenuItem, Me.ToolStripSeparator1, Me.复制XML节点路径ToolStripMenuItem})
         Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
         Me.ContextMenuStrip2.ShowImageMargin = False
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(158, 54)
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(192, 54)
         '
         '修改值ToolStripMenuItem
         '
         Me.修改值ToolStripMenuItem.Name = "修改值ToolStripMenuItem"
         Me.修改值ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2
-        Me.修改值ToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.修改值ToolStripMenuItem.Text = "修改值"
+        Me.修改值ToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.修改值ToolStripMenuItem.Text = "修改值 Edit value"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(154, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(188, 6)
         '
         '复制XML节点路径ToolStripMenuItem
         '
         Me.复制XML节点路径ToolStripMenuItem.Name = "复制XML节点路径ToolStripMenuItem"
-        Me.复制XML节点路径ToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.复制XML节点路径ToolStripMenuItem.Text = "复制 XML 节点路径"
+        Me.复制XML节点路径ToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.复制XML节点路径ToolStripMenuItem.Text = "复制 XML 节点路径 Copy"
         '
         'ImageList1
         '

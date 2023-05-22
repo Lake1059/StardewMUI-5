@@ -46,6 +46,7 @@ Public Class Form模组检查更新操作台
             Me.Label40.Visible = True
             Me.Label43.Visible = True
             Me.Label42.Visible = True
+            Me.Label3.Visible = True
         End If
         If DLC.CustomInputExtension = True Then
             Me.自由输入NEXUSIDToolStripMenuItem.Visible = True

@@ -127,7 +127,7 @@ Partial Class Form直接联网更新单个项
         '
         'Label5
         '
-        Me.Label5.Font = New System.Drawing.Font("Yu Gothic UI", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label5.Location = New System.Drawing.Point(88, 69)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(300, 50)
@@ -200,7 +200,7 @@ Partial Class Form直接联网更新单个项
         Me.ForeColor = System.Drawing.Color.Gainsboro
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(700, 500)
+        Me.MinimumSize = New System.Drawing.Size(700, 300)
         Me.Name = "Form直接联网更新单个项"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False

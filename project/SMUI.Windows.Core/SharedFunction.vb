@@ -1,21 +1,34 @@
-﻿Public Class SharedFunction
-    Private Shared Function GetStringFromHash(hash As Byte()) As String
-        Dim result As New Text.StringBuilder()
-        For i As Integer = 0 To hash.Length - 1
-            result.Append(hash(i).ToString("X2"))
-        Next
-        Return result.ToString()
+﻿Imports System.Security.Cryptography
+Imports System.Text
+
+Public Class SharedFunction
+
+    Public Shared Function CalculateSHA256(filePath As String, chunkSizeByte As Long) As String
+        Using sha256 As SHA256 = SHA256.Create()
+            Using fileStream As IO.FileStream = IO.File.OpenRead(filePath)
+                Dim buffer(chunkSizeByte - 1) As Byte
+                Dim bytesRead As Integer = fileStream.Read(buffer, 0, chunkSizeByte)
+                Dim hashBytes() As Byte = sha256.ComputeHash(buffer, 0, bytesRead)
+                Dim stringBuilder As New StringBuilder()
+                For Each hashByte As Byte In hashBytes
+                    stringBuilder.Append(hashByte.ToString("x2"))
+                Next
+                Return stringBuilder.ToString()
+            End Using
+        End Using
     End Function
 
-    Public Shared Function FileEncryptSHA256(ByVal file_name As String)
-        Dim sha256 As System.Security.Cryptography.SHA256 = System.Security.Cryptography.SHA256.Create()
-        Dim hashValue() As Byte
-        Dim fStream As IO.FileStream = System.IO.File.OpenRead(file_name)
-        fStream.Position = 0
-        hashValue = sha256.ComputeHash(fStream)
-        Dim hash = GetStringFromHash(hashValue)
-        fStream.Close()
-        Return hash
+    Public Shared Function CalculateSHA256(filePath As String) As String
+        Using sha256 As SHA256 = SHA256.Create()
+            Using fileStream As IO.FileStream = IO.File.OpenRead(filePath)
+                Dim hashBytes() As Byte = sha256.ComputeHash(fileStream)
+                Dim stringBuilder As New StringBuilder()
+                For Each hashByte As Byte In hashBytes
+                    stringBuilder.Append(hashByte.ToString("x2"))
+                Next
+                Return stringBuilder.ToString()
+            End Using
+        End Using
     End Function
 
     Public Shared Function GetModUpdateID(ByVal OneLineText As String, ByVal FindID As String) As String

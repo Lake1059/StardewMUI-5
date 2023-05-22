@@ -92,10 +92,11 @@
     <AssemblyOriginatorKeyFile>SMUI.GUI_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3FF7EE53AAF3CD7C477F41CC19CE3CC7C4EE8560</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>431497CFFC8D6A1F1B3399286F7C5A7A637B68F0</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SMUI.GUI_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestTimestampUrl>
@@ -301,6 +302,7 @@
     <Compile Include="Module1.vb" />
     <Compile Include="Module2.vb" />
     <Compile Include="Module3.vb" />
+    <Compile Include="ThreadManager.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

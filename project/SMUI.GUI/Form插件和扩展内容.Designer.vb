@@ -294,7 +294,7 @@ Partial Class Form插件和扩展内容
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "插件和扩展内容"
+        Me.Text = "DLC & Plugins"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel4.ResumeLayout(False)

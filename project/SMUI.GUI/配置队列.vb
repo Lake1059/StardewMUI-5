@@ -151,7 +151,7 @@ Module 配置队列
         If Form1.RichTextBox3.SelectedText = Nothing Then
             Dim a As Integer = Form1.RichTextBox3.SelectionStart
             Form1.RichTextBox3.Text = Form1.RichTextBox3.Text.Insert(a, str)
-            Form1.RichTextBox3.SelectionStart = a + str.Length + 1
+            Form1.RichTextBox3.SelectionStart = a + str.Length
         Else
             Form1.RichTextBox3.SelectedText = str
         End If
@@ -163,82 +163,35 @@ Module 配置队列
             .DropShadowEnabled = False,
             .ShowCheckMargin = False
         }
-        AddHandler a.Items.Add("CDCD").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("CDMAD").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("CDGCD").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("CDGRF").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("CDGCF").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("CDF").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("CDVD").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
+        a.Items.Add("CDCD")
+        a.Items.Add("CDMAD")
+        a.Items.Add("CDGCD")
+        a.Items.Add("CDGRF")
+        a.Items.Add("CDGCF")
+        a.Items.Add("CDGCF-SHA")
+        a.Items.Add("CDF")
+        a.Items.Add("CDCC").ToolTipText = "CDVD"
         a.Items.Add(New ToolStripSeparator)
-        AddHandler a.Items.Add("RQ-D").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("RQ-D-IN").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("RQ-D-UN").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("RQ-F").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("RQ-F-IN").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("RQ-F-UN").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
+        a.Items.Add("RQ-D").ToolTipText = "-IN\UN"
+        a.Items.Add("RQ-F").ToolTipText = "-IN\UN"
         a.Items.Add(New ToolStripSeparator)
-        AddHandler a.Items.Add("CR-UN-OFF").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("CR-CG-DB").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("CR-CDS-CDCD-AMD").Click,
-            Sub(s, e)
-                插入文本(s.Text) : a.Dispose()
-            End Sub
-        AddHandler a.Items.Add("CR-FILE-ALLOW-ALL").Click,
-           Sub(s, e)
-               插入文本(s.Text) : a.Dispose()
-           End Sub
+        a.Items.Add("CR-UN-OFF")
+        a.Items.Add("CR-UN-CANCEL")
+        a.Items.Add("CR-CG-DB")
+        a.Items.Add("CR-CDS-CDCD-AMD")
+        a.Items.Add("CR-FILE-ALLOW-ALL")
+        a.Items.Add("CR-APP-SHELL").ToolTipText = "{-P} -IN\UN"
         a.Items.Add(New ToolStripSeparator)
+        For Each t As ToolStripItem In a.Items
+            AddHandler a.Click,
+                Sub(sender As Object, e As EventArgs)
+                    插入文本(sender.Text) : a.Dispose()
+                End Sub
+        Next
         AddHandler a.Items.Add("SUB D-EX-IN").Click,
             Sub(s, e)
                 插入文本(s.Text & vbNewLine & vbNewLine & "END SUB") : a.Dispose()
             End Sub
-
         Return a
     End Function
 
@@ -337,8 +290,9 @@ Module 配置队列
         Next
         For i = 0 To line.Count - 1
             If Replace(line(i), " ", "") Is Nothing Then Continue For
-            If InStr(Replace(line(i), " ", "").ToUpper, "//") > 0 Then Continue For
-            Select Case Replace(line(i), " ", "").ToUpper
+            Dim data1 As String = Replace(line(i), " ", "").ToUpper
+            If InStr(data1, "//") > 0 Then Continue For
+            Select Case data1
                 Case "CDCD", "CDCP"
                     If i = line.Count - 1 Then
                         添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.7"), Color1.红色)
@@ -394,7 +348,9 @@ Module 配置队列
                     End If
                     If 模组内容对象表.Contains(line(i + 1)) = True Then 命令使用与否记录表(Array.IndexOf(模组内容对象表, line(i + 1))) = True
                     i += 1
-                Case "CDGRF", "CDRF-SHA", "CDGCF", "CDRF-EXT", "CDF", "CDRF"
+                Case "CDGRF", "CDRF", "CDGCF", "CDGCF-SHA", "CDF"
+Line_替换文件行:
+
                     If i = line.Count - 1 Or i = line.Count - 2 Then
                         添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.7"), Color1.红色)
                         存在错误 = True : Exit Select
@@ -429,7 +385,7 @@ Module 配置队列
                         添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.11"), Color1.红色)
                         i += 1 : 存在错误 = True : Exit Select
                     End If
-                Case "UN-OFF", "CR-UN-OFF"
+                Case "UN-OFF", "CR-UN-OFF", "CR-UN-CANCEL"
                 Case "CR-CDS-CDCD-AMD"
                     是否允许CDCD套娃 = True : 添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.21"), Color1.青色)
                 Case "CR-FILE-ALLOW-ALL"
@@ -449,7 +405,47 @@ Module 配置队列
                     Next
                 Case "ENDSUB"
                     存在错误 = True : 添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.13"), Color1.红色)
+
+                Case "CR-APP-SHELL-IN", "CR-APP-SHELL-UN"
+                    If i = line.Count - 1 Then
+                        添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.7"), Color1.红色)
+                        存在错误 = True : Exit Select
+                    End If
+                    If line(i + 1).Replace(" ", "") = "" Or line(i + 1) = Nothing Then
+                        添加情况分析文本(字符_行() & i + 2 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.8"), Color1.红色)
+                        i += 1 : 存在错误 = True : Exit Select
+                    End If
+                    i += 1
+                Case "CR-APP-SHELL-P-IN", "CR-APP-SHELL-P-UN"
+                    If i = line.Count - 1 Then
+                        添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.7"), Color1.红色)
+                        存在错误 = True : Exit Select
+                    End If
+                    If line(i + 1).Replace(" ", "") = "" Or line(i + 1) = Nothing Then
+                        添加情况分析文本(字符_行() & i + 2 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.8"), Color1.红色)
+                        i += 1 : 存在错误 = True : Exit Select
+                    End If
+                    If line(i + 2).Replace(" ", "") = "" Or line(i + 2) = Nothing Then
+                        添加情况分析文本(字符_行() & i + 3 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.8"), Color1.红色)
+                        i += 1 : 存在错误 = True : Exit Select
+                    End If
+                    i += 2
                 Case Else
+                    If data1.Contains("CDGCF-SHA-") Then
+                        If data1.Contains("CDGCF-SHA-") Then
+                            If data1 = "CDGCF-SHA-" Then
+                                添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.25"), Color1.红色)
+                                存在错误 = True : Exit Select
+                            End If
+                            Dim intdata As String = Mid(data1, Len("CDGCF-SHA-"))
+                            If Long.TryParse(intdata, Nothing) = False Then
+                                添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.24") & intdata, Color1.红色)
+                                存在错误 = True : Exit Select
+                            End If
+                        End If
+                        GoTo Line_替换文件行
+                    End If
+
                     存在错误 = True : 添加情况分析文本(字符_行() & i + 1 & ": " & 获取动态多语言文本("data/DynamicText/Deploy.14") & line(i), Color1.红色)
             End Select
         Next
