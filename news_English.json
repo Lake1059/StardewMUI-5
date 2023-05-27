@@ -1,0 +1,22 @@
+{
+    "Object": [
+        {
+            "Title": "Join our KOOK server",
+            "Subtitle": "Ask for help or report bugs.",
+            "Type": "link",
+            "Body": "https://kook.top/yW15HU"
+        },
+        {
+            "Title": "Learn from wiki.",
+            "Subtitle": "For the complete content, please go to the Chinese Wiki.",
+            "Type": "link",
+            "Body": "https://stardewmui.fandom.com/wiki/StardewMUI_Wiki"
+        },
+        {
+            "Title": "Install CEF components to use browser functions.",
+            "Subtitle": "Mainly used to allow non-NEXUS members to download mods directly.",
+            "Type": "link",
+            "Body": "https://drive.google.com/drive/folders/1UDZoHUOibIeFACRkn0ZI_DzaT_Zb4sA2?usp=sharing"
+        },
+    ]
+}

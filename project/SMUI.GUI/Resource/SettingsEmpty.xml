@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<StardewValleyGamePath></StardewValleyGamePath>
+	<ModRepositoryPath></ModRepositoryPath>
+	<StardewValleyGameBackUpPath></StardewValleyGameBackUpPath>
+	<VisualStudioCodePath></VisualStudioCodePath>
+	<VisualStudioPath></VisualStudioPath>
+	<NotepadPath></NotepadPath>
+
+	<DownloadSmuiUndateFrom></DownloadSmuiUndateFrom>
+	<OnlineContentFrom></OnlineContentFrom>
+	<OnlineContentLanguage></OnlineContentLanguage>
+	<InterfaceLanguage></InterfaceLanguage>
+	
+	<NEXUSMODSPersonalAPIKey></NEXUSMODSPersonalAPIKey>
+	<GitHubPersonalAccessTokens></GitHubPersonalAccessTokens>
+	<GiteePersonalAccessTokens></GiteePersonalAccessTokens>
+
+	<StartOptions>1</StartOptions>
+	<UserStartOptions></UserStartOptions>
+	<SMAPIAdditionalParameters></SMAPIAdditionalParameters>
+
+	<AutoCheckSMUIUpdates>True</AutoCheckSMUIUpdates>
+	<AutoGetNews>True</AutoGetNews>
+	<StatisticsOnTheNmberOfParticipatingUsers>True</StatisticsOnTheNmberOfParticipatingUsers>
+	<SaveInterfaceLayout>True</SaveInterfaceLayout>
+	<DragDropCompatibilityForAdministrator>True</DragDropCompatibilityForAdministrator>
+	<AutoSelectFirstNexusDownloadServer>False</AutoSelectFirstNexusDownloadServer>
+
+	<CategoryPanelWidth>200</CategoryPanelWidth>
+	<DetailsPanelWidth>250</DetailsPanelWidth>
+	<MainWindowWidth>1200</MainWindowWidth>
+	<MainWindowHeight>705</MainWindowHeight>
+	<ItemsHeightAdd>0</ItemsHeightAdd>
+
+	<FontName9pt>Microsoft YaHei UI</FontName9pt>
+	<FontName9.75pt>Microsoft YaHei UI</FontName9.75pt>
+
+	<LastUsedSubLibraryName>Default Sub Library</LastUsedSubLibraryName>
+	<LastUsed_DirectDownloadItemUpdateUserMember>False</LastUsed_DirectDownloadItemUpdateUserMember>
+
+	<PrivacyChoice></PrivacyChoice>
+	<ChromiumEmbeddedFrameworkVersionTag></ChromiumEmbeddedFrameworkVersionTag>
+	
+</data>

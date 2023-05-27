@@ -1,0 +1,10 @@
+还是让你找到了，我懒得给关于信息放一个窗体了，所以就拿这个对话框模板展示了，其实我连关于信息要写啥都没想好，那就随便写了
+
+SMUI 5 设计开发者 1059 Studio
+bilibili.com @湖边的稻草
+afdian.net @1059Studio
+
+GPL-3.0 License
+
+.NET Framework 4.8
+Visual Basic .NET
