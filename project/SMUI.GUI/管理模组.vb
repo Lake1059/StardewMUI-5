@@ -422,9 +422,9 @@ Module 管理模组
             当前项信息_作者列表 = a.Author
             Select Case a.Author.Count
                 Case > 1
-                    Form1.Label作者显示.Text = " [" & a.Author.Count & "] " & a.Author(0)
+                    Form1.Label作者显示.Text = 在指定的宽度内显示文本(Form1.Label作者显示.Width, " [" & a.Author.Count & "] " & a.Author(0), Form1.Label作者显示.Font)
                 Case 1
-                    Form1.Label作者显示.Text = " Author: " & a.Author(0)
+                    Form1.Label作者显示.Text = 在指定的宽度内显示文本(Form1.Label作者显示.Width, " Author: " & a.Author(0), Form1.Label作者显示.Font)
                 Case 0
                     Form1.Label作者显示.Text = " No Author"
             End Select
@@ -472,6 +472,24 @@ Module 管理模组
             Form1.Label项列表计数显示.Text = Form1.ListView2.Items.Count & " "
         End If
     End Sub
+
+    Function 在指定的宽度内显示文本(最大宽度 As Integer, 你的文本 As String, 使用的字体 As Font) As String
+        Dim textSize As Size = TextRenderer.MeasureText(你的文本, 使用的字体)
+        If textSize.Width > 最大宽度 Then
+            Dim ellipsisWidth As Integer = TextRenderer.MeasureText("...", 使用的字体).Width
+            Dim availableWidth As Integer = 最大宽度 - ellipsisWidth
+            Dim truncatedText As String = 你的文本
+            While TextRenderer.MeasureText(truncatedText, 使用的字体).Width > availableWidth AndAlso truncatedText.Length > 0
+                truncatedText = truncatedText.Substring(0, truncatedText.Length - 1)
+            End While
+            truncatedText &= "..."
+            Return truncatedText
+        Else
+            Return 你的文本
+        End If
+    End Function
+
+
 
     Public Sub 加载预览图(ByVal 文件 As String)
         Select Case IO.Path.GetExtension(文件).ToLower
