@@ -148,11 +148,10 @@ Module 配置队列
     End Function
 
     Private Sub 插入文本(ByVal str As String)
-        If Form1.RichTextBox3.SelectedText = Nothing Then
-            Dim a As Integer = Form1.RichTextBox3.SelectionStart
-            Form1.RichTextBox3.Text = Form1.RichTextBox3.Text.Insert(a, str)
-            Form1.RichTextBox3.SelectionStart = a + str.Length
+        If Form1.RichTextBox3.SelectionLength > 0 Then
+            Form1.RichTextBox3.SelectedText = str
         Else
+            Form1.RichTextBox3.SelectionStart = Form1.RichTextBox3.SelectionStart + Form1.RichTextBox3.SelectionLength
             Form1.RichTextBox3.SelectedText = str
         End If
     End Sub
@@ -163,34 +162,72 @@ Module 配置队列
             .DropShadowEnabled = False,
             .ShowCheckMargin = False
         }
-        a.Items.Add("CDCD")
-        a.Items.Add("CDMAD")
-        a.Items.Add("CDGCD")
-        a.Items.Add("CDGRF")
-        a.Items.Add("CDGCF")
-        a.Items.Add("CDGCF-SHA")
-        a.Items.Add("CDF")
-        a.Items.Add("CDCC").ToolTipText = "CDVD"
+        AddHandler a.Items.Add("CDCD").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CDCD" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CDMAD").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CDMAD" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CDGCD").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CDGCD" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CDGRF").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CDGRF" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CDGCF").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CDGCF" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CDGCF-SHA").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CDGCF-SHA" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CDF").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CDF" & vbNewLine)
+            End Sub
         a.Items.Add(New ToolStripSeparator)
-        a.Items.Add("RQ-D").ToolTipText = "-IN\UN"
-        a.Items.Add("RQ-F").ToolTipText = "-IN\UN"
+        AddHandler a.Items.Add("RQ-D").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("RQ-D" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("RQ-F").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("RQ-F" & vbNewLine)
+            End Sub
         a.Items.Add(New ToolStripSeparator)
-        a.Items.Add("CR-UN-OFF")
-        a.Items.Add("CR-UN-CANCEL")
-        a.Items.Add("CR-CG-DB")
-        a.Items.Add("CR-CDS-CDCD-AMD")
-        a.Items.Add("CR-FILE-ALLOW-ALL")
-        a.Items.Add("CR-APP-SHELL").ToolTipText = "{-P} -IN\UN"
+        AddHandler a.Items.Add("CR-UN-OFF").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CR-UN-OFF" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CR-UN-CANCEL").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CR-UN-CANCEL" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CR-CG-DB").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CR-CG-DB" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CR-CDS-CDCD-AMD").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CR-CDS-CDCD-AMD" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CR-FILE-ALLOW-ALL").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CR-FILE-ALLOW-ALL" & vbNewLine)
+            End Sub
+        AddHandler a.Items.Add("CR-APP-SHELL").Click,
+            Sub(sender As Object, e As EventArgs)
+                插入文本("CR-APP-SHELL" & vbNewLine)
+            End Sub
         a.Items.Add(New ToolStripSeparator)
-        For Each t As ToolStripItem In a.Items
-            AddHandler a.Click,
-                Sub(sender As Object, e As EventArgs)
-                    插入文本(sender.Text) : a.Dispose()
-                End Sub
-        Next
         AddHandler a.Items.Add("SUB D-EX-IN").Click,
             Sub(s, e)
-                插入文本(s.Text & vbNewLine & vbNewLine & "END SUB") : a.Dispose()
+                插入文本("SUB D-EX-IN" & vbNewLine & vbNewLine & "END SUB")
             End Sub
         Return a
     End Function
