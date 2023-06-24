@@ -1,4 +1,5 @@
 ﻿Imports CefSharp
+Imports CefSharp.DevTools.DOMSnapshot
 Imports CefSharp.WinForms
 Imports SMUI.GUI.Class1
 
@@ -145,7 +146,7 @@ Public Class ChromiumBrowser
     End Sub
 
     Private Sub 重置直接更新项流程状态ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 重置直接更新项流程状态ToolStripMenuItem.Click
-        If Form直接联网更新单个项.Visible = True Then
+        If 浏览器窗口内_需要回调给哪个更新模组窗口 IsNot Nothing AndAlso 浏览器窗口内_需要回调给哪个更新模组窗口.Visible = True Then
             获得的HTML = ""
             ST1.用于内置谷歌浏览器_当前正在更新模组 = True
             Me.Text = "Chromium Embedded Framework - " & 获取动态多语言文本("data/DirectOnlineUpdateWindow/Chromium.4")

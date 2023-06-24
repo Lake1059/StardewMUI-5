@@ -1,4 +1,5 @@
-﻿Imports SMUI.GUI.Class1
+﻿Imports DarkUI.Controls
+Imports SMUI.GUI.Class1
 
 Module 在线模组列表功能
 
@@ -102,6 +103,27 @@ Module 在线模组列表功能
             简介文字.BringToFront()
             基于面板.Controls.Add(独立容器)
             独立容器.BringToFront()
+
+            If DLC解锁状态.DLC3 = True Then
+                If a.status(i) = "not_published" Or a.status(i) = "removed" Or a.status(i) = "hidden" Then Continue For
+                Dim 直接创建按钮 As New DarkButton With {.Text = "➕", .Font = New Font("Microsoft YaHei UI", 9)}
+                独立容器.Controls.Add(直接创建按钮)
+                直接创建按钮.BringToFront()
+                直接创建按钮.Height = 标题文字.Height
+                直接创建按钮.Width = 直接创建按钮.Height + 3
+                直接创建按钮.Top = 标题文字.Top
+                直接创建按钮.Left = 独立容器.Width - 直接创建按钮.Width - 直接创建按钮.Top
+                直接创建按钮.Anchor = AnchorStyles.Right
+                Dim strid1 As String = a.mod_id(i)
+                AddHandler 直接创建按钮.Click,
+                    Sub(s1, e1)
+                        Form下载并新建项输入对话框.DarkTextBox1.Text = 标题文字.Text
+                        Form下载并新建项输入对话框.DarkTextBox2.Text = strid1
+                        显示模式窗体(Form下载并新建项输入对话框, Form1)
+                    End Sub
+            End If
+
+
         Next
         Dim c1 As New Label With {.AutoSize = False, .Dock = DockStyle.Top, .Height = 5}
         基于面板.Controls.Add(c1)

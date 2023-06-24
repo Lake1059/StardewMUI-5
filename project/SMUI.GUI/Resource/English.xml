@@ -516,13 +516,119 @@
 		<A10 chs="无意义的文件">Meaningless file</A10>
 		<L1 chs="扫描到的 UniqueID 总数">UniqueIDs scanned.</L1>	
 	</GlobalModsInstallationCheckWindow>
+
+	<DistributionManagerWindow>
+		<A1 chs=""></A1>
+		<A2 chs=""></A2>
+		<A3 chs=""></A3>
+		<A4 chs=""></A4>
+		<A5 chs=""></A5>
+		<A6 chs=""></A6>
+		<A7 chs=""></A7>
+		<A8 chs=""></A8>
+		<A9 chs=""></A9>
+		<A10 chs=""></A10>
+		<A11 chs=""></A11>
+		<A12 chs=""></A12>
+		<A13 chs=""></A13>
+		<A14 chs=""></A14>
+		<A15 chs=""></A15>
+		<A16 chs=""></A16>
+		<A17 chs=""></A17>
+		<A18 chs=""></A18>
+		<A19 chs=""></A19>
+		<A20 chs=""></A20>
+		<A21 chs=""></A21>
+		<A22 chs=""></A22>
+		<A23 chs=""></A23>
+		<A24 chs=""></A24>
+		<A25 chs=""></A25>
+		<A26 chs=""></A26>
+		<A27 chs=""></A27>
+		<A28 chs=""></A28>
+		<A29 chs=""></A29>
+		<A30 chs=""></A30>
+		<A31 chs=""></A31>
+		<A32 chs=""></A32>
+		<A33 chs=""></A33>
+		<A34 chs=""></A34>
+		<A35 chs=""></A35>
+		<A36 chs=""></A36>
+		<A37 chs=""></A37>
+		<A38 chs=""></A38>
+		<A39 chs=""></A39>
+		<A40 chs=""></A40>
+		<A41 chs=""></A41>
+		<A42 chs=""></A42>
+		<A43 chs=""></A43>
+		<A44 chs=""></A44>
+		<A45 chs=""></A45>
+		<A46 chs=""></A46>
+		<A47 chs=""></A47>
+		<A48 chs=""></A48>
+		<A49 chs=""></A49>
+		<A50 chs=""></A50>
+
+		<S1 chs="输入新预设的名称，由于这是路径的一部分，所以你不能使用某些字符"></S1>
+		<S2 chs="路径已存在，请重新取名"></S2>
+		<S3 chs="重命名预设名称："></S3>
+		<S4 chs="为了防止你反悔，将预设发送到回收站"></S4>
+		<S5 chs=""></S5>
+		<S6 chs=""></S6>
+		<S7 chs=""></S7>
+		<S8 chs=""></S8>
+		<S9 chs=""></S9>
+		<S10 chs=""></S10>
+		<S11 chs=""></S11>
+		<S12 chs=""></S12>
+		<S13 chs=""></S13>
+		<S14 chs=""></S14>
+		<S15 chs=""></S15>
+		<S16 chs=""></S16>
+		<S17 chs=""></S17>
+		<S18 chs=""></S18>
+		<S19 chs=""></S19>
+		<S20 chs=""></S20>
+		<S21 chs=""></S21>
+		<S22 chs=""></S22>
+		<S23 chs=""></S23>
+		<S24 chs=""></S24>
+		<S25 chs=""></S25>
+		<S26 chs=""></S26>
+		<S27 chs=""></S27>
+		<S28 chs=""></S28>
+		<S29 chs=""></S29>
+		<S30 chs=""></S30>
+		<S31 chs=""></S31>
+		<S32 chs=""></S32>
+		<S33 chs=""></S33>
+		<S34 chs=""></S34>
+		<S35 chs=""></S35>
+		<S36 chs=""></S36>
+		<S37 chs=""></S37>
+		<S38 chs=""></S38>
+		<S39 chs=""></S39>
+		<S40 chs=""></S40>
+		<S41 chs=""></S41>
+		<S42 chs=""></S42>
+		<S43 chs=""></S43>
+		<S44 chs=""></S44>
+		<S45 chs=""></S45>
+		<S46 chs=""></S46>
+		<S47 chs=""></S47>
+		<S48 chs=""></S48>
+		<S49 chs=""></S49>
+		<S50 chs=""></S50>
+		
+	</DistributionManagerWindow>
+	
 	
 	
 
 	<PrivacyChoiceWindow>
 		<A1 chs="隐私选项">Privacy Choice</A1>
 		<A2 chs="参与用户统计，并上传这些数据">Participate in user statistics and upload these data.</A2>
-		<A3 chs="参与用户统计，但不愿意上传你的数据，我们仍会收到您的公网 IP 地址">Participate in user statistics, but do not want to upload your data, we will still receive your public IP address.</A3>
+		<A3 chs="参与用户统计，但不愿意上传你的数据，我们仍会收到你的公网 IP 地址">Participate in user statistics, but do not want to upload your data, we will still receive your public IP address.</A3>
 		<A4 chs="不参与统计，我们不会收到你的任何数据">Do not participate in statistics, we will not receive any data from you</A4>
 		<A5 chs="确认选择">Confirm selection</A5>
 	</PrivacyChoiceWindow>

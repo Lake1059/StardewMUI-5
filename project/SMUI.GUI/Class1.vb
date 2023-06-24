@@ -82,6 +82,8 @@ Public Class Class1
         Public Shared ReadOnly 临时自动下载路径 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache\Download"
         Public Shared ReadOnly 临时自动解压路径 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache\Decompress"
         Public Shared ReadOnly 用于发行版的DLC路径 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache\DLC"
+        Public Shared ReadOnly 分发预设目录 As String = AppDataRoaming & "\1059 Studio\SMUI Client 5 Cache\Distribution"
+
     End Class
 
     ''' <summary>

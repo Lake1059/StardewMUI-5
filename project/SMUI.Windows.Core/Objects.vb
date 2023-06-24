@@ -1,5 +1,4 @@
-﻿Imports System.Runtime.CompilerServices
-
+﻿
 Public Class Objects
     Public Enum InstallStatus
         Unknow = -1
