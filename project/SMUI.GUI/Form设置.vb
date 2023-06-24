@@ -291,7 +291,7 @@ Public Class Form设置
         'xml_Settings.SelectSingleNode("data/StatisticsOnTheNmberOfParticipatingUsers").InnerText = Me.CheckBox6.Checked
         xml_Settings.SelectSingleNode("data/SaveInterfaceLayout").InnerText = Me.CheckBox5.Checked
         xml_Settings.SelectSingleNode("data/DragDropCompatibilityForAdministrator").InnerText = Me.CheckBox1.Checked
-        xml_Settings.SelectSingleNode("data/AutoSelectFirstNexusDownloadServer").InnerText = Me.CheckBox1.Checked
+        xml_Settings.SelectSingleNode("data/AutoSelectFirstNexusDownloadServer").InnerText = Me.CheckBox3.Checked
         xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText = Me.TrackBar1.Value
         Form1.Panel9.Width = Me.TrackBar1.Value
         xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText = Me.TrackBar2.Value
@@ -313,14 +313,13 @@ Public Class Form设置
         If Me.ComboBox1.Text <> "" Then
             xml_Settings.SelectSingleNode("data/FontName9pt").InnerText = Me.ComboBox1.Text
             加载主窗口字体设置()
+            Me.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
+            Me.Panel1.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
         End If
         If Me.ComboBox2.Text <> "" Then
             xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText = Me.ComboBox2.Text
+            Me.Panel9.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText, 9.75)
         End If
-
-        Me.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
-        Me.Panel1.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9pt").InnerText, 9)
-        Me.Panel9.Font = New Font(xml_Settings.SelectSingleNode("data/FontName9.75pt").InnerText, 9.75)
 
         xml_Settings.Save(Path1.应用程序设置文件路径)
         If 是否改动了关键路径 = True Then 刷新标题栏主信息显示()
