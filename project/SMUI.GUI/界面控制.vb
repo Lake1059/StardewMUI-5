@@ -3,6 +3,32 @@
 Module 界面控制
 
     Public Sub 启动时初始化界面()
+
+        If xml_Settings.SelectSingleNode("data/SMUI6_ListViewCustomDarwItem").InnerText = "True" Then
+
+            Form1.ListView1.OwnerDraw = True
+            AddHandler Form1.ListView1.DrawItem, Sub(s1, e1) 暗黑列表视图自绘制.绑定绘制项事件(s1, e1)
+            AddHandler Form1.ListView1.SelectedIndexChanged, Sub(s1, e1) s1.Invalidate(s1.ClientRectangle)
+
+            Form1.ListView2.OwnerDraw = True
+            AddHandler Form1.ListView2.DrawSubItem, Sub(s1, e1) 暗黑列表视图自绘制.绑定绘制项事件(s1, e1)
+            AddHandler Form1.ListView2.SelectedIndexChanged, Sub(s1, e1) s1.Invalidate(s1.ClientRectangle)
+
+            Form1.ListView3.OwnerDraw = True
+            AddHandler Form1.ListView3.DrawSubItem, Sub(s1, e1) 暗黑列表视图自绘制.绑定绘制项事件(s1, e1)
+            AddHandler Form1.ListView3.SelectedIndexChanged, Sub(s1, e1) s1.Invalidate(s1.ClientRectangle)
+
+            Form1.ListView4.OwnerDraw = True
+            AddHandler Form1.ListView4.DrawSubItem, Sub(s1, e1) 暗黑列表视图自绘制.绑定绘制项事件(s1, e1)
+            AddHandler Form1.ListView4.SelectedIndexChanged, Sub(s1, e1) s1.Invalidate(s1.ClientRectangle)
+
+            Form依赖项表.ListView1.OwnerDraw = True
+            AddHandler Form依赖项表.ListView1.DrawSubItem, Sub(s1, e1) 暗黑列表视图自绘制.绑定绘制项事件(s1, e1)
+            AddHandler Form依赖项表.ListView1.SelectedIndexChanged, Sub(s1, e1) s1.Invalidate(s1.ClientRectangle)
+        End If
+
+
+
         Form1.Panel起始页面.Dock = DockStyle.Fill
         Form1.Panel起始页面.BorderStyle = BorderStyle.None
         Form1.Panel管理模组.Dock = DockStyle.Fill
@@ -149,8 +175,6 @@ Module 界面控制
         Form1.Panel更新历史.Visible = False
         Form1.Label新闻公告.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
         Form1.Label模组列表.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
-        Form1.Label统计数据.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
-        Form1.Label主题内容.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
         Form1.Label创作者自由面板.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
         Form1.Label关于和许可协议.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
         Form1.Label查看更新历史.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))

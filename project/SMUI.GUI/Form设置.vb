@@ -7,12 +7,12 @@ Imports SMUI.Windows.PakManager
 
 Public Class Form设置
 
-    Sub 一级按钮鼠标移上事件(sender As Object, e As EventArgs) Handles Label9.MouseEnter, Label7.MouseEnter, Label确定.MouseEnter, Label应用.MouseEnter, Label4.MouseEnter, Label28.MouseEnter, Label24.MouseEnter, Label10.MouseEnter, Label取消.MouseEnter
+    Sub 一级按钮鼠标移上事件(sender As Object, e As EventArgs) Handles Label9.MouseEnter, Label7.MouseEnter, Label确定.MouseEnter, Label应用.MouseEnter, Label28.MouseEnter, Label24.MouseEnter, Label10.MouseEnter, Label取消.MouseEnter
         sender.BackColor = ColorTranslator.FromWin32(RGB(100, 100, 100))
 
     End Sub
 
-    Sub 一级按钮鼠标移走事件(sender As Object, e As EventArgs) Handles Label9.MouseLeave, Label7.MouseLeave, Label确定.MouseLeave, Label应用.MouseLeave, Label4.MouseLeave, Label28.MouseLeave, Label24.MouseLeave, Label10.MouseLeave, Label取消.MouseLeave
+    Sub 一级按钮鼠标移走事件(sender As Object, e As EventArgs) Handles Label9.MouseLeave, Label7.MouseLeave, Label确定.MouseLeave, Label应用.MouseLeave, Label28.MouseLeave, Label24.MouseLeave, Label10.MouseLeave, Label取消.MouseLeave
         sender.BackColor = ColorTranslator.FromWin32(RGB(64, 64, 64))
 
     End Sub
@@ -52,7 +52,6 @@ Public Class Form设置
             Me.Label12.Text = 获取动态多语言文本("data/SettingsWindow/A10")
             Me.Label25.Text = 获取动态多语言文本("data/SettingsWindow/A14")
             Me.Label29.Text = 获取动态多语言文本("data/SettingsWindow/A15")
-            Me.Label15.Text = 获取动态多语言文本("data/SettingsWindow/A16")
             Me.Label地区和语言.Text = 获取动态多语言文本("data/SettingsWindow/A17")
             Me.Label1.Text = 获取动态多语言文本("data/SettingsWindow/A18")
             Me.Label22.Text = 获取动态多语言文本("data/SettingsWindow/A19")
@@ -175,7 +174,6 @@ Public Class Form设置
         Me.TextBox星露谷游戏备份路径.Text = xml_Settings.SelectSingleNode("data/StardewValleyGameBackUpPath").InnerText
         Me.TextBox6.Text = xml_Settings.SelectSingleNode("data/VisualStudioCodePath").InnerText
         Me.TextBox7.Text = xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText
-        Me.TextBox13.Text = xml_Settings.SelectSingleNode("data/NotepadPath").InnerText
         Select Case xml_Settings.SelectSingleNode("data/DownloadSmuiUndateFrom").InnerText
             Case 1
                 Me.RadioButton1.Checked = True
@@ -228,6 +226,7 @@ Public Class Form设置
         Me.CheckBox5.Checked = xml_Settings.SelectSingleNode("data/SaveInterfaceLayout").InnerText
         Me.CheckBox1.Checked = xml_Settings.SelectSingleNode("data/DragDropCompatibilityForAdministrator").InnerText
         Me.CheckBox3.Checked = xml_Settings.SelectSingleNode("data/AutoSelectFirstNexusDownloadServer").InnerText
+        Me.CheckBox2.Checked = xml_Settings.SelectSingleNode("data/SMUI6_ListViewCustomDarwItem").InnerText
         Me.TrackBar1.Value = xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText
         Me.TrackBar2.Value = xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText
         Me.TrackBar6.Value = xml_Settings.SelectSingleNode("data/ItemsHeightAdd").InnerText
@@ -249,7 +248,6 @@ Public Class Form设置
         xml_Settings.SelectSingleNode("data/StardewValleyGameBackUpPath").InnerText = Me.TextBox星露谷游戏备份路径.Text
         xml_Settings.SelectSingleNode("data/VisualStudioCodePath").InnerText = Me.TextBox6.Text
         xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText = Me.TextBox7.Text
-        xml_Settings.SelectSingleNode("data/NotepadPath").InnerText = Me.TextBox13.Text
         If Me.RadioButton1.Checked = True Then
             xml_Settings.SelectSingleNode("data/DownloadSmuiUndateFrom").InnerText = 1
         Else
@@ -292,6 +290,8 @@ Public Class Form设置
         xml_Settings.SelectSingleNode("data/SaveInterfaceLayout").InnerText = Me.CheckBox5.Checked
         xml_Settings.SelectSingleNode("data/DragDropCompatibilityForAdministrator").InnerText = Me.CheckBox1.Checked
         xml_Settings.SelectSingleNode("data/AutoSelectFirstNexusDownloadServer").InnerText = Me.CheckBox3.Checked
+        xml_Settings.SelectSingleNode("data/SMUI6_ListViewCustomDarwItem").InnerText = Me.CheckBox2.Checked
+
         xml_Settings.SelectSingleNode("data/CategoryPanelWidth").InnerText = Me.TrackBar1.Value
         Form1.Panel9.Width = Me.TrackBar1.Value
         xml_Settings.SelectSingleNode("data/DetailsPanelWidth").InnerText = Me.TrackBar2.Value
@@ -541,19 +541,6 @@ R1:
         If a.FileName = "" Then Exit Sub
         TextBox7.Text = a.FileName
 
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-        Dim a As New OpenFileDialog With {
-            .Filter = "notepad++.exe|notepad++.exe"
-        }
-        If My.Computer.FileSystem.DirectoryExists("C:\Program Files\Notepad++") = True Then
-            a.InitialDirectory = "C:\Program Files\Notepad++"
-        End If
-        a.ShowDialog(Me)
-
-        If a.FileName = "" Then Exit Sub
-        TextBox13.Text = a.FileName
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked

@@ -11,11 +11,14 @@ Public Class Form直接联网更新单个项
     Public 当前正在进行新建项的目标分类 As String = ""
 
     Public 这份进程正在使用的临时解压目录 As String = Path1.临时自动解压路径 & "\" & Now.Hour & Now.Minute & Now.Second & Now.Millisecond
+
+    Public 当前正在从nxm地址协议下载模组 As Boolean = False
+
     Private Sub Form直接联网更新单个项_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If 当前正在进行更新的单个项的N网ID = 12230 Then
-            MsgBox("不准用来操作 12230 号页面，没有这种操作！" & vbNewLine & vbNewLine & "Not allowed to operate 12230, there is no such operation!", MsgBoxStyle.Exclamation, "不要在酒吧里点炒饭")
-            Me.Close()
-        End If
+        'If 当前正在进行更新的单个项的N网ID = 12230 Then
+        '    MsgBox("不准用来操作 12230 号页面，没有这种操作！" & vbNewLine & vbNewLine & "Not allowed to operate 12230, there is no such operation!", MsgBoxStyle.Exclamation, "不要在酒吧里点炒饭")
+        '    Me.Close()
+        'End If
 
         Select Case 当前正在进行直接更新的操作类型
             Case 在线更新操作类型.更新项
@@ -485,7 +488,7 @@ Public Class Form直接联网更新单个项
                 My.Computer.FileSystem.WriteAllText(新建项完整路径 & "\Code", 自动编写的安装命令, False, System.Text.Encoding.UTF8)
                 Me.Label1.Text = 获取动态多语言文本("data/DirectOnlineUpdateWindow/S15")
                 Application.DoEvents()
-                TimerSleep.Sleep(1200)
+                TimerSleep.Sleep(1000)
         End Select
 
         If My.Computer.FileSystem.DirectoryExists(这份进程正在使用的临时解压目录) = True Then

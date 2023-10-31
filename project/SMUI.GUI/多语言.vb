@@ -15,16 +15,12 @@ Module 多语言
         Form1.Label设置选项.Text = xml_lang.SelectSingleNode("data/MainWindow/TitlePanel.5").InnerText.Replace("/crlf/", vbNewLine)
 
         Form1.Label检查模组安装情况.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.1").InnerText.Replace("/crlf/", vbNewLine)
-        Form1.Label传统管理方式.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.2").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label存档编辑器.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.3").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label模组更新检查器.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.4").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label插件和扩展内容.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.5").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label新闻公告.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.6").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label模组列表.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.7").InnerText.Replace("/crlf/", vbNewLine)
-        Form1.Label统计数据.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.8").InnerText.Replace("/crlf/", vbNewLine)
-        Form1.Label主题内容.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.9").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label创作者自由面板.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.10").InnerText.Replace("/crlf/", vbNewLine)
-        Form1.Label参与翻译SMUI.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.11").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label立即检查更新.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.12").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label关于和许可协议.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.13").InnerText.Replace("/crlf/", vbNewLine)
         Form1.Label查看更新历史.Text = xml_lang.SelectSingleNode("data/MainWindow/StartPanel.14").InnerText.Replace("/crlf/", vbNewLine)
@@ -78,7 +74,6 @@ Module 多语言
         Form1.重命名分类ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.16").InnerText
         Form1.设置颜色ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.17").InnerText
         Form1.设置字体ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.18").InnerText
-        Form1.查看选中分类的属性ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.19").InnerText
         Form1.激活拖拽ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.20").InnerText
 
         Form1.标准字体ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/FontMenu.1").InnerText
@@ -131,11 +126,7 @@ Module 多语言
         Form1.重命名项ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.70").InnerText
         Form1.用VisualStudioCode打开ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.71").InnerText
         Form1.用VisualStudio打开ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.72").InnerText
-        Form1.用Notepad打开ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.73").InnerText
-        Form1.可视化清单编辑器ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.74").InnerText
-        Form1.简单编辑ConfigToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.75").InnerText
         Form1.清除Config缓存ToolStripMenuItem1.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.76").InnerText
-        Form1.属性ToolStripMenuItem.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.77").InnerText
         Form1.激活拖拽ToolStripMenuItem1.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.78").InnerText
 
         Form1.Label描述菜单.Text = xml_lang.SelectSingleNode("data/MainWindow/ManagePanel.48").InnerText

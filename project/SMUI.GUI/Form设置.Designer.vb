@@ -57,6 +57,7 @@ Partial Class Form设置
         Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel功能 = New System.Windows.Forms.Panel()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.LinkLabel打开隐私设置 = New System.Windows.Forms.LinkLabel()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -101,9 +102,6 @@ Partial Class Form设置
         Me.Label1 = New System.Windows.Forms.Label()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Panel可选路径 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -563,6 +561,7 @@ Partial Class Form设置
         '
         'Panel功能
         '
+        Me.Panel功能.Controls.Add(Me.CheckBox2)
         Me.Panel功能.Controls.Add(Me.CheckBox3)
         Me.Panel功能.Controls.Add(Me.LinkLabel打开隐私设置)
         Me.Panel功能.Controls.Add(Me.CheckBox1)
@@ -575,6 +574,17 @@ Partial Class Form设置
         Me.Panel功能.Size = New System.Drawing.Size(666, 300)
         Me.Panel功能.TabIndex = 6
         Me.Panel功能.Visible = False
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(20, 175)
+        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(20, 10, 10, 0)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(390, 21)
+        Me.CheckBox2.TabIndex = 23
+        Me.CheckBox2.Text = "使用 SMUI 6 中的列表视图自绘制（闪烁严重，框架问题无法解决）"
+        Me.CheckBox2.UseVisualStyleBackColor = True
         '
         'CheckBox3
         '
@@ -647,7 +657,6 @@ Partial Class Form设置
         Me.CheckBox8.AutoSize = True
         Me.CheckBox8.Checked = True
         Me.CheckBox8.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox8.Enabled = False
         Me.CheckBox8.Location = New System.Drawing.Point(20, 20)
         Me.CheckBox8.Margin = New System.Windows.Forms.Padding(20, 20, 10, 0)
         Me.CheckBox8.Name = "CheckBox8"
@@ -1090,9 +1099,6 @@ Partial Class Form设置
         '
         'Panel可选路径
         '
-        Me.Panel可选路径.Controls.Add(Me.Label4)
-        Me.Panel可选路径.Controls.Add(Me.TextBox13)
-        Me.Panel可选路径.Controls.Add(Me.Label15)
         Me.Panel可选路径.Controls.Add(Me.Label28)
         Me.Panel可选路径.Controls.Add(Me.TextBox7)
         Me.Panel可选路径.Controls.Add(Me.Label29)
@@ -1108,41 +1114,6 @@ Partial Class Form设置
         Me.Panel可选路径.Size = New System.Drawing.Size(666, 445)
         Me.Panel可选路径.TabIndex = 3
         Me.Panel可选路径.Visible = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoEllipsis = True
-        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label4.Location = New System.Drawing.Point(528, 227)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(30, 23)
-        Me.Label4.TabIndex = 36
-        Me.Label4.Text = "..."
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TextBox13
-        '
-        Me.TextBox13.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox13.ForeColor = System.Drawing.Color.Silver
-        Me.TextBox13.Location = New System.Drawing.Point(23, 227)
-        Me.TextBox13.Margin = New System.Windows.Forms.Padding(0)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(500, 23)
-        Me.TextBox13.TabIndex = 35
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(20, 200)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(20, 10, 0, 10)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(78, 17)
-        Me.Label15.TabIndex = 34
-        Me.Label15.Text = "Notepad++"
         '
         'Label28
         '
@@ -1599,9 +1570,6 @@ Partial Class Form设置
     Friend WithEvents Label网络服务 As Label
     Friend WithEvents Label地区和语言 As Label
     Friend WithEvents Label可选路径 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox13 As TextBox
-    Friend WithEvents Label15 As Label
     Friend WithEvents Panel界面尺寸 As Panel
     Friend WithEvents Label界面尺寸 As Label
     Friend WithEvents TrackBar1 As TrackBar
@@ -1652,4 +1620,5 @@ Partial Class Form设置
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label26 As Label
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents CheckBox2 As CheckBox
 End Class

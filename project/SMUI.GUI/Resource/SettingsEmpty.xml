@@ -5,7 +5,6 @@
 	<StardewValleyGameBackUpPath></StardewValleyGameBackUpPath>
 	<VisualStudioCodePath></VisualStudioCodePath>
 	<VisualStudioPath></VisualStudioPath>
-	<NotepadPath></NotepadPath>
 
 	<DownloadSmuiUndateFrom></DownloadSmuiUndateFrom>
 	<OnlineContentFrom></OnlineContentFrom>
@@ -26,6 +25,7 @@
 	<SaveInterfaceLayout>True</SaveInterfaceLayout>
 	<DragDropCompatibilityForAdministrator>True</DragDropCompatibilityForAdministrator>
 	<AutoSelectFirstNexusDownloadServer>False</AutoSelectFirstNexusDownloadServer>
+	<SMUI6_ListViewCustomDarwItem>False</SMUI6_ListViewCustomDarwItem>
 
 	<CategoryPanelWidth>200</CategoryPanelWidth>
 	<DetailsPanelWidth>250</DetailsPanelWidth>
