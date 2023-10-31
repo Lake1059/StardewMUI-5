@@ -10,6 +10,7 @@ Public Class Form1
 #Region "主窗口"
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         SevenZip.SevenZipBase.SetLibraryPath(Application.StartupPath & "\7zFull64.dll")
         Dim currentGraphics As Graphics = Me.CreateGraphics
         ST1.全局DPI比例 = currentGraphics.DpiX / 96
@@ -31,6 +32,10 @@ Public Class Form1
         If My.Computer.FileSystem.FileExists(Application.StartupPath & "\CefSharp.WinForms.dll") = False Then
             添加调试文本(获取动态多语言文本("data/DynamicText/Other.3"), Color1.黄色) : Exit Sub
         End If
+
+
+
+
         ST1.是否安装了谷歌浏览器组件 = True
     End Sub
 
@@ -146,10 +151,6 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Label参与翻译SMUI_Click(sender As Object, e As EventArgs) Handles Label参与翻译SMUI.Click
-        Process.Start("https://stardewmui.fandom.com/zh/wiki/English_Data")
-    End Sub
-
 #End Region
 
 #Region "标签按钮视觉效果"
@@ -162,11 +163,11 @@ Public Class Form1
         sender.ForeColor = ColorTranslator.FromWin32(RGB(240, 240, 240))
     End Sub
 
-    Sub 二级按钮鼠标移上事件(sender As Object, e As EventArgs) Handles LabelUniqueID显示.MouseEnter, Label依赖项数量显示.MouseEnter, Label作者显示.MouseEnter, Label更新地址显示.MouseEnter, Label预览图菜单.MouseEnter, Label项菜单.MouseEnter, Label调试.MouseEnter, Label刷新.MouseEnter, Label描述菜单.MouseEnter, Label筛选.MouseEnter, Label搜索.MouseEnter, Label子库分类菜单.MouseEnter, Label保存并从队列中移除.MouseEnter, Label仅保存.MouseEnter, Label自动完成.MouseEnter, Label移除配置队列中的项.MouseEnter, Label添加文件夹.MouseEnter, Label添加文件.MouseEnter, Label所有命令.MouseEnter, Label刷新项的数据内容.MouseEnter, Label全部复制.MouseEnter, Label参与翻译SMUI.MouseEnter, Label模组更新检查器.MouseEnter, Label存档编辑器.MouseEnter, Label检查模组安装情况.MouseEnter, Label传统管理方式.MouseEnter, Label立即检查更新.MouseEnter, Label插件和扩展内容.MouseEnter, Label角落预览图菜单.MouseEnter, Label移除配置队列里的全部项.MouseEnter, Label关于和许可协议.MouseEnter
+    Sub 二级按钮鼠标移上事件(sender As Object, e As EventArgs) Handles LabelUniqueID显示.MouseEnter, Label依赖项数量显示.MouseEnter, Label作者显示.MouseEnter, Label更新地址显示.MouseEnter, Label预览图菜单.MouseEnter, Label项菜单.MouseEnter, Label调试.MouseEnter, Label刷新.MouseEnter, Label描述菜单.MouseEnter, Label筛选.MouseEnter, Label搜索.MouseEnter, Label子库分类菜单.MouseEnter, Label保存并从队列中移除.MouseEnter, Label仅保存.MouseEnter, Label自动完成.MouseEnter, Label移除配置队列中的项.MouseEnter, Label添加文件夹.MouseEnter, Label添加文件.MouseEnter, Label所有命令.MouseEnter, Label刷新项的数据内容.MouseEnter, Label全部复制.MouseEnter, Label模组更新检查器.MouseEnter, Label存档编辑器.MouseEnter, Label检查模组安装情况.MouseEnter, Label立即检查更新.MouseEnter, Label插件和扩展内容.MouseEnter, Label角落预览图菜单.MouseEnter, Label移除配置队列里的全部项.MouseEnter, Label关于和许可协议.MouseEnter
         sender.BackColor = ColorTranslator.FromWin32(RGB(64, 64, 64))
     End Sub
 
-    Sub 二级按钮鼠标移走事件(sender As Object, e As EventArgs) Handles Label子库分类菜单.MouseLeave, LabelUniqueID显示.MouseLeave, Label依赖项数量显示.MouseLeave, Label作者显示.MouseLeave, Label更新地址显示.MouseLeave, Label项菜单.MouseLeave, Label刷新.MouseLeave, Label搜索.MouseLeave, Label筛选.MouseLeave, Label调试.MouseLeave, Label描述菜单.MouseLeave, Label预览图菜单.MouseLeave, Label保存并从队列中移除.MouseLeave, Label仅保存.MouseLeave, Label自动完成.MouseLeave, Label移除配置队列中的项.MouseLeave, Label添加文件夹.MouseLeave, Label添加文件.MouseLeave, Label所有命令.MouseLeave, Label刷新项的数据内容.MouseLeave, Label全部复制.MouseLeave, Label参与翻译SMUI.MouseLeave, Label模组更新检查器.MouseLeave, Label存档编辑器.MouseLeave, Label检查模组安装情况.MouseLeave, Label传统管理方式.MouseLeave, Label立即检查更新.MouseLeave, Label插件和扩展内容.MouseLeave, Label角落预览图菜单.MouseLeave, Label移除配置队列里的全部项.MouseLeave, Label关于和许可协议.MouseLeave
+    Sub 二级按钮鼠标移走事件(sender As Object, e As EventArgs) Handles Label子库分类菜单.MouseLeave, LabelUniqueID显示.MouseLeave, Label依赖项数量显示.MouseLeave, Label作者显示.MouseLeave, Label更新地址显示.MouseLeave, Label项菜单.MouseLeave, Label刷新.MouseLeave, Label搜索.MouseLeave, Label筛选.MouseLeave, Label调试.MouseLeave, Label描述菜单.MouseLeave, Label预览图菜单.MouseLeave, Label保存并从队列中移除.MouseLeave, Label仅保存.MouseLeave, Label自动完成.MouseLeave, Label移除配置队列中的项.MouseLeave, Label添加文件夹.MouseLeave, Label添加文件.MouseLeave, Label所有命令.MouseLeave, Label刷新项的数据内容.MouseLeave, Label全部复制.MouseLeave, Label模组更新检查器.MouseLeave, Label存档编辑器.MouseLeave, Label检查模组安装情况.MouseLeave, Label立即检查更新.MouseLeave, Label插件和扩展内容.MouseLeave, Label角落预览图菜单.MouseLeave, Label移除配置队列里的全部项.MouseLeave, Label关于和许可协议.MouseLeave
         sender.BackColor = ColorTranslator.FromWin32(RGB(41, 43, 47))
     End Sub
 
@@ -221,12 +222,12 @@ Public Class Form1
         If Me.Panel模组列表.Controls.Count = 0 Then Me.DCM模组列表.Show(MousePosition)
     End Sub
 
-    Private Sub Label下载模组_Click(sender As Object, e As EventArgs) Handles Label统计数据.Click
+    Private Sub Label下载模组_Click(sender As Object, e As EventArgs)
         切换起始页面内容选项卡按钮状态(sender)
         Me.Panel统计数据.Visible = True
     End Sub
 
-    Private Sub Label主题内容_Click(sender As Object, e As EventArgs) Handles Label主题内容.Click
+    Private Sub Label主题内容_Click(sender As Object, e As EventArgs)
         切换起始页面内容选项卡按钮状态(sender)
         Me.Panel主题内容.Visible = True
     End Sub
@@ -608,7 +609,7 @@ Line1:
 
     End Sub
 
-    Private Sub 查看选中分类的属性ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 查看选中分类的属性ToolStripMenuItem.Click
+    Private Sub 查看选中分类的属性ToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -1828,16 +1829,11 @@ nextline:
         Shell("""" & xml_Settings.SelectSingleNode("data/VisualStudioPath").InnerText & """" & " " & """" & 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
     End Sub
 
-    Private Sub 用Notepad打开ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 用Notepad打开ToolStripMenuItem.Click
-        If xml_Settings.SelectSingleNode("data/NotepadPath").InnerText = "" Then Exit Sub
-        Shell("""" & xml_Settings.SelectSingleNode("data/NotepadPath").InnerText & """" & " " & """" & 检查并返回当前所选子库路径(False) & "\" & 当前项列表中项的分类集合(Me.ListView2.SelectedIndices(0)) & "\" & Me.ListView2.Items.Item(Me.ListView2.SelectedIndices(0)).Text & """", AppWinStyle.NormalFocus)
-    End Sub
-
-    Private Sub 可视化清单编辑器ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 可视化清单编辑器ToolStripMenuItem.Click
+    Private Sub 可视化清单编辑器ToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub 简单编辑ConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 简单编辑ConfigToolStripMenuItem.Click
+    Private Sub 简单编辑ConfigToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 

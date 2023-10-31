@@ -53,7 +53,7 @@ Module Module2
     End Function
 
     Public Sub 刷新标题栏主信息显示()
-        Form1.Text = "StardewMUI 5 Experimental " & Application.ProductVersion
+        Form1.Text = "StardewMUI 5 " & Application.ProductVersion
 
         Dim a As String
         If My.Computer.FileSystem.DirectoryExists(xml_Settings.SelectSingleNode("data/ModRepositoryPath").InnerText) = False Then

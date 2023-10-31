@@ -9,6 +9,7 @@ Module 服务器
     Public 获取到的更新内容描述 As String = ""
 
     Public Sub 运行后台服务器检查更新()
+        If xml_Settings.SelectSingleNode("data/AutoCheckSMUIUpdates").InnerText <> "True" Then Exit Sub
         If My.Computer.FileSystem.FileExists(Application.StartupPath & "\Portable") = True Then
             添加调试文本(获取动态多语言文本("data/DynamicText/Sever.0"), Color1.绿色)
             Exit Sub

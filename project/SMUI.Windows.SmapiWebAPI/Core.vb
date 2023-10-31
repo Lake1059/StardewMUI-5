@@ -128,6 +128,8 @@ Public Class Core
                 End If
                 If JsonData.item("data")(i).item("metadata").item("curseForgeID") IsNot Nothing Then
                     AddValue(OutputData.metadata(i).curseForgeID, JsonData.item("data")(i).item("metadata").item("curseForgeID").ToString)
+                End If
+                If JsonData.item("data")(i).item("metadata").item("curseForgeKey") IsNot Nothing Then
                     AddValue(OutputData.metadata(i).curseForgeKey, JsonData.item("data")(i).item("metadata").item("curseForgeKey").ToString)
                 End If
                 If JsonData.item("data")(i).item("metadata").item("modDropID") IsNot Nothing Then
