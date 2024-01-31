@@ -31,7 +31,6 @@ Partial Class Form插件和扩展内容
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -107,7 +106,6 @@ Partial Class Form插件和扩展内容
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Panel4.Controls.Add(Me.Label10)
         Me.Panel4.Controls.Add(Me.Label9)
         Me.Panel4.Controls.Add(Me.Label8)
         Me.Panel4.Controls.Add(Me.Label7)
@@ -117,17 +115,6 @@ Partial Class Form插件和扩展内容
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(460, 575)
         Me.Panel4.TabIndex = 11
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!)
-        Me.Label10.Location = New System.Drawing.Point(10, 131)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(10, 10, 10, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(218, 19)
-        Me.Label10.TabIndex = 13
-        Me.Label10.Text = "❌ DLC 5 - Distribution Extension"
         '
         'Label9
         '
@@ -329,5 +316,4 @@ Partial Class Form插件和扩展内容
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label10 As Label
 End Class

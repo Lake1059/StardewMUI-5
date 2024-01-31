@@ -73,13 +73,13 @@ Module 配置队列
         Dim 目录 As New System.IO.DirectoryInfo(模组路径)
         For Each 文件 In 目录.GetFiles("*.*")
             Select Case 文件.Name
-                Case "README", "Version", "Code", "README.rtf", "Font"
+                Case "README", "Version", "Code", "README.rtf", "Font", "Code2"
                 Case Else
                     Form1.ListView4.Items.Add(文件.Name)
                     Form1.ListView4.Items.Item(Form1.ListView4.Items.Count - 1).SubItems.Add(获取动态多语言文本("data/DynamicText/File"))
                     Select Case 文件.Name
                         '韩红无语.mp4，贤齐震惊.jpg，若瑄揉肩.gif
-                        Case "manifest.json", "content.json", "config.json", "README", "Version", "Code", "README.rtf", "Font"
+                        Case "manifest.json", "content.json", "config.json", "README", "Version", "Code", "Code2", "README.rtf", "Font"
                             Form1.ListView4.Items.Item(Form1.ListView4.Items.Count - 1).StateImageIndex = 1
                             Form1.ListView4.Items.Item(Form1.ListView4.Items.Count - 1).ForeColor = Color1.红色
                             Continue For
